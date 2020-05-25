@@ -1,10 +1,10 @@
-#### makefile, 2019/05/31
+#### makefile, 2020/05/25
 #### Copyright (C) 2019 Luiz E. M. Lima (luizeduardomlima@gmail.com)
 ##
 ## This makefile provides commands to make compiling LaTeX files.
 
 ## Source and base name
-src :=	utfprpgtex.tex
+src :=	utfprct.tex
 ifeq ($(strip $(src)),)
   src :=	$(shell read -p "Enter source filename with 3-digits extension: " src; echo $$src)
 endif
@@ -84,7 +84,7 @@ pdf2:
 inter_files=	*.aux *.log *.bbl *.bcf *.blg *.brf *.mw *.out *.run.xml \
 	*.acn* *.acr* *.alg* *.glg *.glo *.gls *.idx *.ilg *.ind *.ist *.nlo *.nls \
 	*.loa *.loc *.lod *.lof *.loh *.lop *.lot *.tdo *.toc \
-	*.nav *.snm ${base_name}.dvi ${base_name}*.ps
+	*.bak *.nav *.snm ${base_name}.dvi ${base_name}*.ps
 clean:
 	rm -f ${inter_files}
 	rm -f `find . -name "*.aux"`

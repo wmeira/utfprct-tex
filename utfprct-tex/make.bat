@@ -1,15 +1,16 @@
 @echo off
-REM make.bat, 2019/05/31
-REM Copyright (C) 2019 Luiz E. M. Lima (luizeduardomlima@gmail.com)
+REM make.bat, 2020/05/25
+REM Copyright (C) 2020 William H. T. Meira (williammeira@gmail.com)
+REM Modified version from Luiz E. M. Lima (luizeduardomlima@gmail.com) - 2019/12/03
 REM
 REM This make.bat provides commands to make compiling LaTeX files.
 
 REM Sets local variables
 setlocal EnableDelayedExpansion
 
-REM Source and base name
-set src=utfprpgtex.tex
-if [%src%] == [] set /p src="Enter source filename with 3-digits extension: "
+REM Source and base name (default utfprct.tex)
+REM if [%src%] == [] set /p src="Enter source filename with 3-digits extension: "
+set src=utfprct.tex
 set base_name=%src:~0,-4%
 
 REM Title
@@ -76,20 +77,20 @@ if [%1] == [help] (
   @echo ##############################################################################
   @echo # Commands to make compiling LaTeX source files
   @echo ##############################################################################
-  @echo # make check:     check for errors.
-  @echo # make dvi:       creates dvi, converts tex-dvi.
-  @echo # make ps:        creates ps, converts tex-dvi-ps.
-  @echo # make pdf1:      creates pdf using latex, converts tex-dvi-ps-pdf.
-  @echo # make pdf2:      creates pdf using pdflatex, converts tex-pdf.
-  @echo # make clean:     removes intermediate files.
-  @echo # make all1:      creates pdf using latex and removes intermediate files.
-  @echo # make all2:      creates pdf using pdflatex and removes intermediate files.
-  @echo # make 1 biber:   uses biber to generate references with option 1.
-  @echo # make 1 bibtex:  uses bibtex to generate references with option 1.
-  @echo # make 1 2 mkidx: uses makeindex to generate index with options 1 and 2.
-  @echo # make help:      shows help.
-  @echo # option 1:       dvi, ps, pdf1, pdf2, all1, or all2.
-  @echo # option 2:       biber or bibtex.
+  @echo # make check:     	check for errors.
+  @echo # make dvi:   		creates dvi, converts tex-dvi.
+  @echo # make ps:		creates ps, converts tex-dvi-ps.
+  @echo # make pdf1: 		creates pdf using latex, converts tex-dvi-ps-pdf.
+  @echo # make pdf2: 		creates pdf using pdflatex, converts tex-pdf.
+  @echo # make clean:     	removes intermediate files from folder.
+  @echo # make all1: 		creates pdf using latex and removes intermediate files.
+  @echo # make all2: 		creates pdf using pdflatex and removes intermediate files.
+  @echo # make 1 biber:		uses biber to generate references with option 1.
+  @echo # make 1 bibtex:	uses bibtex to generate references with option 1.
+  @echo # make 1 2 mkidx: 	uses makeindex to generate index with options 1 and 2.
+  @echo # make help:      	shows help.
+  @echo # option 1:       	dvi, ps, pdf1, pdf2, all1, or all2.
+  @echo # option 2:       	biber or bibtex.
   @echo ##############################################################################
 )
 

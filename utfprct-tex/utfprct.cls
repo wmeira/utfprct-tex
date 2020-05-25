@@ -1,54 +1,38 @@
-%%%% utfprpgtex.cls, 2019/12/03, 1.8
-%%%% Copyright (C) 2014-2019 Luiz E. M. Lima (luizeduardomlima@gmail.com)
+%% utfprct.tex, v1.0 wmeira on 2020/05/25
+%% Copyright (C) 2020- by William H. T. Meira
 %%
-%% This work may be distributed and/or modified under the conditions of the
-%% LaTeX Project Public License, either version 1.3 of this license or (at your
-%% option) any later version.
+%% Modified version of project 'utfprpgtex' maintained 
+%% by Luiz E. M. Lima (luizeduardomlima@gmail.com)
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
 %% The latest version of this license is in
 %%   http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX version
-%% 2005/12/01 or later.
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
 %%
 %% This work has the LPPL maintenance status `maintained'.
 %%
-%% The Current Maintainer of this work is Luiz E. M. Lima.
+%% The Current Maintainer of this work is William H. T. Meira.
 %%
-%% This work consists of the files utfprpgtex.cls, utfprpgtex.tex, and
-%% utfprpgtex-dados.tex.
+%% This project consists mainly of files: 'utfprct.cls', 'utfprct.tex', 
+%% 'utfprct-dados.tex' 
+%% 
+%% The 'abntex2-alf.bst' and 'abntex2-num.bst' files are slightly
+%% modified versions of the bibtex styles from abntex2 (v.1.9.7)
+%% package to suit NBR6023/2018 (not yet implemented). Complementary,
+%% 'abntex2-alf-en.bst' and 'abntex2-num-en.bst' are english versions 
+%% of the respective bibtex styles.
 %%
-%% A brief description of this work is in readme.txt.
+%% Contribute to improve this project (github repo):
+%% https://github.com/wmeira/utfprct-tex
+
 
 %% Identificação e modificações
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
-\ProvidesClass{utfprpgtex}[2019/12/03 v1.8]
-%% -- Alteração do espaçamento vertical no sumário (partes e capítulos).
-%% -- Alteração da folha de aprovação (correção das margens).
-% \ProvidesClass{utfprpgtex}[2018/06/17 v1.7]
-%% -- Alteração do título da seção no sumário em letras maíusculas.
-% \ProvidesClass{utfprpgtex}[2017/11/30 v1.6]
-%% -- Remoção da impressão (automática) somente anverso para documentos com um número de páginas inferior à 101.
-%% -- Alteração dos comandos \write18 para execução somente ao final da classe.
-% \ProvidesClass{utfprpgtex}[2017/02/15 v1.5]
-%% -- Criação/alteração de ambientes para elementos pós-textuais: apêndices e anexos.
-% \ProvidesClass{utfprpgtex}[2016/11/25 v1.4]
-%% -- Alteração da folha de aprovação (opção para inclusão de até dois membros adicionais na banca examinadora de Tese).
-%% -- Alteração do comando \SiglaDoProgramaDePosGraduacao para \SiglaDoPPG.
-%% -- Alteração do comando \fonte que sobrescreve o comando definido no abnTeX2.
-%% -- Alteração da largura dos ambientes tipo tabular (largura do texto).
-%% -- Alteração do tamanho da fonte nos ambientes algorithmic, tabular e tabularx (footnotesize = ABNTEXfontereduzida).
-%% -- Alteração do posicionamento e da largura das legendas de ilustrações (acima e com largura igual da ilustração).
-% \ProvidesClass{utfprpgtex}[2016/07/03 v1.3]
-%% -- Criação/alteração de ambientes para elementos pré-textuais: dedicatoria, agradecimentos, epígrafe, resumo, abstract, etc.
-% \ProvidesClass{utfprpgtex}[2016/03/05 v1.2]
-%% -- Alteração da fonte no modo matemático (Helvetica para Times).
-%% -- Alteração do posicionamento vertical da numeração das páginas.
-%% -- Formatação da folha de aprovação (estilo do PPG) mais semelhante aos modelos dos PPGs.
-% \ProvidesClass{utfprpgtex}[2015/10/30 v1.1]
-%% -- Alteração das opções da classe utfprpgtex nos arquivos utfprpgtex.cls (classe) e utfprpgtex.tex (arquivo principal).
-%% -- Impressão somente anverso (automática) para documentos com um número de páginas inferior à 101.
-%% -- Formatação do resumo, do abstract e do sumário mais semelhante às normas da UTFPR.
-% \ProvidesClass{utfprpgtex}[2014/07/05 v1.0]
-%% -- Criação dos arquivos constituintes deste projeto.
+\ProvidesClass{utfprct}[2020/05/25 v1.0]
+%% -- v1.0: Modifications on the utfprpgtex project
 
 %% Classe e opções
 \RequirePackage{color}%% Controle de cores em documentos LaTeX
