@@ -23,13 +23,15 @@
 %% merlin.mbs  (with options: `babel,nm-revf,aunm-semi,nmlm,x3,m3,dt-end,yr-com,xmth,vnum-x,volp-com,jwdpg,jwdvol,num-xser,btit-rm,bt-rm,pg-bk,add-pub,pub-date,pub-xpar,pre-pub,isbn,issn,pp,ed,abr,ednx,nfss')
 %% These sourefiles are copyrighted by Patrick W Daly
 
-%% Some update to fit the NBR6023/2018
+%% Changes due to NBR 6023/2018
 %%
-%% 1) Italic for [s.l.], [s.d.], et al., In
+%% 1) Italic applied to [s.l.], [s.d.], et al., In
 %%
-%% Obs: s.l = sine loco (sem local da publicacao); s.n = sine nomine (sem editora) s.d = sem data (n.d. = no date); 
+%% s.l = sine loco (sem local da publicacao); 
+%% s.n = sine nomine (sem editora)
+%% s.d = sem data (n.d. = no date); 
 %%
-%% modified by William Meira (13/12/2019)
+%% last modified by wmeira (25/05/2020)
 
 ENTRY
   { address author
