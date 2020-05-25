@@ -62,8 +62,8 @@ if [%1] == [pdf2] %cmd_pdf2%
 REM Removes intermediate files
 set inter_files=*.aux *.log *.bbl *.bcf *.blg *.brf *.mw *.out *.run.xml^
   *.acn* *.acr* *.alg* *.glg *.glo *.gls *.idx *.ilg *.ind *.ist *.nlo *.nls^
-  *.loa *.loc *.lod *.lof *.loh *.lop *.lot *.tdo *.toc^ *.bak
-  *.nav *.snm %base_name%.dvi %base_name%*.ps
+  *.loa *.loc *.lod *.lof *.loh *.lop *.lot *.tdo *.toc^
+  *.bak *.nav *.snm %base_name%.dvi %base_name%*.ps
 set "cmd_clean=del /s %inter_files%"
 if [%1] == [clean] %cmd_clean%
 
