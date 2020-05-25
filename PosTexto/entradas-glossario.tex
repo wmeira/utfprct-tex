@@ -1,0 +1,66 @@
+%%%% GLOSSÁRIO
+%%
+%% Relação de palavras ou expressões técnicas de uso restrito ou de sentido obscuro, utilizadas no texto, acompanhadas das
+%% respectivas definições.
+
+%% Entradas do glossário: \newglossaryentry{rótulo}{informações da entrada}
+
+\newglossaryentry{pai}{%% Informações da entrada
+  name        = {pai},
+  plural      = {pais},
+  description = {um exemplo de entrada pai que possui subentradas (entradas filhas)}
+}
+
+\newglossaryentry{componente}{%% Informações da entrada
+  name        = {componente},
+  plural      = {componentes},
+  parent      = {pai},
+  description = {um exemplo de uma entrada componente, subentrada da entrada chamada \gls{pai}}
+}
+
+\newglossaryentry{filho}{%% Informações da entrada
+  name        = {filho},
+  plural      = {filhos},
+  parent      = {pai},
+  description = {um exemplo de uma entrada filha (subentrada) da entrada chamada \gls{pai}. Trata-se de uma entrada irmã da entrada chamada \gls{componente}}
+}
+
+\newglossaryentry{equilibrio}{%% Informações da entrada
+  name        = {equilíbrio da configuração},
+  see         = [veja também]{componente},
+  description = {uma consistência entre os \glspl{componente}}
+}
+
+\newglossaryentry{tex}{%% Informações da entrada
+  name        = {\TeX},
+  sort        = {TeX},
+  description = {é um sistema de tipografia criado por Donald E. Knuth}
+}
+
+\newglossaryentry{latex}{%% Informações da entrada
+  name        = {\latex},
+  sort        = {LaTeX},
+  description = {um conjunto de macros para o processador de textos \gls{tex}, utilizado amplamente para a produção de textos matemáticos e científicos devido à sua alta qualidade tipográfica}
+}
+
+\newglossaryentry{bibtex}{%% Informações da entrada
+  name        = {Bib\TeX},
+  sort        = {BibTeX},
+  parent      = {latex},
+  description = {um software de gerenciamento de referências para a formatação de listas de referências. A ferramenta Bib\TeX\ é normalmente usada em conjunto com o sistema de preparação de documentos do \gls{latex}}
+}
+
+\newglossaryentry{abntex2}{%% Informações da entrada
+  name        = {\abnTeX},
+  sort        = {abnTeX2},
+  see         = {latex},
+  description = {uma suíte para \gls{latex} que atende os requisitos das normas da Associação Brasileira de Normas Técnicas (ABNT) para elaboração de documentos técnicos e científicos brasileiros, como artigos científicos, relatórios técnicos, trabalhos acadêmicos como teses, dissertações, projetos de pesquisa e outros documentos do gênero}
+}
+
+\newglossaryentry{utfprpgtex}{%% Informações da entrada
+  name        = {\utfprpgtex},
+  sort        = {UTFPRPGTeX},
+  see         = {latex},
+  parent      = {abntex2},
+  description = {uma suíte para \gls{latex}, baseada na suíte \gls{abntex2}, que atende os requisitos das normas definidas pela Universidade Tecnológica Federal do Paraná (UTFPR), câmpus Ponta Grossa, para elaboração de trabalhos acadêmicos}
+}

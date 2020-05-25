@@ -1,0 +1,228 @@
+%%%% utfprpgtex.tex, 2019/12/03
+%%%% Copyright (C) 2014-2019 Luiz E. M. Lima (luizeduardomlima@gmail.com)
+%%
+%% This work may be distributed and/or modified under the conditions of the
+%% LaTeX Project Public License, either version 1.3 of this license or (at your
+%% option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX version
+%% 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The Current Maintainer of this work is Luiz E. M. Lima.
+%%
+%% This work consists of the files utfprpgtex.cls, utfprpgtex.tex, and
+%% utfprpgtex-dados.tex.
+%%
+%% A brief description of this work is in readme.txt.
+
+%% Classe e opções de documento
+\documentclass[%% Opções
+%% -- Opções da classe memoir --
+  12pt,%% Tamanho da fonte: 10pt, 11pt, 12pt, etc.
+  a4paper,%% Tamanho do papel: a4paper (A4), letterpaper (carta), etc.
+  % fleqn,%% Alinhamento das equações à esquerda (comente para alinhamento centralizado)
+  % leqno,%% Numeração das equações no lado esquerdo (comente para lado direito)
+  oneside,%% Impressão dos elementos textuais e pós-textuais: oneside (anverso) ou twoside (anverso e verso, se mais de 100 p.)
+  openright,%% Impressão da primeira página dos capítulos: openright (anverso), openleft (verso) ou openany (anverso e verso)
+%% -- Opções da classe abntex2 --
+  sumario = abnt-6027-2012,%% Formatação do sumário: tradicional (estilo tradicional) ou abnt-6027-2012 (norma ABNT 6027-2012)
+  chapter = TITLE,%% Títulos de capítulos em maiúsculas (comente para desabilitar)
+  section = TITLE,%% Títulos de seções secundárias em maiúsculas (comente para desabilitar)
+  % subsection = TITLE,%% Títulos de seções terciárias em maiúsculas (comente para desabilitar)
+  % subsubsection = TITLE,%% Títulos de seções quartenárias em maiúsculas (comente para desabilitar)
+%% -- Opções da classe utfprpgtex --
+  pretextualoneside,%% Impressão dos elementos pré-textuais: pretextualoneside (anverso) ou pretextualtwoside (anverso e verso)
+  fontearial,%% Fonte do texto: fontetimes (times), fontearial (arial) ou fontecourier (courier)
+  % vinculoscoloridos,%% Cores nos vínculos (citações, arquivos, links, url, etc.) (comente para desabilitar)
+  semrecuonosumario,%% Remoção do recuo dos itens no sumário (comente para adição do recuo, se estilo tradicional)
+  usemakeindex,%% Compilação de glossários e índices utilizando makeindex (comente para desabilitar)
+  % legendascentralizadas,%% Alinhamento das legendas centralizado (comente para alinhamento à esquerda)
+  aprovacaoestiloppg,%% Folha de aprovação do programa de pós-graduação no estilo do PPG (comente para estilo padrão)
+  pardeassinaturas,%% Assinaturas na folha de aprovação em até duas colunas (comente para em uma única coluna)
+  % linhasdeassinaturas,%% Linhas de assinaturas na folha de aprovação (comente para remover as linhas)
+%% -- Opções do pacote babel (hifenização) -- % 
+  french,%% Idioma adicional para hifenização
+  spanish,%% Idioma adicional para hifenização
+  english,%% Idioma adicional para hifenização
+  brazil,%% Idioma principal do documento (último da lista)
+]{utfprpgtex}%% Classe utfprpgtex
+
+
+%% Pacotes carregados nas classes:
+%%   memoir: abstract, appendix, array, booktabs, ccaption, chngcntr, chngpage, dcolumn, delarray, enumerate, epigraph, framed, ifmtarg, ifpdf, index, makeidx, moreverb, needspace, newﬁle, nextpage, parskip, patchcmd, setspace, shortvrb, showidx, tabularx, titleref, titling, tocbibind, tocloft, verbatim, verse.
+%%   memoir (similares): crop, fancyhdr, geometry, sidecap, subﬁgure, titlesec.
+%%   abntex2: babel, bookmark, calc, enumitem, ifthen, hyperref, textcase.
+%%   utfprpgtex: abntex2cite, ae, algorithmic, amsmath, backref, breakurl, caption, cmap, color, eepic, epic, epsfig, etoolbox,
+%%               fancyhdr, fix-cm, fontenc, glossaries, graphics, graphicx, helvet, hyphenat, indentfirst, inputenc, lastpage,
+%%               morewrites, nomencl, sfmath, sistyle, substr, times, xtab.
+
+%% Pacotes adicionais (\usepackage[options]{package})
+\usepackage{bigdelim, booktabs, colortbl, longtable, multirow}%% Ferramentas para tabelas
+\usepackage{amssymb, amstext, amsthm, icomma}%% Ferramentas para linguagem matemática
+\usepackage{pifont, textcomp, wasysym}%% Símbolos de texto
+
+%% Comandos personalizados (\newcommand{name}[num]{definition})
+\newcommand{\cpp}{\texttt{C$++$}}%% C++
+\newcommand{\latex}{\LaTeX}%% LaTeX
+\newcommand{\ds}{\displaystyle}%% Tamanho normal das equações
+\newcommand{\bsym}[1]{\boldsymbol{#1}}%% Texto no modo matemático em negrito
+\newcommand{\mr}[1]{\mathrm{#1}}%% Texto no modo matemático normal (não itálico)
+\newcommand{\der}{\mr{d}}%% Operador diferencial
+\newcommand{\deri}[2]{\frac{\der #1}{\der #2}}%% Derivada ordinária
+\newcommand{\derip}[2]{\frac{\partial #1}{\partial #2}}%% Derivada parcial
+\newcommand{\pare}[1]{\left( #1 \right)}%% Parênteses
+\newcommand{\colc}[1]{\left[ #1 \right]}%% Colchetes
+\newcommand{\chav}[1]{\left\lbrace #1 \right\rbrace}%% Chaves
+\newcommand{\sen}{\operatorname{sen}}%% Operador seno
+\newcommand{\senh}{\operatorname{senh}}%% Operador seno hiperbólico
+\newcommand{\tg}{\operatorname{tg}}%% Operador tangente
+\newcommand{\tgh}{\operatorname{tgh}}%% Operador tangente hiperbólico
+\newcommand{\seqref}[1]{Equação~\eqref{#1}}%% Referência de uma única equação
+\newcommand{\meqref}[1]{Equações~\eqref{#1}}%% Referência de multiplas equações
+\newcommand{\citep}[1]{\cite{#1}}%% Atalho para citação implícita
+\newcommand{\citet}[1]{\citeonline{#1}}%% Atalho para citação explícita
+\newcommand{\citepa}[1]{(\citeauthor{#1})}%% Atalho para citação implícita (somente autor)
+\newcommand{\citeta}[1]{\citeauthoronline{#1}}%% Atalho para citação explícita (somente autor)
+\newcommand{\citepy}[1]{(\citeyear{#1})}%% Atalho para citação implícita (somente ano)
+\newcommand{\citety}[1]{\citeyear{#1}}%% Atalho para citação explícita (somente ano)
+
+%% Arquivo de dados do modelo de documento LaTeX para produção de trabalhos acadêmicos da UTFPR
+\input{./utfprpgtex-dados}%% Realize as modificações pertinentes no arquivo "utfprpgtex-dados.tex"
+
+%% Ferramenta para criação de índices
+\makeindex%% Não comente esta linha
+
+%% Ferramenta para criação de glossários
+\makeglossaries%% Não comente esta linha
+\include{./PreTexto/entradas-acronimos}%% Entradas da lista de abreviaturas, siglas e acrônimos - Comente para remover este item
+\include{./PosTexto/entradas-glossario}%% Entradas do glossário - Comente para remover este item
+
+%% Ferramenta para criação de nomenclaturas
+\makenomenclature%% Não comente esta linha
+
+%% Início do documento
+\begin{document}%% Não comente esta linha
+
+
+%% Formatação de páginas de elementos pré-textuais
+\pretextual%% Não comente esta linha
+
+%% Capa
+\incluircapa%% Comente para remover este item
+
+%% Folha de rosto (* coloca a ficha bibliográfica no verso)
+\incluirfolhaderosto*%% Comente para remover este item
+
+%% Ficha catalográfica (teses e dissertações)
+\incluirfichacatalografica%% Comente para remover este item
+
+%% Errata
+\include{./PreTexto/errata}%% Comente para remover este item
+
+%% Folha de aprovação
+\incluirfolhadeaprovacao%% Comente para remover este item
+
+%% Dedicatória
+\include{./PreTexto/dedicatoria}%% Comente para remover este item
+
+%% Agradecimentos
+\include{./PreTexto/agradecimentos}%% Comente para remover este item
+
+%% Epígrafe
+\include{./PreTexto/epigrafe}%% Comente para remover este item
+
+%% Resumo
+\include{./PreTexto/resumo}%% Comente para remover este item
+
+%% Abstract
+\include{./PreTexto/abstract}%% Comente para remover este item
+
+%% Lista de algoritmos
+\incluirlistadealgoritmos%% Comente para remover este item
+
+%% Lista de ilustrações
+\incluirlistadeilustracoes%% Comente para remover este item
+
+%% Lista de tabelas
+\incluirlistadetabelas%% Comente para remover este item
+
+%% Lista de abreviaturas, siglas e acrônimos
+\incluirlistadeacronimos{glossaries}%% Opções: "glossaries" (pacote) ou "file" (arquivo) ou "none" (desabilita)
+
+%% Lista de símbolos
+\incluirlistadesimbolos{nomencl}%% Opções: "nomencl" (pacote) ou "file" (arquivo) ou "none" (desabilita)
+
+%% Sumário
+\incluirsumario%% Comente para remover este item
+
+%% Formatação de páginas de elementos textuais
+\textual%% Não comente esta linha
+
+%% Parte
+% \part{Introdução}%% Comente para remover este item
+
+%% Capítulo
+
+\languagename
+\citeonline{Thompson2001}
+
+\include{./Capitulo1/capitulo1}%% Comente para remover este item
+
+%% Parte
+% \part{Desenvolvimento}%% Comente para remover este item
+
+%% Capítulo
+\include{./Capitulo2/capitulo2}%% Comente para remover este item
+
+%% Capítulo
+\include{./Capitulo3/capitulo3}%% Comente para remover este item
+
+%% Capítulo
+\include{./Capitulo4/capitulo4}%% Comente para remover este item
+
+%% Parte
+% \part{Conclusão}%% Comente para remover este item
+
+%% Capítulo
+\include{./Capitulo5/capitulo5}%% Comente para remover este item
+
+%% Capítulos após este comando criam marcadores do pdf na raiz
+% \phantompart%% Comente para remover este item
+
+%% Capítulo de exemplo
+\include{./CapituloExemplo/capituloexemplo}%% Comente para remover este item
+
+%% Formatação de páginas de elementos pós-textuais
+\postextual%% Não comente esta linha
+
+%% Arquivos de referências
+\arquivosdereferencias{%% Arquivos bibtex sem a extensão .bib e separados por vírgula - Não comente esta linha
+  ./PosTexto/exemplos-referencias,%% Arquivo de referências - Comente para remover este item
+  ./PosTexto/referencias%% Arquivo de referências - Comente para remover este item
+}%% Não comente esta linha
+
+%% Glossário
+\incluirglossario%% Comente para remover este item
+
+%% Arquivos de apêndices
+\begin{arquivosdeapendices}%% Os arquivos de apêndices devem se incluídos neste ambiente - Não comente esta linha
+  \partapendices%% Página de início dos apêndices - Comente para remover este item
+  \include{./PosTexto/apendicea}%% Apêndice - Comente para remover este item
+  \include{./PosTexto/apendiceb}%% Apêndice - Comente para remover este item
+\end{arquivosdeapendices}%% Não comente esta linha
+
+%% Arquivos de anexos
+\begin{arquivosdeanexos}%% Os arquivos de anexos devem se incluídos neste ambiente - Não comente esta linha
+  \partanexos%% Página de início dos anexos - Comente para remover este item
+  \include{./PosTexto/anexoa}%% Anexo - Comente para remover este item
+  \include{./PosTexto/anexob}%% Anexo - Comente para remover este item
+\end{arquivosdeanexos}%% Não comente esta linha
+
+%% Índice
+\incluirindice%% Comente para remover este item
+
+%% Fim do documento
+\end{document}%% Não comente esta linha

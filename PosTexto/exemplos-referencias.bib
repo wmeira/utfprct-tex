@@ -1,0 +1,442 @@
+%%%% REFERÊNCIAS
+%%
+%% Conjunto padronizado de elementos descritivos retirados de um documento, que permite sua identificação individual.
+%%
+%% Cada entrada no arquivo BibTeX segue um formato padrão. Este formato muda ligeiramente baseado no tipo de entrada, mas a sintaxe
+%% continua a mesma.
+%%
+%% O rótulo de cada entrada não pode conter caracteres especiais, acentuados ou cedilha.
+%%
+%% A formatação do texto no campo "AUTHOR" deve obedecer algumas regras:
+%%   - Acento agudo:        "á = {\'a}".
+%%   - Acento crase:        "à = {\`a}".
+%%   - Acento til:          "ã = {\~a}".
+%%   - Acento circunflexo:  "ê = {\^e}".
+%%   - Acento trema:        "ü = {\"u}".
+%%   - Acento na letra i:   "í = {\'\i}".
+%%   - Cedilha:             "ç = {\c{c}}".
+%%   - Sobrenome composto:  "Santos, Filho, Jos{\'e} C. S.; da Silva, Erivanildo Lopes".
+%%   - Nome de organização: "{\mbox IONA Technologies PLC}".
+%%
+%% A formatação do texto no campo "TITLE" deve obedecer algumas regras (também válidas para o texto no campo "AUTHOR"):
+%%   - MAIÚSCULAS: "REAL = {REAL}".
+%%   - Minúsculas: "real = {real}".
+%%   - CamelCase:  "Real = {R}eal".
+
+%% TIPOS DE ENTRADA
+%%
+%% Ao inserir uma referência no banco de dados, a primeira coisa a decidir é o tipo de entrada. Existem vários tipos de entrada, mas
+%% não são completas, porém são suficientes para o BibTeX fornecer entradas para lidar com praticamente qualquer tipo de referência
+%% razoavelmente bem.
+
+%% ARTICLE - Um artigo de um jornal ou revista.
+%%   - Campos requeridos: AUTHOR, TITLE, JOURNAL e YEAR.
+%%   - Campos opcionais: VOLUME, NUMBER, PAGES, MONTH e NOTE.
+
+@ARTICLE{Guimaraes2003,
+  AUTHOR   = {Guimar{\~a}es, Eliane G. and Maffeis, Antonio T. and Pereira, James L. and Russo, Bruno G. and Cardozo, Eleri and Bergerman, Marcel and Magalh{\~a}es, Mauricio F.},
+  TITLE    = {{REAL}},
+  JOURNAL  = {IEEE Transactions on Education},
+  YEAR     = {2003},
+  VOLUME   = {46},
+  NUMBER   = {1},
+  PAGES    = {37--42},
+  MONTH    = feb,
+  SUBTITLE = {A Virtual Laboratory for Mobile Robot Experiment}
+}
+
+@ARTICLE{Frederico2012,
+  AUTHOR    = {Frederico, Guilherme Francisco and Martins, Roberto Antonio},
+  TITLE     = {Modelo para alinhamento entre a maturidade dos sistemas de medição de desempenho e a maturidade da gestão da cadeia de suprimentos},
+  JOURNAL   = {Gestão \& Produção},
+  YEAR      = {2012},
+  VOLUME    = {19},
+  PAGES     = {857--871},
+  MONTH     = dec,
+  ISSN      = {0104-530X},
+  PUBLISHER = {Scielo},
+  URL       = {http://www.scielo.br/scielo.php?script=sci_arttext&pid=S0104-530X2012000400014&nrm=iso}
+}
+
+%% BOOK - Um livro com uma editora explícita.
+%%   - Campos requeridos: AUTHOR ou EDITOR, TITLE, PUBLISHER e YEAR.
+%%   - Campos opcionais: VOLUME ou NUMBER, SERIES, ADDRESS, EDITION, MONTH e NOTE.
+
+@BOOK{Pedrycz1998,
+  AUTHOR    = {Pedrycz, Witold and Gomide, Fernando A. C.},
+  TITLE     = {An Introduction to Fuzzy Sets},
+  PUBLISHER = {MIT Press},
+  YEAR      = {1998},
+  ADDRESS   = {Massachusetts, USA},
+  MONTH     = apr,
+  PAGES     = {465},
+  SUBTITLE  = {Analysis and Design (Complex Adaptive Systems)}
+}
+
+%% BOOKLET - Uma obra impressa mas sem uma editora ou instituição patrocinadora.
+%%   - Campos requeridos: TITLE.
+%%   - Campos opcionais: AUTHOR, HOWPUBLISHED, ADDRESS, MONTH, YEAR e NOTE.
+
+@BOOKLET{Thompson2001,
+  TITLE        = {X-Ray Data Booklet},
+  AUTHOR       = {Thompson, Albert C. and Vaughan, Douglas},
+  HOWPUBLISHED = {Lawrence Berkeley National Laboratory, University of California},
+  ADDRESS      = {California, USA},
+  MONTH        = jan,
+  YEAR         = {2001},
+  PAGES        = {457}
+}
+
+%% CONFERENCE - O mesmo que "INPROCEEDINGS", incluído para compatibilidade de escrita.
+%%   - Campos requeridos: AUTHOR, TITLE, BOOKTITLE e YEAR.
+%%   - Campos opcionais: EDITOR, VOLUME ou NUMBER, SERIES, PAGES, ADDRESS, MONTH, ORGANIZATION, PUBLISHER e NOTE.
+
+@CONFERENCE{Alt1995,
+  AUTHOR       = {Alt, Martin and Martin, Florian},
+  TITLE        = {Generation of Efficient Interprocedural Analyzers with {PAG}},
+  BOOKTITLE    = {SAS'95, Static Analysis Symposium},
+  YEAR         = {1995},
+  EDITOR       = {Mycroft, Alan},
+  PAGES        = {33--50},
+  MONTH        = sep,
+  PUBLISHER    = {Springer}
+}
+
+%% INBOOK - Uma parte de um livro, que pode ser um capítulo e/ou um intervalo de páginas.
+%%   - Campos requeridos: AUTHOR ou EDITOR, TITLE, CHAPTER ou PAGES, PUBLISHER e YEAR.
+%%   - Campos opcionais: VOLUME ou NUMBER, SERIES, TYPE, ADDRESS, EDITION, MONTH, NOTE.
+
+@INBOOK{Santos2000,
+  AUTHOR    = {Santos, Euripedes P. and von Zuben, Fernando J.},
+  TITLE     = {Recurrent Neural Networks},
+  CHAPTER   = {3},
+  PAGES     = {47--75},
+  PUBLISHER = {CRC Press},
+  YEAR      = {2000},
+  VOLUME    = {13},
+  SERIES    = {International Series on Computational Intelligence},
+  SUBTITLE  = {Design, Applications}
+}
+
+%% INCOLLECTION - Uma parte de um livro com o seu próprio título.
+%%   - Campos requeridos: AUTHOR, TITLE, BOOKTITLE, PUBLISHER e YEAR.
+%%   - Campos opcionais: EDITOR, VOLUME OR NUMBER, SERIES, TYPE, CHAPTER, PAGES, ADDRESS, EDITION, MONTH e NOTE.
+
+@INCOLLECTION{Pinto2000,
+  AUTHOR    = {Pinto, Alexandre S. and Faina, Luis F. and Cardozo, Eleri},
+  TITLE     = {A {TINA}-Based Distributed Environment for Mobile Multimedia Applications},
+  BOOKTITLE = {Managing QoS in Multimedia Networks, Services},
+  PUBLISHER = {Kluwer Academic Publishers},
+  YEAR      = {2000},
+  EDITOR    = {de Souza, Jos{\'e} Neuman and Boutaba, Raouf},
+  PAGES     = {163--175}
+}
+
+%% INPROCEEDINGS - Um artigo nos anais de uma conferência.
+%%   - Campos requeridos: AUTHOR, TITLE, BOOKTITLE e YEAR.
+%%   - Campos opcionais: EDITOR, VOLUME ou NUMBER, SERIES, PAGES, ADDRESS, MONTH, ORGANIZATION, PUBLISHER e NOTE.
+
+@INPROCEEDINGS{Faina2001,
+  AUTHOR       = {Faina, Luis F. and Pinto, Rossano P. and Guimar{\~a}es, Eliane G. and Cardozo, Eleri},
+  TITLE        = {Mobile Agents for Supporting Ubiquity in Telecommunication Services},
+  BOOKTITLE    = {Second Latin American Network Operation, Management Symposium (LANOMS)},
+  YEAR         = {2001},
+  EDITOR       = {Loureiro, A. and Nogueira, J.},
+  PAGES        = {50--61},
+  ADDRESS      = {Belo Horizonte},
+  MONTH        = aug
+}
+
+%% MANUAL - Uma documentação técnica.
+%%   - Campos requeridos: TITLE.
+%%   - Campos opcionais: AUTHOR, ORGANIZATION, ADDRESS, EDITION, MONTH, YEAR e NOTE.
+
+@MANUAL{IONA1999,
+  TITLE        = {Orbix Programming Reference},
+  AUTHOR       = {{\mbox IONA Technologies PLC}},
+  ORGANIZATION = {IONA Technologies PLC},
+  ADDRESS      = {Dublin, Ireland},
+  MONTH        = oct,
+  YEAR         = {1999}
+}
+
+@MANUAL{NBR6024:2012,
+  TITLE         = {{NBR} 6024},
+  AUTHOR        = {{ABNT}},
+  ORGANIZATION  = {Associação Brasileira de Normas Técnicas},
+  ADDRESS       = {Rio de Janeiro},
+  MONTH         = feb,
+  YEAR          = {2012},
+  DATE-ADDED    = {2012-12-15 21:24:06 +0000},
+  DATE-MODIFIED = {2012-12-15 21:24:28 +0000},
+  ORG-SHORT     = {ABNT},
+  PAGES         = {4},
+  SUBTITLE      = {Numeração progressiva das seções de um documento}
+}
+
+@MANUAL{NBR14724:2011,
+  TITLE         = {{NBR} 14724},
+  AUTHOR        = {{ABNT}},
+  ORGANIZATION  = {Associação Brasileira de Normas Técnicas},
+  ADDRESS       = {Rio de Janeiro},
+  MONTH         = mar,
+  YEAR          = {2011},
+  NOTE          = {Substitui a ABNT NBR 14724:2002},
+  DATE-ADDED    = {2012-12-15 20:34:08 +0000},
+  DATE-MODIFIED = {2012-12-15 20:35:25 +0000},
+  ORG-SHORT     = {ABNT},
+  PAGES         = {15},
+  SUBTITLE      = {Informação e documentação -- trabalhos acadêmicos -- apresentação}
+}
+
+@MANUAL{NBR10520:2002,
+  TITLE         = {{NBR} 10520},
+  AUTHOR        = {{ABNT}},
+  ORGANIZATION  = {Associação Brasileira de Normas Técnicas},
+  ADDRESS       = {Rio de Janeiro},
+  MONTH         = aug,
+  YEAR          = {2002},
+  DATE-ADDED    = {2012-12-15 21:43:38 +0000},
+  DATE-MODIFIED = {2013-01-12 22:17:20 +0000},
+  ORG-SHORT     = {ABNT},
+  PAGES         = {7},
+  SUBTITLE      = {Informação e documentação -- Apresentação de citações em documentos}
+}
+
+@MANUAL{abnTeX2:2013,
+  TITLE         = {A classe abntex2},
+  AUTHOR        = {abnTeX2 and Araujo, Lauro C{\'e}sar},
+  ORGANIZATION  = {Equipe abnTeX2},
+  YEAR          = {2013},
+  BDSK-URL-1    = {http://code.google.com/p/abntex2/},
+  DATE-ADDED    = {2013-01-09 10:37:38 +0000},
+  DATE-MODIFIED = {2013-04-05 11:03:48 +0000},
+  URL           = {http://www.abntex.net.br/},
+  SUBTITLE      = {{Modelo canônico de trabalhos acadêmicos brasileiros compatível com as normas ABNT NBR 14724:2011, ABNT NBR 6024:2012 e outras}}
+}
+
+@MANUAL{abnTeX2:2013Cite,
+  TITLE         = {O pacote abntex2cite},
+  AUTHOR        = {abnTeX2 and Araujo, Lauro C{\'e}sar},
+  ORGANIZATION  = {Equipe abnTeX2},
+  YEAR          = {2013},
+  BDSK-URL-1    = {http://code.google.com/p/abntex2/},
+  DATE-ADDED    = {2013-01-09 10:37:45 +0000},
+  DATE-MODIFIED = {2013-04-05 10:47:36 +0000},
+  URL           = {http://www.abntex.net.br/},
+  SUBTITLE      = {{Estilos bibliográficos compatíveis com a ABNT NBR 6023}}
+}
+
+@MANUAL{abnTeX2:2013CiteAlf,
+  TITLE         = {O pacote abntex2cite},
+  AUTHOR        = {abnTeX2 and Araujo, Lauro C{\'e}sar},
+  ORGANIZATION  = {Equipe abnTeX2},
+  YEAR          = {2013},
+  BDSK-URL-1    = {http://code.google.com/p/abntex2/},
+  DATE-ADDED    = {2013-01-09 10:37:45 +0000},
+  DATE-MODIFIED = {2013-04-05 11:03:05 +0000},
+  URL           = {http://www.abntex.net.br/},
+  SUBTITLE      = {{Tópicos específicos da ABNT NBR 10520:2002 e o estilo bibliográfico alfabético (sistema autor-data)}}
+}
+
+@MANUAL{UTFPR2008,
+  TITLE        = {Normas para elaboração de trabalhos acadêmicos},
+  AUTHOR       = {UTFPR, Comiss{\~a}o de Normaliza{\c c}{\~a}o de Trabalhos Acad{\^e}micos},
+  ORGANIZATION = {Universidade Tecnológica Federal do Paraná},
+  ADDRESS      = {Curitiba},
+  EDITION      = {1a},
+  YEAR         = {2008},
+  URL          = {http://www.utfpr.edu.br/dibib/normas-para-elaboracao-de-trabalhos-academicos/normas_trabalhos_utfpr.pdf}
+}
+
+@MANUAL{Wilson2010,
+  TITLE         = {The Memoir Class for Configurable Typesetting - User Guide},
+  AUTHOR        = {Wilson, Peter and Madsen, Lars},
+  ORGANIZATION  = {The Herries Press},
+  ADDRESS       = {Normandy Park, WA, USA},
+  YEAR          = {2010},
+  BDSK-URL-1    = {http://ctan.tche.br/macros/latex/contrib/memoir/memman.pdf},
+  DATE-ADDED    = {2013-01-09 10:37:50 +0000},
+  DATE-MODIFIED = {2013-03-21 13:23:25 +0000},
+  URL           = {http://mirrors.ctan.org/macros/latex/contrib/memoir/memman.pdf},
+  URLACCESSDATE = {19.12.2012}
+}
+
+%% MASTERSTHESIS - Uma dissertação de mestrado.
+%%   - Campos requeridos: AUTHOR, TITLE, SCHOOL e YEAR.
+%%   - Campos opcionais: TYPE, ADDRESS, MONTH e NOTE.
+
+@MASTERSTHESIS{SantosFilho2003,
+  AUTHOR  = {Santos, Filho, Jos{\'e} C. S.},
+  TITLE   = {Combinação por Ganho Igual em Ambiente com Desvanecimento Arbitrário},
+  SCHOOL  = {Faculdade de Engenharia Elétrica e de Computação, Universidade Estadual de Campinas},
+  YEAR    = {2003},
+  ADDRESS = {Campinas},
+  MONTH   = aug,
+  PAGES   = {150}
+}
+
+@MASTERSTHESIS{Araujo2012,
+  AUTHOR        = {Araujo, Lauro C{\'e}sar},
+  TITLE         = {Configuração},
+  SCHOOL        = {Universidade de Brasília},
+  YEAR          = {2012},
+  ADDRESS       = {Brasília},
+  MONTH         = mar,
+  DATE-ADDED    = {2013-01-09 11:04:42 +0000},
+  DATE-MODIFIED = {2013-01-09 11:04:42 +0000},
+  SUBTITLE      = {Uma perspectiva de arquitetura da informação da escola de {B}rasília}
+}
+
+%% MISC - Use esse tipo quando nada mais se encaixa.
+%%   - Campos requeridos: "NENHUM".
+%%   - Campos opcionais: AUTHOR, TITLE, HOWPUBLISHED, MONTH, YEAR e NOTE.
+
+@MISC{Cruz2003,
+  AUTHOR       = {Cruz, Renato},
+  TITLE        = {Padrão Brasileiro de {TV} Enfrenta Oposição},
+  HOWPUBLISHED = {Jornal O Estado de São Paulo},
+  MONTH        = feb,
+  YEAR         = {2003},
+  NOTE         = {Opinião do Prof. Max Costa}
+}
+
+@MISC{Larsson2003,
+  AUTHOR       = {Larsson, Alexander},
+  TITLE        = {Dia's Homepage},
+  HOWPUBLISHED = {Lysator, The Academic Computer Society},
+  MONTH        = aug,
+  YEAR         = {2003},
+  URL          = {http://www.lysator.liu.se/~alla/dia/dia.html}
+}
+
+@MISC{Hadian1982,
+  AUTHOR       = {Hadian, R.},
+  TITLE        = {{Fotografia da erupção vulcânica em 1982 do Galungung, Indonésia (com descargas de raios), produzida pelo Serviço Geológico dos Estados Unidos da América}},
+  MONTH        = dec,
+  YEAR         = {1982},
+  NOTE         =  {Galunggung, Indonesia; 07.25 S 108.05 E; 2,168 m. His image is in the public domain because it contains materials that originally came from the U.S. National Oceanic and Atmospheric Administration, taken or made as part of an employee's official duties.},
+  ORGANIZATION = {U.S. National Oceanic and Atmospheric Administration},
+  URL          = {http://www.ngdc.noaa.gov/seg/hazard/img/200_res/30/30_603.tif}
+}
+
+@MISC{Sartore2013,
+  AUTHOR       = {Sartore, Joel},
+  TITLE        = {{Camaleão pantera fotografado por Joel Sartore, National Geographic}},
+  MONTH        = mar,
+  YEAR         = {2013},
+  NOTE         = {Published March 5, 2013},
+  ORGANIZATION = {National Geographic},
+  URL          = {http://images.nationalgeographic.com/wpf/media-live/photos/000/649/cache/08-tedx-photo-ark-panther-chameleon_64915_600x450.jpg}
+}
+
+@MISC{daSilva2009,
+  AUTHOR       = {da Silva, Erivanildo Lopes and Bahia, Marcus Vinicius},
+  TITLE        = {Compostos orgânicos: fórmulas estruturais e principais classes},
+  HOWPUBLISHED = {Site UOL Educação},
+  MONTH        = feb,
+  YEAR         = {2009},
+  ORGANIZATION = {Universidade Federal da Bahia},
+  URL          = {http://educacao.uol.com.br/disciplinas/quimica/compostos-organicos-formulas-estruturais-e-principais-classes.htm}
+}
+
+@MISC{Smallen2014,
+  AUTHOR       = {Smallen, Shava},
+  TITLE        = {My \LaTeX\ notes},
+  HOWPUBLISHED = {San Diego Supercomputer Center},
+  MONTH        = feb,
+  YEAR         = {2014},
+  URL          = {http://users.sdsc.edu/~ssmallen/}
+}
+
+%% PHDTHESIS - Uma tese de doutorado.
+%%   - Campos requeridos: AUTHOR, TITLE, SCHOOL e YEAR.
+%%   - Campos opcionais: TYPE, ADDRESS, MONTH e NOTE.
+
+@PHDTHESIS{Faina2000,
+  AUTHOR  = {Faina, Luis F.},
+  TITLE   = {Uma Arquitetura para Suporte à Ubiquidade dos Serviços de Telecomunicações Baseada na Arquitetura {TINA} e em Agentes Móveis},
+  SCHOOL  = {Faculdade de Engenharia Elétrica e de Computação, Universidade Estadual de Campinas},
+  YEAR    = {2000},
+  ADDRESS = {Campinas},
+  MONTH   = dec,
+  PAGES   = {150}
+}
+
+%% PROCEEDINGS - As deliberações de uma conferência.
+%%   - Campos requeridos: TITLE e YEAR.
+%%   - Campos opcionais: EDITOR, VOLUME ou NUMBER, SERIES, ADDRESS, MONTH, ORGANIZATION, PUBLISHER e NOTE.
+
+@PROCEEDINGS{Pirmez2002,
+  TITLE        = {{Anais do XX Simpósio Brasileiro de Redes de Computadores}},
+  YEAR         = {2002},
+  EDITOR       = {Pirmez, Luci and Carmo, Luis Fernando and Mac{\^e}do, Raimundo Jos{\'e}},
+  ADDRESS      = {Rio de Janeiro},
+  MONTH        = may,
+  ORGANIZATION = {Sociedade Brasileira de Computação},
+  PUBLISHER    = {Núcleo de Computação Eletrônica da UFRJ}
+}
+
+%% TECHREPORT - Um relatório publicado por uma escola ou uma outra instituição, geralmente dentro de uma série numerada.
+%%   - Campos requeridos: AUTHOR, TITLE, INSTITUTION e YEAR.
+%%   - Campos opcionais: TYPE, NUMBER, ADDRESS, MONTH e NOTE.
+
+@TECHREPORT{OMG2000,
+  AUTHOR      = {{OMG}},
+  TITLE       = {Audio/Video Streams, Version 1.0},
+  INSTITUTION = {Object Management Group (OMG)},
+  YEAR        = {2000},
+  TYPE        = {OMG Specification},
+  ADDRESS     = {Massachusetts, USA},
+  MONTH       = jan,
+  NOTE        = {formal/2000-01-03},
+  URL         = {http://www.omg.org/}
+}
+
+%% UNPUBLISHED - Um documento com um autor e um título, mas não publicado formalmente.
+%%   - Campos requeridos: AUTHOR, TITLE e NOTE.
+%%   - Campos opcionais: MONTH e YEAR.
+
+@UNPUBLISHED{Sichman2002,
+  AUTHOR = {Sichman, Jaime S.},
+  TITLE  = {Sobre Agentes Móveis e Fixos},
+  NOTE   = {Comunicação pessoal por e-mail},
+  MONTH  = mar,
+  YEAR   = {2002}
+}
+
+%% CAMPOS
+%%
+%% Os tipos de entradas bibliográficas contém alguns subconjuntos padrões de entradas de dados:
+%%   - ADDRESS: Endereço da editora (normalmente, apenas a cidade, mas pode ser o endereço completo para editoras menos conhecidas).
+%%   - ANNOTE: Uma anotação para estilos bibliográficos adotados (não típico).
+%%   - AUTHOR: O(s) nome(s) do(s) autor(es) (no caso de haver mais de um autor, separá-los por "and").
+%%   - BOOKTITLE: O título do livro, mesmo que apenas parte dele esteja sendo citado.
+%%   - CHAPTER: O número do capítulo.
+%%   - CROSSREF: A chave de entrada da referência cruzada.
+%%   - EDITION: A edição de um livro, forma longa (como o "primeiro" ou "segundo").
+%%   - EDITOR: O(s) nome(s) do(s) editor(es).
+%%   - EPRINT: A especificação de uma publicação eletrônica, muitas vezes um "preprint" ou um relatório técnico.
+%%   - HOWPUBLISHED: Como ele foi publicado, se o método de publicação não é típico.
+%%   - INSTITUTION: A instituição que esteve envolvida na publicação, mas não é necessariamente a editora.
+%%   - JOURNAL: O jornal ou a revista onde o trabalho foi publicado.
+%%   - KEY: Um campo oculto utilizado para especificar ou colocar em ordem alfabética as entradas (quando o campos "autor" e
+%%     "editor" estão em falta). Note que isto é muito diferente da chave (mencionados apenas após esta lista) que é usado para
+%%     citar ou fazer uma referência cruzada à entrada.
+%%   - MONTH: O mês de publicação (ou, se não publicado, no mês de criação).
+%%   - NOTE: Diversas informações extras.
+%%   - NUMBER: O "número" de um jornal, uma revista, ou um relatório técnico, se aplicável. (A maioria das publicações tem um campo
+%%     "volume", mas não o campo "número").
+%%   - ORGANIZATION: A organização patrocinadora.
+%%   - PAGES: números de página, separados por vírgulas ou hifens duplo. Para os livros, o número total de páginas.
+%%   - PUBLISHER: O nome da editora.
+%%   - SCHOOL: A escola onde a tese ou dissertação foi escrita.
+%%   - SERIES: A série de livros onde foi publicado em (por exemplo: "A Hardy Boys" ou "Lecture Notes in Computer Science").
+%%   - TITLE: o título do trabalho.
+%%   - TYPE: O tipo de relatório técnico, por exemplo, "Nota de Investigação".
+%%   - URL: O endereço da web.
+%%   - VOLUME: O volume de uma revista ou de um livro com vários volumes.
+%%   - YEAR: O ano de publicação (ou, se não publicado, o ano de criação).
+%%
+%% Além disto, cada entrada contém uma chave (rótulo) que é usada para citar ou uma entrada de referência cruzada. Esta chave é o
+%% primeiro item em uma entrada BibTeX, e não faz parte de qualquer domínio.

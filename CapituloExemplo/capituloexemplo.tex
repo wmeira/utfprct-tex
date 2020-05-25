@@ -1,0 +1,809 @@
+%%%% CAPÍTULO - EXEMPLO
+%%
+%% Capítulo de informações e exemplos de utilização deste modelo.
+
+%% Título e rótulo de capítulo (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\chapter{Informações e Exemplos de Utilização deste Modelo}\label{cap:exemplo}
+
+Devido à necessidade de padronização em trabalhos acadêmicos (teses, dissertações, trabalhos de conclusão de curso, etc.), são utilizadas neste documento algumas regras básicas para estruturação e formatação.
+
+Deste modo, o presente documento foi produzido utilizando o modelo \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex} para elaboração de trabalhos acadêmicos segundo as normas definidas pela \gls{utfpr}\index{UTFPR} \cite{UTFPR2008}. Este modelo foi desenvolvido em linguagem de editoração \gls{tex}\index{TeX@\TeX}/\gls{latex}\index{LaTeX@\latex} com base no modelo \gls{abntex2}\index{abnTeX2@\abnTeX} \cite{abnTeX2:2013}, que atende os requisitos das normas da \gls{abnt}\index{ABNT} para elaboração de documentos técnicos e científicos brasileiros.
+
+Os arquivos principais do modelo \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex} são: \texttt{utfprpgtex.tex} e \texttt{utfprpgtex-dados.tex}. O segundo tem por finalidade a definição de informações sobre o documento, o autor, o orientador, o coorientador, a instituição e a defesa do trabalho. O primeiro constitui a estrutura central deste modelo e tem por finalidade:
+
+\begin{itemize}%% Lista de itens
+\item Definir a classe e as opções do documento.
+\item Permitir o carregamento de pacotes adicionais.
+\item Permitir a definição de comandos personalizados.
+\item Permitir a inclusão de arquivos auxiliares, por exemplo, fontes de dados do documento e elementos pré-textuais, textuais e pós-textuais.
+\end{itemize}
+
+A codificação de caracteres em todos os arquivos é \texttt{UTF8}, tanto no modelo \gls{abntex2}\index{abnTeX2@\abnTeX} quanto no modelo \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex}. Portanto, é necessário que seja utilizada a mesma codificação nos documentos a serem desenvolvidos, inclusive nos arquivos de base bibliográfica. Diversos editores de arquivos fonte do \gls{latex}\index{LaTeX@\latex} são capazes de manipular e/ou converter entre diferentes codificações, por exemplo, o ``Texmaker\index{Texmaker}'' (disponível em \url{http://www.xm1math.net/texmaker/}). Recomenda-se, sempre que for manipular e/ou substituir um dos arquivos constituintes deste modelo, manter uma cópia do original num local seguro e/ou renomear esta cópia do original para que possa ser utilizada como um exemplo no desenvolvimento do seu próprio arquivo. Por exemplo, quando for criar o seu ``Capítulo 1'', fazer uma cópia do arquivo original \texttt{capitulo1.tex}, renomeando-o para \texttt{capitulo1.original.tex}, por exemplo, e realizar as alterações e/ou modificações no arquivo \texttt{capitulo1.tex}.
+
+Este capítulo\label{errata:capitulo} de exemplo tem por finalidade a definição e a apresentação de alguns comandos do \gls{latex}\index{LaTeX@\latex} e/ou dos modelos \gls{abntex2}\index{abnTeX2@\abnTeX} e \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex}. O presente documento não se constitui um manual, tampouco uma apostila de \gls{latex}\index{LaTeX@\latex}, visto que existe uma grande quantidade de material de referência disponível na internet, como por exemplo em \url{http://en.wikibooks.org/wiki/LaTeX}.
+
+Os capítulos devem conter uma introdução e um fecho. A introdução fornece ao leitor uma breve descrição do que será tratado no capítulo, enquanto o fecho apresenta comentários finais sobre o que foi desenvolvido no capítulo. Os capítulos podem ser divididos em seções\label{errata:secao}. Esta divisão deve ser lógica (temática) e não física (por tamanho). O número ideal de seções é impossível de se precisar. Entretanto, um capítulo com uma única seção, possivelmente, deverá ser agregado ao capítulo anterior ou posterior. Um capítulo com quinze seções, possivelmente, deverá ser subdividido em dois capítulos. Capítulos, seções e subseções\label{errata:subsecao} devem ser rotulados para que possam ser referenciados em qualquer parte do texto. Exemplo: O \autoref{cap:exemplo} é gerado, rotulado e referenciado pelos comandos \verb|\chapter{Informações e...}|, \verb|\label{cap:exemplo}| e \verb|\autoref{cap:exemplo}|, respectivamente.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Título da Seção Secundária}\label{sec:secsec}
+
+Seções secundárias são divisões do conteúdo das seções primárias. A \autoref{sec:secsec} é gerada, rotulada e referenciada pelos comandos \verb|\section{Título da Seção Secundária}|, \verb|\label{sec:secsec}| e \verb|\autoref{sec:secsec}|, respectivamente.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\subsection{Título da Seção Terciária}\label{ssec:secterc}
+
+Seções terciárias são divisões do conteúdo de seções secundárias. A \autoref{ssec:secterc} é gerada, rotulada e referenciada pelos comandos \verb|\subsection{Título da Seção Terciária}|, \verb|\label{ssec:secterc}| e \verb|\autoref{ssec:secterc}|, respectivamente.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\subsubsection{Título da seção quartenária}\label{sssec:secquart}
+
+Seções quartenárias são divisões do conteúdo de seções terciárias. A \autoref{sssec:secquart} é gerada, rotulada e referenciada pelos comandos \verb|\subsubsection{Título da seção quartenária}|, \verb|\label{sssec:secquart}| e \verb|\autoref{sssec:secquart}|, respectivamente.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\paragraph{Título da seção quinária}\label{par:secqui}
+
+Seções quinárias são divisões do conteúdo de seções quartenárias. A \autoref{par:secqui} é gerada, rotulada e referenciada pelos comandos \verb|\paragraph{Título da seção quinária}|, \verb|\label{par:secqui}| e \verb|\autoref{par:secqui}|, respectivamente.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Exemplo de Título de Seção Secundária com um Texto Muito Longo que Pode Ocupar Mais de uma Linha}\label{sec:sectitulolongo}
+
+A \autoref{sec:sectitulolongo} é um exemplo de título de seção secundária com texto muito longo, formatado automaticamente de acordo com \citeonline[subseções 5.2.2 a 5.2.4]{NBR14724:2011} e \citeonline[subseções 3.1 a 3.8]{NBR6024:2012}. Segundo as normas, o título de seção deve estar alinhado à esquerda e a segunda e demais linhas devem iniciar logo abaixo da primeira palavra da primeira linha.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Elementos Pré-Textuais}\label{sec:elempretext}
+
+Alguns elementos pré-textuais do presente documento são gerados automaticamente pelo \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex}. Para adicionar e/ou alterar as informações apresentadas na capa, na folha de rosto, na ficha catalográfica e na folha de aprovação deve-se editar o arquivo \texttt{utfprpgtex-dados.tex}. Os dados informados neste arquivo também são utilizados para gerar a referência do trabalho na errata, no resumo e no \textit{abstract}.
+
+Para adicionar e/ou alterar o texto da errata, da dedicatória, dos agradecimentos, da epígrafe, do resumo e do \textit{abstract} deve-se editar seus respectivos arquivos presentes no diretório ``PreTexto'': \texttt{errata.tex}, \texttt{dedicatoria.tex}, \texttt{agradecimentos.tex}, \texttt{epigrafe.tex}, \texttt{resumo.tex} e \texttt{abstract.tex}.
+
+As listas de algoritmos, de ilustrações e de tabelas são geradas automaticamente pelo \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex}. Os itens destas listas são gerados a medida que forem sendo inseridos no texto do documento. A lista de abreviaturas, siglas e acrônimos pode ser gerada automaticamente através do arquivo \texttt{entradas-acronimos.tex}, utilizando o pacote \texttt{glossaries}\footnote{Detalhes sobre comandos para geração de abreviaturas, siglas e acrônimos utilizando o pacote \texttt{glossaries} são apresentadas na \autoref{sec:acronimos}.}, ou através da edição do arquivo \texttt{lista-acronimos.tex}. A lista de símbolos pode ser gerada automaticamente utilizando o pacote \texttt{nomencl}\footnote{Detalhes sobre comandos para geração de símbolos utilizando o pacote \texttt{nomencl} são apresentadas na \autoref{sec:simbolos}.} ou através da edição do arquivo \texttt{lista-simbolos.tex}. Os arquivos citados estão no diretório ``PreTexto''. O sumário é o último elemento pré-textual e também é gerado automaticamente pelo \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex}.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Regras Gerais de Apresentação}\label{sec:regrasgerais}
+
+As regras gerais de apresentação, definidas na sequência, já estão predefinidas no modelo \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex}. Algumas destas regras podem ser alteradas, por comandos apropriados do \gls{latex}\index{LaTeX@\latex}, do \gls{abntex2}\index{abnTeX2@\abnTeX} ou do \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex}, no preâmbulo do arquivo principal \texttt{utfprpgtex.tex} ou em outras partes do documento, por exemplo, nos capítulos.
+
+\begin{itemize}%% Lista de itens
+\item Configuração das margens: deve-se usar margens superior e esquerda de \SI{3}{cm}; e margens inferior e direita de \SI{2}{cm}; em papel formato A4 ($\SI{21}{cm} \times \SI{29,7}{cm}$).
+\item Recomenda-se o uso de fonte tipo Arial ou Times New Roman, tamanho 12 para o texto e tamanho 10 para citações de mais de três linhas, notas de rodapé e legendas dos algoritmos, ilustrações e tabelas.
+\item O parágrafo deve aparecer com recuo na primeira linha de \SI{1,5}{cm}, justificado, sem espaçamento anterior ou posterior.
+\item Os elementos como: o resumo, as notas, as referências, as legendas das ilustrações e tabelas, a natureza do trabalho, o objetivo, o nome da instituição a que é submetida e a área de concentração devem ser digitados em espaço simples.
+\item A numeração progressiva para as seções do texto deve ser adotada para evidenciar a sistematização do conteúdo do trabalho.
+\item Para os títulos das seções não se utilizam pontos, hífen, travessão, ou qualquer sinal após o indicativo de seção ou de título.
+\item Para as seções primárias: utiliza-se negrito e caixa alta.
+\item Para as seções secundárias: somente caixa alta e sem negrito.
+\item Para as seções terciárias: a primeira letra de cada palavra em maiúscula (desconsidera-se artigos e preposições).
+\item Para as seções quaternárias: somente a primeira letra do título da seção em maiúscula.
+\item No sumário, os títulos das seções devem aparecer exatamente iguais ao que estão contidos no trabalho.
+\end{itemize}
+
+Recomenda-se evitar, sempre que possível, o uso dos seguintes recursos (ou enfeites) no documento:
+
+\begin{itemize}%% Lista de itens
+\item \textbf{o uso de negrito;}
+\item \textit{o uso de itálico (exceto em palavras em outra língua);}
+\item \texttt{texto em diferente fonte como máquina de escrever;}
+\item \underline{o uso de texto sublinhado;}
+\item o uso excessivo de\footnote{Notas de rodapé.}.
+\end{itemize}
+
+\noindent Lembre-se: um texto ``limpo'' é mais agradável de ler que um texto ``enfeitado''.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\subsection{Espaçamento}\label{sec:espacamento}
+
+\begin{itemize}%% Lista de itens
+\item O resumo, o \textit{abstract}, as notas, as referências, as legendas das ilustrações e tabelas e a natureza do trabalho devem ser digitadas em espaço simples.
+\item Todo o texto deve ser formatado com espaço entre linhas de um fator de 1,5 (sem espaçamento antes/depois).
+\item As citações com mais de três linhas devem ser em espaço simples e com recuo de \SI{4}{cm} da margem esquerda.
+\item As referências, ao final do trabalho, devem ser separadas entre si por dois espaços simples, e na mesma referência o espaço é simples.
+\item Os títulos das seções secundárias devem ser separados do texto que os precede por dois espaços entre linhas de um fator de 1,5.
+\item As seções primárias devem iniciar em páginas distintas.
+\end{itemize}
+
+O recuo na primeira linha, espaço entre a margem e o início do parágrafo, pode ser redefinido definido pelo comando:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+\setlength{\parindent}{1.5cm}
+\end{verbatim}
+\end{SingleSpacing}
+
+O espaçamento entre um parágrafo e outro\index{espaçamento!entre os parágrafos} pode ser redefinido pelo comando:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+\setlength{\parskip}{0mm} %% Tente também \onelineskip
+\end{verbatim}
+\end{SingleSpacing}
+
+O controle do espaçamento entre linhas\index{espaçamento!entre as linhas} pode ser redefinido pelo comando:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+\OnehalfSpacing %% Espaçamento um e meio (padrão)
+\DoubleSpacing  %% Espaçamento duplo
+\SingleSpacing  %% Espaçamento simples
+\end{verbatim}
+\end{SingleSpacing}
+
+Para isso, também estão disponíveis os ambientes:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+\begin{SingleSpacing} ...     \end{SingleSpacing}
+\begin{Spacing}{<factor>} ... \end{Spacing}
+\begin{OnehalfSpacing} ...    \end{OnehalfSpacing}
+\begin{OnehalfSpacing*} ...   \end{OnehalfSpacing*}
+\begin{DoubleSpacing} ...     \end{DoubleSpacing}
+\begin{DoubleSpacing*} ...    \end{DoubleSpacing*}
+\end{verbatim}
+\end{SingleSpacing}
+
+Para mais informações, consulte \citeonline[p. 47-52 e 135]{Wilson2010}.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Enumerações: Alíneas e Subalíneas}\label{sec:enumeracoes}\index{alíneas}\index{subalíneas}
+
+Quando for necessário enumerar os diversos assuntos de uma seção que não possua título, esta deve ser subdividida em alíneas\index{alíneas} \cite[subseção 4.2]{NBR6024:2012}:
+
+\begin{alineas}%% Ambiente alineas
+\item os diversos assuntos que não possuam título próprio, dentro de uma mesma seção, devem ser subdivididos em alíneas\index{alíneas};
+\item o texto que antecede as alíneas\index{alíneas} termina em dois pontos;
+\item as alíneas\index{alíneas} devem ser indicadas alfabeticamente, em letra minúscula, seguida de parêntese. Utilizam-se letras dobradas, quando esgotadas as letras do alfabeto;
+\item as letras indicativas das alíneas\index{alíneas} devem apresentar recuo em relação à margem esquerda;
+\item o texto da alínea deve começar por letra minúscula e terminar em ponto-e-vírgula, exceto a última alínea que termina em ponto final;
+\item o texto da alínea deve terminar em dois pontos, se houver subalínea;
+\item a segunda e as seguintes linhas do texto da alínea começa sob a primeira letra do texto da própria alínea;
+\item subalíneas\index{subalíneas} \cite[subseção 4.3]{NBR6024:2012} devem ser conforme as alíneas\index{alíneas} a seguir:
+\begin{alineas}%% Ambiente alineas
+\item as subalíneas\index{subalíneas} devem começar por travessão seguido de espaço;
+\item as subalíneas\index{subalíneas} devem apresentar recuo em relação à alínea;
+\item o texto da subalínea deve começar por letra minúscula e terminar em ponto-e-vírgula. A última subalínea deve terminar em ponto final, se não houver alínea subsequente;
+\item a segunda e as seguintes linhas do texto da subalínea começam sob a primeira letra do texto da própria subalínea.
+\end{alineas}
+\item no \gls{abntex2}\index{abnTeX2@\abnTeX} estão disponíveis os ambientes \texttt{incisos} e \texttt{subalineas}, que em suma são o mesmo que se criar outro nível de \texttt{alineas}, como nos exemplos à seguir:
+\begin{incisos}%% Ambiente incisos
+\item \textit{um novo inciso em itálico}\index{incisos}.
+\end{incisos}
+\item Alínea em \textbf{negrito}:
+\begin{subalineas}%% Ambiente subalineas
+\item \textit{uma subalínea em itálico};
+\item \underline{\textit{uma subalínea em itálico e sublinhado}}.
+\end{subalineas}
+\item última alínea com \emph{ênfase}.
+\end{alineas}
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Citações}\label{sec:citacoes}
+
+O \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex} está configurado para produzir as citações no texto no estilo alfabético (autor-ano), segundo as normas \gls{abnt}\index{ABNT}, através dos comandos do \gls{abntex2}\index{abnTeX2@\abnTeX} \cite{abnTeX2:2013Cite,abnTeX2:2013CiteAlf}. A lista dos principais comandos são apresentadas a seguir:
+
+\begin{itemize}%% Lista de itens
+\item \verb|\cite{rótulo}| -- para gerar citação implícita. Por exemplo, a citação ``\ldots\ \cite{Thompson2001}\ldots'' é gerada pelo comando \verb|\cite{Thompson2001}| ou pelo atalho \verb|\citep{Thompson2001}|, definido em \texttt{utfprpgtex.tex}.
+\item \verb|\citeonline{rótulo}| -- para gerar citação explícita. Por exemplo a citação ``\ldots\ conforme proposto por \citeonline{Thompson2001}\ldots'' é gerada pelo comando \verb|\citeonline{Thompson2001}| ou pelo atalho \verb|\citet{Thompson2001}|, definido em \texttt{utfprpgtex.tex}.
+\item \verb|(\citeauthor{rótulo})| -- para gerar citação implícita somente do autor. Por exemplo, a citação ``\ldots\ (\citeauthor{Thompson2001})\ldots'' é gerada pelo comando \verb|(\citeauthor{Thompson2001})| ou pelo atalho \verb|\citepa{Thompson2001}|, definido em \texttt{utfprpgtex.tex}.
+\item \verb|\citeauthoronline{rótulo}| -- para gerar citação explícita somente do autor. Por exemplo, a citação ``\ldots\ conforme a relação de \citeauthoronline{Thompson2001}\ldots'' é gerada pelo comando \verb|\citeauthoronline{Thompson2001}| ou pelo atalho \verb|\citeta{Thompson2001}|, definido em \texttt{utfprpgtex.tex}.
+\item \verb|(\citeyear{rótulo})| -- para gerar citação implícita somente do ano. Por exemplo, a citação ``\ldots\ (\citeyear{Thompson2001})\ldots'' é gerada pelo comando \verb|(\citeyear{Thompson2001})| ou pelo atalho \verb|\citepy{Thompson2001}|, definido em \texttt{utfprpgtex.tex}.
+\item \verb|\citeyear{rótulo}| -- para gerar citação explícita somente do ano. Por exemplo, a citação ``\ldots\ no ano de \citeyear{Thompson2001}\ldots'' é gerada pelo comando \verb|\citeyear{Thompson2001}| ou pelo atalho \verb|\citety{Thompson2001}|, definido em \texttt{utfprpgtex.tex}.
+\end{itemize}
+
+Informações sobre a utilização dos comandos listados acima e os demais comandos para geração de referências, utilizados pelo \gls{abntex2}\index{abnTeX2@\abnTeX}, podem ser encontradas em \citeonline{abnTeX2:2013Cite,abnTeX2:2013CiteAlf}, disponíveis em \url{http://www.abntex.net.br/}.
+
+\gls{latex}\index{LaTeX@\latex} utiliza um arquivo externo (em separado) para o banco de dados das referências citadas no texto. Este arquivo é compilado pelo \gls{bibtex}\index{BibTeX@Bib\TeX} e deve possuir a extensão \texttt{bib}, como nos arquivos \texttt{referencias.bib} e \texttt{referencias-modelos.bib} presentes no diretório ``PosTexto'', utilizados neste documento. O arquivo \texttt{referencias-modelos.bib} apresenta exemplos dos seguintes estilos de referência aceitos pelo \gls{bibtex}\index{BibTeX@Bib\TeX}:
+
+\begin{itemize}%% Lista de itens
+\item anais de simpósios \citep{Alt1995,Pirmez2002};
+\item artigos em anais de simpósios \citep{Faina2001};
+\item artigos em coletâneas de artigos \citep{Pinto2000};
+\item artigos em revistas \citep{Guimaraes2003};
+\item capítulos de livros \citep{Santos2000};
+\item livretos \citep{Thompson2001};
+\item livros \citep{Pedrycz1998};
+\item manuais técnicos \citep{IONA1999};
+\item miscelânea \citep{Cruz2003};
+\item páginas na internet \cite[acessado em 1 de janeiro de 2004]{Larsson2003} (utilizar a data do último acesso à página);
+\item relatórios técnicos \citep{OMG2000};
+\item teses de mestrado \citep{SantosFilho2003};
+\item teses de doutorado \citep{Faina2000};
+\item trabalhos não publicados \citep{Sichman2002}.
+\end{itemize}
+
+Existem alguns programas para gerenciamento de banco de dados de referências bibliográficas (arquivos \texttt{bib}) do \gls{bibtex}\index{BibTeX@Bib\TeX}. O ``JabRef'' é um exemplo destes programas e está disponível em: \url{http://jabref.sourceforge.net/}.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\subsection{Citações Diretas}\label{sec:citacoesdiretas}\index{citações!diretas}
+
+O ambiente \texttt{citacao} permite a inclusão de citações diretas que ocupam mais de três linhas:
+
+\begin{citacao}%% Ambiente citacao
+As citações diretas no texto, que ocupam mais de três linhas, devem ser destacadas com recuo de \SI{4}{cm} da margem esquerda, com letra menor que a do texto utilizado e sem as aspas. No caso de documentos datilografados, deve-se observar apenas o recuo \cite[subseção 5.3]{NBR10520:2002}.
+\end{citacao}
+
+\noindent Esta citação direta com mais de três linhas foi gerada da seguinte forma:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+\begin{citacao}
+As citações diretas no texto, com mais de três linhas,...
+... observar apenas o recuo \cite[subseção 5.3]{NBR10520:2002}.
+\end{citacao}
+\end{verbatim}
+\end{SingleSpacing}
+
+O ambiente \texttt{citacao} pode receber como parâmetro opcional um nome de idioma previamente carregado nas opções da classe (definido no preâmbulo do arquivo \texttt{utfprpgtex.tex}). Neste caso, o texto da citação é automaticamente escrito em itálico e a hifenização é ajustada para o idioma selecionado na opção do ambiente. Por exemplo:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+\begin{citacao}[english]
+Text in English language in italic with correct hyphenation.
+\end{citacao}
+\end{verbatim}
+\end{SingleSpacing}
+
+\noindent Tem como resultado:
+
+\begin{citacao}[english]%% Ambiente citacao
+Text in English language in italic with correct hyphenation.
+\end{citacao}
+
+Citações simples\index{citações!simples}, com até três linhas, devem ser incluídas com aspas. Observe que em \gls{latex}\index{LaTeX@\latex} as aspas iniciais são diferentes das finais: ``Amor é fogo que arde sem se ver''.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Equações}\label{sec:equacoes}
+
+\gls{latex}\index{LaTeX@\latex} é insuperável no processamento de equações. Equações simples como $y = a x^2 + b x + c$ podem ser adicionadas ao longo do texto ou em uma linha própria:
+%
+\[%% Ambiente displaymath
+y = a x^2 + b x + c
+\]
+
+Equações complexas como:
+%
+\begin{equation}%% Ambiente equation
+\label{eq:equation1}%% Rótulo
+\begin{array}{lcl}%% Ambiente array
+p \left(\gamma\right)
+& = &
+\frac{1}{2}
+\sqrt{\frac{M}{\gamma \bar{\gamma}_b}}
+\frac{1}{\prod_{i = 1}^M \sqrt{\tilde{\gamma}_i}}
+\int_0^{\sqrt{M \delta}}
+\int_0^{\sqrt{M \delta} - r_M} \cdots
+\int_0^{\sqrt{M \delta} - \sum_{i = 3}^M r_i} \\[0.5\linha]
+& &
+p \left(%
+\frac{\sqrt{M \delta} - \sum_{i = 2}^M r_i}{\sqrt{\tilde{\gamma}_1}},
+\frac{r_2}{\sqrt{\tilde{\gamma}_2}}, \ldots,
+\frac{r_M}{\sqrt{\tilde{\gamma}_M}}
+\right) \, \der r_2 \cdots \der r_{M - 1} \, \der r_M
+\end{array}
+\end{equation}
+
+\noindent ou
+%
+\begin{equation}%% Ambiente equation
+\label{eq:equation2}%% Rótulo
+T \left(r\right) =
+\frac{1}{f_m}
+\left(%
+\frac{\pi}{2} \sum_{i = 1}^M {\tilde{r}_i^2 \dot{\varsigma}_i^2}
+\right)^{-1/2}
+\frac{%
+\begin{array}{ll}%% Ambiente array
+\int_0^{\rho \sqrt{M}}
+\int_0^{\rho \sqrt{M} - r_M} \cdots
+\int_0^{\rho \sqrt{M} - \sum_{i = 3}^M r_i}
+\int_0^{\rho \sqrt{M} - \sum_{i = 2}^M r_i} \\[0.5\linha]
+p \left(%
+\frac{r_1}{\tilde{r}_1},
+\frac{r_2}{\tilde{r}_2}, \ldots,
+\frac{r_M}{\tilde{r}_M}
+\right) \, \der r_1 \, \der r_2 \cdots \der r_{M - 1} \, \der r_M \\[0.5\linha]
+\end{array}
+}{%
+\begin{array}{ll}%% Ambiente array
+\int_0^{\rho \sqrt{M}}
+\int_0^{\rho \sqrt{M} - r_M} \cdots
+\int_0^{\rho \sqrt{M} - \sum_{i = 3}^M r_i} \\[0.5\linha]
+p \left(%
+\frac{\rho \sqrt{M} - \sum_{i = 2}^M r_i}{\tilde{r}_1},
+\frac{r_2}{\tilde{r}_2}, \ldots,
+\frac{r_M}{\tilde{r}_M}
+\right) \, \der r_2 \cdots \der r_{M - 1} \, \der r_M \\[0.5\linha]
+\end{array}
+}
+\end{equation}
+
+\noindent são automaticamente numeradas e podem ser referenciadas ao longo do texto. Por exemplo, a \seqref{eq:equation1} é trivialmente derivada da \seqref{eq:equation2}. Veja os exemplos de comandos para estas equações no arquivo fonte deste capítulo.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Algoritmos}\label{sec:algoritmos}
+
+Algoritmos podem ser inseridos através do pacote \texttt{algorithms}, conforme exemplos no arquivo fonte deste capítulo e cujos resultados são apresentados no \autoref{alg:algoritmo1} e no \autoref{alg:algoritmo2}.
+
+\begin{algorithm}[htb]%% Ambiente algorithm
+\caption{Primeiro exemplo de algoritmo com uma legenda contendo um texto muito longo que pode ocupar mais de uma linha.}%% Legenda
+\label{alg:algoritmo1}%% Rótulo
+\hrule
+\begin{algorithmic}[1]%% Ambiente algorithmic
+\ENSURE $A, B$
+\STATE $C = A + B$
+\PRINT $C$
+\end{algorithmic}
+\hrule
+\fonte{Autoria própria.}%% Fonte
+\end{algorithm}
+
+\begin{algorithm}[htb]%% Ambiente algorithm
+\caption{Segundo exemplo de algoritmo.}%% Legenda
+\label{alg:algoritmo2}%% Rótulo
+\hrule
+\begin{algorithmic}[1]%% Ambiente algorithmic
+\ENSURE $A, B$
+\STATE $C = A + B$
+\IF{$C < 10$}
+\STATE $C = 2 \ C$
+\ELSE
+\STATE $C = 0,5 \ C$
+\ENDIF
+\PRINT $A, B, C$
+\end{algorithmic}
+\hrule
+\fonte{Autoria própria.}%% Fonte
+\end{algorithm}
+
+A documentação sobre o pacote \texttt{algorithms} pode ser encontrada em: \url{http://tug.ctan.org/tex-archive/macros/latex/contrib/algorithms/algorithms.pdf}.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Ilustrações}\label{sec:ilustracoes}
+
+O \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex} está configurado para produzir os ambientes para os seguintes tipos de ilustrações: figuras, fotografias, gráficos e quadros. Exemplos de uso destes ambientes podem ser observados no arquivo fonte deste capítulo.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\subsection{Figuras}\label{sec:figuras}
+
+Figuras são criadas e/ou editadas com editores gráficos capazes de exportar a figura em formato \gls{ps} ou, preferencialmente, \gls{eps}. O editor ``xfig'' é adequado para a maioria dos casos, como por exemplo, a \autoref{fig:figura1} que foi editada utilizando o ``xfig''. Outras opções para criação/edição de figuras são o \gls{gimp}\index{Gimp} (\url{http://www.gimp.org/}), ou o ``dia'' (\url{http://dia-installer.de/}), um editor orientado a diagramas (UML, fluxograma, etc.) com capacidade de exportar \gls{eps}, como apresentado por \citet{Larsson2003}.
+
+\begin{figure}[htb]%% Ambiente figure
+\captionsetup{width=0.55\textwidth}%% Largura da legenda
+\caption{Exemplo de figura criada a partir de um arquivo.}%% Legenda
+\label{fig:figura1}%% Rótulo
+\includegraphics[width=0.55\textwidth]{./CapituloExemplo/figura1}%% Dimensões e localização
+\fonte{\citet{Larsson2003}.}%% Fonte
+\end{figure}
+
+Figuras em formato GIF, JPEG e BMP podem ser convertidas para o formato \gls{eps} através do aplicativo ``xv''. O ``xv'' não lista o formato \gls{eps} dentre aqueles que é capaz de manipular. Entretanto, selecionando-se o formato \textit{PostScript} e fornecendo-se a extensão \texttt{eps} ao nome do arquivo, o formato \gls{eps} é gerado.
+
+O ambiente \texttt{picture} permite a programação de imagens diretamente no \gls{latex}\index{LaTeX@\latex}, conforme exemplo apresentado na \autoref{fig:figura2}.
+
+\begin{figure}[htb]%% Ambiente figure
+\captionsetup{width=8cm}%% Largura da legenda
+\caption{Exemplo de figura criada a partir do ambiente \texttt{picture}.}%% Legenda
+\label{fig:figura2}%% Rótulo
+\setlength{\unitlength}{1cm}%% Unidade de comprimento
+\begin{picture}(8,5)(-4,-2.5)%% Ambiente picture
+\put(-4,0){\vector(1,0){8}}
+\put(3.75,-0.25){$\chi$}
+\put(0,-2.5){\vector(0,1){5}}
+\multiput(-4,1)(0.4,0){20}{\line(1,0){0.2}}
+\multiput(-4,-1)(0.4,0){20}{\line(1,0){0.2}}
+\put(0.25,2.25){$\beta \equiv v / c = \tanh \chi$}
+\qbezier(0,0)(0.8853,0.8853)(2,0.9640)
+\qbezier(0,0)(-0.8853,-0.8853)(-2,-0.9640)
+\end{picture}
+\fonte{Autoria própria.}%% Fonte
+\end{figure}
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\subsection{Fotografias}\label{sec:fotografias}
+
+Um exemplo deste tipo de ilustração é apresentado na \autoref{foto:foto1}.
+
+\begin{photograph}[htb]%% Ambiente photograph
+\captionsetup{width=0.6\textwidth}%% Largura da legenda
+\caption{Camaleão pantera fotografado por Joel Sartore, National Geographic.}%% Legenda
+\label{foto:foto1}%% Rótulo
+\includegraphics[width=0.6\textwidth]{./CapituloExemplo/foto1}%% Dimensões e localização
+\fonte{\citet{Sartore2013}.}%% Fonte
+\end{photograph}
+
+Outro exemplo deste tipo de ilustração é apresentado na \autoref{foto:foto2}.
+
+\begin{photograph}[htb]%% Ambiente photograph
+\captionsetup{width=0.6\textwidth}%% Largura da legenda
+\caption{Fotografia da erupção vulcânica em 1982 do Galungung, Indonésia (com descargas de raios), produzida pelo Serviço Geológico dos Estados Unidos da América.}%% Legenda
+\label{foto:foto2}%% Rótulo
+\includegraphics[width=0.6\textwidth]{./CapituloExemplo/foto2}%% Dimensões e localização
+\fonte{\citet{Hadian1982}.}%% Fonte
+\end{photograph}
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\subsection{Gráficos}\label{sec:graficos}
+
+Gráficos são gerados com aplicativos capazes de exportar nos formatos \gls{ps} ou \gls{eps}. A ferramenta ``gnuplot'' é uma das mais utilizadas para a geração de gráficos (\url{http://www.gnuplot.info/}). Uma vez no formato \gls{eps}, gráficos são inseridos no texto tal como figuras (veja \autoref{gra:grafico1}).
+
+\begin{graph}[htb]%% Ambiente graph
+\captionsetup{width=0.6\textwidth}%% Largura da legenda
+\caption{Exemplo de gráfico produzido em ``gnuplot''.}%% Legenda
+\label{gra:grafico1}%% Rótulo
+\includegraphics[width=0.6\textwidth]{./CapituloExemplo/grafico1}%% Dimensões e localização
+\fonte{\citet{Faina2001}.}%% Fonte
+\end{graph}
+
+No \autoref{gra:grafico2} é apresentado um exemplo de gráfico produzido em ``Excel''.
+
+\begin{graph}[htb]%% Ambiente graph
+\captionsetup{width=0.6\textwidth}%% Largura da legenda
+\caption{Exemplo de gráfico produzido em ``Excel''.}%% Legenda
+\label{gra:grafico2}%% Rótulo
+\includegraphics[width=0.6\textwidth]{./CapituloExemplo/grafico2}%% Dimensões e localização
+\fonte{\citeonline[p. 24]{Araujo2012}.}%% Fonte
+\end{graph}
+
+O ambiente \texttt{minipage} pode ser usado para inserir textos ou outros elementos em quadros com tamanhos e posições controladas, conforme exemplos apresentados no \autoref{gra:minipagegrafico1} e no \autoref{gra:minipagegrafico2}.
+
+\begin{graph}[htb]%% Ambiente graph
+\begin{minipage}[t]{0.395\textwidth}%% Ambiente minipage
+\centering%% Centralizado
+\captionsetup{width=0.85\textwidth}%% Largura da legenda
+\caption{Gráfico 1 do ambiente \texttt{minipage}.}%% Legenda
+\label{gra:minipagegrafico1}%% Rótulo
+\includegraphics[width=0.85\textwidth]{./CapituloExemplo/grafico1}%% Dimensões e localização
+\fonte{\citet{Faina2001}.}%% Fonte
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.595\textwidth}%% Ambiente minipage
+\centering%% Centralizado
+\captionsetup{width=0.95\textwidth}%% Largura da legenda
+\caption{Gráfico 2 do ambiente \texttt{minipage}.}%% Legenda
+\label{gra:minipagegrafico2}%% Rótulo
+\includegraphics[width=0.95\textwidth]{./CapituloExemplo/grafico2}%% Dimensões e localização
+\fonte{\citeonline[p. 24]{Araujo2012}}%% Fonte
+\end{minipage}
+\label{gra:minipagegraficos}
+\end{graph}
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\subsection{Quadros}\label{sec:quadros}
+
+Um exemplo deste tipo de ilustração é apresentado no \autoref{quad:quadro1}.
+
+\begin{tabframed}[htb]%% Ambiente tabframed
+\captionsetup{width=0.5\textwidth}%% Largura da legenda
+\caption{Compostos orgânicos: fórmulas estruturais e principais classes.}%% Legenda
+\label{quad:quadro1}%% Rótulo
+\includegraphics[width=0.5\textwidth]{./CapituloExemplo/quadro1}%% Dimensões e localização
+\fonte{\citet{daSilva2009}.}%% Fonte
+\end{tabframed}
+
+Outro exemplo deste tipo de ilustração é apresentado no \autoref{quad:quadro2}.
+
+\begin{tabframed}[htb]%% Ambiente tabframed
+\captionsetup{width=0.7\textwidth}%% Largura da legenda
+\caption{Modelos de maturidade para a gestão da cadeia de suprimentos.}%% Legenda
+\label{quad:quadro2}%% Rótulo
+\includegraphics[width=0.7\textwidth]{./CapituloExemplo/quadro2}%% Dimensões e localização
+\fonte{\citet{Frederico2012}.}%% Fonte
+\end{tabframed}
+
+Os quadros não devem ser chamados de tabelas, uma vez que se diferenciam destas por apresentarem as laterais fechadas e o conteúdo não numérico.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Tabelas}\label{sec:tabelas}
+
+Tabelas são construídas com comandos próprios do \gls{latex}\index{LaTeX@\latex}. Por exemplo, a \autoref{tab:tabela1} foi construída desta forma.
+
+\begin{table}[htb]%% Ambiente table
+\caption{Primeiro exemplo de tabela com uma legenda contendo um texto muito longo que pode ocupar mais de uma linha.}%% Legenda
+\label{tab:tabela1}%% Rótulo
+\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}}llll}%% Ambiente tabularx
+\toprule
+$\bsym{L}$ & $\bsym{L^2}$ & $\bsym{L^3}$ & $\bsym{L^4}$ \\
+\SI{}{[m]} & \SI{}{[m^2]} & \SI{}{[m^3]} & \SI{}{[m^4]} \\ \midrule
+1          & 1            & 1            & 1            \\
+2          & 4            & 8            & 16           \\
+3          & 9            & 27           & 81           \\
+4          & 16           & 64           & 256          \\
+5          & 25           & 125          & 625          \\ \bottomrule
+\end{tabularx}
+\fonte{Autoria própria.}%% Fonte
+\end{table}
+
+A \autoref{tab:tabela2} é um exemplo de tabela que ocupa mais de uma página e que foi construída pelo \gls{latex}\index{LaTeX@\latex} utilizando o pacote \texttt{longtable}.
+
+\begin{longtable}{@{\extracolsep{\fill}}lll}%% Ambiente longtable
+\caption{Possíveis tríplices para grade altamente variável.\label{tab:tabela2}} \\%% Legenda e rótulo
+\toprule
+\textbf{Tempo (s)} & \textbf{Tríplice escolhida} & \textbf{Outras possíveis tríplices} \\
+\midrule
+\endfirsthead%% Encerra cabeçalho da primeira página
+\caption[]{Possíveis tríplices para grade altamente variável.} \\%% Legenda
+\multicolumn{3}{r}{\textbf{(continuação)}} \\
+\toprule
+\textbf{Tempo (s)} & \textbf{Tríplice escolhida} & \textbf{Outras possíveis tríplices} \\
+\midrule
+\endhead%% Encerra cabeçalho das demais páginas
+\midrule
+\multicolumn{3}{r}{\textbf{(continua)}} \\
+\endfoot%% Encerra rodapé das demais páginas
+\bottomrule
+\\[-0.5\linha]
+\caption*{\nomefonte: Adaptado de \citet{Smallen2014}.} \\
+\endlastfoot%% Encerra rodapé da última página
+0      & (1, 11, 13725) & (1, 12, 10980), (1, 13, 8235), (2, 2, 0), (3, 1, 0) \\
+2745   & (1, 12, 10980) & (1, 13, 8235), (2, 2, 0), (2, 3, 0), (3, 1, 0)      \\
+5490   & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+8235   & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+10980  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+13725  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+16470  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+19215  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+21960  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+24705  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+27450  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+30195  & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+32940  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+35685  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+38430  & (1, 13, 10980) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+41175  & (1, 12, 13725) & (1, 13, 10980), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+43920  & (1, 13, 10980) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+46665  & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+49410  & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+52155  & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+54900  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+57645  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+60390  & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+63135  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+65880  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+68625  & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+71370  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+74115  & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+76860  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+79605  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+82350  & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+85095  & (1, 12, 13725) & (1, 13, 10980), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+87840  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+90585  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+93330  & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+96075  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+98820  & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+101565 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+104310 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+107055 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+109800 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+112545 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+115290 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+118035 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+120780 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+123525 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+126270 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+129015 & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+131760 & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+134505 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+137250 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+139995 & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+142740 & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+145485 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0)  \\
+148230 & (2, 2, 2745)   & (2, 3, 0), (3, 1, 0)                                \\
+150975 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+153720 & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+156465 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+159210 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+161955 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+164700 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0)                  \\
+\end{longtable}
+
+Tabelas criadas em planilhas do ``Excel'' podem ser convertidas em tabelas \gls{latex}\index{LaTeX@\latex} através do suplemento ``Excel-to-LaTeX'', disponível em \url{http://www.ctan.org/pkg/excel2latex}.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Abreviaturas, Siglas e Acrônimos}\label{sec:acronimos}
+
+\gls{latex}\index{LaTeX@\latex} gera automaticamente a lista de abreviaturas, siglas e acrônimos através do pacote \texttt{glossaries}. As abreviaturas, siglas e acrônimos devem ser definidos no arquivo \texttt{entradas-acronimos.tex}, no diretório ``PreTexto'', com os comandos:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+\abreviatura{rótulo}{representação}{definição}
+\sigla{rótulo}{representação}{definição}
+\acronimo{rótulo}{representação}{definição}
+\end{verbatim}
+\end{SingleSpacing}
+
+Para que a abreviatura, sigla ou acrônimo seja apresentada em alguma parte do texto do documento use o comando \verb|\gls{rótulo}|, por exemplo, as abreviaturas \gls{art.}, \gls{cap.} e \gls{sec.} foram geradas pelos comandos \verb|\gls{art.}, \gls{cap.} e \gls{sec.}|, respectivamente. Mais detalhes dos comandos do pacote \texttt{glossaries} podem ser encontrados em: \url{http://mirrors.ctan.org/macros/latex/contrib/glossaries/glossaries-user.pdf}.
+
+Outra opção para gerar a lista de abreviaturas, siglas e acrônimos é através da edição manual do arquivo \texttt{lista-acronimos.tex} no diretório ``PreTexto''.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Símbolos}\label{sec:simbolos}
+
+\gls{latex}\index{LaTeX@\latex} gera automaticamente a lista de símbolos através do pacote \texttt{nomencl}. Ao redigir um símbolo pela primeira vez em qualquer parte do texto com o comando \verb|\nomenclature[prefixo]{símbolo}{descrição \nomunit{unidade}}|, é gerada uma entrada para a lista de símbolos. Veja exemplos deste comando no arquivo fonte deste capítulo. Os elementos da lista de símbolos são agrupados a depender da primeira letra atribuída ao prefixo e classificadas em:
+
+\begin{itemize}%% Lista de itens
+\item A~-~Letras Latinas.
+\item B~-~Letras Gregas.
+\item C~-~Sobrescritos.
+\item D~-~Subscritos.
+\item E~-~Notações.
+\end{itemize}
+
+Outra opção ao comando \verb|\nomenclature| é o uso dos atalhos:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+\letralatina{prefixo}{símbolo}{descrição}{unidade}
+\letragrega{prefixo}{símbolo}{descrição}{unidade}
+\sobrescrito{prefixo}{símbolo}{descrição}{unidade}
+\subscrito{prefixo}{símbolo}{descrição}{unidade}
+\notacao{prefixo}{símbolo}{descrição}{unidade}
+\end{verbatim}
+\end{SingleSpacing}
+
+\noindent Neste caso a atribuição da primeira letra do prefixo pode ser desprezada.
+
+%% Letras Latinas [A]
+\nomenclature[AA]{$A$}{Área \nomunit{m^2}}%%
+\letralatina{L}{L}{Comprimento}{m}%%
+\letralatina{R}{R}{Raio}{m}%%
+%% Letras Gregas [B]
+\nomenclature[Bmu]{$\mu$}{Viscosidade dinâmica \nomunit{kg/(m.s)}}%%
+\letragrega{nu}{\nu}{Viscosidade cinemática}{m^2/s}%%
+\letragrega{pi}{\pi}{Pi (constante circular)}{rad}%%
+\letragrega{rho}{\rho}{Massa específica}{kg/m^3}%%
+\letragrega{sigma}{\sigma}{Tensão superficial}{N/m}%%
+%% Sobrescritos [C]
+\nomenclature[C+]{$+$}{Passo de tempo posterior}%%
+\sobrescrito{-}{-}{Passo de tempo anterior}{}%%
+\sobrescrito{0}{0}{Valor inicial}{}%%
+%% Subscritos [D]
+\nomenclature[DG]{$G$}{Fase gasosa}%%
+\subscrito{L}{L}{Fase líquida}{}%%
+\subscrito{S}{S}{Fase sólida}{}%%
+%% Notações [E]
+\nomenclature[EPsi_1]{$\overline{\Psi}$}{Média temporal}%%
+\notacao{Psi_2}{\langle \Psi \rangle}{Média na seção transversal}{}%%
+\notacao{Psi_3}{\langle\langle \Psi \rangle\rangle}{Média na seção transversal ponderada}{}%%
+
+Mais detalhes dos comandos do pacote \texttt{nomencl} podem ser encontrados em: \url{http://tug.ctan.org/tex-archive/macros/latex/contrib/nomencl/nomencl.pdf}.
+
+Outra opção para gerar a lista de símbolos é através da edição manual do arquivo \texttt{lista-simbolos.tex} no diretório ``PreTexto''.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Inclusão de Outros Arquivos}\label{sec:inclusao}
+
+É uma boa prática dividir o seu documento em diversos arquivos, e não apenas escrever tudo em um único. Esse recurso foi utilizado neste documento (veja \texttt{utfprpgtex.tex}). Para incluir diferentes arquivos em um arquivo principal, de modo que cada arquivo incluído fique em uma página diferente, utilize o comando:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+\include{documento-a-ser-incluido} %% Sem a extensão .tex
+\end{verbatim}
+\end{SingleSpacing}
+
+Para incluir documentos sem quebra de páginas, utilize:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+\input{documento-a-ser-incluido}   %% Sem a extensão .tex
+\end{verbatim}
+\end{SingleSpacing}
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Referências Bibliográficas}\label{sec:referencias}
+
+A formatação das referências bibliográficas conforme as regras da \gls{abnt}\index{ABNT} são um dos principais objetivos do \gls{abntex2}\index{abnTeX2@\abnTeX}. Consulte os manuais \citeonline{abnTeX2:2013Cite} e \citeonline{abnTeX2:2013CiteAlf} para obter informações sobre sua utilização.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\subsection{Acentuação de Referências Bibliográficas}\label{sec:acentuacaodereferencias}
+
+Normalmente não há problemas em usar caracteres acentuados em arquivos bibliográficos (extensão \texttt{bib}). Porém, como as regras da \gls{abnt}\index{ABNT} fazem uso quase abusivo da conversão para letras maiúsculas, é preciso observar o modo como se escreve os nomes dos autores e/ou editores. No \autoref{quad:quadro3} você encontra alguns exemplos das conversões mais importantes. A regra geral é sempre usar a acentuação neste modo quando houver conversão para letras maiúsculas.
+
+\begin{tabframed}[htb]%% Ambiente tabframed
+\captionsetup{width=0.5\textwidth}%% Largura da legenda
+\caption{Conversão de acentuação em arquivos \texttt{bibtex}.}%% Legenda
+\label{quad:quadro3}%% Rótulo
+\begin{tabular}{|*{2}{p{0.25\textwidth-\columnsep}|}}%% Ambiente tabular
+\hline
+\textbf{Acento}   & \textbf{Comando}                       \\ \hline
+{\'a} {\`a} {\~a} & \verb|{\'a}| \verb|{\`a}| \verb|{\~a}| \\ \hline
+{\^e}             & \verb|{\^e}|                           \\ \hline
+{\"u}             & \verb|{\"u}|                           \\ \hline
+{\'\i}            & \verb|{\'\i}|                          \\ \hline
+{\c{c}}           & \verb|{\c{c}}|                         \\ \hline
+\end{tabular}
+\fonte{Autoria própria.}%% Fonte
+\end{tabframed}
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Glossário}\label{sec:glossario}
+
+Você pode definir as entradas do glossário no início do texto. Recomenda-se o uso de um arquivo separado a ser inserido ainda no preâmbulo do documento, como por exemplo o arquivo \texttt{entradas-glossario.tex} no diretório ``PosTexto'' do presente documento. Veja orientações sobre inclusão de arquivos na \autoref{sec:inclusao}.
+
+`O \gls{abntex2} é \glsdesc*{abntex2}' é um exemplo de termo definido no glossário e usado no decorrer do texto, bem como:
+
+\begin{citacao}%% Ambiente citacao
+Esta frase usa a palavra \gls{componente} e o plural de \glspl{filho}, ambas definidas no glossário como filhas da entrada \gls{pai}. \Gls{equilibrio} exemplifica o uso de um termo no início da frase. O software \gls{abntex2}\index{abnTeX2@\abnTeX} é escrito em \gls{latex}\index{LaTeX@\latex}, que é definido no glossário como `\glsdesc*{latex}'.
+\end{citacao}
+
+A frase da citação direta acima foi produzida com:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+Esta frase usa a palavra \gls{componente} e o plural de
+\glspl{filho}, ambas definidas no glossário como filhas da
+entrada \gls{pai}. \Gls{equilibrio} exemplifica o uso de um
+termo no início da frase. O software \gls{abntex2} é
+escrito em \gls{latex}, que é definido no glossário como
+`\glsdesc*{latex}'.
+\end{verbatim}
+\end{SingleSpacing}
+
+A impressão efetiva do glossário é dada com:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+\printglossaries
+\end{verbatim}
+\end{SingleSpacing}
+
+A impressão do glossário incorpora o número das páginas em que as entradas foram citadas. Isso pode ser removido adicionando-se a opção \texttt{nonumberlist} em:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+\usepackage[nonumberlist, style=index]{glossaries}
+\end{verbatim}
+\end{SingleSpacing}
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Apêndices e Anexos}\label{sec:apendiceseanexos}
+
+Apêndices e anexos podem ser inseridos no documento, logo após o glossário, através da inclusão de arquivos, como por exemplo, os arquivos fontes \texttt{apendicea.tex}, \texttt{apendiceb.tex}, \texttt{anexoa.tex} e \texttt{anexob.tex}, presentes no diretório ``PosTexto'' deste projeto, são utilizados para gerar o \autoref{cap:apendicea}, o \autoref{cap:apendiceb}, o \autoref{cap:anexoa} e o \autoref{cap:anexob}, respectivamente. Veja orientações sobre inclusão de arquivos na \autoref{sec:inclusao}.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Índice Remissivo}\label{sec:indice}
+
+Palavras podem ser indexadas no índice remissivo através do comando \verb|\index{palavra a ser indexada}|. Existem vários exemplos do uso deste comando no arquivo fonte deste capítulo. Por exemplo o comando \verb|\index{Windows}| é utilizado para indexar a palavra Windows\index{Windows} no índice remissivo.
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\section{Compilação do Documento \LaTeX}\label{sec:compilar}\index{LaTeX@\latex}
+
+Geralmente os editores \gls{latex}\index{LaTeX@\latex}, como o TeXlipse\index{TeXlipse}\footnote{Disponível em \url{http://texlipse.sourceforge.net/}.}, o Texmaker\index{Texmaker}\footnote{Disponível em \url{http://www.xm1math.net/texmaker/}.}, entre outros, compilam os documentos automaticamente ou após configuração, de modo que você não precisa se preocupar com isto.
+
+No entanto, você pode compilar os documentos \gls{latex}\index{LaTeX@\latex} usando os seguintes comandos, que devem ser digitados no \textit{Prompt} de comandos do Windows\index{Windows} ou no terminal do Mac\index{Mac} ou do Linux\index{Linux}:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+latex <mainfile>.tex
+bibtex <mainfile>
+latex <mainfile>.tex
+latex <mainfile>.tex
+dvips <dvips configs> <mainfile>.dvi -o <mainfile>.ps
+ps2pdf <mainfile>.ps <mainfile>.pdf
+\end{verbatim}
+\end{SingleSpacing}
+
+\noindent se todas as figuras no seu documento estão no formato \gls{eps}, ou então, usando os seguintes comandos:
+
+\begin{SingleSpacing}%% Ambiente SingleSpacing
+\begin{verbatim}
+pdflatex <mainfile>.tex
+bibtex <mainfile>
+pdflatex <mainfile>.tex
+pdflatex <mainfile>.tex
+\end{verbatim}
+\end{SingleSpacing}
+
+\noindent se todas as figuras no seu documento estão no \gls{pdf}, ou em formatos comuns de imagens (BMP, GIF, JPG ou PNG).
+
+%% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\subsection{Problemas de Compilação}\label{sec:problemas}
+
+O \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex} foi configurado e testado para compilar documentos \gls{latex}\index{LaTeX@\latex} sem problemas, mas por se tratar de uma linguagem de programação (para editoração) está sujeita à \textit{bugs} como qualquer outra linguagem. Além disto, o \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex} é baseado em outras classes de documento e também utiliza uma quantidade considerável de pacotes que podem ter incompatibilidades. Portanto, alguns cuidados devem ser tomados quando se trabalha com \gls{latex}\index{LaTeX@\latex}, principalmente para novos usuários:
+
+\begin{itemize}%% Lista de itens
+\item Os comandos devem ser corretamente finalizados, ou seja, deve-se verificar a abertura e fechamento dos colchetes e chaves: \verb|\comando[opções]{argumentos}|. Alguns comandos não necessitam disto, por exemplo \verb|\comando|, mas as vezes torna-se necessário colocar uma barra invertida, \verb|\|, ou chaves, \verb|{}|, após o comando para gerar um espaço com o texto na sequência: \verb|\comando\ texto na sequência do comando| ou \verb|\comando{} texto na sequência do comando|.
+\item Os ambientes devem ser corretamente finalizados, ou seja, deve-se verificar a abertura e fechamento dos ambientes: \verb|\begin{ambiente} ... \end{ambiente}|.
+\item Os caracteres especiais devem ser precedidos de barra invertida quando se deseja imprimí-los no texto: \verb|\$ \& \% \# \_ \{ \}| resulta em \$ \& \% \# \_ \{ \}. Do contrário, não serão impressos e executarão comandos específicos do \gls{latex}\index{LaTeX@\latex}.
+\item Os textos copiados de outros arquivos (\texttt{*.doc}, \texttt{*.html}, \texttt{*.pdf}, etc.) para os arquivos fonte do \gls{latex}\index{LaTeX@\latex} (\texttt{*.tex}, \texttt{*.bib}, etc.) devem ter a mesma codificação de caracteres (\texttt{UTF8}). Do contrário, alguns caracteres não serão devidamente impressos ou causarão erro, por exemplo, o hífen e os caracteres acentuados.
+\item Os nomes de arquivos carregados no modelo (arquivos fontes, figuras, etc.) não devem conter caracteres especiais ou acentuados: \verb|capitulo1.tex| ao invés de \verb|capitulo_1.tex|. Esta regra também se aplica aos rótulos: \verb|\label{cap:capitulo1}| ao invés de \verb|\label{cap:capitulo_1}|.
+\end{itemize}
+
+Outras dicas de uso dos comandos do \gls{latex}\index{LaTeX@\latex} podem ser encontradas em diversos materiais de referência disponíveis na internet, por exemplo: \url{http://en.wikibooks.org/wiki/LaTeX}, \url{http://repositorios.cpai.unb.br/ctan/info/lshort/portuguese-BR/lshortBR.pdf}, entre outros.
