@@ -6,6 +6,8 @@ Este trabalho apresenta modificações do projeto [UTFPRPG-TEX](https://pt.overl
 
 A estrutura principal de ambos os trabalhos é baseada no template de trabalhos acadêmicos [abnTeX2](http://www.abntex.net.br), que atende aos requisitos das normas da Associação Brasileira de Normas Técnicas (ABNT) para produção de documentos técnicos e científicos brasileiros.
 
+---
+
 ## Arquivos do Projeto
 
 A pasta `utfprct-tex` contém os arquivos do template deste projeto e um exemplo de uso escrito pelo prof. Luiz. E. M. Lima (UTFPRPG-TEX).
@@ -20,6 +22,8 @@ Os arquivos do template são:
 - `abntex2-alf-en.bst`: arquivo `abntex2-alf.bst` com conectores e termos traduzidos para o inglês
 - `abntex2-num-en.bst`: arquivo `abntex2-num.bst` com conectores e termos traduzidos para o inglês
 - `make.bat` (`makefile`): possui comandos para converter o arquivo `utfprct.tex` (default) para PDF e um comando para limpar os arquivos intermediários (`clean`) (vide comando `help`)
+
+---
 
 ## Normas vigentes do Sistema de Bibliotecas da UTFPR (2020)
 
@@ -49,6 +53,8 @@ O projeto UTFPRCT-TEX envolve o projeto `abnTeX2` (v. 1.9.7). Sendo o pacote `ab
 
 Por este motivo, modificações no pacote `abnTeX2` e no código do `UTFPRPG-TEX` foram necessárias para tornar o UTFPRCT-TE compatível com as principais características de formatação e os principais tipos de entrada *bibtex* da `NBR 6023/2018`. No entanto, a norma `NBR 6023/2018` é extensa e possui muitos novos recursos que podem ser referenciados, inexistentes na norma anterior `NBR 6023/2002` e, por isso, possíveis melhorias podem ainda ser necessárias neste aspecto para cobrir a norma no seu total.
 
+---
+
 ## Formato de Entrega
 
 A Instrução Normativa Conjunta nº 01/2018 – PROPPG/PROGRAD dispõe sobre o formato das versões finais enviadas às bancas de avaliação e depósito no Sistema de Bibliotecas da UTFPR [link](http://portal.utfpr.edu.br/documentos/pesquisa-e-pos-graduacao/proppg/instrucoes-normativas-conjuntas/in-conjunta-proppg-prograd-01-2018.pdf).
@@ -74,8 +80,9 @@ Implica na remoção de todas as páginas em branco, a fim de não dar a impress
 * `openright`: impressão da primeira página dos capítulos no anverso.
 * `pretextualtwoside`: impressão dos elementos pré-textuais para começar sempre no anverso
 
+----
 
-#### Formato PDF-A
+## Formato PDF-A
 
 Além do `formato digital`, a entrega de TCC, dissertação ou tese deve ser feita no formato **PDF/A**.
 
