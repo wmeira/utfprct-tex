@@ -47,7 +47,7 @@ A orientação para entrega de trabalhos acadêmicos pode ser encontrada no [por
 
 O projeto UTFPRCT-TEX envolve o projeto `abnTeX2` (v. 1.9.7). Sendo o pacote `abnTeX2` compatível com quase todas as normas vigentes na UTFPR, exceto a `NBR 6023/2018` (referências).
 
-Por este motivo, modificações no pacote `abnTeX2` e no código do `UTFPRPG-TEX` foram necessárias para tornar o UTFPRCT-TE compatível com os principais pontos e os principais tipos de entrada *bibtex* da `NBR 6023/2018`. No entanto, a norma `NBR 6023/2018` é extensa e cobre muitos novos recursos de referências inexistentes na norma anterior `NBR 6023/2002`, o que pode ser necessário melhorar.
+Por este motivo, modificações no pacote `abnTeX2` e no código do `UTFPRPG-TEX` foram necessárias para tornar o UTFPRCT-TE compatível com as principais características de formatação e os principais tipos de entrada *bibtex* da `NBR 6023/2018`. No entanto, a norma `NBR 6023/2018` é extensa e possui muitos novos recursos que podem ser referenciados, inexistentes na norma anterior `NBR 6023/2002` e, por isso, possíveis melhorias podem ainda ser necessárias neste aspecto para cobrir a norma no seu total.
 
 ## Formato de Entrega
 
@@ -85,11 +85,11 @@ Existem diversas categorias de [**PDF/A**](https://en.wikipedia.org/wiki/PDF/A) 
 
 Uma das categorias mais básicas dentro do PDF/A-2 é o PDF/A-2B (*Basic*) e que já torna o arquivo adequado para o longo prazo de armazenamento, enquanto mantém seu aspecto visual. Para converter um PDF para **PDF/A-2B**, sugiro a ferramenta online da **PDFEN**: https://www.pdfen.com/
 
-Outra categoria é o PDF/A-1B, cujo formato pode ser gerado ao tentar imprimir o documento PDF para outro PDF com o `Foxit Reader PDF Printer` (impressora de PDF do Foxit) e nas propriedades escolher na "Qualidade de Impressão" a categoria padrão `PDF/A-1b` (cuidado para não imprimir em escala de cinza). A mesma funcionalidade deve estar presente na impressora PDF do Acrobat Reader.
+Outra categoria é o **PDF/A-1B**, cujo formato pode ser gerado ao tentar imprimir o documento PDF para outro PDF com o `Foxit Reader PDF Printer` (impressora de PDF do Foxit) e nas propriedades escolher na "Qualidade de Impressão" a categoria padrão `PDF/A-1b` (cuidado para não imprimir em escala de cinza). A mesma funcionalidade pode estar presente em outras impressoras de PDF (e.g., o *Adobe Acrobat Reader*).
 
-Para validar se o PDF/A foi gerado corretamente, o programa [VeraPDF](https://verapdf.org/) pode detectar e validar a categoria do PDF/A do documento de entrada. Outra opção é abrir o arquivo no Acrobat Reader, aparecerá um aviso informando que o documento PDF aberto é um PDF/A.
+Para validar se o PDF/A foi gerado corretamente, o programa [VeraPDF](https://verapdf.org/) pode detectar e validar a categoria do PDF/A do documento de entrada. Outra opção é abrir o arquivo no *Abobe Acrobat Reader*, no qual aparecerá um aviso informando que o documento PDF aberto é um PDF/A.
 
-A conversão para PDF/A poderia ser feita através de algum procedimento de compilação do LaTeX, porém tive algumas dificuldades e não  consegui validar o arquivo gerado como PDF/A. A falta da ferramenta não é tão negativa, pois o procedimento só é necessário no momento de gerar a versão final e o PDFEN já satisfaz bem o requisito (*fico aberto a sugestões*).
+A conversão para PDF/A poderia ser feita através de algum procedimento de compilação do LaTeX, porém tive algumas dificuldades e não  consegui validar o arquivo gerado como PDF/A. A falta da ferramenta não é tão negativa, pois o procedimento só é necessário no momento de gerar a versão final e as alternativas citadas já satisfazem bem o requisito (*fico aberto à sugestões*).
 
 
 # UTFPR-CT Latex Template
