@@ -15,7 +15,7 @@
 *.brf 
 *.mw 
 *.out 
-*.run.xml^
+*.run.xml
 *.acn*
 *.acr*
 *.alg*
@@ -27,7 +27,7 @@
 *.ind
 *.ist
 *.nlo
-*.nls^
+*.nls
 *.loa
 *.loc
 *.lod
@@ -36,7 +36,7 @@
 *.lop
 *.lot
 *.tdo
-*.toc^
+*.toc
 *.bak
 *.nav 
 *.snm
@@ -45,3 +45,6 @@
 # Final files
 *.dvi
 *.ps
+
+# Others
+*.lnk
