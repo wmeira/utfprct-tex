@@ -1,6 +1,6 @@
 # UTFPRCT-TEX
 
-O UTFPRCT-TEX é um template LaTeX não oficial para trabalhos acadêmicos (teses, disser, trabalhos de conclusão, etc.) da Universidade Tecnológica Federal do Paraná (UTFPR) - Curitiba.
+O UTFPRCT-TEX é um template LaTeX não oficial para trabalhos acadêmicos (teses, dissertações, trabalhos de conclusão, etc.) da Universidade Tecnológica Federal do Paraná (UTFPR) - Curitiba.
 
 Este trabalho apresenta modificações do projeto [UTFPRPG-TEX](https://pt.overleaf.com/latex/templates/federal-university-of-technology-parana-ic-report/gkjvhwrtkvps)) mantido por Luiz. E. M. Lima, o qual é o maior responsável pelo estado atual do projeto. As alterações do template foram necessárias para alinhar as diferentes interpretações da ABNT presentes mesmo entre diferentes campi da UTFPR e implementar a NBR6023/2018 (referências).
 
