@@ -1,8 +1,8 @@
 # UTFPRCT-TEX
 
-O UTFPRCT-TEX é um template LaTeX não oficial para trabalhos acadêmicos (teses, dissertações, trabalhos de conclusão, etc.) da Universidade Tecnológica Federal do Paraná (UTFPR) - Curitiba.
+O `UTFPRCT-TEX` é um template LaTeX não oficial para trabalhos acadêmicos (teses, dissertações, trabalhos de conclusão, etc.) da Universidade Tecnológica Federal do Paraná (UTFPR) - Curitiba.
 
-Este trabalho apresenta modificações do projeto [UTFPRPG-TEX](https://pt.overleaf.com/latex/templates/federal-university-of-technology-parana-ic-report/gkjvhwrtkvps) mantido por Luiz. E. M. Lima. As alterações do template UTFPRPG-TEX foram necessárias para alinhar as diferentes interpretações da ABNT presentes mesmo entre diferentes campi da UTFPR e implementar os principais pontos da **NBR 6023/2018** (referências).
+Este trabalho é baseado no projeto [UTFPRPG-TEX](https://pt.overleaf.com/latex/templates/federal-university-of-technology-parana-ic-report/gkjvhwrtkvps) mantido por Luiz. E. M. Lima. As alterações do template `UTFPRPG-TEX` foram necessárias para alinhar as diferentes interpretações da ABNT presentes mesmo entre diferentes campi da UTFPR e implementar os principais pontos da **NBR 6023/2018** (referências).
 
 A estrutura principal de ambos os trabalhos é baseada no template de trabalhos acadêmicos [abnTeX2](http://www.abntex.net.br), que atende aos requisitos das normas da Associação Brasileira de Normas Técnicas (ABNT) para produção de documentos técnicos e científicos brasileiros.
 
@@ -103,4 +103,4 @@ A conversão para PDF/A poderia ser feita através de algum procedimento de comp
 
 Unofficial LaTeX template for academic works (doctoral, master, and bachelor thesis, etc.) production of the Universidade Tecnológica Federal do Paraná (UTFPR), campus Curitiba.
 
-This work was based on the UTFPR-PG project ([utfprpgtex](https://pt.overleaf.com/latex/templates/federal-university-of-technology-parana-ic-report/gkjvhwrtkvps)) maintained by Luiz E. M. Lima. The main foundation is based the [abnTeX2](http://www.abntex.net.br/) academic works template, which meets the standards requirements of the Brazilian Association of Technical Standards (ABNT) for development of technical and scientific Brazilian documents.
+This work is based on the [UTFPRPG-TEX](https://pt.overleaf.com/latex/templates/federal-university-of-technology-parana-ic-report/gkjvhwrtkvps)) project maintained by Luiz E. M. Lima. The main foundation of both projects is the [abnTeX2](http://www.abntex.net.br/) academic works template, which meets the standards requirements of the Brazilian Association of Technical Standards (ABNT) for development of technical and scientific Brazilian documents.
