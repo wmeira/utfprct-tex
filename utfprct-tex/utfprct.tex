@@ -46,29 +46,43 @@
   % leqno,%% Numeração das equações no lado esquerdo (comente para lado direito)
   oneside,%% Impressão dos elementos textuais e pós-textuais: oneside (anverso) ou twoside (anverso e verso, se mais de 100 p.)
   openright,%% Impressão da primeira página dos capítulos: openright (anverso), openleft (verso) ou openany (anverso e verso)
+%%  
 %% -- Opções da classe abntex2 --
   sumario = abnt-6027-2012,%% Formatação do sumário: tradicional (estilo tradicional) ou abnt-6027-2012 (norma ABNT 6027-2012)
   chapter = TITLE,%% Títulos de capítulos em maiúsculas (comente para desabilitar)
   section = TITLE,%% Títulos de seções secundárias em maiúsculas (comente para desabilitar)
   % subsection = TITLE,%% Títulos de seções terciárias em maiúsculas (comente para desabilitar)
   % subsubsection = TITLE,%% Títulos de seções quartenárias em maiúsculas (comente para desabilitar)
+%%  
 %% -- Opções da classe utfprpgtex --
   pretextualoneside,%% Impressão dos elementos pré-textuais: pretextualoneside (anverso) ou pretextualtwoside (anverso e verso)
   fontetimes,%% Fonte do texto: fontetimes (times), fontearial (arial) ou fontecourier (courier), fontemodern (lmodern - default latex). Times and Arial are ABNT recommended
-  % vinculoscoloridos,%% Cores nos vínculos (citações, arquivos, links, url, etc.) (comente para desabilitar)
+   %vinculoscoloridos,%% Cores nos vínculos (citações, arquivos, links, url, etc.) (comente para desabilitar). NBR 14724/2011: cor preta (inclusive hyperlinks)
   semrecuonosumario,%% Remoção do recuo dos itens no sumário (comente para adição do recuo, se estilo tradicional)
   usemakeindex,%% Compilação de glossários e índices utilizando makeindex (comente para desabilitar)
-  % legendascentralizadas,%% Alinhamento das legendas centralizado (comente para alinhamento à esquerda)
-  aprovacaoestiloppg,%% Folha de aprovação do programa de pós-graduação no estilo do PPG (comente para estilo padrão)
-  pardeassinaturas,%% Assinaturas na folha de aprovação em até duas colunas (comente para em uma única coluna)
+  legendascentralizadas,%% Alinhamento das legendas centralizado (comente para alinhamento à esquerda)
+%%  
+%% -- Opções da folha de aprovação -- 
+%% O mais comum é anexar o PDF do termo de aprovação sem assinaturas. As opções abaixo são para o formato da pós-graduação UTFPR-PG (Ponta Grossa) e podem servir de placeholder para este template.
+  %aprovacaoestiloppg,%% Folha de aprovação do programa de pós-graduação no estilo do PPG (comente para estilo padrão)
+  %pardeassinaturas,%% Assinaturas na folha de aprovação em até duas colunas (comente para em uma única coluna)
   % linhasdeassinaturas,%% Linhas de assinaturas na folha de aprovação (comente para remover as linhas)
+%%  
 %% -- Opções do pacote babel (hifenização) -- % 
-  french,%% Idioma adicional para hifenização
-  spanish,%% Idioma adicional para hifenização
+  %french,%% Idioma adicional para hifenização
+  %spanish,%% Idioma adicional para hifenização
   english,%% Idioma adicional para hifenização
   brazil,%% Idioma principal do documento (último da lista)
 ]{utfprct}%% Classe utfprct
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Para alterar o idioma do documento para inglês: 
+%1) Colocar o "english" como último idioma carregado no documentclass (o último será o principal do documento. Adicionalmente, pode-se selecionar o english como língua principal.
+%\selectlanguage{english}
+
+%2) Usar o abntex2-alf-en ou abntex2-num-en ao invés do default em pt-br do abntex2.
+%\bibliographystyle{abntex2-alf-en} % comentar para pt-br
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Pacotes carregados nas classes:
 %%   memoir: abstract, appendix, array, booktabs, ccaption, chngcntr, chngpage, dcolumn, delarray, enumerate, epigraph, framed, ifmtarg, ifpdf, index, makeidx, moreverb, needspace, newﬁle, nextpage, parskip, patchcmd, setspace, shortvrb, showidx, tabularx, titleref, titling, tocbibind, tocloft, verbatim, verse.
@@ -82,6 +96,21 @@
 \usepackage{bigdelim, booktabs, colortbl, longtable, multirow}%% Ferramentas para tabelas
 \usepackage{amssymb, amstext, amsthm, icomma}%% Ferramentas para linguagem matemática
 \usepackage{pifont, textcomp, wasysym}%% Símbolos de texto
+\usepackage{pdfpages} % Facilita a inclusão de PDF com múltiplas páginas
+\usepackage{afterpage} %Executa comando depois de quebrar página
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    %\addtocounter{page}{-1}%
+    \newpage}
+%\afterpage{blankpage} %adiciona quebra de página e adiciona uma página em branco sem estilo na sequência (a página é contada)
+
+\usepackage[labelformat=simple]{subcaption} %subfigure
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\renewcommand{\subfigureautorefname}{\figureautorefname}
+
+\usepackage{silence}
+\WarningFilter{xcolor}{Incompatible color definition}
 
 %% Comandos personalizados (\newcommand{name}[num]{definition})
 \newcommand{\cpp}{\texttt{C$++$}}%% C++
@@ -107,6 +136,11 @@
 \newcommand{\citeta}[1]{\citeauthoronline{#1}}%% Atalho para citação explícita (somente autor)
 \newcommand{\citepy}[1]{(\citeyear{#1})}%% Atalho para citação implícita (somente ano)
 \newcommand{\citety}[1]{\citeyear{#1}}%% Atalho para citação explícita (somente ano)
+
+%allow fixed size on collums with text position
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 %% Arquivo de dados do modelo de documento LaTeX para produção de trabalhos acadêmicos da UTFPR
 \input{./utfprct-dados}%% Realize as modificações pertinentes no arquivo "utfprct-dados.tex"
@@ -225,14 +259,14 @@
 
 %% Arquivos de apêndices
 \begin{arquivosdeapendices}%% Os arquivos de apêndices devem se incluídos neste ambiente - Não comente esta linha
-  \partapendices%% Página de início dos apêndices - Comente para remover este item
+  %\partapendices%% Página de início dos apêndices - Comente para remover este item
   \include{./PosTexto/apendicea}%% Apêndice - Comente para remover este item
   \include{./PosTexto/apendiceb}%% Apêndice - Comente para remover este item
 \end{arquivosdeapendices}%% Não comente esta linha
 
 %% Arquivos de anexos
 \begin{arquivosdeanexos}%% Os arquivos de anexos devem se incluídos neste ambiente - Não comente esta linha
-  \partanexos%% Página de início dos anexos - Comente para remover este item
+  %\partanexos%% Página de início dos anexos - Comente para remover este item
   \include{./PosTexto/anexoa}%% Anexo - Comente para remover este item
   \include{./PosTexto/anexob}%% Anexo - Comente para remover este item
 \end{arquivosdeanexos}%% Não comente esta linha
