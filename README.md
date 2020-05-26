@@ -16,12 +16,19 @@ Os arquivos do template são:
 
 - `utfprct.cls`: arquivo de classe do template UTFPRCT-TEX
 - `utfprct.tex`: arquivo LaTeX de trabalho acadêmico utilizando o template UTFPRCT-TEX
-- `utfprct-dados.tex`: arquivo de dados do trabalho acadêmicos
+- `utfprct-dados.tex`: arquivo de dados do trabalho acadêmicos. Deve conter todas as informações da capa, contra-capa e metadados do documento
 - `abntex2-alf.bst`: arquivo com pequenas alterações do estilo alfanumérico *bibtex* do pacote `abnTeX2` para se adaptar a NBR6023/2018 (estilo *bibtex* padrão)
 - `abntex2-num.bst`: arquivo com pequenas alterações do estilo numérico *bibtex* do pacote `abnTeX2` para se adaptar a NBR6023/2018
 - `abntex2-alf-en.bst`: arquivo `abntex2-alf.bst` com conectores e termos traduzidos para o inglês
 - `abntex2-num-en.bst`: arquivo `abntex2-num.bst` com conectores e termos traduzidos para o inglês
 - `make.bat` (`makefile`): possui comandos para converter o arquivo `utfprct.tex` (default) para PDF e um comando para limpar os arquivos intermediários (`clean`) (vide comando `help`)
+
+## Trabalho Acadêmico em Inglês
+
+Na declaração da classe `utfprct` no arquivo `utfprct.tex`, as últimas opções adicionam idiomas para hifenização, sendo o último idioma definido como idioma principal do documento (`\languagename`). Portanto, caso o trabalho seja desenvolvido em inglês realize os seguintes passos:
+
+- Colocar a opção `english` em último da lista de opções da declaração de classe. Adicionalmente, pode-se selecionar a língua do pacote babel no preâmbulo: `\selectlanguage{english}`
+- Selecionar o estilo de bibliografia `abntex2-alf-en` ou `abntex2-num-en` ao invés dos pacotes em português da `abnTeX2`, pois existem conectores e termos na citação e referência que precisavam ser traduzidos. Para isso, adicionar o seguinte comando (pode ser no preâmbulo): `\bibliographystyle{abntex2-alf-en}` (alf) ou  `\bibliographystyle{abntex2-num-en}` (numérico).
 
 ---
 
