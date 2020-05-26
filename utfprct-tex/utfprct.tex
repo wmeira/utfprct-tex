@@ -28,6 +28,14 @@
 %% Contribute to improve this project (github repo):
 %% https://github.com/wmeira/utfprct-tex
 
+%% Formato digital (sem folhas em branco): 
+%% openany: Impressão da primeira página em qualquer lado
+%% pretextualoneside: Impressão dos pré-textuais em qualquer lado
+
+%% Formato impresso:
+%% oneside: Impressão dos elementos textuais e pós-textuais oneside (anverso) ou twoside (anverso e verso, se mais de 100 p.)
+%% openright: impressão da primeira página dos capítulos no anverso
+%% pretextualtwoside: Impressão dos pré-textuais começando no anverso
 
 %% Classe e opções de documento
 \documentclass[%% Opções
@@ -46,7 +54,7 @@
   % subsubsection = TITLE,%% Títulos de seções quartenárias em maiúsculas (comente para desabilitar)
 %% -- Opções da classe utfprpgtex --
   pretextualoneside,%% Impressão dos elementos pré-textuais: pretextualoneside (anverso) ou pretextualtwoside (anverso e verso)
-  fontearial,%% Fonte do texto: fontetimes (times), fontearial (arial) ou fontecourier (courier)
+  fontetimes,%% Fonte do texto: fontetimes (times), fontearial (arial) ou fontecourier (courier), fontemodern (lmodern - default latex). Times and Arial are ABNT recommended
   % vinculoscoloridos,%% Cores nos vínculos (citações, arquivos, links, url, etc.) (comente para desabilitar)
   semrecuonosumario,%% Remoção do recuo dos itens no sumário (comente para adição do recuo, se estilo tradicional)
   usemakeindex,%% Compilação de glossários e índices utilizando makeindex (comente para desabilitar)

@@ -1,7 +1,7 @@
 %% utfprct.tex, v1.0 wmeira on 2020/05/25
 %% Copyright (C) 2020- by William H. T. Meira
 %%
-%% Modified version of project 'utfprpgtex' maintained 
+%% Modified version of project 'utfprpgtex' maintained
 %% by Luiz E. M. Lima (luizeduardomlima@gmail.com)
 %%
 %% This work may be distributed and/or modified under the
@@ -16,13 +16,13 @@
 %%
 %% The Current Maintainer of this work is William H. T. Meira.
 %%
-%% This project consists mainly of files: 'utfprct.cls', 'utfprct.tex', 
-%% 'utfprct-dados.tex' 
-%% 
+%% This project consists mainly of files: 'utfprct.cls', 'utfprct.tex',
+%% 'utfprct-dados.tex'
+%%
 %% The 'abntex2-alf.bst' and 'abntex2-num.bst' files are slightly
 %% modified versions of the bibtex styles from abntex2 (v.1.9.7)
 %% package to suit NBR6023/2018 (not yet implemented). Complementary,
-%% 'abntex2-alf-en.bst' and 'abntex2-num-en.bst' are english versions 
+%% 'abntex2-alf-en.bst' and 'abntex2-num-en.bst' are english versions
 %% of the respective bibtex styles.
 %%
 %% Contribute to improve this project (github repo):
@@ -44,9 +44,11 @@
 \DeclareOption{pretextualoneside}{\typeout{-----> Option: pretextualoneside}\@pretexttwosidefalse}%% Anverso
 \DeclareOption{pretextualtwoside}{\typeout{-----> Option: pretextualtwoside}\@pretexttwosidetrue}%% Anverso e verso
 %%    -- Fonte do texto
-\DeclareOption{fontetimes}{\typeout{-----> Option: fontetimes}\gdef\@tipodefonte{\rmdefault}}%% Times
-\DeclareOption{fontearial}{\typeout{-----> Option: fontearial}\gdef\@tipodefonte{\sfdefault}}%% Arial
-\DeclareOption{fontecourier}{\typeout{-----> Option: fontecourier}\gdef\@tipodefonte{\ttdefault}}%% Courier
+\gdef\@tipodefonte{lmodern} % Computer modern roman (default)
+\DeclareOption{fontemodern}{\typeout{-----> Option: fontemodern}\gdef\@tipodefonte{lmodern}}%% Computer modern roman (default)
+\DeclareOption{fontetimes}{\typeout{-----> Option: fontetimes}\gdef\@tipodefonte{times}}%% Times
+\DeclareOption{fontearial}{\typeout{-----> Option: fontearial}\gdef\@tipodefonte{arial}}%% Helvetica (closest to Arial)
+\DeclareOption{fontecourier}{\typeout{-----> Option: fontecourier}\gdef\@tipodefonte{courier}}%% Courier
 %%    -- Cores nos vínculos (padrões: citecolor = green, filecolor = cyan, linkcolor = red, urlcolor = magenta)
 \definecolor{bblue}{rgb}{0, 0, 0.25}%% Definição do azul escuro (modificado)
 \definecolor{gray}{rgb}{0.5, 0.5, 0.5}%% Definição do cinza (modificado)
@@ -430,19 +432,31 @@
 }
 
 %% Configuração de fontes
-\RequirePackage{times}%% Seleção da fonte Adobe Times Roman (ou equivalente) como fonte padrão
-\renewcommand{\rmdefault}{ptm}%% Fonte Adobe Times
-\renewcommand{\sfdefault}{phv}%% Fonte Adobe Helvetica
-\renewcommand{\ttdefault}{pcr}%% Fonte Adobe Courier
-\renewcommand{\familydefault}{\@tipodefonte}%% Seleção do tipo de fonte padrão do documento
-\ifthenelse{\equal{\familydefault}{\sfdefault}}{%% Fonte arial com fator de escala de 1.0 (fonte principal arial)
-  \RequirePackage{helvet}%% Seleção da fonte Arial (ou equivalente) como fonte padrão
-  % \RequirePackage{sfmath}%% Fonte Helvetica no modo matemático
-}{%% Fonte arial com fator de escala de 0.9 (fonte principal times)
-  \RequirePackage[scaled=0.9]{helvet}%% Seleção da fonte Arial (ou equivalente) como fonte padrão
+\ifthenelse{\equal{\@tipodefonte}{lmodern}}{
+	\renewcommand{\familydefault}{\rmdefault}
+}{
+	\RequirePackage{times}%% Seleção da fonte Adobe Times Roman (ou equivalente) como fonte padrão
+	\renewcommand{\rmdefault}{ptm}%% Fonte Adobe Times
+	\renewcommand{\sfdefault}{phv}%% Fonte Adobe Helvetica
+	\renewcommand{\ttdefault}{pcr}%% Fonte Adobe Courier
+	\ifthenelse{\equal{\@tipodefonte}{arial}}{
+		%% Fonte arial com fator de escala de 1.0 (fonte principal arial)
+  		\RequirePackage{helvet}%% Fonte Arial (ou equivalente) como fonte padrão
+  		%\RequirePackage{sfmath}%% Fonte Helvetica no modo matemático
+		\renewcommand{\familydefault}{\sfdefault}
+	}{
+		\RequirePackage[scaled=0.9]{helvet}%% Fonte arial com fator de escala de 0.9 quando não é fonte principal
+		
+		\ifthenelse{\equal{\@tipodefonte}{courier}}{
+			\renewcommand{\familydefault}{\ttdefault}
+		}{
+			\renewcommand{\familydefault}{\rmdefault}			
+		}
+	}
 }
+
 \normalsize%% Tamanho padrão de fonte
-\renewcommand{\ABNTEXpartfont}{\fontfamily{\@tipodefonte}\bfseries}%% Estilo da fonte da parte
+\renewcommand{\ABNTEXpartfont}{\fontfamily{\familydefault}\bfseries}%% Estilo da fonte da parte
 \renewcommand{\ABNTEXpartfontsize}{\normalsize}%% Tamanho da fonte da parte
 \renewcommand{\ABNTEXchapterfont}{\ABNTEXpartfont}%% Estilo da fonte do capítulo
 \renewcommand{\ABNTEXchapterfontsize}{\ABNTEXpartfontsize}%% Tamanho da fonte do capítulo
