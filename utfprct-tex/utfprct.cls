@@ -446,10 +446,11 @@
 \newcommand{\Curso}[1]{\providecommand{\imprimircurso}{#1}}%% Nome do curso
 \newcommand{\Course}[1]{\providecommand{\printcourse}{#1}}%% Course name
 \newcommand{\AreaDeConcentracao}[1]{\providecommand{\imprimirareadeconcentracao}{#1}}%% Nome da área de concentração
+\newcommand{\Programa}[1]{\providecommand{\imprimirprograma}{#1}}%% Nome do programa ou nome do curso completo
 \newcommand{\SiglaDoPPG}[1]{\providecommand{\imprimirsigladoppg}{#1}}%% Logo do programa de pós-graduação
 \newcommand{\imprimirppgoudepartamento}{%% Programa de pós-graduação ou departamento
   \ifthenelse{\equal{\imprimirtipodedocumento}{Tese}\or\equal{\imprimirtipodedocumento}{Dissertação}}%% Tese ou dissertação
-  {Programa de Pós-Graduação em \imprimircurso}%% Programa de pós-graduação
+  {\imprimirprograma}%% Programa de pós-graduação
   {\imprimirdepartamento}%% Departamento
 }
 \let\Instituicao\instituicao%% Instituição (from abntex2)
@@ -475,6 +476,7 @@
 \newcommand{\SiglaDepartamentoCotutela}[1]{\providecommand{\imprimirsigladepartamentocotutela}{#1}}%% Sigla do departamento da inst. cotutela
 \newcommand{\CursoCotutela}[1]{\providecommand{\imprimircursocotutela}{#1}}%% Nome do curso bachalerado ou pós-graduação (PPG)
 \newcommand{\CourseCotutela}[1]{\providecommand{\printcoursecotutela}{#1}}%% Cotutela Course name
+\newcommand{\ProgramaCotutela}[1]{\providecommand{\imprimirprogramacotutela}{#1}}%% Nome do programa ou nome do curso completo na inst. cotutela
 \newcommand{\SiglaDoPPGCotutela}[1]{\providecommand{\imprimirsigladoppgcotutela}{#1}}%% Sigla do programa de pós-graduação da inst. de cotutela
 
 \newcommand{\AreaDeConcentracaoCotutela}[1]{\providecommand{\imprimirareadeconcentracaocotutela}{#1}}%% Area de concentração na inst. de cotutela
@@ -497,6 +499,12 @@
 
 \newcommand{\AtribuiDescricaoCotutela}[1]{\providecommand{\imprimiratribuidescricaocotutela}{#1}}%% Insere descrição de cotutela na folha de rosto
 \newcommand{\DescricaoDoDocumentoCotutela}[1]{\providecommand{\imprimirdescricaododocumentocotutela}{#1}}%% descricao de cotutela na folha de rosto
+
+\newcommand{\imprimirppgoudepartamentocotutela}{%% Programa de pós-graduação ou departamento da inst. cotutela
+  \ifthenelse{\equal{\imprimirtipodedocumento}{Tese}\or\equal{\imprimirtipodedocumento}{Dissertação}}%% Tese ou dissertação
+  {\imprimirprogramacotutela}%% Programa de pós-graduação
+  {\imprimirdepartamentocotutela}%% Departamento
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ficha Catalografica
@@ -701,11 +709,19 @@
 \makepagestyle{abntchapfirst}%% Cabeçalho do início do capítulo
 \makeoddhead{abntchapfirst}{}{}{\ABNTEXfontereduzida\thepage}%% Formatação do cabeçalho do início do capítulo (ímpar)
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Capa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\incluircapa}{%% Formatação da capa
   \begin{capa}%% Ambiente capa
     \pdfbookmark[0]{\nomecapa}{capa}%% Marcador
     \renewcommand{\thepage}{\roman{page}}%% Numéração de página em algarismos romanos
+    %\vspace*{-2\linha}
+	%\hspace*{-0.162\textwidth}
+	%\includegraphics[width = 40mm]{./Capitulos/figures/logos/logo_utfpr.png}%
+	%\hfill
+	%\includegraphics[width = 40mm]{./Capitulos/figures/logos/logo_inst_cotutela.png}
+	%\vspace*{1\linha}
     \begin{center}%% Texto centralizado
       \bfseries%% Texto em negrito
       \MakeUppercase{\imprimirinstituicao}\\%% Instituição
@@ -713,11 +729,15 @@
         \equal{\imprimirtipodedocumento}{Tese}
         \or\equal{\imprimirtipodedocumento}{Dissertação}
       }{%% Programa de pós-graduação
-        \MakeUppercase{Programa de Pós-Graduação em \imprimircurso}
+        \MakeUppercase{\imprimirprograma}
       }{%% Departamento
         \MakeUppercase{\imprimirdepartamento}
-      }\\
-      \MakeUppercase{\imprimirniveldeformacao\ em \imprimircurso}\\[80pt]%% Titulação e curso
+      }\\[0.5\linha]%
+	  %\MakeUppercase{\imprimirniveldeformacao\ em \imprimircurso}\\[80pt]%% Titulação e curso
+	  \ifthenelse{\equal{\imprimiratribuicotutela}{true}}{%%	  
+		\MakeUppercase{\imprimirinstituicaocotutela}\\%%
+	    \MakeUppercase{\imprimirprogramacotutela}\\[80pt]%%
+	  }{\vspace*{100pt}}%%
       \ifthenelse{\equal{\imprimiratribuiautortres}{true}}{%% Insere 3 autores(as)
 	    \MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
       	\MakeUppercase{\imprimirnomedoautordois}\\%% Autor(a) 2
@@ -805,7 +825,7 @@
       & & \\
       & \hspace*{1em} \imprimirtipodedocumento\ (\imprimirniveldeformacao\ em \imprimircurso) --
         \ifthenelse{\equal{\imprimirtipodedocumento}{Tese}\or\equal{\imprimirtipodedocumento}{Dissertação}}%%
-          {Programa de Pós-Graduação em \imprimircurso}{\imprimirdepartamento}%%
+          {\imprimirprograma}{\imprimirdepartamento}%%
         . \imprimirinstituicao. \imprimircidade, \imprimirano. & \\
       & & \\
       & \hspace*{1em}
