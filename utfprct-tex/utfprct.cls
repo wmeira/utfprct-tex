@@ -775,23 +775,40 @@
         \MakeUppercase{\imprimirnomedoautor}\\[285pt]%% Autor(a)
       }
     }
+    \ifthenelse{\equal{\imprimiratribuicotutela}{true}}{%%
+    	\ifthenelse{\equal{\imprimiratribuidescricaocotutela}{true}}{%%
+			{\vspace{-70pt}}
+    	}{}
+    }{}
     {\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[35pt]%% Título do documento
   \end{center}
   \begin{flushright}%% Alinhamento à direita
     \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
-      \parbox{0.5\textwidth}{%% Caixa de texto
-        \ifthenelse{%% Verificação do tipo de documento
-          \equal{\imprimirtipodedocumento}{Tese}
-          \or\equal{\imprimirtipodedocumento}{Dissertação}
-        }{%% Descrição do documento e área de concentração
-          \imprimirdescricaododocumento\ Área de Concentração: \imprimirareadeconcentracao.
-        }{%% Descrição do documento
-          \imprimirdescricaododocumento
-        }\\[\linha]
-        \imprimiratribuicaoorientador: \imprimirtitulodoorientador\ \imprimirnomedoorientador\\%% Orientador
-        \ifthenelse{\equal{\imprimiratribuicoorientador}{true}}%% Verificação do coorientador
-          {\imprimiratribuicaocoorientador: \imprimirtitulodocoorientador\ \imprimirnomedocoorientador\\}{\\}%% Coorientador
-      }
+      \parbox{0.5\textwidth}{%% Caixa de texto			
+	  \imprimirdescricaododocumento\\[\linha]		
+      \imprimiratribuicaoorientador: \imprimirtitulodoorientador\ \imprimirnomedoorientador\\%% Orientador
+	  \ifthenelse{\equal{\imprimiratribuicotutela}{true}}{%%
+      \ifthenelse{\equal{\imprimiratribuidescricaocotutela}{true}}%%
+      {%1)coorientador + outra descrição + orientador(ext) + coorientador(ext)
+		\ifthenelse{\equal{\imprimiratribuicoorientador}{true}}%% Existe coorientador
+        {\imprimiratribuicaocoorientador: \imprimirtitulodocoorientador\ \imprimirnomedocoorientador\\[\linha]}{\\[\linha]}%% Coorientador
+		\imprimirdescricaododocumentocotutela\\[\linha]		
+        \imprimiratribuicaoorientadorcotutela: \imprimirtitulodoorientadorcotutela\ \imprimirnomedoorientadorcotutela\\%% Orientador Cotutela
+   		\ifthenelse{\equal{\imprimiratribuicoorientadorcotutela}{true}}%% Existe coorientador cotutela
+        {\imprimiratribuicaocoorientadorcotutela: \imprimirtitulodocoorientadorcotutela\ \imprimirnomedocoorientadorcotutela\\}{\\}%% Coorientador Cotutela
+	  }%%
+	  {%2)orientador(ext) + coorientador + coorientador(ext)
+	  	\imprimiratribuicaoorientadorcotutela: \imprimirtitulodoorientadorcotutela\ \imprimirnomedoorientadorcotutela\\%% Orientador Cotutela
+		\ifthenelse{\equal{\imprimiratribuicoorientador}{true}}%% Existe coorientador
+        {\imprimiratribuicaocoorientador: \imprimirtitulodocoorientador\ \imprimirnomedocoorientador\\}{\\}%% Coorientador
+   		\ifthenelse{\equal{\imprimiratribuicoorientadorcotutela}{true}}%% Existe coorientador cotutela
+        {\imprimiratribuicaocoorientadorcotutela: \imprimirtitulodocoorientadorcotutela\ \imprimirnomedocoorientadorcotutela\\}{\\}%%
+	  }}%%
+	  {%3)apenas coorientador
+		\ifthenelse{\equal{\imprimiratribuicoorientador}{true}}%% Existe coorientador
+        {\imprimiratribuicaocoorientador: \imprimirtitulodocoorientador\ \imprimirnomedocoorientador\\}{\\}%% Coorientador
+	  }
+      }%end parbox
     \end{Spacing}
   \end{flushright}
   \vspace*{\stretch{1}}%% Espaçamento vertical
