@@ -7,14 +7,14 @@
 .DS_Store
 
 # Intermediate Files
-*.aux 
-*.log 
-*.bbl 
-*.bcf 
-*.blg 
-*.brf 
-*.mw 
-*.out 
+*.aux
+*.log
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.mw
+*.out
 *.run.xml
 *.acn*
 *.acr*
@@ -38,8 +38,9 @@
 *.tdo
 *.toc
 *.bak
-*.nav 
+*.nav
 *.snm
+*.synctex
 *.synctex.gz
 
 # Final files
