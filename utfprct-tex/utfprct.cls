@@ -370,12 +370,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\TipoDeDocumento}[1]{\providecommand{\imprimirtipodedocumento}{#1}}%% Tipo de documento
-\newcommand{\DocumentType}[1]{\providecommand{\printdocumenttype}{#1}}%% Document type
+\newcommand{\DocumentType}[1]{\providecommand{\imprimirdocumenttype}{#1}}%% Document type
 \newcommand{\NivelDeFormacao}[1]{\providecommand{\imprimirniveldeformacao}{#1}}%% Nível de formação
-\newcommand{\FormationLevel}[1]{\providecommand{\printformationlevel}{#1}}%% Formation level
+\newcommand{\FormationLevel}[1]{\providecommand{\imprimirformationlevel}{#1}}%% Formation level
 \newcommand{\TituloPretendido}[1]{\providecommand{\imprimirtitulopretendido}{#1}}%% Título pretendido
 \newcommand{\TituloDoDocumento}[1]{\providecommand{\imprimirtitulododocumento}{#1}}%% Título do documento
-\newcommand{\DocumentTitle}[1]{\providecommand{\printdocumenttitle}{#1}}%% Document title
+\newcommand{\DocumentTitle}[1]{\providecommand{\imprimirdocumenttitle}{#1}}%% Document title
 \newcommand{\TituloEmMultiplasLinhas}[1]{\providecommand{\imprimirtituloemmultiplaslinhas}{#1}}%% Título em multiplas linhas
 \newcommand{\Dia}[1]{\providecommand{\imprimirdia}{#1}}%% Dia com número de dígitos exatos
 \newcommand{\MesPorExtenso}[1]{\providecommand{\imprimirmesporextenso}{#1}}%% Mês por extenso
@@ -437,14 +437,14 @@
 %% Informações da Instituição
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\Institution}[1]{\providecommand{\printinstitution}{#1}}%% Institution name
+\newcommand{\Institution}[1]{\providecommand{\imprimirinstitution}{#1}}%% Institution name
 \newcommand{\SiglaInstituicao}[1]{\providecommand{\imprimirsiglainstituicao}{#1}}%% Sigla instituicao
 \newcommand{\Cidade}[1]{\providecommand{\imprimircidade}{#1}}%% Nome da cidade (câmpus)
 \newcommand{\Diretoria}[1]{\providecommand{\imprimirdiretoria}{Diretoria de #1}}%% Diretoria
 \newcommand{\Departamento}[1]{\providecommand{\imprimirdepartamento}{#1}}%% Nome do departamento
 \newcommand{\SiglaDepartamento}[1]{\providecommand{\imprimirsigladepartamento}{#1}}%% Sigla do departamento
 \newcommand{\Curso}[1]{\providecommand{\imprimircurso}{#1}}%% Nome do curso
-\newcommand{\Course}[1]{\providecommand{\printcourse}{#1}}%% Course name
+\newcommand{\Course}[1]{\providecommand{\imprimircourse}{#1}}%% Course name
 \newcommand{\AreaDeConcentracao}[1]{\providecommand{\imprimirareadeconcentracao}{#1}}%% Nome da área de concentração
 \newcommand{\Programa}[1]{\providecommand{\imprimirprograma}{#1}}%% Nome do programa ou nome do curso completo
 \newcommand{\SiglaDoPPG}[1]{\providecommand{\imprimirsigladoppg}{#1}}%% Logo do programa de pós-graduação
@@ -470,19 +470,19 @@
 
 %% Informacoes da Instituicao Cotutela
 \newcommand{\InstituicaoCotutela}[1]{\providecommand{\imprimirinstituicaocotutela}{#1}}%% Instituicao cotutela
-\newcommand{\InstitutionCotutela}[1]{\providecommand{\printinstitutioncotutela}{#1}}%% Institution cotutela
+\newcommand{\InstitutionCotutela}[1]{\providecommand{\imprimirinstitutioncotutela}{#1}}%% Institution cotutela
 \newcommand{\SiglaInstituicaoCotutela}[1]{\providecommand{\imprimirsiglainstituicaocotutela}{#1}}%% Sigla instituicao cotutela
 \newcommand{\DepartamentoCotutela}[1]{\providecommand{\imprimirdepartamentocotutela}{#1}}%% Nome do departamento da inst. cotutela
 \newcommand{\SiglaDepartamentoCotutela}[1]{\providecommand{\imprimirsigladepartamentocotutela}{#1}}%% Sigla do departamento da inst. cotutela
 \newcommand{\CursoCotutela}[1]{\providecommand{\imprimircursocotutela}{#1}}%% Nome do curso bachalerado ou pós-graduação (PPG)
-\newcommand{\CourseCotutela}[1]{\providecommand{\printcoursecotutela}{#1}}%% Cotutela Course name
+\newcommand{\CourseCotutela}[1]{\providecommand{\imprimircoursecotutela}{#1}}%% Cotutela Course name
 \newcommand{\ProgramaCotutela}[1]{\providecommand{\imprimirprogramacotutela}{#1}}%% Nome do programa ou nome do curso completo na inst. cotutela
 \newcommand{\SiglaDoPPGCotutela}[1]{\providecommand{\imprimirsigladoppgcotutela}{#1}}%% Sigla do programa de pós-graduação da inst. de cotutela
 
 \newcommand{\AreaDeConcentracaoCotutela}[1]{\providecommand{\imprimirareadeconcentracaocotutela}{#1}}%% Area de concentração na inst. de cotutela
 
 \newcommand{\NivelDeFormacaoResumo}[1]{\providecommand{\imprimirniveldeformacaoresumo}{#1}}%% Nível de formação no resumo
-\newcommand{\FormationLevelAbstract}[1]{\providecommand{\printformationlevelabstract}{#1}}%% Formation level no abstract
+\newcommand{\FormationLevelAbstract}[1]{\providecommand{\imprimirformationlevelabstract}{#1}}%% Formation level no abstract
 
 %% Informacoes do orientador(a) da inst. cotutela
 \newcommand{\AtribuicaoOrientadorCotutela}[1]{\providecommand{\imprimiratribuicaoorientadorcotutela}{#1}}%% Atribuição "orientador(a)"
@@ -876,7 +876,10 @@
   \end{fichacatalografica}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Errata
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \let\errataoriginal\errata%% Formatação do ambiente errata (original)
 \renewenvironment{errata}{%% Formatação do ambiente errata
   \begin{errataoriginal}%% Ambiente errata (original)
@@ -902,7 +905,10 @@
   \cleardoublepage%% Página de verso
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Cabeçalho da folha de aprovação
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \let\footruleskip\undefined%% Remoção da definição de "\footruleskip" antes do carregamento do pacote fancyhdr
 \RequirePackage{fancyhdr}%% Controle extensivo de cabeçalhos e rodapés
 \fancypagestyle{folhadeaprovacao}{%% Formatação do cabeçalho da folha de aprovação
@@ -985,7 +991,11 @@
   % \abntex@ifnotempty{\imprimiravisodeaprovacao}{\fancyfoot[C]{\ABNTEXfontereduzida\imprimiravisodeaprovacao}}%% Definição do rodapé
 }
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Folha de aprovação
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\incluirfolhadeaprovacao}{%% Formatação da folha de aprovação
   \loadgeometry{approvalterm}
   \ifthenelse{\equal{\imprimirtipodedocumento}{Tese}\or\equal{\imprimirtipodedocumento}{Dissertação}}{%% Tese ou Dissertação
@@ -1122,7 +1132,10 @@
   \checkandfixthelayout
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Dedicatória
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \let\dedicatoriaoriginal\dedicatoria%% Formatação do ambiente dedicatoria (original)
 \renewenvironment{dedicatoria}{%% Formatação do ambiente dedicatoria
   \begin{dedicatoriaoriginal}%% Ambiente dedicatoria (original)
@@ -1136,7 +1149,10 @@
   \end{dedicatoriaoriginal}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Epígrafe
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \let\epigrafeoriginal\epigrafe%% Formatação do ambiente epigrafe (original)
 \renewenvironment{epigrafe}{%% Formatação do ambiente epigrafe
   \begin{epigrafeoriginal}%% Ambiente epigrafe (original)
@@ -1151,7 +1167,10 @@
   \cleardoublepage%% Página de verso
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Resumo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \AtBeginDocument{%% Definições carregadas no início do documento
   \renewcommand{\abstracttextfont}{\normalfont\normalsize}%% Fonte do texto do resumo
   \setlength{\absleftindent}{0pt}%% Recuo esquerdo do resumo
@@ -1188,7 +1207,10 @@
   \end{resumo}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newenvironment{abstractutfpr}{%% Formatação do ambiente abstractutfpr
   \begin{resumo}[\nomeabstract]%% Ambiente resumo (abstract)
     \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
@@ -1213,7 +1235,10 @@
   \end{resumo}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de algoritmos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newlistof{listofalgorithms}{loa}{\listalgorithmname}%% Lista de objetos flutuantes (algoritmos)
 \newlistentry{algorithm}{loa}{0}%% Entrada da lista de objetos flutuantes (algoritmo)
 \newfloat{algorithm}{loa}{\algorithmname}%% Objeto flutuante (algoritmo)
@@ -1230,7 +1255,10 @@
   \cleardoublepage%% Página de verso
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de ilustrações
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % \renewcommand{\cftfigurename}{\figurename\space}%% Nome da entrada na lista de objetos flutuantes (figura)
 \renewcommand*{\cftfigureaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (figura)
 \renewcommand{\afterloftitle}{\afterchaptertitle\vspace*{0.5\linha}}%% Espaçamento após o título da lista (figura)
