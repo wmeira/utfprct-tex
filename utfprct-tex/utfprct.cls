@@ -213,8 +213,10 @@
   \renewcommand\UrlRight{}%antes era ">"
 }
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Variáveis dependentes do idioma
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \ifthenelse{%% Verificação do idioma português brasileiro
   \equal{\languagename}{brazil}
   \or\equal{\languagename}{brazilian}
@@ -229,7 +231,7 @@
     % \newcommand{\nomededicatoria}{Dedicatória}
     % \newcommand{\nomeagradecimentos}{Agradecimentos}
     % \newcommand{\nomeepigrafe}{Epígrafe}
-    % \newcommand{\nomeresumo}{Resumo}
+    \newcommand{\nomeresumo}{Resumo}
     \newcommand{\nomepalavraschave}{Palavras-chave}
     \newcommand{\nomeabstract}{Abstract}
     \newcommand{\nomekeywords}{Keywords}
@@ -254,19 +256,26 @@
     \newcommand{\nomesobrescritos}{Sobrescritos}
     \newcommand{\nomesubscritos}{Subscritos}
     \newcommand{\nomenotacoes}{Notações}
+    \newcommand{\nomeindicessets}{Índices e Conjuntos}
+    \newcommand{\nomeparam}{Parâmetros}
+    \newcommand{\nomefloatvar}{Variáveis Contínuas}
+    \newcommand{\nomeintvar}{Variáveis Inteiras}
+    \newcommand{\nomebinvar}{Variáveis Binárias}
     % \renewcommand{\contentsname}{Sumário}
     % \renewcommand{\chapterautorefname}{Capítulo}
     % \renewcommand{\sectionautorefname}{Seção}
     % \renewcommand{\subsectionautorefname}{Subseção}
     % \renewcommand{\subsubsectionautorefname}{Subseção}
     \renewcommand{\paragraphautorefname}{\subsubsectionautorefname}
-    % \renewcommand{\bibname}{Referências}
-    % \renewcommand{\refname}{\bibname}
+    \renewcommand{\bibname}{Referências}
+    \renewcommand{\refname}{\bibname}
     % \renewcommand{\appendixname}{Apêndice}
     % \newcommand{\apendiceautorefname}{Apêndice}
     % \newcommand{\nomeanexo}{Anexo}
     \newcommand{\anexoautorefname}{Anexo}
     \renewcommand{\indexname}{Índice Remissivo}
+    
+    %algorithmicx
     \renewcommand{\algorithmicrequire}{\textbf{requer}}
     \renewcommand{\algorithmicensure}{\textbf{inserir}}
     \renewcommand{\algorithmicend}{\textbf{finaliza}}
@@ -284,6 +293,7 @@
     \renewcommand{\algorithmicreturn}{\textbf{retorna}}
     \renewcommand{\algorithmictrue}{\textbf{verdadeiro}}
     \renewcommand{\algorithmicfalse}{\textbf{falso}}
+    
     \renewcommand{\glossaryname}{Glossário}
     \providetranslation{Glossary}{Glossário}
     \providetranslation{Acronyms}{Siglas}
@@ -303,12 +313,12 @@
     % \newcommand{\nomeerrata}{Erratum}
     \newcommand{\nomefolhadeaprovacao}{Approval Term}
     % \newcommand{\nomededicatoria}{Dedicatory}
-    % \newcommand{\nomeagradecimentos}{Acknowledgements}
+    \newcommand{\nomeagradecimentos}{Acknowledgements}
     % \newcommand{\nomeepigrafe}{Epigraphy}
-    % \newcommand{\nomeresumo}{Abstract}
-    \newcommand{\nomepalavraschave}{Keywords}
-    \newcommand{\nomeabstract}{Resumo}
-    \newcommand{\nomekeywords}{Palavras-chave}
+    \newcommand{\nomeresumo}{Resumo}
+    \newcommand{\nomepalavraschave}{Palavras-chave}
+    \newcommand{\nomeabstract}{Abstract}
+    \newcommand{\nomekeywords}{Keywords}
     \newcommand{\listalgorithmname}{List of Algorithms}
     \newcommand{\algorithmname}{Algorithm}
     \renewcommand{\listfigurename}{List of Figures}
@@ -319,10 +329,10 @@
     \renewcommand{\listtablename}{List of Tables}
     % \renewcommand{\tablename}{Table}
     \newcommand{\nomefonte}{Source}
-    % \renewcommand{\nomname}{Nomenclature}
-    \newcommand{\nomelistadeacronimos}{List of Abbreviations and Acronyms}
+    \renewcommand{\nomname}{Nomenclature}
+    \newcommand{\nomelistadeacronimos}{List of Acronyms}
     \newcommand{\nomeabreviaturas}{Abbreviations}
-    \newcommand{\nomesiglas}{Pseudo-Acronyms}
+    \newcommand{\nomesiglas}{Initialism} %Initialism 
     \newcommand{\nomeacronimos}{Acronyms}
     \newcommand{\nomelistadesimbolos}{List of Symbols}
     \newcommand{\nomeletraslatinas}{Latin Letters}
@@ -330,14 +340,19 @@
     \newcommand{\nomesobrescritos}{Superscripts}
     \newcommand{\nomesubscritos}{Subscripts}
     \newcommand{\nomenotacoes}{Notations}
+    \newcommand{\nomeindicessets}{Indices and Sets}
+    \newcommand{\nomeparam}{Parameters}
+    \newcommand{\nomefloatvar}{Continuos Variables}
+    \newcommand{\nomeintvar}{Integer Variables}
+    \newcommand{\nomebinvar}{Binary Variables}
     % \renewcommand{\contentsname}{Summary}
-    % \renewcommand{\chapterautorefname}{Chapter}
-    % \renewcommand{\sectionautorefname}{Section}
-    % \renewcommand{\subsectionautorefname}{Subsection}
-    % \renewcommand{\subsubsectionautorefname}{Subsection}
+    \renewcommand{\chapterautorefname}{Chapter}
+    \renewcommand{\sectionautorefname}{Section}
+    \renewcommand{\subsectionautorefname}{Subsection}
+    \renewcommand{\subsubsectionautorefname}{Subsection}
     \renewcommand{\paragraphautorefname}{\subsubsectionautorefname}
-    % \renewcommand{\bibname}{References}
-    % \renewcommand{\refname}{\bibname}
+    \renewcommand{\bibname}{References}
+    \renewcommand{\refname}{\bibname}
     % \renewcommand{\appendixname}{Appendix}
     % \newcommand{\apendiceautorefname}{Appendix}
     % \newcommand{\nomeanexo}{Annex}
@@ -348,7 +363,7 @@
 \renewcommand{\folhaderostoname}{\nomefolhaderosto}
 \renewcommand{\folhadeaprovacaoname}{\nomefolhadeaprovacao}
 \renewcommand{\listadesiglasname}{\nomelistadeacronimos}
-\renewcommand{\listadesimbolosname}{\nomelistadesimbolos}
+%\renewcommand{\listadesimbolosname}{\nomelistadesimbolos}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Informações do Documento
@@ -1302,7 +1317,7 @@
 %% Lista de símbolos (configuração do arquivo ./PreTexto/lista-simbolos.tex)
 \newcommand{\unidade}[1]{\SI{}{[#1]}}%% Formatação da unidade na lista de símbolos
 \newcommand{\listadesimbolos}{%% Formatação da lista de símbolos
-  \pretextualchapter{\listadesimbolosname}%% Estilo da página e marcador
+  \pretextualchapter{\nomelistadesimbolos}%% Estilo da página e marcador
   \vspace*{7.5pt}%% Espaçamento vertical
 }
 \newenvironment{listadeletraslatinas}{%% Formatação do ambiente listadeletraslatinas
