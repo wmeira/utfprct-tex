@@ -1220,8 +1220,18 @@
       {; \MakeUppercase{\imprimirsobrenomedoautordois}, \imprimirprenomedoautordois%
       \ifthenelse{\equal{\imprimiratribuiautortres}{true}}%% 3 autores?
       {; \MakeUppercase{\imprimirsobrenomedoautortres}, \imprimirprenomedoautortres.}
-      {.}}{.} {\bfseries\printdocumenttitle\unskip}. \imprimirano. \pageref{LastPage}~p. \printdocumenttype\ (\printformationlevel\ in
-        \printcourse) -- \printinstitution. \imprimircidade, \imprimirano.
+      {.}}{.} 
+      \ifthenelse{\equal{\imprimiratribuicotutela}{false}}{%%
+        {\bfseries\imprimirdocumenttitle\unskip}. \imprimirano. \pageref{LastPage}~p. \imprimirdocumenttype\ (\imprimirformationlevel\ in
+        \imprimircourse) -- \imprimirinstitution. \imprimircidade, \imprimirano.%%
+        }{%% Cotutela
+		{\bfseries\imprimirdocumenttitle\unskip}. \imprimirano. \pageref{LastPage}~p. \imprimirdocumenttype\ (\imprimirformationlevelabstract\ in
+        \imprimircourse\ and \imprimircoursecotutela) -- \imprimirinstitution\ and \imprimirinstitutioncotutela. \imprimircidade, \imprimirano.
+        }
+           
+      
+        
+      
       \end{flushleft}
 }{%%
       \par\textbf{\nomekeywords:}
