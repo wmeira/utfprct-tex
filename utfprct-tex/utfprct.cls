@@ -639,7 +639,7 @@
   right    = 20mm,%
   bottom   = 20mm,%
   head     = 10mm,%
-  headsep  = 10mm,%
+  headsep  = 5.5mm,% NBR 14724/2011: 2 cm da borda superior (ajustado manualmente para ficar proximo do esperado)
   footskip = 5mm,%
 }%
 \savegeometry{standard}
