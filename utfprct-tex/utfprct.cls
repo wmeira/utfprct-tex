@@ -196,12 +196,21 @@
 
 \AtBeginDocument{%% Definições carregadas no início do documento
   \citeoption{abnt-emphasize=bf}
-  \citeoption{abnt-etal-cite=3}
-  \citeoption{abnt-etal-list=3}
+  \citeoption{abnt-etal-cite=2}%número de autores max para nao usar et al
+  \citeoption{abnt-etal-list=0}%nao usar et al. nas ref.
   \citeoption{abnt-full-initials=yes}
-  \citeoption{abnt-repeated-title-omit=yes}
   \citeoption{abnt-thesis-year=both}
   \citeoption{abnt-url-package=url}
+  
+  %NBR6023/2018: sem traço sublinear quando referências (mesmos autores) forem repetidos (yes para colocar)
+  \citeoption{abnt-repeated-title-omit=no}
+  
+  %NBR6023/2018: alinhado para esquerda (nao mais justificado)
+  \citeoption{bibleftalign}
+
+  %NBR6023/2018: URLs nao devem ter "<" and ">" (altera o comando do abntex2cite.sty)
+  \renewcommand\UrlLeft{}%antes era "<"
+  \renewcommand\UrlRight{}%antes era ">"
 }
 
 
@@ -1453,7 +1462,8 @@
   \fi
   \prebibhook
 }
-\setlength{\bibitemsep}{1.5\linha}%% Espaçamento entre itens da lista de referências
+%NBR 6023/2018: única linha entre referências (antes era 1.5)
+\setlength{\bibitemsep}{1\linha}%% Espaçamento entre itens da lista de referências
 
 %% Glossário
 \renewcommand*{\glsseeformat}[3][\seename]{{#1}\space\glsseelist{#2}.}%% Formatação do texto "veja..." no glossário
