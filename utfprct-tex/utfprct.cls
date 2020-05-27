@@ -1598,7 +1598,7 @@
   labelfont={footnotesize,bf,singlespacing},%%
   textfont={footnotesize,bf,singlespacing},%%
   labelsep={endash},%%
-  skip=1pt%%
+  skip=2.5pt%% Space below caption
 }
 
 %% Fonte (referência) para objetos flutuantes
