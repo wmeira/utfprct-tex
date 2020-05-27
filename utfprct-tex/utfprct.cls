@@ -1,4 +1,4 @@
-%% utfprct.tex, v1.0 wmeira on 2020/05/25
+%% UTFPRCT-TEX, v1.0 wmeira on 2020/05/25
 %% Copyright (C) 2020- by William H. T. Meira
 %%
 %% Modified version of project 'utfprpgtex' maintained
@@ -34,11 +34,16 @@
 \ProvidesClass{utfprct}[2020/05/25 v1.0]
 %% -- v1.0: Modifications on the utfprpgtex project
 
-%% Classe e opções
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Classe e Opções
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% -- Opções da classe abntex2
 \RequirePackage{color}%% Controle de cores em documentos LaTeX
 \RequirePackage{substr}%% Controle de substrings em strings
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{abntex2}}%% Envio das opções atuais para a classe abntex2
-%% -- Opções da classe utfprpgtex
+%% -- Opções da classe utfprct
 %%    -- Impressão dos elementos pré-textuais
 \newif\if@pretexttwoside%% Condicional para impressão dos elementos pré-textuais
 \DeclareOption{pretextualoneside}{\typeout{-----> Option: pretextualoneside}\@pretexttwosidefalse}%% Anverso
@@ -52,7 +57,7 @@
 %%    -- Cores nos vínculos (padrões: citecolor = green, filecolor = cyan, linkcolor = red, urlcolor = magenta)
 \definecolor{bblue}{rgb}{0, 0, 0.25}%% Definição do azul escuro (modificado)
 \definecolor{gray}{rgb}{0.5, 0.5, 0.5}%% Definição do cinza (modificado)
-\def\@cordosvinculos{black}%% Preto
+\def\@cordosvinculos{black}%% Preto (NBR 14724/2011: cor preta)
 \DeclareOption{vinculoscoloridos}{\typeout{-----> Option: vinculoscoloridos}\def\@cordosvinculos{bblue}}%% Azul escuro
 \def\@citecolor{\@cordosvinculos}%% Cor das citações
 \def\@filecolor{\@cordosvinculos}%% Cor dos arquivos
@@ -62,6 +67,9 @@
 \newif\if@semrecuonosumario%% Condicional para remoção do recuo dos itens no sumário
 \@semrecuonosumariofalse%% Remove
 \DeclareOption{semrecuonosumario}{\typeout{-----> Option: semrecuonosumario}\@semrecuonosumariotrue}%% Adiciona
+\newif\if@inserirbackref%% Condicional para inserir backref na lista de referencias (Citado na página...)
+\@inserirbackreffalse%% Nao inseri (default)
+\DeclareOption{inserirbackref}{\typeout{-----> Option: inserirbackref}\@inserirbackreftrue}%% inseri backref nas ref.
 %%    -- Compilação de glossários e índices utilizando makeindex
 \newif\if@usemakeindex%% Condicional para compilação de glossários e índices utilizando makeindex
 \@usemakeindexfalse%% Desabilita
@@ -85,7 +93,10 @@
 \ProcessOptions\relax%% Processamento das opções
 \LoadClass{abntex2}%% Carregamento da classe abntex2
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Pacotes carregados
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \RequirePackage[utf8]{inputenc}%% Codificações de entrada: unix - latin1/utf8; windows - ansinew; Mac - applemax; DOS-OS/2 - cp850
 \ifpdf%% Compilação com pdflatex
   \RequirePackage{cmap}%% Busca e cópia em arquivos PDF
@@ -101,7 +112,39 @@
 \fi
 \RequirePackage{fix-cm}%% Fontes "Computer Modern" em tamanhos arbitrários
 \RequirePackage{hyphenat}%% Hifenização de palavras
+
+%% Configurações do pacote backref
+\if@inserirbackref%% Inserir backref na lista de referencias
+\ifthenelse{\equal{\languagename}{english}}
+{%% english
+\RequirePackage[english, hyperpageref]{backref}%% Páginas das citações nas referências
+\renewcommand{\backrefpagesname}{Cited on page(s):~}%% Comando usado sem a opção hyperpageref do pacote backref
+\renewcommand{\backref}{}%% Texto padrão antes do número das páginas
+\renewcommand*{\backrefalt}[4]{%% Definição dos textos da citação
+  \ifcase #1%%
+    No citation in the text.%%
+  \or%%
+    Cited on page #2.%%
+  \else%%
+    Cited #1 times on pages #2.%%
+  \fi
+}
+}{%% portugues (default)
 \RequirePackage[brazilian, hyperpageref]{backref}%% Páginas das citações nas referências
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}%% Comando usado sem a opção hyperpageref do pacote backref
+\renewcommand{\backref}{}%% Texto padrão antes do número das páginas
+\renewcommand*{\backrefalt}[4]{%% Definição dos textos da citação
+  \ifcase #1%%
+    Nenhuma citação no texto.%%
+  \or%%
+    Citado na página #2.%%
+  \else%%
+    Citado #1 vezes nas páginas #2.%%
+  \fi
+}
+}
+\fi
+
 \RequirePackage[alf]{abntex2cite}%% Citações padrão ABNT (autor-data)
 \ifpdf%% Compilação com pdflatex
 \else%% Compilação com latex
@@ -112,6 +155,8 @@
 \RequirePackage{geometry}
 \RequirePackage{lastpage}%% Referência da última página
 \RequirePackage{algorithmic}%% Ferramenta para tipografar um algoritmo em pseudocódigo
+%\RequirePackage{algorithmicx}%% Ferramenta para tipografar um algoritmo em pseudocódigo (optional)
+%\RequirePackage{algpseudocode}%% Ferramenta para tipografar um algoritmo em pseudocódigo (optional)
 \RequirePackage[acronym, nosuper, nowarn, sanitize={description=false}, style=index]{glossaries}%% Glossários e listas de acrônimos
 \RequirePackage{nomencl}%% Listas de símbolos como uma nomenclatura
 \RequirePackage{amsmath}%% Ferramentas para linguagem matemática
@@ -122,7 +167,16 @@
 \RequirePackage{indentfirst}%% Recuo do primeiro parágrafo após cabeçalho da seção
 \RequirePackage{morewrites}%% Espaços adicionais para comandos \write*
 
+%% Logo UTFPRPGTeX
+\newcommand{\utfprpgtex}{UTF\kern-0.75ex\lower0.4ex\hbox{\tiny PR}\kern-0.9ex\lower-0.585ex\hbox{\tiny PG}\kern-0.1ex\TeX}
+
+%% Logo UTFPRCTTeX
+\newcommand{\utfprcttex}{UTF\kern-0.75ex\lower0.4ex\hbox{\tiny PR}\kern-0.9ex\lower-0.585ex\hbox{\tiny CT}\kern-0.1ex\TeX}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Configurações do pacote hyperref
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \hypersetup{%% Opções do pacote hyperref
   breaklinks=true,%%
   colorlinks=true,%%
@@ -136,20 +190,10 @@
   pdfpagelayout=SinglePage%%
 }
 
-%% Configurações do pacote backref
-\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}%% Comando usado sem a opção hyperpageref do pacote backref
-\renewcommand{\backref}{}%% Texto padrão antes do número das páginas
-\renewcommand*{\backrefalt}[4]{%% Definição dos textos da citação
-  \ifcase #1%%
-    Nenhuma citação no texto.%%
-  \or%%
-    Citado na página #2.%%
-  \else%%
-    Citado #1 vezes nas páginas #2.%%
-  \fi
-}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Configurações do pacote abntex2cite
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \AtBeginDocument{%% Definições carregadas no início do documento
   \citeoption{abnt-emphasize=bf}
   \citeoption{abnt-etal-cite=3}
@@ -160,8 +204,6 @@
   \citeoption{abnt-url-package=url}
 }
 
-%% Logo UTFPRPGTeX
-\newcommand{\utfprpgtex}{UTF\kern-0.75ex\lower0.4ex\hbox{\tiny PR}\kern-0.9ex\lower-0.585ex\hbox{\tiny PG}\kern-0.1ex\TeX}
 
 %% Variáveis dependentes do idioma
 \ifthenelse{%% Verificação do idioma português brasileiro
@@ -299,38 +341,62 @@
 \renewcommand{\listadesiglasname}{\nomelistadeacronimos}
 \renewcommand{\listadesimbolosname}{\nomelistadesimbolos}
 
-%% Definições de variáveis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Informações do Documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\TipoDeDocumento}[1]{\providecommand{\imprimirtipodedocumento}{#1}}%% Tipo de documento
 \newcommand{\DocumentType}[1]{\providecommand{\printdocumenttype}{#1}}%% Document type
 \newcommand{\NivelDeFormacao}[1]{\providecommand{\imprimirniveldeformacao}{#1}}%% Nível de formação
 \newcommand{\FormationLevel}[1]{\providecommand{\printformationlevel}{#1}}%% Formation level
+\newcommand{\TituloPretendido}[1]{\providecommand{\imprimirtitulopretendido}{#1}}%% Título pretendido
 \newcommand{\TituloDoDocumento}[1]{\providecommand{\imprimirtitulododocumento}{#1}}%% Título do documento
 \newcommand{\DocumentTitle}[1]{\providecommand{\printdocumenttitle}{#1}}%% Document title
 \newcommand{\TituloEmMultiplasLinhas}[1]{\providecommand{\imprimirtituloemmultiplaslinhas}{#1}}%% Título em multiplas linhas
-\newcommand{\DescricaoDoDocumento}[1]{\providecommand{\imprimirdescricaododocumento}{#1}}%% Descrição do documento
-\newcommand{\TituloDaFichaCatalografica}[1]{%% Título da ficha catalográfica
-  \providecommand{\imprimirtitulodafichacatalografica}{#1}%%
-}
-\newcommand{\TextoDeAprovacao}[1]{\providecommand{\imprimirtextodeaprovacao}{#1}}%% Texto de aprovação
-\newcommand{\AvisoDeAprovacao}[1]{\providecommand{\imprimiravisodeaprovacao}{#1}}%% Aviso de aprovação
-\newcommand{\NumeroDaTeseOuDissertacao}[1]{\providecommand{\imprimirnumerodateseoudissertacao}{#1}}%% Número da tese ou dissertação
-\newcommand{\NumeroDaPublicacao}[1]{\providecommand{\imprimirnumerodapublicacao}{#1}}%% Número da publicação
-\newcommand{\NumeroDaFichaCatalografica}[1]{%% Número da ficha catalográfica
-  \providecommand{\imprimirnumerodafichacatalografica}{#1}%%
-}
-\newcommand{\CDDOuCDU}[1]{\providecommand{\imprimircddoucdu}{#1}}%% CDD ou CDU
-\newcommand{\TituloPretendido}[1]{\providecommand{\imprimirtitulopretendido}{#1}}%% Título pretendido
+\newcommand{\Dia}[1]{\providecommand{\imprimirdia}{#1}}%% Dia com número de dígitos exatos
+\newcommand{\MesPorExtenso}[1]{\providecommand{\imprimirmesporextenso}{#1}}%% Mês por extenso
+\newcommand{\Ano}[1]{\providecommand{\imprimirano}{#1}}%% Ano com quatro dígitos
+\newcommand{\NumeroDePalavrasChave}[1]{\providecommand{\imprimirnumerodepalavraschave}{#1}}%% Número de palavras-chave (máximo 5)
+\newcommand{\PalavraChaveA}[1]{\providecommand{\imprimirpalavrachavea}{#1}}%% Palavra-chave A
+\newcommand{\PalavraChaveB}[1]{\providecommand{\imprimirpalavrachaveb}{#1}}%% Palavra-chave B
+\newcommand{\PalavraChaveC}[1]{\providecommand{\imprimirpalavrachavec}{#1}}%% Palavra-chave C
+\newcommand{\PalavraChaveD}[1]{\providecommand{\imprimirpalavrachaved}{#1}}%% Palavra-chave D
+\newcommand{\PalavraChaveE}[1]{\providecommand{\imprimirpalavrachavee}{#1}}%% Palavra-chave E
+\newcommand{\NumeroDeKeywords}[1]{\providecommand{\imprimirnumerodekeywords}{#1}}%% Número de keywords (máximo 5)
+\newcommand{\KeywordA}[1]{\providecommand{\imprimirkeyworda}{#1}}%% Keyword A
+\newcommand{\KeywordB}[1]{\providecommand{\imprimirkeywordb}{#1}}%% Keyword B
+\newcommand{\KeywordC}[1]{\providecommand{\imprimirkeywordc}{#1}}%% Keyword C
+\newcommand{\KeywordD}[1]{\providecommand{\imprimirkeywordd}{#1}}%% Keyword D
+\newcommand{\KeywordE}[1]{\providecommand{\imprimirkeyworde}{#1}}%% Keyword E
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Informação do Autor(a) ou Autores(as) (TCC)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\NomeDoAutor}[1]{\providecommand{\imprimirnomedoautor}{#1}}%% Nome completo do(a) autor(a)
 \newcommand{\SobrenomeDoAutor}[1]{\providecommand{\imprimirsobrenomedoautor}{#1}}%% Sobrenome do(a) autor(a)
 \newcommand{\PrenomeDoAutor}[1]{\providecommand{\imprimirprenomedoautor}{#1}}%% Prenome do(a) autor(a)
-\newcommand{\AtribuiOutroAutor}[1]{%% Insere ou remove outro(a) autor(a)
+\newcommand{\AtribuiAutorDois}[1]{%% Insere ou remove autor(a) 2
   \ifthenelse{\equal{\imprimirtipodedocumento}{Trabalho de Conclusão de Curso}}%% Verificação do tipo de documento
-    {\providecommand{\imprimiratribuioutroautor}{#1}}%% Insere ou remove outro(a) autor(a)
-    {\providecommand{\imprimiratribuioutroautor}{false}}%% Remove outro(a) autor(a)
+    {\providecommand{\imprimiratribuiautordois}{#1}}%% Insere ou remove autor(a) 2
+    {\providecommand{\imprimiratribuiautordois}{false}}%% Remove autor(a) 2
 }
-\newcommand{\NomeDoOutroAutor}[1]{\providecommand{\imprimirnomedooutroautor}{#1}}%% Nome completo do(a) outro(a) autor(a)
-\newcommand{\SobrenomeDoOutroAutor}[1]{\providecommand{\imprimirsobrenomedooutroautor}{#1}}%% Sobrenome do(a) outro(a) autor(a)
-\newcommand{\PrenomeDoOutroAutor}[1]{\providecommand{\imprimirprenomedooutroautor}{#1}}%% Prenome do(a) outro(a) autor(a)
+\newcommand{\NomeDoAutorDois}[1]{\providecommand{\imprimirnomedoautordois}{#1}}%% Nome completo do(a) autor(a) 2
+\newcommand{\SobrenomeDoAutorDois}[1]{\providecommand{\imprimirsobrenomedoautordois}{#1}}%% Sobrenome do(a) autor(a) 2
+\newcommand{\PrenomeDoAutorDois}[1]{\providecommand{\imprimirprenomedoautordois}{#1}}%% Prenome do(a) autor(a) 2
+\newcommand{\AtribuiAutorTres}[1]{%% Insere ou remove autor(a) 3
+  \ifthenelse{\equal{\imprimirtipodedocumento}{Trabalho de Conclusão de Curso}}%% Verificação do tipo de documento
+    {\providecommand{\imprimiratribuiautortres}{#1}}%% Insere ou remove autor(a) 3
+    {\providecommand{\imprimiratribuiautortres}{false}}%% Remove autor(a) 3
+}
+\newcommand{\NomeDoAutorTres}[1]{\providecommand{\imprimirnomedoautortres}{#1}}%% Nome completo do(a) autor(a) 3
+\newcommand{\SobrenomeDoAutorTres}[1]{\providecommand{\imprimirsobrenomedoautortres}{#1}}%% Sobrenome do(a) autor(a) 3
+\newcommand{\PrenomeDoAutorTres}[1]{\providecommand{\imprimirprenomedoautortres}{#1}}%% Prenome do(a) autor(a) 3
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Informações do Orientador(a) e Coorientador(a)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\AtribuicaoOrientador}[1]{\providecommand{\imprimiratribuicaoorientador}{#1}}%% Atribuição "orientador(a)"
 \newcommand{\TituloDoOrientador}[1]{\providecommand{\imprimirtitulodoorientador}{#1}}%% Título do(a) orientador(a)
 \newcommand{\NomeDoOrientador}[1]{\providecommand{\imprimirnomedoorientador}{#1}}%% Nome completo do(a) orientador(a)
@@ -342,13 +408,87 @@
 \newcommand{\NomeDoCoorientador}[1]{\providecommand{\imprimirnomedocoorientador}{#1}}%% Nome completo do(a) coorientador(a)
 \newcommand{\SobrenomeDoCoorienador}[1]{\providecommand{\imprimirsobrenomedocoorientador}{#1}}%% Sobrenome do(a) coorientador(a)
 \newcommand{\PrenomeDoCoorientador}[1]{\providecommand{\imprimirprenomedocoorientador}{#1}}%% Prenome do(a) coorientador(a)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Informações da Instituição
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\Institution}[1]{\providecommand{\printinstitution}{#1}}%% Institution name
+\newcommand{\SiglaInstituicao}[1]{\providecommand{\imprimirsiglainstituicao}{#1}}%% Sigla instituicao
 \newcommand{\Cidade}[1]{\providecommand{\imprimircidade}{#1}}%% Nome da cidade (câmpus)
 \newcommand{\Diretoria}[1]{\providecommand{\imprimirdiretoria}{Diretoria de #1}}%% Diretoria
 \newcommand{\Departamento}[1]{\providecommand{\imprimirdepartamento}{#1}}%% Nome do departamento
+\newcommand{\SiglaDepartamento}[1]{\providecommand{\imprimirsigladepartamento}{#1}}%% Sigla do departamento
 \newcommand{\Curso}[1]{\providecommand{\imprimircurso}{#1}}%% Nome do curso
 \newcommand{\Course}[1]{\providecommand{\printcourse}{#1}}%% Course name
 \newcommand{\AreaDeConcentracao}[1]{\providecommand{\imprimirareadeconcentracao}{#1}}%% Nome da área de concentração
+\newcommand{\SiglaDoPPG}[1]{\providecommand{\imprimirsigladoppg}{#1}}%% Logo do programa de pós-graduação
+\newcommand{\imprimirppgoudepartamento}{%% Programa de pós-graduação ou departamento
+  \ifthenelse{\equal{\imprimirtipodedocumento}{Tese}\or\equal{\imprimirtipodedocumento}{Dissertação}}%% Tese ou dissertação
+  {Programa de Pós-Graduação em \imprimircurso}%% Programa de pós-graduação
+  {\imprimirdepartamento}%% Departamento
+}
+\let\Instituicao\instituicao%% Instituição (from abntex2)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Folha de Rosto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\DescricaoDoDocumento}[1]{\providecommand{\imprimirdescricaododocumento}{#1}}%% Descrição do documento
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Informações de Cotutela (Duplo Grau)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\AtribuiCotutela}[1]{\providecommand{\imprimiratribuicotutela}{#1}}%% Insere dados de cotutela
+
+%% Informacoes da Instituicao Cotutela
+\newcommand{\InstituicaoCotutela}[1]{\providecommand{\imprimirinstituicaocotutela}{#1}}%% Instituicao cotutela
+\newcommand{\InstitutionCotutela}[1]{\providecommand{\printinstitutioncotutela}{#1}}%% Institution cotutela
+\newcommand{\SiglaInstituicaoCotutela}[1]{\providecommand{\imprimirsiglainstituicaocotutela}{#1}}%% Sigla instituicao cotutela
+\newcommand{\DepartamentoCotutela}[1]{\providecommand{\imprimirdepartamentocotutela}{#1}}%% Nome do departamento da inst. cotutela
+\newcommand{\SiglaDepartamentoCotutela}[1]{\providecommand{\imprimirsigladepartamentocotutela}{#1}}%% Sigla do departamento da inst. cotutela
+\newcommand{\CursoCotutela}[1]{\providecommand{\imprimircursocotutela}{#1}}%% Nome do curso bachalerado ou pós-graduação (PPG)
+\newcommand{\CourseCotutela}[1]{\providecommand{\printcoursecotutela}{#1}}%% Cotutela Course name
+\newcommand{\SiglaDoPPGCotutela}[1]{\providecommand{\imprimirsigladoppgcotutela}{#1}}%% Sigla do programa de pós-graduação da inst. de cotutela
+
+\newcommand{\AreaDeConcentracaoCotutela}[1]{\providecommand{\imprimirareadeconcentracaocotutela}{#1}}%% Area de concentração na inst. de cotutela
+
+\newcommand{\NivelDeFormacaoResumo}[1]{\providecommand{\imprimirniveldeformacaoresumo}{#1}}%% Nível de formação no resumo
+\newcommand{\FormationLevelAbstract}[1]{\providecommand{\printformationlevelabstract}{#1}}%% Formation level no abstract
+
+%% Informacoes do orientador(a) da inst. cotutela
+\newcommand{\AtribuicaoOrientadorCotutela}[1]{\providecommand{\imprimiratribuicaoorientadorcotutela}{#1}}%% Atribuição "orientador(a)"
+\newcommand{\TituloDoOrientadorCotutela}[1]{\providecommand{\imprimirtitulodoorientadorcotutela}{#1}}%% Título do(a) orientador(a)
+\newcommand{\NomeDoOrientadorCotutela}[1]{\providecommand{\imprimirnomedoorientadorcotutela}{#1}}%% Nome completo do(a) orientador(a)
+\newcommand{\SobrenomeDoOrienadorCotutela}[1]{\providecommand{\imprimirsobrenomedoorientadorcotutela}{#1}}%% Sobrenome do(a) orientador(a)
+\newcommand{\PrenomeDoOrientadorCotutela}[1]{\providecommand{\imprimirprenomedoorientadorcotutela}{#1}}%% Prenome do(a) orientador(a)
+\newcommand{\AtribuiCoorientadorCotutela}[1]{\providecommand{\imprimiratribuicoorientadorcotutela}{#1}}%% Insere ou remove o(a) coorientador(a)
+\newcommand{\AtribuicaoCoorientadorCotutela}[1]{\providecommand{\imprimiratribuicaocoorientadorcotutela}{#1}}%% Atribuição "coorientador(a)"
+\newcommand{\TituloDoCoorientadorCotutela}[1]{\providecommand{\imprimirtitulodocoorientadorcotutela}{#1}}%% Título do(a) coorientador(a)
+\newcommand{\NomeDoCoorientadorCotutela}[1]{\providecommand{\imprimirnomedocoorientadorcotutela}{#1}}%% Nome completo do(a) coorientador(a)
+\newcommand{\SobrenomeDoCoorienadorCotutela}[1]{\providecommand{\imprimirsobrenomedocoorientadorcotutela}{#1}}%% Sobrenome do(a) coorientador(a)
+\newcommand{\PrenomeDoCoorientadorCotutela}[1]{\providecommand{\imprimirprenomedocoorientadorcotutela}{#1}}%% Prenome do(a) coorientador(a)
+
+\newcommand{\AtribuiDescricaoCotutela}[1]{\providecommand{\imprimiratribuidescricaocotutela}{#1}}%% Insere descrição de cotutela na folha de rosto
+\newcommand{\DescricaoDoDocumentoCotutela}[1]{\providecommand{\imprimirdescricaododocumentocotutela}{#1}}%% descricao de cotutela na folha de rosto
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ficha Catalografica
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\TituloDaFichaCatalografica}[1]{%% Título da ficha catalográfica
+  \providecommand{\imprimirtitulodafichacatalografica}{#1}%%
+}
+\newcommand{\TextoDeAprovacao}[1]{\providecommand{\imprimirtextodeaprovacao}{#1}}%% Texto de aprovação
+\newcommand{\AvisoDeAprovacao}[1]{\providecommand{\imprimiravisodeaprovacao}{#1}}%% Aviso de aprovação
+\newcommand{\NumeroDaTeseOuDissertacao}[1]{\providecommand{\imprimirnumerodateseoudissertacao}{#1}}%% Número da tese ou dissertação
+\newcommand{\NumeroDaPublicacao}[1]{\providecommand{\imprimirnumerodapublicacao}{#1}}%% Número da publicação
+\newcommand{\NumeroDaFichaCatalografica}[1]{%% Número da ficha catalográfica
+  \providecommand{\imprimirnumerodafichacatalografica}{#1}%%
+}
+\newcommand{\CDDOuCDU}[1]{\providecommand{\imprimircddoucdu}{#1}}%% CDD ou CDU
 \newcommand{\TituloDoResponsavelTCC}[1]{\providecommand{\imprimirtitulodoresponsaveltcc}{#1}}%% Título do(a) responsável pelos TCC
 \newcommand{\NomeDoResponsavelTCC}[1]{%% Nome completo do(a) responsável pelos TCC
   \providecommand{\imprimirnomedoresponsaveltcc}{#1}%%
@@ -356,7 +496,6 @@
 \newcommand{\AtribuicaoCoordenador}[1]{\providecommand{\imprimiratribuicaocoordenador}{#1}}%% Atribuição "coordenador(a)" do curso
 \newcommand{\TituloDoCoordenador}[1]{\providecommand{\imprimirtitulodocoordenador}{#1}}%% Título do(a) coordenador(a) do curso
 \newcommand{\NomeDoCoordenador}[1]{\providecommand{\imprimirnomedocoordenador}{#1}}%% Nome completo do(a) coordenador(a) do curso
-\newcommand{\SiglaDoPPG}[1]{\providecommand{\imprimirsigladoppg}{#1}}%% Logo do programa de pós-graduação
 \newcommand{\MembroAIgualOrientador}[1]{\providecommand{\imprimirmembroaigualorientador}{#1}}%% Membro A igual ao(à) orientador(a)
 \newcommand{\MembroA}[1]{\providecommand{\imprimirmembroa}{#1}}%% Nome completo do membro A
 \newcommand{\TituloDoMembroA}[1]{\providecommand{\imprimirtitulodomembroa}{#1}}%% Título do membro A
@@ -381,29 +520,11 @@
 \newcommand{\MembroG}[1]{\providecommand{\imprimirmembrog}{#1}}%% Nome completo do membro G
 \newcommand{\TituloDoMembroG}[1]{\providecommand{\imprimirtitulodomembrog}{#1}}%% Título do membro G
 \newcommand{\InstituicaoDoMembroG}[1]{\providecommand{\imprimirinstituicaodomembrog}{#1}}%% Nome da instituição do membro G
-\newcommand{\Dia}[1]{\providecommand{\imprimirdia}{#1}}%% Dia com número de dígitos exatos
-\newcommand{\MesPorExtenso}[1]{\providecommand{\imprimirmesporextenso}{#1}}%% Mês por extenso
-\newcommand{\Ano}[1]{\providecommand{\imprimirano}{#1}}%% Ano com quatro dígitos
-\newcommand{\NumeroDePalavrasChave}[1]{\providecommand{\imprimirnumerodepalavraschave}{#1}}%% Número de palavras-chave (máximo 5)
-\newcommand{\PalavraChaveA}[1]{\providecommand{\imprimirpalavrachavea}{#1}}%% Palavra-chave A
-\newcommand{\PalavraChaveB}[1]{\providecommand{\imprimirpalavrachaveb}{#1}}%% Palavra-chave B
-\newcommand{\PalavraChaveC}[1]{\providecommand{\imprimirpalavrachavec}{#1}}%% Palavra-chave C
-\newcommand{\PalavraChaveD}[1]{\providecommand{\imprimirpalavrachaved}{#1}}%% Palavra-chave D
-\newcommand{\PalavraChaveE}[1]{\providecommand{\imprimirpalavrachavee}{#1}}%% Palavra-chave E
-\newcommand{\NumeroDeKeywords}[1]{\providecommand{\imprimirnumerodekeywords}{#1}}%% Número de keywords (máximo 5)
-\newcommand{\KeywordA}[1]{\providecommand{\imprimirkeyworda}{#1}}%% Keyword A
-\newcommand{\KeywordB}[1]{\providecommand{\imprimirkeywordb}{#1}}%% Keyword B
-\newcommand{\KeywordC}[1]{\providecommand{\imprimirkeywordc}{#1}}%% Keyword C
-\newcommand{\KeywordD}[1]{\providecommand{\imprimirkeywordd}{#1}}%% Keyword D
-\newcommand{\KeywordE}[1]{\providecommand{\imprimirkeyworde}{#1}}%% Keyword E
-\newcommand{\imprimirppgoudepartamento}{%% Programa de pós-graduação ou departamento
-  \ifthenelse{\equal{\imprimirtipodedocumento}{Tese}\or\equal{\imprimirtipodedocumento}{Dissertação}}%% Tese ou dissertação
-  {Programa de Pós-Graduação em \imprimircurso}%% Programa de pós-graduação
-  {\imprimirdepartamento}%% Departamento
-}
-\let\Instituicao\instituicao%% Instituição
 
-%% Informações nas propriedades do documento do arquivo pdf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Informações nas propriedades do documento do arquivo PDF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \AtBeginDocument{%% Definições carregadas no início do documento
   \ifthenelse{\imprimirnumerodepalavraschave > 0}%% Palavra-chave A
     {\newcommand{\pdfkeyworda}{\imprimirpalavrachavea}}%%
@@ -431,7 +552,10 @@
   }
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Configuração de fontes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \ifthenelse{\equal{\@tipodefonte}{lmodern}}{
 	\renewcommand{\familydefault}{\rmdefault}
 }{
@@ -454,7 +578,6 @@
 		}
 	}
 }
-
 \normalsize%% Tamanho padrão de fonte
 \renewcommand{\ABNTEXpartfont}{\fontfamily{\familydefault}\bfseries}%% Estilo da fonte da parte
 \renewcommand{\ABNTEXpartfontsize}{\normalsize}%% Tamanho da fonte da parte
@@ -467,7 +590,11 @@
 \renewcommand{\ABNTEXsubsubsectionfont}{\ABNTEXsubsectionfont}%% Estilo da fonte da subsubseção
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\ABNTEXsubsectionfontsize}%% Tamanho da fonte da subsubseção
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Formatação das páginas no documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \let\newtextual\textual%% Elementos textuais
 \let\newpretextual\pretextual%% Elementos pré-textuais
 \if@twoside%% Estilo de impressão para elementos textuais e pós-textuais (anverso e verso)
@@ -567,11 +694,17 @@
         \MakeUppercase{\imprimirdepartamento}
       }\\
       \MakeUppercase{\imprimirniveldeformacao\ em \imprimircurso}\\[80pt]%% Titulação e curso
-      \ifthenelse{\equal{\imprimiratribuioutroautor}{true}}{%% Insere outro(a) autor(a)
-        \MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
-        \MakeUppercase{\imprimirnomedooutroautor}\\[118pt]%% Outro(a) autor(a)
-      }{%% Remove outro(a) autor(a)
-        \MakeUppercase{\imprimirnomedoautor}\\[140pt]%% Autor(a)
+      \ifthenelse{\equal{\imprimiratribuiautortres}{true}}{%% Insere 3 autores(as)
+	    \MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
+      	\MakeUppercase{\imprimirnomedoautordois}\\%% Autor(a) 2
+      	\MakeUppercase{\imprimirnomedoautortres}\\[96pt]%% Autor(a) 3
+      }{%
+      	\ifthenelse{\equal{\imprimiratribuiautordois}{true}}{%% Insere 2 autores(as)
+          \MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
+	      \MakeUppercase{\imprimirnomedoautordois}\\[118pt]%% Autor(a) 2
+      	}{%% Insere 1 autor(a)
+          \MakeUppercase{\imprimirnomedoautor}\\[140pt]%% Autor(a)
+        }
       }
       {\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[120pt]%% Título do documento
       \MakeUppercase{\imprimirtipodedocumento}\\%% Tipo de documento
@@ -586,11 +719,17 @@
 \renewcommand{\folhaderostocontent}{%% Formatação da folha de rosto
   \begin{center}%% Texto centralizado
     \bfseries%% Texto em negrito
-    \ifthenelse{\equal{\imprimiratribuioutroautor}{true}}{%% Insere outro(a) autor(a)
+    \ifthenelse{\equal{\imprimiratribuiautortres}{true}}{%% Insere 3 autores(as)
       \MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
-      \MakeUppercase{\imprimirnomedooutroautor}\\[263pt]%% Outro(a) autor(a)
-    }{%% Remove outro(a) autor(a)
-      \MakeUppercase{\imprimirnomedoautor}\\[285pt]%% Autor(a)
+      \MakeUppercase{\imprimirnomedoautordois}\\%% Autor(a) 2
+      \MakeUppercase{\imprimirnomedoautortres}\\[241pt]%% Autor(a) 3
+    }{% 
+      \ifthenelse{\equal{\imprimiratribuiautordois}{true}}{%% Insere 2 autores(as)
+        \MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
+        \MakeUppercase{\imprimirnomedoautordois}\\[263pt]%% Autor(a) 2
+      }{%% Insere 1 autor(a)
+        \MakeUppercase{\imprimirnomedoautor}\\[285pt]%% Autor(a)
+      }
     }
     {\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[35pt]%% Título do documento
   \end{center}
@@ -676,10 +815,13 @@
     \vspace*{0.5\linha}%% Espaçamento vertical
     \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
       \begin{flushleft}%% Alinhamento à esquerda
-        \MakeUppercase{\imprimirsobrenomedoautor}, \imprimirprenomedoautor
-        \ifthenelse{\equal{\imprimiratribuioutroautor}{true}}%% Verificação do(a) outro(a) autor(a)
-          {; \MakeUppercase{\imprimirsobrenomedooutroautor}, \imprimirprenomedooutroautor.}{.}
-        {\bfseries\imprimirtitulododocumento\unskip}. \imprimirano. \pageref{LastPage}~f. \imprimirtipodedocumento\
+        \MakeUppercase{\imprimirsobrenomedoautor}, \imprimirprenomedoautor%
+        \ifthenelse{\equal{\imprimiratribuiautordois}{true}}%% 2 autores?
+        {; \MakeUppercase{\imprimirsobrenomedoautordois}, \imprimirprenomedoautordois%
+           \ifthenelse{\equal{\imprimiratribuiautortres}{true}}%% 3 autores?
+           {; \MakeUppercase{\imprimirsobrenomedoautortres}, \imprimirprenomedoautortres.}
+           {.}
+        }{.} {\bfseries\imprimirtitulododocumento\unskip}. \imprimirano. \pageref{LastPage}~f. \imprimirtipodedocumento\
         (\imprimirniveldeformacao\ em \imprimircurso) -- \imprimirinstituicao. \imprimircidade, \imprimirano.
       \end{flushleft}
 }{%%
@@ -794,12 +936,15 @@
       \fi
       \MakeUppercase{\imprimirtituloemmultiplaslinhas}\\[0.5\linha]%% Título do documento
       por\\[0.5\linha]
-      \ifthenelse{\equal{\imprimiratribuioutroautor}{true}}{%% Insere outro(a) autor(a)
-        \MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
-        e\\
-        \MakeUppercase{\imprimirnomedooutroautor}\\[\linha]%% Outro(a) autor(a)
-      }{%% Remove outro(a) autor(a)
-        \MakeUppercase{\imprimirnomedoautor}\\[\linha]%% Autor(a)
+      \ifthenelse{\equal{\imprimiratribuiautortres}{true}}%% Inserir 3 autores(as)
+      {\MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
+       \MakeUppercase{\imprimirnomedoautordois}\\%% Autor(a) 2
+       \MakeUppercase{\imprimirnomedoautortres}\\[\linha]%% Autor(a) 3
+      }{\ifthenelse{\equal{\imprimiratribuiautordois}{true}}%% Insere 2 autores(as)
+      {\MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
+       \MakeUppercase{\imprimirnomedoautordois}\\[\linha]%% Autor(a) 2
+      }%%Insere 1 autor(a)
+      {\MakeUppercase{\imprimirnomedoautor}\\[\linha]}
       }
     \end{center}
     \noindent\imprimirtextodeaprovacao%% Texto de aprovação
@@ -944,13 +1089,15 @@
   \setlength{\abstitleskip}{1.25\linha}%% Espaçamento após o título do resumo
 }
 \newenvironment{resumoutfpr}{%% Formatação do ambiente resumoutfpr
-  \begin{resumo}%% Ambiente resumo
+  \begin{resumo}[\nomeresumo]%% Ambiente resumo
     \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
       \begin{flushleft}%% Alinhamento à esquerda
         \MakeUppercase{\imprimirsobrenomedoautor}, \imprimirprenomedoautor
-        \ifthenelse{\equal{\imprimiratribuioutroautor}{true}}%% Verificação do(a) outro(a) autor(a)
-          {; \MakeUppercase{\imprimirsobrenomedooutroautor}, \imprimirprenomedooutroautor.}{.}
-        {\bfseries\imprimirtitulododocumento\unskip}. {\imprimirano}. \pageref{LastPage}~f. \imprimirtipodedocumento\
+		\ifthenelse{\equal{\imprimiratribuiautordois}{true}}%% 2 autores?
+        {; \MakeUppercase{\imprimirsobrenomedoautordois}, \imprimirprenomedoautordois%
+        \ifthenelse{\equal{\imprimiratribuiautortres}{true}}%% 3 autores?
+        {; \MakeUppercase{\imprimirsobrenomedoautortres}, \imprimirprenomedoautortres.}
+        {.}}{.} {\bfseries\imprimirtitulododocumento\unskip}. {\imprimirano}. \pageref{LastPage}~f. \imprimirtipodedocumento\
         (\imprimirniveldeformacao\ em \imprimircurso) -- \imprimirinstituicao. \imprimircidade, \imprimirano.
       \end{flushleft}
 }{%%
@@ -970,10 +1117,12 @@
   \begin{resumo}[\nomeabstract]%% Ambiente resumo (abstract)
     \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
       \begin{flushleft}%% Alinhamento à esquerda
-        \MakeUppercase{\imprimirsobrenomedoautor}, \imprimirprenomedoautor
-        \ifthenelse{\equal{\imprimiratribuioutroautor}{true}}%% Verificação do(a) outro(a) autor(a)
-          {; \MakeUppercase{\imprimirsobrenomedooutroautor}, \imprimirprenomedooutroautor.}{.}
-        {\bfseries\printdocumenttitle\unskip}. \imprimirano. \pageref{LastPage}~p. \printdocumenttype\ (\printformationlevel\ in
+      \MakeUppercase{\imprimirsobrenomedoautor}, \imprimirprenomedoautor
+	  \ifthenelse{\equal{\imprimiratribuiautordois}{true}}%% 2 autores?
+      {; \MakeUppercase{\imprimirsobrenomedoautordois}, \imprimirprenomedoautordois%
+      \ifthenelse{\equal{\imprimiratribuiautortres}{true}}%% 3 autores?
+      {; \MakeUppercase{\imprimirsobrenomedoautortres}, \imprimirprenomedoautortres.}
+      {.}}{.} {\bfseries\printdocumenttitle\unskip}. \imprimirano. \pageref{LastPage}~p. \printdocumenttype\ (\printformationlevel\ in
         \printcourse) -- \printinstitution. \imprimircidade, \imprimirano.
       \end{flushleft}
 }{%%
