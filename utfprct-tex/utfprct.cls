@@ -1158,8 +1158,12 @@
         {; \MakeUppercase{\imprimirsobrenomedoautordois}, \imprimirprenomedoautordois%
         \ifthenelse{\equal{\imprimiratribuiautortres}{true}}%% 3 autores?
         {; \MakeUppercase{\imprimirsobrenomedoautortres}, \imprimirprenomedoautortres.}
-        {.}}{.} {\bfseries\imprimirtitulododocumento\unskip}. {\imprimirano}. \pageref{LastPage}~f. \imprimirtipodedocumento\
-        (\imprimirniveldeformacao\ em \imprimircurso) -- \imprimirinstituicao. \imprimircidade, \imprimirano.
+        {.}}{.}
+        \ifthenelse{\equal{\imprimiratribuicotutela}{false}}{%%
+        {\bfseries\imprimirtitulododocumento\unskip}. {\imprimirano}. \pageref{LastPage}~f. \imprimirtipodedocumento\ (\imprimirniveldeformacao\ em \imprimircurso) -- \imprimirinstituicao. \imprimircidade, \imprimirano.%%
+        }{%% Cotutela
+		{\bfseries\imprimirtitulododocumento\unskip}. {\imprimirano}. \pageref{LastPage}~f. \imprimirtipodedocumento\ (\imprimirniveldeformacaoresumo\ em \imprimircurso\ e \imprimircursocotutela) -- \imprimirinstituicao\ e \imprimirinstituicaocotutela. \imprimircidade, \imprimirano.%%
+        }
       \end{flushleft}
 }{%%
       \par\textbf{\nomepalavraschave:}
