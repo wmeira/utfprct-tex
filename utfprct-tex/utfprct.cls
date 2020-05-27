@@ -1223,9 +1223,9 @@
 \AtBeginEnvironment{tabular}{\ABNTEXfontereduzida}%% Formatação do ambiente tabular
 \AtBeginEnvironment{tabularx}{\ABNTEXfontereduzida}%% Formatação do ambiente tabularx
 \AtBeginEnvironment{longtable}{\linespread{1}\ABNTEXfontereduzida}%% Formatação do ambiente longtable
-\setlength\LTcapwidth{\textwidth}%% Largura do \parbox contendo a legenda do ambiente longtable
-\setlength\LTleft{0pt}%% Largura da margem esquerda do ambiente longtable
-\setlength\LTright{0pt}%% Largura da margem direita do ambiente longtable
+%\setlength\LTcapwidth{\textwidth}%% Largura do \parbox contendo a legenda do ambiente longtable
+%\setlength\LTleft{0pt}%% Largura da margem esquerda do ambiente longtable
+%\setlength\LTright{0pt}%% Largura da margem direita do ambiente longtable
 \newcommand{\incluirlistadetabelas}{%% Definição do comando para inclusão da lista de tabelas
   \pdfbookmark[0]{\listtablename}{lot}%% Marcador
   \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
