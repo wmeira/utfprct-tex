@@ -89,15 +89,12 @@
 %%   memoir: abstract, appendix, array, booktabs, ccaption, chngcntr, chngpage, dcolumn, delarray, enumerate, epigraph, framed, ifmtarg, ifpdf, index, makeidx, moreverb, needspace, newﬁle, nextpage, parskip, patchcmd, setspace, shortvrb, showidx, tabularx, titleref, titling, tocbibind, tocloft, verbatim, verse.
 %%   memoir (similares): crop, fancyhdr, geometry, sidecap, subﬁgure, titlesec.
 %%   abntex2: babel, bookmark, calc, enumitem, ifthen, hyperref, textcase.
-%%   utfprpgtex: abntex2cite, ae, algorithmic, amsmath, backref, breakurl, caption, cmap, color, eepic, epic, epsfig, etoolbox,
-%%               fancyhdr, fix-cm, fontenc, glossaries, graphics, graphicx, helvet, hyphenat, indentfirst, inputenc, lastpage,
-%%               morewrites, nomencl, sfmath, sistyle, substr, times, xtab.
+%%   utfprct: abntex2cite, ae, algorithmic, amsmath, backref, breakurl, caption, cmap, color, eepic, epic, epsfig, etoolbox, fancyhdr, fix-cm, fontenc, glossaries, graphics, graphicx, helvet, hyphenat, indentfirst, inputenc, lastpage, morewrites, nomencl, sfmath, sistyle, substr, times, xtab, pdfpages.
 
 %% Pacotes adicionais (\usepackage[options]{package})
 \usepackage{bigdelim, booktabs, colortbl, longtable, multirow}%% Ferramentas para tabelas
 \usepackage{amssymb, amstext, amsthm, icomma}%% Ferramentas para linguagem matemática
 \usepackage{pifont, textcomp, wasysym}%% Símbolos de texto
-\usepackage{pdfpages} % Facilita a inclusão de PDF com múltiplas páginas
 \usepackage{afterpage} %Executa comando depois de quebrar página
 \newcommand\blankpage{%
     \null
@@ -170,8 +167,15 @@
 %% Folha de rosto (* coloca a ficha bibliográfica no verso)
 \incluirfolhaderosto*%% Comente para remover este item
 
-%% Ficha catalográfica (teses e dissertações)
-\incluirfichacatalografica%% Comente para remover este item
+%% Ficha catalográfica (comente para remover este item)
+%% A ficha catalográfica é fornecida pela biblioteca em PDF
+%% e deve ser anexada no verso da folha de rosto.
+%%
+%% Comando \incluirfichacatalografica: 
+%% 1) Aceita o path para o PDF (insere a primeira página)
+%% 2) Com argumento 'template' (ou sem argumento), insere-se um template 'utfprct' que pode servir de placeholder
+\incluirfichacatalografica{./PreTexto/ficha_catalografica_exemplo.pdf}%%1
+%\incluirfichacatalografica{template}%%2
 
 %% Errata
 \include{./PreTexto/errata}%% Comente para remover este item
