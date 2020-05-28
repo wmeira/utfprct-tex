@@ -167,6 +167,7 @@
 \RequirePackage{indentfirst}%% Recuo do primeiro parágrafo após cabeçalho da seção
 \RequirePackage{morewrites}%% Espaços adicionais para comandos \write*
 \RequirePackage{pdfpages}%% Inclusão de PDF com múltiplas páginas
+
 %% Logo UTFPRPGTeX
 \newcommand{\utfprpgtex}{UTF\kern-0.75ex\lower0.4ex\hbox{\tiny PR}\kern-0.9ex\lower-0.585ex\hbox{\tiny PG}\kern-0.1ex\TeX}
 
@@ -1804,6 +1805,11 @@
   labelsep={endash},%%
   skip=2.5pt%% Space below caption
 }
+
+%Altera formato do label e autoref do pacote subcaption
+\RequirePackage[labelformat=simple]{subcaption} %Subfigure caption
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\renewcommand{\subfigureautorefname}{\figureautorefname}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Fonte (referência) para objetos flutuantes

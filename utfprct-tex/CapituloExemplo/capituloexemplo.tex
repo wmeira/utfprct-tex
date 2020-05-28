@@ -395,6 +395,28 @@ O ambiente \texttt{picture} permite a programação de imagens diretamente no \g
 \fonte{Autoria própria.}%% Fonte
 \end{figure}
 
+A \autoref{fig:subfigure} apresenta um exemplo usando o pacote \texttt{subfigure} com legendas usando o pacote \texttt{subcaption}. É  possível referenciar cada uma das sub-figuras, no qual, a sua referência alfabética aparece entre parênteses: \autoref{fig:subfigure_a} e \autoref{fig:subfigure_b}.
+
+\begin{figure}[!ht]
+\centering
+\caption{Exemplo de Subfigure} 
+\begin{subfigure}[t]{.45\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{./CapituloExemplo/subfigure-a.png}  
+	\caption{Figura A}
+	\label{fig:subfigure_a}
+\end{subfigure}
+\qquad
+\begin{subfigure}[t]{.45\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{./CapituloExemplo/subfigure-b.png}  
+	\caption{Figura B}
+	\label{fig:subfigure_b}
+\end{subfigure}
+\label{fig:subfigure}
+\fonte{\citet{Meira2020}} %citeonline{meira2020}
+\end{figure}
+
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \subsection{Fotografias}\label{sec:fotografias}
 

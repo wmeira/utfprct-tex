@@ -73,7 +73,7 @@
   %french,%% Idioma adicional para hifenização (suporte parcial)
   %spanish,%% Idioma adicional para hifenização (suporte parcial)
   english,%% Idioma adicional para hifenização  
-  brazil,%% Idioma principal do documento (último da lista)  
+  brazil,%% Idioma principal do documento (último da lista)    
 ]{utfprct}%% Classe utfprct
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -89,7 +89,7 @@
 %%   memoir: abstract, appendix, array, booktabs, ccaption, chngcntr, chngpage, dcolumn, delarray, enumerate, epigraph, framed, ifmtarg, ifpdf, index, makeidx, moreverb, needspace, newﬁle, nextpage, parskip, patchcmd, setspace, shortvrb, showidx, tabularx, titleref, titling, tocbibind, tocloft, verbatim, verse.
 %%   memoir (similares): crop, fancyhdr, geometry, sidecap, subﬁgure, titlesec.
 %%   abntex2: babel, bookmark, calc, enumitem, ifthen, hyperref, textcase.
-%%   utfprct: abntex2cite, ae, algorithmic, amsmath, backref, breakurl, caption, cmap, color, eepic, epic, epsfig, etoolbox, fancyhdr, fix-cm, fontenc, glossaries, graphics, graphicx, helvet, hyphenat, indentfirst, inputenc, lastpage, morewrites, nomencl, sfmath, sistyle, substr, times, xtab, pdfpages.
+%%   utfprct: abntex2cite, ae, algorithmic, amsmath, backref, breakurl, caption, subcaption, cmap, color, eepic, epic, epsfig, etoolbox, fancyhdr, fix-cm, fontenc, glossaries, graphics, graphicx, helvet, hyphenat, indentfirst, inputenc, lastpage, morewrites, nomencl, sfmath, sistyle, substr, times, xtab, pdfpages.
 
 %% Pacotes adicionais (\usepackage[options]{package})
 \usepackage{bigdelim, booktabs, colortbl, longtable, multirow}%% Ferramentas para tabelas
@@ -104,11 +104,6 @@
     %\addtocounter{page}{-1}%
     \newpage}
 %\afterpage{blankpage} %adiciona quebra de página e adiciona uma página em branco sem estilo na sequência (a página é contada)
-
-%Altera formato do label e autoref do pacote subcaption
-\usepackage[labelformat=simple]{subcaption} %subfigure
-\renewcommand\thesubfigure{(\alph{subfigure})}
-\renewcommand{\subfigureautorefname}{\figureautorefname}
 
 \usepackage{silence}
 \WarningFilter{xcolor}{Incompatible color definition}
