@@ -1228,10 +1228,6 @@
 		{\bfseries\imprimirdocumenttitle\unskip}. \imprimirano. \pageref{LastPage}~p. \imprimirdocumenttype\ (\imprimirformationlevelabstract\ in
         \imprimircourse\ and \imprimircoursecotutela) -- \imprimirinstitution\ and \imprimirinstitutioncotutela. \imprimircidade, \imprimirano.
         }
-           
-      
-        
-      
       \end{flushleft}
 }{%%
       \par\textbf{\nomekeywords:}
@@ -1305,7 +1301,10 @@
   \cleardoublepage%% Página de verso
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de tabelas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % \renewcommand{\cfttablename}{\tablename\space}%% Nome da entrada na lista de objetos flutuantes (tabela)
 \renewcommand*{\cfttableaftersnum}{~~--~~}%% Conteúdo após a entrada na lista de objetos flutuantes (tabela)
 \renewcommand{\afterlottitle}{\afterchaptertitle\vspace*{0.5\linha}}%% Espaçamento após o título da lista (tabela)
@@ -1324,7 +1323,11 @@
   \cleardoublepage%% Página de verso
 }
 
-%% Lista de abreviaturas, siglas e acrônimos (configuração do arquivo ./PreTexto/lista-acronimos.tex)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lista de abreviaturas, siglas e acrônimos 
+%%(configuração do arquivo ./PreTexto/lista-acronimos.tex)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\listadeabrevsiglaseacr}{%% Formatação da lista de abreviaturas, siglas e acrônimos
   \pretextualchapter{\nomelistadeacronimos}%% Estilo da página e marcador
   \vspace*{7.5pt}%% Espaçamento vertical
@@ -1357,7 +1360,11 @@
   \vspace*{0pt}%% Espaçamento vertical
 }
 
-%% Lista de abreviaturas, siglas e acrônimos (configuração do pacote glossaries)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lista de abreviaturas, siglas e acrônimos 
+%% (configuração do pacote glossaries)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\pseudoacronymtype}{sigla}%% Tipo de acrônimo (sigla)
 \newcommand{\abbreviationtype}{abreviatura}%% Tipo de acrônimo (abreviatura)
 \newglossary[alg2]{\pseudoacronymtype}{acr2}{acn2}{\nomesiglas}%% Subtipo de glossário (siglas)
@@ -1404,7 +1411,11 @@
   }
 }
 
-%% Lista de símbolos (configuração do arquivo ./PreTexto/lista-simbolos.tex)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lista de símbolos 
+%% (configuração do arquivo ./PreTexto/lista-simbolos.tex)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\unidade}[1]{\SI{}{[#1]}}%% Formatação da unidade na lista de símbolos
 \newcommand{\listadesimbolos}{%% Formatação da lista de símbolos
   \pretextualchapter{\nomelistadesimbolos}%% Estilo da página e marcador
@@ -1456,7 +1467,11 @@
   \vspace*{0pt}%% Espaçamento vertical
 }
 
-%% Lista de símbolos (configuração do pacote nomencl)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Lista de símbolos 
+%% (configuração do pacote nomencl)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newlength{\rmnomlabel}%% Escala espaçamento do rótulo de símbolo
 \setlength{\nomlabelwidth}{23mm}%% Largura do rótulo do símbolo
 \setlength{\rmnomlabel}{\nomlabelwidth+\labelsep}%% Tamanho da escala espaçamento do rótulo de símbolo
@@ -1508,7 +1523,10 @@
   }
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Sumário
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \settocpreprocessor{part}{%% Título da parte no sumário em letras maíusculas
   \let\tempf@rtoc\f@rtoc\def\f@rtoc{\texorpdfstring{\MakeTextUppercase{\tempf@rtoc}}{\tempf@rtoc}}%%
 }
@@ -1555,7 +1573,10 @@
   \cleardoublepage%% Página de verso
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Referências
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \let\arquivosdereferencias\bibliography%% Arquivos da lista de referências
 \renewcommand{\prebibhook}{\vspace*{0.5\linha}}%% Conteúdo após o título da lista de referências
 \renewcommand{\bibsection}{%% Formatação da lista de referências
@@ -1570,7 +1591,10 @@
 %NBR 6023/2018: única linha entre referências (antes era 1.5)
 \setlength{\bibitemsep}{1\linha}%% Espaçamento entre itens da lista de referências
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Glossário
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \renewcommand*{\glsseeformat}[3][\seename]{{#1}\space\glsseelist{#2}.}%% Formatação do texto "veja..." no glossário
 \newcommand{\incluirglossario}{%% Definição do comando para inclusão do glossário
   \setlength{\glstreeindent}{\parindent}%% Recuo dos itens do glossário
@@ -1591,7 +1615,10 @@
   \end{apendicesenv}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Anexos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newenvironment{arquivosdeanexos}{%% Definição do ambiente arquivosdeanexos
   \renewcommand{\Hy@appendixstring}{anexo}%% Definição do comando para o rótulo anexo
   \xdef\Hy@chapapp{\Hy@appendixstring}%% Definição do rótulo anexo
@@ -1604,7 +1631,10 @@
   \end{anexosenv}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Índice
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\incluirindice}{%% Definição do comando para inclusão do índice
   \renewenvironment{theindex}{%% Formatação do índice
     \clearforchapter
@@ -1634,16 +1664,26 @@
   \cleardoublepage%% Página de verso
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Partes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \renewcommand{\partnamefont}{\normalfont\normalsize\bfseries\MakeUppercase}%% Fonte do nome da parte
 \renewcommand{\partnumfont}{\normalfont\normalsize\bfseries\MakeUppercase}%% Fonte da página da parte
 \renewcommand{\parttitlefont}{\normalfont\normalsize\bfseries\MakeUppercase}%% Fonte do título da parte
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Parágrafos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \setparaheadstyle{\normalfont\normalsize\itshape}%% Estilo do título do parágrafo
 \setafterparaskip{\aftersubsubsecskip}%% Espaçamento após título do parágrafo
 
-%% Espaçamentos em capítulos, seções, subseções, subsubseções, parágrafos e subparágrafos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Espaçamentos em capítulos, seções, subseções, 
+%% subsubseções, parágrafos e subparágrafos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \setlength{\beforechapskip}{0pt}%% Espaçamento antes do título do capítulo
 \setlength{\afterchapskip}{2\linha}%% Espaçamento após o título do capítulo
 \setlength{\beforesecskip}{\linha}%% Espaçamento antes do título da seção
@@ -1657,19 +1697,29 @@
 \setlength{\beforesubparaskip}{\linha}%% Espaçamento antes do título do subparágrafo
 \setlength{\aftersubparaskip}{\linha}%% Espaçamento após o título do subparágrafo
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Níveis de seções no documento e no sumário
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \setsecnumdepth{all}%% Utilizado no documento
 \maxsecnumdepth{all}%% Máximo no documento
 \maxtocdepth{all}%% Utilizado no sumário
 \settocdepth{all}%% Máximo no sumário
 
-%% Estilo de numeração de algoritmos, figuras, tabelas e equações
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Estilo de numeração de algoritmos, figuras, tabelas 
+%% e equações
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \counterwithout{algorithm}{chapter}%% Numeração contínua ao longo dos capítulos para algoritmos
 \counterwithout{figure}{chapter}%% Numeração contínua ao longo dos capítulos para figuras
 \counterwithout{table}{chapter}%% Numeração contínua ao longo dos capítulos para tabelas
 \counterwithout{equation}{chapter}%% Numeração contínua ao longo dos capítulos para equações
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Legendas de objetos flutuantes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \hangcaption%% Recuo do texto das legendas
 \if@legendascentralizadas%% Alinhamento das legendas centralizado
   \gdef\@captionjustification{on}%% Ativa alinhamento justificado
@@ -1691,12 +1741,18 @@
   skip=2.5pt%% Space below caption
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Fonte (referência) para objetos flutuantes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % \ifx\fonte\undefined%% Verificação da definição do comando fonte
   \renewcommand{\fonte}[1]{\legend{\ABNTEXfontereduzida{\bfseries\nomefonte: #1}}}%% Definição do comando fonte
 % \fi
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Compilação de índices utilizando makeindex (se habilitada)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \if@usemakeindex
   \immediate\write18{makeindex \jobname.idx}\relax%% Compilação do índice
   \immediate\write18{makeindex -s \jobname.ist -t \jobname.glg -o \jobname.gls \jobname.glo}\relax%% Compilação do glossário
