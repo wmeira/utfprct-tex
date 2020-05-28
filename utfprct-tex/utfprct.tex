@@ -55,7 +55,7 @@
   % subsubsection = TITLE,%% Títulos de seções quartenárias em maiúsculas (comente para desabilitar)
 %%  
 %% -- Opções da classe utfprpgtex --
-  pretextualoneside,%% Impressão dos elementos pré-textuais: pretextualoneside (anverso) ou pretextualtwoside (anverso e verso)
+  pretextualtwoside,%% Impressão dos elementos pré-textuais: pretextualoneside (anverso) ou pretextualtwoside (anverso e verso)
   fontetimes,%% Fonte do texto: fontetimes (times), fontearial (arial) ou fontecourier (courier), fontemodern (lmodern - default latex). Times and Arial are ABNT recommended
    %vinculoscoloridos,%% Cores nos vínculos (citações, arquivos, links, url, etc.) (comente para desabilitar). NBR 14724/2011: cor preta (inclusive hyperlinks)
   semrecuonosumario,%% Remoção do recuo dos itens no sumário (comente para adição do recuo, se estilo tradicional)
@@ -77,12 +77,12 @@
 ]{utfprct}%% Classe utfprct
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Para alterar o idioma do documento para inglês: 
+%% Para alterar o idioma do documento para INGLÊS: 
 %1) Colocar o "english" como último idioma carregado no documentclass (o último será o principal do documento. Adicionalmente, pode-se selecionar o english como língua principal.
-%\selectlanguage{english}
+%\selectlanguage{english}%descomentar para ingles
 
 %2) Usar o abntex2-alf-en ou abntex2-num-en ao invés do default em pt-br do abntex2.
-%\bibliographystyle{abntex2-alf-en} % comentar para pt-br
+%\bibliographystyle{abntex2-alf-en}%descomentar para ingles
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Pacotes carregados nas classes:
@@ -96,6 +96,8 @@
 \usepackage{amssymb, amstext, amsthm, icomma}%% Ferramentas para linguagem matemática
 \usepackage{pifont, textcomp, wasysym}%% Símbolos de texto
 \usepackage{afterpage} %Executa comando depois de quebrar página
+
+%insere página em branco (comando para o afterpage)
 \newcommand\blankpage{%
     \null
     \thispagestyle{empty}%
@@ -103,6 +105,7 @@
     \newpage}
 %\afterpage{blankpage} %adiciona quebra de página e adiciona uma página em branco sem estilo na sequência (a página é contada)
 
+%Altera formato do label e autoref do pacote subcaption
 \usepackage[labelformat=simple]{subcaption} %subfigure
 \renewcommand\thesubfigure{(\alph{subfigure})}
 \renewcommand{\subfigureautorefname}{\figureautorefname}
@@ -140,6 +143,9 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %% Arquivo de dados do modelo de documento LaTeX para produção de trabalhos acadêmicos da UTFPR
 \input{./utfprct-dados}%% Realize as modificações pertinentes no arquivo "utfprct-dados.tex"
 
@@ -148,8 +154,15 @@
 
 %% Ferramenta para criação de glossários
 \makeglossaries%% Não comente esta linha
-\include{./PreTexto/entradas-acronimos}%% Entradas da lista de abreviaturas, siglas e acrônimos - Comente para remover este item
-\include{./PosTexto/entradas-glossario}%% Entradas do glossário - Comente para remover este item
+
+%% Entradas da lista de abreviaturas, siglas e acrônimos
+\include{./PreTexto/entradas-acronimos}% Comente para remover este item
+
+%Remove subtitulos da lista de abreviaturas, siglas e acrônimos
+%\renewcommand{\glossarysection}[2][]{}
+
+%% Entradas do glossário
+\include{./PosTexto/entradas-glossario}% Comente para remover este item
 
 %% Ferramenta para criação de nomenclaturas
 \makenomenclature%% Não comente esta linha
@@ -157,15 +170,16 @@
 %% Início do documento
 \begin{document}%% Não comente esta linha
 
-
 %% Formatação de páginas de elementos pré-textuais
 \pretextual%% Não comente esta linha
 
 %% Capa
 \incluircapa%% Comente para remover este item
 
-%% Folha de rosto (* coloca a ficha bibliográfica no verso)
-\incluirfolhaderosto*%% Comente para remover este item
+%% Folha de rosto (comentar para remover pré-textual)
+%% Comando com * coloca a ficha bibliográfica no verso
+\incluirfolhaderosto*%% Com ficha catalográfica no verso 
+%\incluirfolhaderosto%% Sem ficha catalográfica no verso
 
 %% Ficha catalográfica (comente para remover este item)
 %% A ficha catalográfica é fornecida pela biblioteca em PDF
