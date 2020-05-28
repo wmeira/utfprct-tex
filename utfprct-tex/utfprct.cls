@@ -1467,15 +1467,65 @@
   \vspace*{0pt}%% Espaçamento vertical
 }
 
+\newenvironment{listadeindicessets}{%% Formatação do ambiente listadeindicessets
+  \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
+    \section*{\nomeindicessets}%% Seção notações
+    \begin{xtabular}{@{}p{25mm}@{}p{110mm}@{}>{\hspace*{\fill}}p{25mm}}%% Ambiente xtabular
+}{%%
+    \end{xtabular}
+  \end{Spacing}
+  \vspace*{0pt}%% Espaçamento vertical
+}
+
+\newenvironment{listadeparam}{%% Formatação do ambiente listadeparam
+  \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
+    \section*{\nomeparam}%% Seção notações
+    \begin{xtabular}{@{}p{25mm}@{}p{110mm}@{}>{\hspace*{\fill}}p{25mm}}%% Ambiente xtabular
+}{%%
+    \end{xtabular}
+  \end{Spacing}
+  \vspace*{0pt}%% Espaçamento vertical
+}
+
+\newenvironment{listadefloatvar}{%% Formatação do ambiente listadefloatvar
+  \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
+    \section*{\nomefloatvar}%% Seção notações
+    \begin{xtabular}{@{}p{25mm}@{}p{110mm}@{}>{\hspace*{\fill}}p{25mm}}%% Ambiente xtabular
+}{%%
+    \end{xtabular}
+  \end{Spacing}
+  \vspace*{0pt}%% Espaçamento vertical
+}
+
+\newenvironment{listadeintvar}{%% Formatação do ambiente listadeintvar
+  \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
+    \section*{\nomeintvar}%% Seção notações
+    \begin{xtabular}{@{}p{25mm}@{}p{110mm}@{}>{\hspace*{\fill}}p{25mm}}%% Ambiente xtabular
+}{%%
+    \end{xtabular}
+  \end{Spacing}
+  \vspace*{0pt}%% Espaçamento vertical
+}
+
+\newenvironment{listadebinvar}{%% Formatação do ambiente listadebinvar
+  \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
+    \section*{\nomebinvar}%% Seção notações
+    \begin{xtabular}{@{}p{25mm}@{}p{110mm}@{}>{\hspace*{\fill}}p{25mm}}%% Ambiente xtabular
+}{%%
+    \end{xtabular}
+  \end{Spacing}
+  \vspace*{0pt}%% Espaçamento vertical
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de símbolos 
 %% (configuração do pacote nomencl)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newlength{\rmnomlabel}%% Escala espaçamento do rótulo de símbolo
-\setlength{\nomlabelwidth}{23mm}%% Largura do rótulo do símbolo
+\setlength{\nomlabelwidth}{30mm}%% Largura do rótulo do símbolo
 \setlength{\rmnomlabel}{\nomlabelwidth+\labelsep}%% Tamanho da escala espaçamento do rótulo de símbolo
-\setlength{\nomitemsep}{-2.75pt}%% Tamanho do espaçamento entre itens da lista de símbolo
+\setlength{\nomitemsep}{0pt}%% Tamanho do espaçamento entre itens da lista de símbolo
 \newcommand{\nomunit}[1]{\abntex@ifnotempty{#1}{\renewcommand{\nomentryend}{\hspace*{\fill}\SI{}{[#1]}}}}%% Unidade do símbolo
 \renewcommand{\nomgroup}[1]{%% Grupos de símbolos
   \ifthenelse{\equal{#1}{A}}{\item[\normalfont\normalsize\MakeUppercase{\nomeletraslatinas}]}%% Letras latinas
@@ -1483,14 +1533,19 @@
       {\ifthenelse{\equal{#1}{C}}{\item[\normalfont\normalsize\MakeUppercase{\nomesobrescritos}]}%% Sobrescritos
         {\ifthenelse{\equal{#1}{D}}{\item[\normalfont\normalsize\MakeUppercase{\nomesubscritos}]}%% Subscritos
           {\ifthenelse{\equal{#1}{E}}{\item[\normalfont\normalsize\MakeUppercase{\nomenotacoes}]}%% Notações
-            {}}}}\vspace*{12.25pt}}
-  \item[]\vspace*{12.25pt}
+            {\ifthenelse{\equal{#1}{F}}{\item[\normalfont\normalsize\MakeUppercase{\nomeindicessets}]}%% Notações indices e conjuntos
+          	  {\ifthenelse{\equal{#1}{G}}{\item[\normalfont\normalsize\MakeUppercase{\nomeparam}]}%% Notações de parametros
+          	    {\ifthenelse{\equal{#1}{H}}{\item[\normalfont\normalsize\MakeUppercase{\nomefloatvar}]}%% Notações de variaveis continuas
+	       	      {\ifthenelse{\equal{#1}{I}}{\item[\normalfont\normalsize\MakeUppercase{\nomeintvar}]}%% Notações de variaveis inteiras
+          	        {\ifthenelse{\equal{#1}{J}}{\item[\normalfont\normalsize\MakeUppercase{\nomebinvar}]}%% Notações de variaveis binarias
+            {}}}}}}}}}\vspace*{22pt}} %espacamento do ultimo elemento da lista
+  \item[]\vspace*{0pt} %espacamento entre o titulo e o primeiro elemento da lista
 }
 \renewcommand{\thenomenclature}{%% Inicialização da formatação da lista de símbolos
-  \pretextualchapter{\listadesimbolosname}%% Estilo da página e marcador
+  \pretextualchapter{\nomelistadesimbolos}%% Estilo da página e marcador
   \vspace*{12pt}%% Espaçamento vertical
   \nompreamble%% Pré-texto da nomeclatura
-  \begin{Spacing}{0.0}%% Espaçamento simples entre linhas
+  \begin{Spacing}{0.5}%% Espaçamento simples entre linhas
   \list{}{%% Estilo da lista de itens
     \labelwidth\nom@tempdim
     \leftmargin\labelwidth
@@ -1510,6 +1565,11 @@
 \newcommand{\sobrescrito}[4]{\nomenclature[C#1]{$#2$}{#3 \nomunit{#4}}}%% Entrada de sobrescrito
 \newcommand{\subscrito}[4]{\nomenclature[D#1]{$#2$}{#3 \nomunit{#4}}}%% Entrada de subscrito
 \newcommand{\notacao}[4]{\nomenclature[E#1]{$#2$}{#3 \nomunit{#4}}}%% Entrada de notação
+\newcommand{\notacaois}[4]{\nomenclature[F#1]{$#2$}{#3 \nomunit{#4}}}%% Entrada de indices e sets
+\newcommand{\notacaoparam}[4]{\nomenclature[G#1]{$#2$}{#3 \nomunit{#4}}}%% Entrada de parametros
+\newcommand{\notacaofloatvar}[4]{\nomenclature[H#1]{$#2$}{#3 \nomunit{#4}}}%% Entrada de var continua
+\newcommand{\notacaointvar}[4]{\nomenclature[I#1]{$#2$}{#3 \nomunit{#4}}}%% Entrada de var inteira
+\newcommand{\notacaobinvar}[4]{\nomenclature[J#1]{$#2$}{#3 \nomunit{#4}}}%% Entrada de var binaria
 
 %% Lista de símbolos
 \newcommand{\incluirlistadesimbolos}[1]{%% Definição do comando para inclusão da lista de símbolos
