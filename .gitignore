@@ -41,6 +41,7 @@
 *.nav
 *.snm
 *.synctex
+*.synctex(busy)
 *.synctex.gz
 
 # Final files
