@@ -188,8 +188,13 @@
 %% Errata
 \include{./PreTexto/errata}%% Comente para remover este item
 
-%% Folha de aprovação
-\incluirfolhadeaprovacao%% Comente para remover este item
+%% Folha ou Termo de aprovação (comente para remover este item)
+%% A folha de aprovação é entregue ao autor, quando aprovado, após
+%% a defesa e deve ser anexada nos pré-textuais .
+%% 1) Aceita o path para o PDF (insere a primeira página)
+%% 2) Com argumento 'template' (ou sem argumento), insere-se um template 'utfprct', que pode servir de placeholder.
+\incluirfolhadeaprovacao{./PreTexto/folha_de_aprovacao_exemplo.pdf}%%1
+%\incluirfolhadeaprovacao{template}%2
 
 %% Dedicatória
 \include{./PreTexto/dedicatoria}%% Comente para remover este item
@@ -219,6 +224,9 @@
 \incluirlistadeacronimos{glossaries}%% Opções: "glossaries" (pacote) ou "file" (arquivo) ou "none" (desabilita)
 
 %% Lista de símbolos
+%% Pretexto da lista de símbolos (opção pacote nomencl)
+%\renewcommand{\nompreamble}{Nomenclature...}
+
 \incluirlistadesimbolos{nomencl}%% Opções: "nomencl" (pacote) ou "file" (arquivo) ou "none" (desabilita)
 
 %% Sumário

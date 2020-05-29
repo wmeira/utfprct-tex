@@ -650,35 +650,10 @@
   head     = 10mm,%
   headsep  = 5.5mm,% NBR 14724/2011: 2 cm da borda superior (ajustado manualmente para ficar proximo do esperado)
   footskip = 5mm,%
+  includehead = false,
 }%
 \savegeometry{standard}
-\AtBeginDocument{%
-  \ifthenelse{\equal{\imprimirtipodedocumento}{Tese}\or\equal{\imprimirtipodedocumento}{Dissertação}}{%
-    \newgeometry{%
-      top         = 30mm,%
-      left        = 30mm,%
-      right       = 20mm,%
-      bottom      = 20mm,%
-      head        = 20mm,%
-      headsep     = 0mm,%
-      footskip    = 5mm,%
-      includehead = true,%
-    }%
-  }{%
-    \newgeometry{%
-      top         = 30mm,%
-      left        = 30mm,%
-      right       = 20mm,%
-      bottom      = 20mm,%
-      head        = 25mm,%
-      headsep     = 0mm,%
-      footskip    = 5mm,%
-      includehead = true,%
-    }%
-  }%
-  \savegeometry{approvalterm}%
-  \loadgeometry{standard}%
-}
+
 \frenchspacing%% Remoção de espaço adicional após ponto final
 \raggedbottom%% Remoção de espaços adicionais no texto
 \sloppy%% Força todas as linhas ficarem dentro das margens
@@ -1001,16 +976,16 @@
 %% Folha de aprovação
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\incluirfolhadeaprovacao}{%% Formatação da folha de aprovação
-  \loadgeometry{approvalterm}
+\newcommand{\incluirfolhadeaprovacao}[1]{%% Formatação da folha de aprovação
+  \ifthenelse{\equal{#1}{template}\or\equal{#1}{\par}}{
   \ifthenelse{\equal{\imprimirtipodedocumento}{Tese}\or\equal{\imprimirtipodedocumento}{Dissertação}}{%% Tese ou Dissertação
       \newcommand{\nomedafolhadeaprovacao}{Folha de Aprovação}%% Nome da folha de aprovação
     }{%% Trabalho de Conclusão de Curso
       \newcommand{\nomedafolhadeaprovacao}{Termo de Aprovação}%% Nome da folha de aprovação
       \@aprovacaoestiloppgfalse%% Folha de aprovação estilo padrão
-    }%% Folha de aprovação do programa de pós-graduação no estilo do PPG ou no estilo padrão
+    }%% Folha de aprovação do programa de pós-graduação no estilo do PPG ou no estilo padrão    
   \begin{folhadeaprovacao}%% Ambiente folhadeaprovacao
-    \if@aprovacaoestiloppg%% Folha de aprovação do programa de pós-graduação no estilo do PPG
+	\if@aprovacaoestiloppg%% Folha de aprovação do programa de pós-graduação no estilo do PPG
       \thispagestyle{folhadeaprovacaoppg}%% Cabeçalho da folha de aprovação
     \else%% Folha de aprovação do programa de pós-graduação no estilo padrão
       \thispagestyle{folhadeaprovacao}%% Cabeçalho da folha de aprovação
@@ -1132,9 +1107,11 @@
       \abntex@ifnotempty{\imprimiravisodeaprovacao}{\ABNTEXfontereduzida\imprimiravisodeaprovacao}%% Definição do rodapé
     \end{center}
   \end{folhadeaprovacao}
-  \loadgeometry{standard}
-  \setSpacing{1.5}
-  \checkandfixthelayout
+  \cleardoublepage
+  }{%% path to file
+	\includepdf[pages=1]{#1}%1
+	\cleardoublepage
+  }
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
