@@ -1129,6 +1129,7 @@
       \end{minipage}
     \end{flushright}
   \end{dedicatoriaoriginal}
+  \cleardoublepage%% Página de verso
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
