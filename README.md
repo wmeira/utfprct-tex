@@ -76,16 +76,16 @@ Para que o template UTFPRCT-TEX produza documentos no formato digital ou impress
 
 #### Formato Digital
 
-Implica na remoção de todas as páginas em branco, a fim de não dar a impressão de faltar informação durante a leitura do documento.
+Implica na remoção de todas as páginas em branco, a fim de não parecer que existe falta de informação durante a leitura do documento.
 
-* `openany`: impressão da primeira página dos capítulos em qualquer lado da folha (anverso ou verso)
 * `pretextualoneside`: impressão dos elementos pré-textuais começa em qualquer lado da folha (anverso ou verso)
+* `oneside`: impressão dos elementos textuais no anverso da folha (sem folhas em branco para o verso)
+
 
 #### Formato Impresso
 
-* `oneside` ou `twoside`: impressão dos elementos textuais e pós-textuais `oneside` (anverso) ou `twoside` (anverso e verso, se mais de 100 páginas)
-* `openright`: impressão da primeira página dos capítulos no anverso.
 * `pretextualtwoside`: impressão dos elementos pré-textuais começa sempre no anverso
+* `oneside` ou `twoside`: impressão dos elementos textuais `oneside` (anverso) ou `twoside` (anverso e verso, se mais de 100 páginas)
 
 ---
 
