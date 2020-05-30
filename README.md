@@ -25,26 +25,6 @@ Os arquivos do template são:
 - `abntex2-num-en.bst`: arquivo `abntex2-num.bst` com conectores e termos traduzidos para o inglês
 - `make.bat` (`makefile`): possui comandos para converter o arquivo `utfprct.tex` (default) para PDF e um comando para limpar os arquivos intermediários (`clean`) (vide comando `help`)
 
-## Trabalho Acadêmico em Inglês
-
-Na declaração da classe `utfprct` no arquivo `utfprct.tex`, as últimas opções adicionam idiomas para hifenização, no qual, o último idioma definido será o idioma principal do documento (define o `\languagename`). Portanto, caso o trabalho seja desenvolvido em inglês realize os seguintes passos:
-
-1. Colocar a opção `english` em último da lista de opções da declaração de classe.
-    - Adicionalmente, pode-se selecionar a língua do pacote babel no preâmbulo: `\selectlanguage{english}`
-2. Selecionar o estilo de bibliografia `abntex2-alf-en` ou `abntex2-num-en` ao invés dos pacotes em português da `abnTeX2`, pois existem conectores e termos na citação e referência que precisavam ser traduzidos. Para isso, adicionar o seguinte comando (pode ser no preâmbulo): `\bibliographystyle{abntex2-alf-en}` (alfabético) ou  `\bibliographystyle{abntex2-num-en}` (numérico).
-
-<!--Um exemplo do template em inglês está disponível no exemplo [utfprct-ingles](./docs/examples/utfprct-ingles).-->
-
----
-
-## Trabalho Acadêmico em Cotutela  (Duplo Grau)
-
-Para trabalhos acadêmicos em cotutela com outro instituto (duplo grau), pode-se adicionar as informações do instituto de cotutela no arquivo de dados do trabalho (`utfprct-dados.tex`), de forma que essas informações sejam mencionadas nos elementos pré-textuais.
-
-No arquivo de dados, definir `\AtribuiCotutela{true}` para inserir as informações de cotutela na capa, folha de rosto e forma de referenciar o trabalho (adicionado na errata, resumo e abstract). Na folha de rosto, pode-se também atribuir uma segunda descrição do documento mais específica para o instituto de cotutela definindo `\AtribuiDescricaoCotutela{true}` com a descrição em `\DescricaoDoDocumentoCotutela`.
-
-<!--Um exemplo do template de trabalho em cotutela (duplo grau) está disponível no exemplo [utfprct-cotutela](./docs/examples/utfprct-cotutela).-->
-
 ## Normas vigentes do Sistema de Bibliotecas da UTFPR (2020)
 
 A orientação para entrega de trabalhos acadêmicos pode ser encontrada no [portal da UTFPR](http://portal.utfpr.edu.br/biblioteca/trabalhos-academicos/orientacao-para-trabalhos-academicos) (*publicada em 18/09/2017*). No qual, estabele-se que os trabalhos devem estar de acordo com as normas da Associação Brasileira de Normas Técnicas (ABNT):
@@ -118,9 +98,29 @@ Para validar se o PDF/A foi gerado corretamente, o programa [VeraPDF](https://ve
 
 A conversão para PDF/A poderia ser feita através de algum procedimento de compilação do LaTeX, porém tive algumas dificuldades e não  consegui validar o arquivo gerado como PDF/A. A falta da ferramenta não é tão negativa, pois o procedimento só é necessário no momento de gerar a versão final e as alternativas citadas já satisfazem bem o requisito (*fico aberto à sugestões*).
 
+## Opções de Trabalho Acadêmico
 
-# UTFPR-CT Latex Template
+### Trabalho Acadêmico em Inglês
+
+Na declaração da classe `utfprct` no arquivo `utfprct.tex`, as últimas opções adicionam idiomas para hifenização, no qual, o último idioma definido será o idioma principal do documento (define o `\languagename`). Portanto, caso o trabalho seja desenvolvido em inglês realize os seguintes passos:
+
+1. Colocar a opção `english` em último da lista de opções da declaração de classe.
+    - Adicionalmente, pode-se selecionar a língua do pacote babel no preâmbulo: `\selectlanguage{english}`
+2. Selecionar o estilo de bibliografia `abntex2-alf-en` ou `abntex2-num-en` ao invés dos pacotes em português da `abnTeX2`, pois existem conectores e termos na citação e referência que precisavam ser traduzidos. Para isso, adicionar o seguinte comando (pode ser no preâmbulo): `\bibliographystyle{abntex2-alf-en}` (alfabético) ou  `\bibliographystyle{abntex2-num-en}` (numérico).
+
+<!--Um exemplo do template em inglês está disponível no exemplo [utfprct-ingles](./docs/examples/utfprct-ingles).-->
+
+### Trabalho Acadêmico em Cotutela  (Duplo Grau)
+
+Para trabalhos acadêmicos em cotutela com outro instituto (duplo grau), pode-se adicionar as informações do instituto de cotutela no arquivo de dados do trabalho (`utfprct-dados.tex`), de forma que essas informações sejam mencionadas nos elementos pré-textuais.
+
+No arquivo de dados, definir `\AtribuiCotutela{true}` para inserir as informações de cotutela na capa, folha de rosto e forma de referenciar o trabalho (adicionado na errata, resumo e abstract). Na folha de rosto, pode-se também atribuir uma segunda descrição do documento mais específica para o instituto de cotutela definindo `\AtribuiDescricaoCotutela{true}` com a descrição em `\DescricaoDoDocumentoCotutela`.
+
+<!--Um exemplo do template de trabalho em cotutela (duplo grau) está disponível no exemplo [utfprct-cotutela](./docs/examples/utfprct-cotutela).-->
+
+<!--# UTFPR-CT Latex Template
 
 Unofficial LaTeX template for academic works (doctoral, master, and bachelor thesis, etc.) production of the Universidade Tecnológica Federal do Paraná (UTFPR), campus Curitiba.
 
 This work is based on the [UTFPRPG-TEX](https://pt.overleaf.com/latex/templates/federal-university-of-technology-parana-ic-report/gkjvhwrtkvps)) project maintained by Luiz E. M. Lima. The main foundation of both projects is the [abnTeX2](http://www.abntex.net.br/) academic works template, which meets the standards requirements of the Brazilian Association of Technical Standards (ABNT) for development of technical and scientific Brazilian documents.
+-->
