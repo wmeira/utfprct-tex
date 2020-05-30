@@ -29,13 +29,12 @@
 %% https://github.com/wmeira/utfprct-tex
 
 %% Formato digital (sem folhas em branco): 
-%% openany: Impressão da primeira página em qualquer lado
-%% pretextualoneside: Impressão dos pré-textuais em qualquer lado
+%% 'pretextualoneside': impressão dos elementos pré-textuais começa em qualquer lado da folha (anverso ou verso)
+%% 'oneside': impressão dos elementos textuais no anverso da folha (sem folhas em branco para o verso)
 
 %% Formato impresso:
-%% oneside: Impressão dos elementos textuais e pós-textuais oneside (anverso) ou twoside (anverso e verso, se mais de 100 p.)
-%% openright: impressão da primeira página dos capítulos no anverso
-%% pretextualtwoside: Impressão dos pré-textuais começando no anverso
+%% 'pretextualtwoside': impressão dos elementos pré-textuais começa sempre no anverso
+%% 'oneside' ou 'twoside': impressão dos elementos textuais `oneside` (anverso) ou `twoside` (anverso e verso, se mais de 100 páginas)
 
 %% Classe e opções de documento
 \documentclass[%% Opções
@@ -44,7 +43,7 @@
   a4paper,%% Tamanho do papel: a4paper (A4), letterpaper (carta), etc.
   % fleqn,%% Alinhamento das equações à esquerda (comente para alinhamento centralizado)
   % leqno,%% Numeração das equações no lado esquerdo (comente para lado direito)
-  oneside,%% IMPRESSÃO NA FOLHA dos elementos textuais e pós-textuais: oneside (apenas no anverso) ou twoside (anverso e verso, se mais de 100 p.) (insere páginas em branco).
+  oneside,%% IMPRESSÃO dos elementos textuais e pós-textuais: oneside (apenas no anverso) ou twoside (anverso e verso, se mais de 100 p.) (insere páginas em branco).
 %%  
 %% -- Opções da classe ABNTEX2 --
   sumario = abnt-6027-2012,%% Formatação do sumário: tradicional (estilo tradicional) ou abnt-6027-2012 (norma ABNT 6027-2012)
@@ -162,7 +161,7 @@
 \incluircapa%% Comente para remover este item
 
 %% Folha de rosto (comentar para remover pré-textual)
-%% Comando com * coloca a ficha bibliográfica no verso
+%% Comando com * coloca a ficha catalográfica no verso
 \incluirfolhaderosto*%% Com ficha catalográfica no verso 
 %\incluirfolhaderosto%% Sem ficha catalográfica no verso
 
