@@ -2,7 +2,7 @@
 %% Copyright (C) 2020- by William H. T. Meira
 %%
 %% Modified version of project 'utfprpgtex' maintained
-%% by Luiz E. M. Lima (luizeduardomlima@gmail.com)
+%% by Luiz E. M. Lima
 %%
 %% This work may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3
@@ -27,6 +27,7 @@
 %%
 %% Contribute to improve this project (github repo):
 %% https://github.com/wmeira/utfprct-tex
+%%
 
 
 %% Identificação e modificações
