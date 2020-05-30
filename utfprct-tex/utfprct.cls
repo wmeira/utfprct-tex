@@ -227,10 +227,10 @@
     \newcommand{\nomecapa}{Capa}
     \newcommand{\nomefolhaderosto}{Folha de Rosto}
     \newcommand{\nomefichacatalografica}{Ficha Catalográfica}
-    % \newcommand{\nomeerrata}{Errata}
+    \newcommand{\nomeerrata}{Errata}
     \newcommand{\nomefolhadeaprovacao}{Folha de Aprovação}
     % \newcommand{\nomededicatoria}{Dedicatória}
-    % \newcommand{\nomeagradecimentos}{Agradecimentos}
+    \renewcommand{\agradecimentosname}{Agradecimentos}
     % \newcommand{\nomeepigrafe}{Epígrafe}
     \newcommand{\nomeresumo}{Resumo}
     \newcommand{\nomepalavraschave}{Palavras-chave}
@@ -311,10 +311,10 @@
     \newcommand{\nomecapa}{Cover}
     \newcommand{\nomefolhaderosto}{Title Page}
     \newcommand{\nomefichacatalografica}{Index Card}
-    % \newcommand{\nomeerrata}{Erratum}
+    \newcommand{\nomeerrata}{Errata}%Errata Sheet / Erratum
     \newcommand{\nomefolhadeaprovacao}{Approval Term}
     % \newcommand{\nomededicatoria}{Dedicatory}
-    \newcommand{\nomeagradecimentos}{Acknowledgements}
+    \renewcommand{\agradecimentosname}{Acknowledgements}
     % \newcommand{\nomeepigrafe}{Epigraphy}
     \newcommand{\nomeresumo}{Resumo}
     \newcommand{\nomepalavraschave}{Palavras-chave}
@@ -862,6 +862,7 @@
 
 \let\errataoriginal\errata%% Formatação do ambiente errata (original)
 \renewenvironment{errata}{%% Formatação do ambiente errata
+  \renewcommand{\errataname}{\nomeerrata}
   \begin{errataoriginal}%% Ambiente errata (original)
     \vspace*{0.5\linha}%% Espaçamento vertical
     \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
