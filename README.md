@@ -6,6 +6,8 @@ Este trabalho é baseado no projeto [UTFPRPG-TEX](https://www.overleaf.com/latex
 
 A estrutura principal de ambos os trabalhos é baseada no template de trabalhos acadêmicos [abnTeX2](http://www.abntex.net.br), que atende aos requisitos das normas da Associação Brasileira de Normas Técnicas (ABNT) para produção de documentos técnicos e científicos brasileiros.
 
+<!--A versão mais recente do template encontra-se também disponível no [**Overleaf**](#)-->
+
 ---
 
 ## Arquivos do Projeto
@@ -45,7 +47,7 @@ No arquivo de dados, definir `\AtribuiCotutela{true}` para inserir as informaç�
 
 ## Normas vigentes do Sistema de Bibliotecas da UTFPR (2020)
 
-A orientação para entrega de trabalhos acadêmicos pode ser encontrada no [portal do aluno](http://portal.utfpr.edu.br/biblioteca/trabalhos-academicos/orientacao-para-trabalhos-academicos) (*publicada em 18/09/2017*). No qual, estabele-se que os trabalhos devem estar de acordo com as normas da Associação Brasileira de Normas Técnicas (ABNT):
+A orientação para entrega de trabalhos acadêmicos pode ser encontrada no [portal da UTFPR](http://portal.utfpr.edu.br/biblioteca/trabalhos-academicos/orientacao-para-trabalhos-academicos) (*publicada em 18/09/2017*). No qual, estabele-se que os trabalhos devem estar de acordo com as normas da Associação Brasileira de Normas Técnicas (ABNT):
 
 - **NBR 6023/2018**: Informação e documentação - Referências
 - **NBR 6024/2012**: Informação e documentação - Numeração progressiva das seções de um documento - Apresentação

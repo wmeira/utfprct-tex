@@ -63,7 +63,7 @@ As listas de algoritmos, de ilustrações e de tabelas são geradas automaticame
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \section{Regras Gerais de Apresentação}\label{sec:regrasgerais}
 
-As regras gerais de apresentação, definidas na sequência, já estão predefinidas no modelo \gls{utfprcttex}\index{UTFPRCTTeX@\utfprcttex}. Algumas destas regras podem ser alteradas, por comandos apropriados do \gls{latex}\index{LaTeX@\latex}, do \gls{abntex2}\index{abnTeX2@\abnTeX} ou do \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex}, no preâmbulo do arquivo principal \texttt{utfprpgtex.tex} ou em outras partes do documento, por exemplo, nos capítulos.
+As regras gerais de apresentação, definidas na sequência, já estão predefinidas no modelo \gls{utfprcttex}\index{UTFPRCTTeX@\utfprcttex}. Algumas destas regras podem ser alteradas, por comandos apropriados do \gls{latex}\index{LaTeX@\latex}, do \gls{abntex2}\index{abnTeX2@\abnTeX} ou do \gls{utfprcttex}\index{UTFPRCTTeX@\utfprcttex}, no preâmbulo do arquivo principal \texttt{utfprcttex.tex} ou em outras partes do documento, por exemplo, nos capítulos.
 
 \begin{itemize}%% Lista de itens
 \item Configuração das margens: deve-se usar margens superior e esquerda de \SI{3}{cm}; e margens inferior e direita de \SI{2}{cm}; em papel formato A4 ($\SI{21}{cm} \times \SI{29,7}{cm}$).
@@ -98,7 +98,7 @@ Recomenda-se evitar, sempre que possível, o uso dos seguintes recursos (ou enfe
 \item O resumo, o \textit{abstract}, as notas, as referências, as legendas das ilustrações e tabelas e a natureza do trabalho devem ser digitadas em espaço simples.
 \item Todo o texto deve ser formatado com espaço entre linhas de um fator de 1,5 (sem espaçamento antes/depois).
 \item As citações com mais de três linhas devem ser em espaço simples e com recuo de \SI{4}{cm} da margem esquerda.
-\item As referências, ao final do trabalho, devem ser separadas entre si por dois espaços simples, e na mesma referência o espaço é simples.
+\item As referências, ao final do trabalho, devem ser separadas entre si por um espaço simples, e na mesma referência o espaço é simples \cite{NBR6023:2018}.
 \item Os títulos das seções secundárias devem ser separados do texto que os precede por dois espaços entre linhas de um fator de 1,5.
 \item As seções primárias devem iniciar em páginas distintas.
 \end{itemize}
@@ -179,20 +179,20 @@ Quando for necessário enumerar os diversos assuntos de uma seção que não pos
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \section{Citações}\label{sec:citacoes}
 
-O \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex} está configurado para produzir as citações no texto no estilo alfabético (autor-ano), segundo as normas \gls{abnt}\index{ABNT}, através dos comandos do \gls{abntex2}\index{abnTeX2@\abnTeX} \cite{abnTeX2:2013Cite,abnTeX2:2013CiteAlf}. A lista dos principais comandos são apresentadas a seguir:
+O \gls{utfprcttex}\index{UTFPRCTTeX@\utfprcttex} está configurado para produzir as citações no texto no estilo alfabético (autor-ano), segundo as normas \gls{abnt}\index{ABNT}, através dos comandos do \gls{abntex2}\index{abnTeX2@\abnTeX} \cite{abnTeX2:2013Cite,abnTeX2:2013CiteAlf}. A lista dos principais comandos são apresentadas a seguir:
 
 \begin{itemize}%% Lista de itens
-\item \verb|\cite{rótulo}| -- para gerar citação implícita. Por exemplo, a citação ``\ldots\ \cite{Thompson2001}\ldots'' é gerada pelo comando \verb|\cite{Thompson2001}| ou pelo atalho \verb|\citep{Thompson2001}|, definido em \texttt{utfprpgtex.tex}.
-\item \verb|\citeonline{rótulo}| -- para gerar citação explícita. Por exemplo a citação ``\ldots\ conforme proposto por \citeonline{Thompson2001}\ldots'' é gerada pelo comando \verb|\citeonline{Thompson2001}| ou pelo atalho \verb|\citet{Thompson2001}|, definido em \texttt{utfprpgtex.tex}.
-\item \verb|(\citeauthor{rótulo})| -- para gerar citação implícita somente do autor. Por exemplo, a citação ``\ldots\ (\citeauthor{Thompson2001})\ldots'' é gerada pelo comando \verb|(\citeauthor{Thompson2001})| ou pelo atalho \verb|\citepa{Thompson2001}|, definido em \texttt{utfprpgtex.tex}.
-\item \verb|\citeauthoronline{rótulo}| -- para gerar citação explícita somente do autor. Por exemplo, a citação ``\ldots\ conforme a relação de \citeauthoronline{Thompson2001}\ldots'' é gerada pelo comando \verb|\citeauthoronline{Thompson2001}| ou pelo atalho \verb|\citeta{Thompson2001}|, definido em \texttt{utfprpgtex.tex}.
-\item \verb|(\citeyear{rótulo})| -- para gerar citação implícita somente do ano. Por exemplo, a citação ``\ldots\ (\citeyear{Thompson2001})\ldots'' é gerada pelo comando \verb|(\citeyear{Thompson2001})| ou pelo atalho \verb|\citepy{Thompson2001}|, definido em \texttt{utfprpgtex.tex}.
-\item \verb|\citeyear{rótulo}| -- para gerar citação explícita somente do ano. Por exemplo, a citação ``\ldots\ no ano de \citeyear{Thompson2001}\ldots'' é gerada pelo comando \verb|\citeyear{Thompson2001}| ou pelo atalho \verb|\citety{Thompson2001}|, definido em \texttt{utfprpgtex.tex}.
+\item \verb|\cite{rótulo}| -- para gerar citação implícita. Por exemplo, a citação ``\ldots\ \cite{Thompson2001}\ldots'' é gerada pelo comando \verb|\cite{Thompson2001}| ou pelo atalho \verb|\citep{Thompson2001}|, definido em \texttt{utfprcttex.tex}.
+\item \verb|\citeonline{rótulo}| -- para gerar citação explícita. Por exemplo a citação ``\ldots\ conforme proposto por \citeonline{Thompson2001}\ldots'' é gerada pelo comando \verb|\citeonline{Thompson2001}| ou pelo atalho \verb|\citet{Thompson2001}|, definido em \texttt{utfprcttex.tex}.
+\item \verb|(\citeauthor{rótulo})| -- para gerar citação implícita somente do autor. Por exemplo, a citação ``\ldots\ (\citeauthor{Thompson2001})\ldots'' é gerada pelo comando \verb|(\citeauthor{Thompson2001})| ou pelo atalho \verb|\citepa{Thompson2001}|, definido em \texttt{utfprcttex.tex}.
+\item \verb|\citeauthoronline{rótulo}| -- para gerar citação explícita somente do autor. Por exemplo, a citação ``\ldots\ conforme a relação de \citeauthoronline{Thompson2001}\ldots'' é gerada pelo comando \verb|\citeauthoronline{Thompson2001}| ou pelo atalho \verb|\citeta{Thompson2001}|, definido em \texttt{utfprcttex.tex}.
+\item \verb|(\citeyear{rótulo})| -- para gerar citação implícita somente do ano. Por exemplo, a citação ``\ldots\ (\citeyear{Thompson2001})\ldots'' é gerada pelo comando \verb|(\citeyear{Thompson2001})| ou pelo atalho \verb|\citepy{Thompson2001}|, definido em \texttt{utfprcttex.tex}.
+\item \verb|\citeyear{rótulo}| -- para gerar citação explícita somente do ano. Por exemplo, a citação ``\ldots\ no ano de \citeyear{Thompson2001}\ldots'' é gerada pelo comando \verb|\citeyear{Thompson2001}| ou pelo atalho \verb|\citety{Thompson2001}|, definido em \texttt{utfprcttex.tex}.
 \end{itemize}
 
 Informações sobre a utilização dos comandos listados acima e os demais comandos para geração de referências, utilizados pelo \gls{abntex2}\index{abnTeX2@\abnTeX}, podem ser encontradas em \citeonline{abnTeX2:2013Cite,abnTeX2:2013CiteAlf}, disponíveis em \url{http://www.abntex.net.br/}.
 
-\gls{latex}\index{LaTeX@\latex} utiliza um arquivo externo (em separado) para o banco de dados das referências citadas no texto. Este arquivo é compilado pelo \gls{bibtex}\index{BibTeX@Bib\TeX} e deve possuir a extensão \texttt{bib}, como nos arquivos \texttt{referencias.bib} e \texttt{referencias-modelos.bib} presentes no diretório ``PosTexto'', utilizados neste documento. O arquivo \texttt{referencias-modelos.bib} apresenta exemplos dos seguintes estilos de referência aceitos pelo \gls{bibtex}\index{BibTeX@Bib\TeX}:
+\gls{latex}\index{LaTeX@\latex} utiliza um arquivo externo (em separado) para o banco de dados das referências citadas no texto. Este arquivo é compilado pelo \gls{bibtex}\index{BibTeX@Bib\TeX} e deve possuir a extensão \texttt{bib}, como nos arquivos \texttt{referencias.bib} e \texttt{referencias-modelos.bib} presentes no diretório ``PosTexto'', utilizados neste documento. O arquivo \texttt{exemplos-referencias.bib} apresenta exemplos dos seguintes estilos de referência aceitos pelo \gls{bibtex}\index{BibTeX@Bib\TeX}:
 
 \begin{itemize}%% Lista de itens
 \item anais de simpósios \citep{Alt1995,Pirmez2002};
@@ -233,7 +233,7 @@ As citações diretas no texto, com mais de três linhas,...
 \end{verbatim}
 \end{SingleSpacing}
 
-O ambiente \texttt{citacao} pode receber como parâmetro opcional um nome de idioma previamente carregado nas opções da classe (definido no preâmbulo do arquivo \texttt{utfprpgtex.tex}). Neste caso, o texto da citação é automaticamente escrito em itálico e a hifenização é ajustada para o idioma selecionado na opção do ambiente. Por exemplo:
+O ambiente \texttt{citacao} pode receber como parâmetro opcional um nome de idioma previamente carregado nas opções da classe (definido no preâmbulo do arquivo \texttt{utfprcttex.tex}). Neste caso, o texto da citação é automaticamente escrito em itálico e a hifenização é ajustada para o idioma selecionado na opção do ambiente. Por exemplo:
 
 \begin{SingleSpacing}%% Ambiente SingleSpacing
 \begin{verbatim}
@@ -360,7 +360,7 @@ A documentação sobre o pacote \texttt{algorithms} pode ser encontrada em: \url
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \section{Ilustrações}\label{sec:ilustracoes}
 
-O \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex} está configurado para produzir os ambientes para os seguintes tipos de ilustrações: figuras, fotografias, gráficos e quadros. Exemplos de uso destes ambientes podem ser observados no arquivo fonte deste capítulo.
+O \gls{utfprcttex}\index{UTFPRCTTeX@\utfprpgtex} está configurado para produzir os ambientes para os seguintes tipos de ilustrações: figuras, fotografias, gráficos e quadros. Exemplos de uso destes ambientes podem ser observados no arquivo fonte deste capítulo.
 
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \subsection{Figuras}\label{sec:figuras}
@@ -640,7 +640,7 @@ Outra opção para gerar a lista de abreviaturas, siglas e acrônimos é atravé
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \section{Símbolos}\label{sec:simbolos}
 
-\gls{latex}\index{LaTeX@\latex} gera automaticamente a lista de símbolos através do pacote \texttt{nomencl}. Ao redigir um símbolo pela primeira vez em qualquer parte do texto com o comando \verb|\nomenclature[prefixo]{símbolo}{descrição \nomunit{unidade}}|, é gerada uma entrada para a lista de símbolos. Veja exemplos deste comando no arquivo fonte deste capítulo. Os elementos da lista de símbolos são agrupados a depender da primeira letra atribuída ao prefixo e classificadas em:
+\gls{latex}\index{LaTeX@\latex} gera automaticamente a lista de símbolos através do pacote \texttt{nomencl}. Ao redigir um símbolo pela primeira vez em qualquer parte do texto com o comando \verb|\nomenclature[prefixo]{símbolo}{descrição \nomunit{unidade}}|, é gerada uma entrada para a lista de símbolos. Veja exemplos deste comando no arquivo fonte deste capítulo. Os elementos da lista de símbolos são ordenados a depender da primeira letra atribuída ao prefixo e classificadas em:
 
 \begin{itemize}%% Lista de itens
 \item A~-~Letras Latinas.
@@ -648,6 +648,11 @@ Outra opção para gerar a lista de abreviaturas, siglas e acrônimos é atravé
 \item C~-~Sobrescritos.
 \item D~-~Subscritos.
 \item E~-~Notações.
+\item F~-~Índices e Conjuntos
+\item G~-~Parâmetros
+\item H~-~Variáveis contínuas
+\item I~-~Variáveis inteiras
+\item J~-~Variáveis binárias
 \end{itemize}
 
 Outra opção ao comando \verb|\nomenclature| é o uso dos atalhos:
@@ -659,6 +664,11 @@ Outra opção ao comando \verb|\nomenclature| é o uso dos atalhos:
 \sobrescrito{prefixo}{símbolo}{descrição}{unidade}
 \subscrito{prefixo}{símbolo}{descrição}{unidade}
 \notacao{prefixo}{símbolo}{descrição}{unidade}
+\notacaois{símbolo}{descrição}{unidade}
+\notacaoparam{símbolo}{descrição}{unidade}
+\notacaofloatvar{símbolo}{descrição}{unidade}
+\notacaointvar{símbolo}{descrição}{unidade}
+\notacaobinvar{símbolo}{descrição}{unidade}
 \end{verbatim}
 \end{SingleSpacing}
 
@@ -686,6 +696,19 @@ Outra opção ao comando \verb|\nomenclature| é o uso dos atalhos:
 \nomenclature[EPsi_1]{$\overline{\Psi}$}{Média temporal}%%
 \notacao{Psi_2}{\langle \Psi \rangle}{Média na seção transversal}{}%%
 \notacao{Psi_3}{\langle\langle \Psi \rangle\rangle}{Média na seção transversal ponderada}{}%%
+%% Notações [F]
+\notacaois{Event_set}{e \in E}{Set of events}{}
+\notacaois{Interval_set}{i \in I}{Set of intervals}{}
+%% Notações [H]
+\notacaoparam{eps}{\varepsilon}{Small constant value}{}
+\notacaoparam{lb}{L}{Lower bound value ($L \ll 0$)}{}
+%% Notações [I]
+\notacaofloatvar{end}{e_{i}}{End of interval $i$}{h}
+\notacaofloatvar{start}{s_{i}}{Start of interval $i$}{h}
+%% Notações [J]
+\notacaointvar{e_i}{\phi_i}{Number of employees set to work during interval $i$}{}
+%% Notações [K]
+\notacaobinvar{a_i}{a_{i}}{1 if the flow is active during interval $i$; 0 otherwise}{}
 
 Mais detalhes dos comandos do pacote \texttt{nomencl} podem ser encontrados em: \url{http://tug.ctan.org/tex-archive/macros/latex/contrib/nomencl/nomencl.pdf}.
 
@@ -694,7 +717,7 @@ Outra opção para gerar a lista de símbolos é através da edição manual do 
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \section{Inclusão de Outros Arquivos}\label{sec:inclusao}
 
-É uma boa prática dividir o seu documento em diversos arquivos, e não apenas escrever tudo em um único. Esse recurso foi utilizado neste documento (veja \texttt{utfprpgtex.tex}). Para incluir diferentes arquivos em um arquivo principal, de modo que cada arquivo incluído fique em uma página diferente, utilize o comando:
+É uma boa prática dividir o seu documento em diversos arquivos, e não apenas escrever tudo em um único. Esse recurso foi utilizado neste documento (veja \texttt{utfprct.tex}). Para incluir diferentes arquivos em um arquivo principal, de modo que cada arquivo incluído fique em uma página diferente, utilize o comando:
 
 \begin{SingleSpacing}%% Ambiente SingleSpacing
 \begin{verbatim}
@@ -779,7 +802,7 @@ A impressão do glossário incorpora o número das páginas em que as entradas f
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \section{Apêndices e Anexos}\label{sec:apendiceseanexos}
 
-Apêndices e anexos podem ser inseridos no documento, logo após o glossário, através da inclusão de arquivos, como por exemplo, os arquivos fontes \texttt{apendicea.tex}, \texttt{apendiceb.tex}, \texttt{anexoa.tex} e \texttt{anexob.tex}, presentes no diretório ``PosTexto'' deste projeto, são utilizados para gerar o \autoref{cap:apendicea}, o \autoref{cap:apendiceb}, o \autoref{cap:anexoa} e o \autoref{cap:anexob}, respectivamente. Veja orientações sobre inclusão de arquivos na \autoref{sec:inclusao}.
+Apêndices e anexos podem ser inseridos no documento, logo após o glossário, através da inclusão de arquivos, como por exemplo, os arquivos fontes \texttt{apendicea.tex}, \texttt{apendiceb.tex} e  \texttt{anexoa.tex}, presentes no diretório ``PosTexto'' deste projeto, são utilizados para gerar o \autoref{cap:apendicea}, o \autoref{cap:apendiceb} e o \autoref{cap:anexoa}, respectivamente. Veja orientações sobre inclusão de arquivos na \autoref{sec:inclusao}.
 
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \section{Índice Remissivo}\label{sec:indice}
@@ -820,7 +843,7 @@ pdflatex <mainfile>.tex
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \subsection{Problemas de Compilação}\label{sec:problemas}
 
-O \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex} foi configurado e testado para compilar documentos \gls{latex}\index{LaTeX@\latex} sem problemas, mas por se tratar de uma linguagem de programação (para editoração) está sujeita à \textit{bugs} como qualquer outra linguagem. Além disto, o \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex} é baseado em outras classes de documento e também utiliza uma quantidade considerável de pacotes que podem ter incompatibilidades. Portanto, alguns cuidados devem ser tomados quando se trabalha com \gls{latex}\index{LaTeX@\latex}, principalmente para novos usuários:
+O \gls{utfprcttex}\index{UTFPRCTTeX@\utfprcttex} foi configurado e testado para compilar documentos \gls{latex}\index{LaTeX@\latex} sem problemas, mas por se tratar de uma linguagem de programação (para editoração) está sujeita à \textit{bugs} como qualquer outra linguagem. Além disto, o \gls{utfprcttex}\index{UTFPRCTTeX@\utfprcttex} é baseado em outras classes de documento e também utiliza uma quantidade considerável de pacotes que podem ter incompatibilidades. Portanto, alguns cuidados devem ser tomados quando se trabalha com \gls{latex}\index{LaTeX@\latex}, principalmente para novos usuários:
 
 \begin{itemize}%% Lista de itens
 \item Os comandos devem ser corretamente finalizados, ou seja, deve-se verificar a abertura e fechamento dos colchetes e chaves: \verb|\comando[opções]{argumentos}|. Alguns comandos não necessitam disto, por exemplo \verb|\comando|, mas as vezes torna-se necessário colocar uma barra invertida, \verb|\|, ou chaves, \verb|{}|, após o comando para gerar um espaço com o texto na sequência: \verb|\comando\ texto na sequência do comando| ou \verb|\comando{} texto na sequência do comando|.
@@ -830,4 +853,4 @@ O \gls{utfprpgtex}\index{UTFPRPGTeX@\utfprpgtex} foi configurado e testado para 
 \item Os nomes de arquivos carregados no modelo (arquivos fontes, figuras, etc.) não devem conter caracteres especiais ou acentuados: \verb|capitulo1.tex| ao invés de \verb|capitulo_1.tex|. Esta regra também se aplica aos rótulos: \verb|\label{cap:capitulo1}| ao invés de \verb|\label{cap:capitulo_1}|.
 \end{itemize}
 
-Outras dicas de uso dos comandos do \gls{latex}\index{LaTeX@\latex} podem ser encontradas em diversos materiais de referência disponíveis na internet, por exemplo: \url{http://en.wikibooks.org/wiki/LaTeX}, \url{http://repositorios.cpai.unb.br/ctan/info/lshort/portuguese-BR/lshortBR.pdf}, entre outros.
+Outras dicas de uso dos comandos do \gls{latex}\index{LaTeX@\latex} podem ser encontradas em diversos materiais de referência disponíveis na internet, por exemplo: \url{http://en.wikibooks.org/wiki/LaTeX}, \url{https://www.overleaf.com/learn}, entre outros.

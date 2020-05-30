@@ -1632,7 +1632,7 @@
   \fi
   \prebibhook
 }
-%NBR 6023/2018: única linha entre referências (antes era 1.5)
+%NBR6023/2018: única linha entre referências (antes era 1.5)
 \setlength{\bibitemsep}{1\linha}%% Espaçamento entre itens da lista de referências
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
