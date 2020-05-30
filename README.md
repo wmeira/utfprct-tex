@@ -2,7 +2,7 @@
 
 O `UTFPRCT-TEX` é um template LaTeX não oficial para trabalhos acadêmicos (teses, dissertações, trabalhos de conclusão, etc.) da Universidade Tecnológica Federal do Paraná (UTFPR) - Curitiba.
 
-Este trabalho é baseado no projeto [UTFPRPG-TEX](https://pt.overleaf.com/latex/templates/federal-university-of-technology-parana-ic-report/gkjvhwrtkvps) mantido por Luiz. E. M. Lima. As alterações do template `UTFPRPG-TEX` foram necessárias para alinhar as diferentes interpretações da ABNT presentes mesmo entre diferentes campi da UTFPR e implementar os principais pontos da **NBR 6023/2018** (referências).
+Este trabalho é baseado no projeto [UTFPRPG-TEX](https://www.overleaf.com/latex/templates/federal-university-of-technology-parana-academic-works/vvbtcwhwngcz) mantido por Luiz. E. M. Lima. As alterações do template `UTFPRPG-TEX` foram necessárias para alinhar as diferentes interpretações da ABNT presentes mesmo entre diferentes campi da UTFPR e implementar os principais pontos da **NBR 6023/2018** (referências).
 
 A estrutura principal de ambos os trabalhos é baseada no template de trabalhos acadêmicos [abnTeX2](http://www.abntex.net.br), que atende aos requisitos das normas da Associação Brasileira de Normas Técnicas (ABNT) para produção de documentos técnicos e científicos brasileiros.
 
@@ -16,7 +16,7 @@ Os arquivos do template são:
 
 - `utfprct.cls`: arquivo de classe do template UTFPRCT-TEX
 - `utfprct.tex`: arquivo LaTeX de trabalho acadêmico utilizando o template UTFPRCT-TEX
-- `utfprct-dados.tex`: arquivo de dados do trabalho acadêmicos. Deve conter todas as informações da capa, contra-capa e metadados do documento
+- `utfprct-dados.tex`: arquivo de dados do trabalho acadêmico. Deve conter todas as informações da capa, contra-capa e metadados do documento
 - `abntex2-alf.bst`: arquivo com pequenas alterações do estilo alfanumérico *bibtex* do pacote `abnTeX2` para se adaptar a NBR6023/2018 (estilo *bibtex* padrão)
 - `abntex2-num.bst`: arquivo com pequenas alterações do estilo numérico *bibtex* do pacote `abnTeX2` para se adaptar a NBR6023/2018
 - `abntex2-alf-en.bst`: arquivo `abntex2-alf.bst` com conectores e termos traduzidos para o inglês
@@ -25,12 +25,23 @@ Os arquivos do template são:
 
 ## Trabalho Acadêmico em Inglês
 
-Na declaração da classe `utfprct` no arquivo `utfprct.tex`, as últimas opções adicionam idiomas para hifenização, sendo o último idioma definido como idioma principal do documento (`\languagename`). Portanto, caso o trabalho seja desenvolvido em inglês realize os seguintes passos:
+Na declaração da classe `utfprct` no arquivo `utfprct.tex`, as últimas opções adicionam idiomas para hifenização, no qual, o último idioma definido será o idioma principal do documento (define o `\languagename`). Portanto, caso o trabalho seja desenvolvido em inglês realize os seguintes passos:
 
-- Colocar a opção `english` em último da lista de opções da declaração de classe. Adicionalmente, pode-se selecionar a língua do pacote babel no preâmbulo: `\selectlanguage{english}`
-- Selecionar o estilo de bibliografia `abntex2-alf-en` ou `abntex2-num-en` ao invés dos pacotes em português da `abnTeX2`, pois existem conectores e termos na citação e referência que precisavam ser traduzidos. Para isso, adicionar o seguinte comando (pode ser no preâmbulo): `\bibliographystyle{abntex2-alf-en}` (alf) ou  `\bibliographystyle{abntex2-num-en}` (numérico).
+1. Colocar a opção `english` em último da lista de opções da declaração de classe.
+    - Adicionalmente, pode-se selecionar a língua do pacote babel no preâmbulo: `\selectlanguage{english}`
+2. Selecionar o estilo de bibliografia `abntex2-alf-en` ou `abntex2-num-en` ao invés dos pacotes em português da `abnTeX2`, pois existem conectores e termos na citação e referência que precisavam ser traduzidos. Para isso, adicionar o seguinte comando (pode ser no preâmbulo): `\bibliographystyle{abntex2-alf-en}` (alfabético) ou  `\bibliographystyle{abntex2-num-en}` (numérico).
+
+<!--Um exemplo do template em inglês está disponível no exemplo [utfprct-ingles](./docs/examples/utfprct-ingles).-->
 
 ---
+
+## Trabalho Acadêmico em Cotutela  (Duplo Grau)
+
+Para trabalhos acadêmicos em cotutela com outro instituto (duplo grau), pode-se adicionar as informações do instituto de cotutela no arquivo de dados do trabalho (`utfprct-dados.tex`), de forma que essas informações sejam mencionadas nos elementos pré-textuais.
+
+No arquivo de dados, definir `\AtribuiCotutela{true}` para inserir as informações de cotutela na capa, folha de rosto e forma de referenciar o trabalho (adicionado na errata, resumo e abstract). Na folha de rosto, pode-se também atribuir uma segunda descrição do documento mais específica para o instituto de cotutela definindo `\AtribuiDescricaoCotutela{true}` com a descrição em `\DescricaoDoDocumentoCotutela`.
+
+<!--Um exemplo do template de trabalho em cotutela (duplo grau) está disponível no exemplo [utfprct-cotutela](./docs/examples/utfprct-cotutela).-->
 
 ## Normas vigentes do Sistema de Bibliotecas da UTFPR (2020)
 
@@ -79,13 +90,13 @@ Para que o template UTFPRCT-TEX produza documentos no formato digital ou impress
 Implica na remoção de todas as páginas em branco, a fim de não parecer que existe falta de informação durante a leitura do documento.
 
 * `pretextualoneside`: impressão dos elementos pré-textuais começa em qualquer lado da folha (anverso ou verso)
-* `oneside`: impressão dos elementos textuais no anverso da folha (sem folhas em branco para o verso)
+* `oneside`: impressão dos elementos textuais e pós-textuais no anverso da folha (sem folhas em branco para o verso)
 
 
 #### Formato Impresso
 
 * `pretextualtwoside`: impressão dos elementos pré-textuais começa sempre no anverso
-* `oneside` ou `twoside`: impressão dos elementos textuais `oneside` (anverso) ou `twoside` (anverso e verso, se mais de 100 páginas)
+* `oneside` ou `twoside`: impressão dos elementos textuais e  pós-textuais `oneside` (anverso) ou `twoside` (anverso e verso, se mais de 100 páginas)
 
 ---
 
