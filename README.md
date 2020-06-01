@@ -6,7 +6,7 @@ Este trabalho é baseado no projeto [UTFPRPG-TEX](https://www.overleaf.com/latex
 
 A estrutura principal de ambos os trabalhos é baseada no template de trabalhos acadêmicos [abnTeX2](http://www.abntex.net.br), que atende aos requisitos das normas da Associação Brasileira de Normas Técnicas (ABNT) para produção de documentos técnicos e científicos brasileiros.
 
-<!--A versão mais recente do template encontra-se também disponível no [**Overleaf**](#)-->
+A versão mais recente do template encontra-se também disponível no [**Overleaf**](https://www.overleaf.com/latex/templates/utfprct-tex-template-para-trabalhos-academicos-da-utfpr/rgmcwpndsrgq)
 
 ---
 
