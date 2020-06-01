@@ -1320,7 +1320,7 @@
 \newenvironment{listadeabreviaturas}{%% Formatação do ambiente listadeabreviaturas
   \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
     \section*{\nomeabreviaturas}%% Seção abreviaturas
-    \begin{xtabular}{@{}p{25mm}@{}p{135mm}}%% Ambiente xtabular
+    \begin{xtabular}{@{}p{25mm}@{}p{135mm}@{}}%% Ambiente xtabular
 }{%%
     \end{xtabular}
   \end{Spacing}
@@ -1329,7 +1329,7 @@
 \newenvironment{listadesiglas}{%% Formatação do ambiente listadesiglas
   \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
     \section*{\nomesiglas}%% Seção siglas
-    \begin{xtabular}{@{}p{25mm}@{}p{135mm}}%% Ambiente xtabular
+    \begin{xtabular}{@{}p{25mm}@{}p{135mm}@{}}%% Ambiente xtabular
 }{%%
     \end{xtabular}
   \end{Spacing}
@@ -1338,7 +1338,7 @@
 \newenvironment{listadeacronimos}{%% Formatação do ambiente listadeacronimos
   \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
     \section*{\nomeacronimos}%% Seção acrônimos
-    \begin{xtabular}{@{}p{25mm}@{}p{135mm}}%% Ambiente xtabular
+    \begin{xtabular}{@{}p{25mm}@{}p{135mm}@{}}%% Ambiente xtabular
 }{%%
     \end{xtabular}
   \end{Spacing}
@@ -1368,21 +1368,21 @@
     \setlength{\glspagelistwidth}{0pt}%% Comprimento da lista de páginas
     \renewenvironment{theglossary}{%% Formatação do glossário
       \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
-        \begin{xtabular}{@{}p{25mm}@{}p{\glsdescwidth}}%% Ambiente xtabular
+        \begin{xtabular}{@{}p{25mm}@{}p{\glsdescwidth}@{}}%% Ambiente xtabular
     }{%%
         \end{xtabular}
       \end{Spacing}
     }
   }
   \pretextualchapter{\nomelistadeacronimos}%% Marcador
-  \printglossary[type = \abbreviationtype, title = \nomeabreviaturas, style = myxtab, nonumberlist = true]%% Lista de abreviaturas
+  \printglossary[type=\abbreviationtype, title = \nomeabreviaturas, style = myxtab, nonumberlist = true]%% Lista de abreviaturas
   \printglossary[type = \pseudoacronymtype, title = \nomesiglas, style = myxtab, nonumberlist = true]%% Lista de siglas
   \printglossary[type = \acronymtype, title = \nomeacronimos, style = myxtab, nonumberlist = true ]%% Lista de acrônimos
   \cleardoublepage%% Página de verso
 }
-\newcommand{\abreviatura}[3]{\newacronym[type = \abbreviationtype]{#1}{#2}{#3}}%% Entrada de abreviatura
-\newcommand{\sigla}[3]{\newacronym[type = \pseudoacronymtype]{#1}{#2}{#3}}%% Entrada de sigla
-\newcommand{\acronimo}[3]{\newacronym[type = \acronymtype]{#1}{#2}{#3}}%% Entrada de acrônimo
+\newcommand{\abreviatura}[3]{\newacronym[type=\abbreviationtype]{#1}{#2}{#3}}%% Entrada de abreviatura
+\newcommand{\sigla}[3]{\newacronym[type=\pseudoacronymtype]{#1}{#2}{#3}}%% Entrada de sigla
+\newcommand{\acronimo}[3]{\newacronym[type=\acronymtype]{#1}{#2}{#3}}%% Entrada de acrônimo
 
 %% Lista de abreviaturas, siglas e acrônimos
 \newcommand{\incluirlistadeacronimos}[1]{%% Definição do comando para inclusão da lista de abreviaturas, siglas e acrônimos
