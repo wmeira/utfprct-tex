@@ -112,9 +112,16 @@
 \newcommand{\sen}{\operatorname{sen}}%% Operador seno
 \newcommand{\senh}{\operatorname{senh}}%% Operador seno hiperbólico
 \newcommand{\tg}{\operatorname{tg}}%% Operador tangente
-\newcommand{\tgh}{\operatorname{tgh}}%% Operador tangente hiperbólico
-\newcommand{\seqref}[1]{Equação~\eqref{#1}}%% Referência de uma única equação
-\newcommand{\meqref}[1]{Equações~\eqref{#1}}%% Referência de multiplas equações
+\newcommand{\tgh}{\operatorname{tgh}}%% Operador tangente hiperbólico  
+\ifthenelse{\equal{\languagename}{english}}{%%
+\newcommand{\nomeequacao}{Equation}
+\newcommand{\nomeequacoes}{Equations}
+}{%default pt
+\newcommand{\nomeequacao}{Equação}
+\newcommand{\nomeequacoes}{Equações}
+}%  
+\newcommand{\seqref}[1]{\nomeequacao~\eqref{#1}}%% Referência de uma única equação
+\newcommand{\meqref}[1]{\nomeequacoes~\eqref{#1}}%% Referência de multiplas equações
 \newcommand{\citep}[1]{\cite{#1}}%% Atalho para citação implícita
 \newcommand{\citet}[1]{\citeonline{#1}}%% Atalho para citação explícita
 \newcommand{\citepa}[1]{(\citeauthor{#1})}%% Atalho para citação implícita (somente autor)
