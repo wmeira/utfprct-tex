@@ -30,11 +30,12 @@
 
 %% Formato digital (sem folhas em branco): 
 %% 'pretextualoneside': impressão dos elementos pré-textuais começa em qualquer lado da folha (anverso ou verso)
-%% 'oneside': impressão dos elementos textuais no anverso da folha (sem folhas em branco para o verso)
+%% 'oneside': impressão dos elementos textuais e pós-textuais no anverso da folha (sem folhas em branco para o verso)
 
 %% Formato impresso:
 %% 'pretextualtwoside': impressão dos elementos pré-textuais começa sempre no anverso
-%% 'oneside' ou 'twoside': impressão dos elementos textuais `oneside` (anverso) ou `twoside` (anverso e verso, se mais de 100 páginas)
+%% 'oneside' ou 'twoside': impressão dos elementos textuais e pós-textuais `oneside` (anverso) ou `twoside` (anverso e verso, se mais de 100 páginas)
+
 
 %% Classe e opções de documento
 \documentclass[%% Opções
@@ -74,15 +75,24 @@
   brazil,%% Idioma principal do documento (último da lista)    
 ]{utfprct}%% Classe utfprct
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Para alterar o idioma do documento para INGLÊS: 
+%%%%%%%%
+%% Configuração dos avisos (warnings)
+%% Comportamento do Tex quando um PDF é incluído e possui uma versão mais nova que a versão mínima especificada em \pdfminorversion. Opções: -1 (no info), 0 (default, warning), 1 (error)
+\pdfinclusionerrorlevel=-1%no warning 
+%\pdfminorversion=5%pdf minor output version (default 5)
+
+%%%%%%%%
+
+%%%%%%%%
+%% Para alterar o idioma do documento para o INGLÊS: 
 %1) Colocar o "english" como último idioma carregado no documentclass (o último será o principal do documento. Adicionalmente, pode-se selecionar o english como língua principal.
 %\selectlanguage{english}%descomentar para ingles
 
 %2) Usar o abntex2-alf-en ou abntex2-num-en ao invés do default em pt-br do abntex2.
 %\bibliographystyle{abntex2-alf-en}%descomentar para ingles
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%
 
+%%%%%%%%
 %% Pacotes carregados nas classes:
 %%   memoir: abstract, appendix, array, booktabs, ccaption, chngcntr, chngpage, dcolumn, delarray, enumerate, epigraph, framed, ifmtarg, ifpdf, index, makeidx, moreverb, needspace, newﬁle, nextpage, parskip, patchcmd, setspace, shortvrb, showidx, tabularx, titleref, titling, tocbibind, tocloft, verbatim, verse.
 %%   memoir (similares): crop, fancyhdr, geometry, sidecap, subﬁgure, titlesec.
@@ -94,8 +104,6 @@
 \usepackage{amssymb, amstext, amsthm, icomma}%% Ferramentas para linguagem matemática
 \usepackage{pifont, textcomp, wasysym}%% Símbolos de texto
 
-\usepackage{silence}
-\WarningFilter{xcolor}{Incompatible color definition}
 
 %% Comandos personalizados (\newcommand{name}[num]{definition})
 \newcommand{\cpp}{\texttt{C$++$}}%% C++
