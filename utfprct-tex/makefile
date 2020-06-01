@@ -1,7 +1,8 @@
-#### makefile, 2020/05/25
-#### Copyright (C) 2019 Luiz E. M. Lima (luizeduardomlima@gmail.com)
-##
-## This makefile provides commands to make compiling LaTeX files.
+#### makefile, 2020/06/01
+#### Copyright (C) 2020 William H. T. Meira
+#### Modified version from Luiz E. M. Lima - 2019/12/03
+####
+#### This makefile provides commands to make compiling LaTeX files.
 
 ## Source and base name
 src :=	utfprct.tex
@@ -72,7 +73,7 @@ help:
 	@echo "# option 1:       dvi, ps, pdf1, pdf2, all1, or all2."
 	@echo "# option 2:       biber or bibtex."
 	@echo "##############################################################################"
-	
+
 ## Check for errors
 check:
 	chktex ${base_name}.tex || true

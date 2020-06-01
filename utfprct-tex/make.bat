@@ -9,8 +9,8 @@ REM Sets local variables
 setlocal EnableDelayedExpansion
 
 REM Source and base name (default utfprct.tex)
-REM if [%src%] == [] set /p src="Enter source filename with 3-digits extension: "
 set src=utfprct.tex
+REM if [%src%] == [] set /p src="Enter source filename with 3-digits extension: "
 set base_name=%src:~0,-4%
 
 REM Title
@@ -73,7 +73,11 @@ if [%1] == [all1] %cmd_pdf1% & %cmd_clean%
 if [%1] == [all2] %cmd_pdf2% & %cmd_clean%
 
 REM Shows help
-if [%1] == [help] (
+set "cmd_help="
+if [%1] == [help] set cmd_help=1
+if [%1] == [] set cmd_help=1
+
+if defined cmd_help (
   @echo ##############################################################################
   @echo # Commands to make compiling LaTeX source files
   @echo ##############################################################################
