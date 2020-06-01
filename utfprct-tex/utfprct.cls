@@ -33,12 +33,13 @@
 %% Identificação e modificações
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
 \ProvidesClass{utfprct}[2020/05/25 v1.0]
-%% -- v1.0: Modifications on the utfprpgtex project
+%% -- v1.0: Modification of utfprpgtex to utrpfcttex project
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Classe e Opções
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %% -- Opções da classe abntex2
 \RequirePackage{color}%% Controle de cores em documentos LaTeX
@@ -94,9 +95,14 @@
 \ProcessOptions\relax%% Processamento das opções
 \LoadClass{abntex2}%% Carregamento da classe abntex2
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Pacotes carregados
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{silence}
+% Supress warning: captions config. via caption package interface instead the memoir class
+\WarningFilter{memoir}{For the caption package}
 
 \RequirePackage[utf8]{inputenc}%% Codificações de entrada: unix - latin1/utf8; windows - ansinew; Mac - applemax; DOS-OS/2 - cp850
 \ifpdf%% Compilação com pdflatex
@@ -146,7 +152,9 @@
 }
 \fi
 
-\RequirePackage[alf]{abntex2cite}%% Citações padrão ABNT (autor-data)
+%NBR6023/2018: alinhado para esquerda (package default: bibleftalign)
+\RequirePackage[alf, bibleftalign]{abntex2cite}%% Citações padrão ABNT (autor-data)
+
 \ifpdf%% Compilação com pdflatex
 \else%% Compilação com latex
   \@ifpackageloaded{breakurl}%% Verificação do pacote breakurl
@@ -206,9 +214,6 @@
   
   %NBR6023/2018: sem traço sublinear quando referências (mesmos autores) forem repetidos (yes para colocar)
   \citeoption{abnt-repeated-title-omit=no}
-  
-  %NBR6023/2018: alinhado para esquerda (nao mais justificado)
-  \citeoption{bibleftalign}
 
   %NBR6023/2018: URLs nao devem ter "<" and ">" (altera o comando do abntex2cite.sty)
   \renewcommand\UrlLeft{}%antes era "<"
@@ -673,8 +678,6 @@
 % \setlength{\marginparsep}{0pt}%% Espaçamento horizontal entre a margem e a nota de margem
 % \setlength{\marginparpush}{0pt}%% Espaçamento vertical mínimo entre duas notas de margem
 % \setlength{\marginparwidth}{0pt}%% Largura da nota de margem
-\setlength{\abovecaptionskip}{1pt}%% Espaçamento acima da legenda
-\setlength{\belowcaptionskip}{1pt}%% Espaçamento abaixo da legenda
 \if@fleqn\setlength{\mathindent}{\parindent}\fi%% Recuo dos parágrafos de equações alinhadas à esquerda (em ambiente matemático)
 \renewcommand{\baselinestretch}{1.5}%% Espaçamento entre linhas (1, 1,5 ou 2)
 
@@ -713,16 +716,16 @@
       }\\[0.5\linha]%
 	  %\MakeUppercase{\imprimirniveldeformacao\ em \imprimircurso}\\[80pt]%% Titulação e curso
 	  \ifthenelse{\equal{\imprimiratribuicotutela}{true}}{%%	  
-		\MakeUppercase{\imprimirinstituicaocotutela}\\%%
+		\MakeUppercase{\imprimirinstituicaocotutela}\par%%
 	    \MakeUppercase{\imprimirprogramacotutela}\\[80pt]%%
 	  }{\vspace*{100pt}}%%
       \ifthenelse{\equal{\imprimiratribuiautortres}{true}}{%% Insere 3 autores(as)
-	    \MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
-      	\MakeUppercase{\imprimirnomedoautordois}\\%% Autor(a) 2
+	    \MakeUppercase{\imprimirnomedoautor}\par%% Autor(a)
+      	\MakeUppercase{\imprimirnomedoautordois}\par%% Autor(a) 2
       	\MakeUppercase{\imprimirnomedoautortres}\\[96pt]%% Autor(a) 3
       }{%
       	\ifthenelse{\equal{\imprimiratribuiautordois}{true}}{%% Insere 2 autores(as)
-          \MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
+          \MakeUppercase{\imprimirnomedoautor}\par%% Autor(a)
 	      \MakeUppercase{\imprimirnomedoautordois}\\[118pt]%% Autor(a) 2
       	}{%% Insere 1 autor(a)
           \MakeUppercase{\imprimirnomedoautor}\\[140pt]%% Autor(a)
@@ -731,8 +734,8 @@
       {\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[120pt]%% Título do documento
       \MakeUppercase{\imprimirtipodedocumento}\\%% Tipo de documento
       \vspace*{\stretch{1}}%% Espaçamento vertical
-      \MakeUppercase{\imprimircidade}\\%% Cidade
-      \MakeUppercase{\imprimirano}\\%% Ano
+      \MakeUppercase{\imprimircidade}\par%% Cidade
+      \MakeUppercase{\imprimirano}%% Ano
     \end{center}
   \end{capa}
 }
@@ -745,12 +748,12 @@
   \begin{center}%% Texto centralizado
     \bfseries%% Texto em negrito
     \ifthenelse{\equal{\imprimiratribuiautortres}{true}}{%% Insere 3 autores(as)
-      \MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
-      \MakeUppercase{\imprimirnomedoautordois}\\%% Autor(a) 2
+      \MakeUppercase{\imprimirnomedoautor}\par%% Autor(a)
+      \MakeUppercase{\imprimirnomedoautordois}\par%% Autor(a) 2
       \MakeUppercase{\imprimirnomedoautortres}\\[241pt]%% Autor(a) 3
     }{% 
       \ifthenelse{\equal{\imprimiratribuiautordois}{true}}{%% Insere 2 autores(as)
-        \MakeUppercase{\imprimirnomedoautor}\\%% Autor(a)
+        \MakeUppercase{\imprimirnomedoautor}\par%% Autor(a)
         \MakeUppercase{\imprimirnomedoautordois}\\[263pt]%% Autor(a) 2
       }{%% Insere 1 autor(a)
         \MakeUppercase{\imprimirnomedoautor}\\[285pt]%% Autor(a)
@@ -774,20 +777,20 @@
 		\ifthenelse{\equal{\imprimiratribuicoorientador}{true}}%% Existe coorientador
         {\imprimiratribuicaocoorientador: \imprimirtitulodocoorientador\ \imprimirnomedocoorientador\\[\linha]}{\\[\linha]}%% Coorientador
 		\imprimirdescricaododocumentocotutela\\[\linha]		
-        \imprimiratribuicaoorientadorcotutela: \imprimirtitulodoorientadorcotutela\ \imprimirnomedoorientadorcotutela\\%% Orientador Cotutela
+        \imprimiratribuicaoorientadorcotutela: \imprimirtitulodoorientadorcotutela\ \imprimirnomedoorientadorcotutela\par%% Orientador Cotutela
    		\ifthenelse{\equal{\imprimiratribuicoorientadorcotutela}{true}}%% Existe coorientador cotutela
-        {\imprimiratribuicaocoorientadorcotutela: \imprimirtitulodocoorientadorcotutela\ \imprimirnomedocoorientadorcotutela\\}{\\}%% Coorientador Cotutela
+        {\imprimiratribuicaocoorientadorcotutela: \imprimirtitulodocoorientadorcotutela\ \imprimirnomedocoorientadorcotutela\par}{\par}%% Coorientador Cotutela
 	  }%%
 	  {%2)orientador(ext) + coorientador + coorientador(ext)
-	  	\imprimiratribuicaoorientadorcotutela: \imprimirtitulodoorientadorcotutela\ \imprimirnomedoorientadorcotutela\\%% Orientador Cotutela
+	  	\imprimiratribuicaoorientadorcotutela: \imprimirtitulodoorientadorcotutela\ \imprimirnomedoorientadorcotutela\par%% Orientador Cotutela
 		\ifthenelse{\equal{\imprimiratribuicoorientador}{true}}%% Existe coorientador
-        {\imprimiratribuicaocoorientador: \imprimirtitulodocoorientador\ \imprimirnomedocoorientador\\}{\\}%% Coorientador
+        {\imprimiratribuicaocoorientador: \imprimirtitulodocoorientador\ \imprimirnomedocoorientador\par}{\par}%% Coorientador
    		\ifthenelse{\equal{\imprimiratribuicoorientadorcotutela}{true}}%% Existe coorientador cotutela
-        {\imprimiratribuicaocoorientadorcotutela: \imprimirtitulodocoorientadorcotutela\ \imprimirnomedocoorientadorcotutela\\}{\\}%%
+        {\imprimiratribuicaocoorientadorcotutela: \imprimirtitulodocoorientadorcotutela\ \imprimirnomedocoorientadorcotutela\par}{\par}%%
 	  }}%%
 	  {%3)apenas coorientador
 		\ifthenelse{\equal{\imprimiratribuicoorientador}{true}}%% Existe coorientador
-        {\imprimiratribuicaocoorientador: \imprimirtitulodocoorientador\ \imprimirnomedocoorientador\\}{\\}%% Coorientador
+        {\imprimiratribuicaocoorientador: \imprimirtitulodocoorientador\ \imprimirnomedocoorientador\par}{\par}%% Coorientador
 	  }
       }%end parbox
     \end{Spacing}
@@ -795,8 +798,8 @@
   \vspace*{\stretch{1}}%% Espaçamento vertical
   \begin{center}%% Texto centralizado
     \bfseries%% Texto em negrito
-    \MakeUppercase{\imprimircidade}\\%% Cidade
-    \MakeUppercase{\imprimirano}\\%% Ano
+    \MakeUppercase{\imprimircidade}\par%% Cidade
+    \MakeUppercase{\imprimirano}%% Ano
   \end{center}
 }
 \newcommand{\incluirfolhaderosto}[1][\folhaderostoname]{%% Inclusão da folha de rosto (com ou sem ficha catalográfica)
@@ -1764,6 +1767,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Legendas de objetos flutuantes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\abovecaptionskip}{1pt}%% Espaçamento acima da legenda
+\setlength{\belowcaptionskip}{1pt}%% Espaçamento abaixo da legenda
 
 \hangcaption%% Recuo do texto das legendas
 \if@legendascentralizadas%% Alinhamento das legendas centralizado
