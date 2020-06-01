@@ -52,6 +52,27 @@ else
   cmd_mkidx =	${prg_mkidx} ${base_name}.idx
 endif
 
+## Shows help
+help:
+	@echo "##############################################################################"
+	@echo "# Commands to make compiling LaTeX source files"
+	@echo "##############################################################################"
+	@echo "# make check:     check for errors."
+	@echo "# make dvi:       creates dvi, converts tex-dvi."
+	@echo "# make ps:        creates ps, converts tex-dvi-ps."
+	@echo "# make pdf1:      creates pdf using latex, converts tex-dvi-ps-pdf."
+	@echo "# make pdf2:      creates pdf using pdflatex, converts tex-pdf."
+	@echo "# make clean:     removes intermediate files."
+	@echo "# make all1:      creates pdf using latex and removes intermediate files."
+	@echo "# make all2:      creates pdf using pdflatex and removes intermediate files."
+	@echo "# make 1 biber:   uses biber to generate references with option 1."
+	@echo "# make 1 bibtex:  uses bibtex to generate references with option 1."
+	@echo "# make 1 2 mkidx: uses makeindex to generate index with options 1 and 2."
+	@echo "# make help:      shows help."
+	@echo "# option 1:       dvi, ps, pdf1, pdf2, all1, or all2."
+	@echo "# option 2:       biber or bibtex."
+	@echo "##############################################################################"
+	
 ## Check for errors
 check:
 	chktex ${base_name}.tex || true
@@ -81,7 +102,7 @@ pdf2:
 	${cmd_pdflatex}
 
 ## Removes intermediate files
-inter_files=	*.aux *.log *.bbl *.bcf *.blg *.brf *.mw *.out *.run.xml \
+inter_files= *.aux *.log *.bbl *.bcf *.blg *.brf *.mw *.out *.run.xml \
 	*.acn* *.acr* *.alg* *.glg *.glo *.gls *.idx *.ilg *.ind *.ist *.nlo *.nls \
 	*.loa *.loc *.lod *.lof *.loh *.lop *.lot *.tdo *.toc \
 	*.bak *.nav *.snm ${base_name}.dvi ${base_name}*.ps
@@ -93,24 +114,3 @@ clean:
 ## Creates pdf file using latex or pdflatex and removes intermediate files
 all1:	pdf1 clean
 all2:	pdf2 clean
-
-## Shows help
-help:
-	@echo "##############################################################################"
-	@echo "# Commands to make compiling LaTeX source files"
-	@echo "##############################################################################"
-	@echo "# make check:     check for errors."
-	@echo "# make dvi:       creates dvi, converts tex-dvi."
-	@echo "# make ps:        creates ps, converts tex-dvi-ps."
-	@echo "# make pdf1:      creates pdf using latex, converts tex-dvi-ps-pdf."
-	@echo "# make pdf2:      creates pdf using pdflatex, converts tex-pdf."
-	@echo "# make clean:     removes intermediate files."
-	@echo "# make all1:      creates pdf using latex and removes intermediate files."
-	@echo "# make all2:      creates pdf using pdflatex and removes intermediate files."
-	@echo "# make 1 biber:   uses biber to generate references with option 1."
-	@echo "# make 1 bibtex:  uses bibtex to generate references with option 1."
-	@echo "# make 1 2 mkidx: uses makeindex to generate index with options 1 and 2."
-	@echo "# make help:      shows help."
-	@echo "# option 1:       dvi, ps, pdf1, pdf2, all1, or all2."
-	@echo "# option 2:       biber or bibtex."
-	@echo "##############################################################################"
