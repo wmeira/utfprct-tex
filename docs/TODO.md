@@ -12,3 +12,4 @@
 
 - Change `make.bat` and `makefile` to accept filename (source) as parameter and `utfprct.tex` if not defined
 
+- Include the possibility of "Coletânea de Artigos" to the template
