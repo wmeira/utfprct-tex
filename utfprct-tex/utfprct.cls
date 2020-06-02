@@ -1126,13 +1126,17 @@
 \let\dedicatoriaoriginal\dedicatoria%% Formatação do ambiente dedicatoria (original)
 \renewenvironment{dedicatoria}{%% Formatação do ambiente dedicatoria
   \begin{dedicatoriaoriginal}%% Ambiente dedicatoria (original)
-    \vspace*{0.6\textheight}%% Espaçamento vertical
+	%% Espaçamento vertical antes da dedicatoria   
+    %\vspace*{0.6\textheight}%%Começa após 60% da altura
+    \vspace*{\fill}%%Ou alinha o texto para baixo na folha
+	    
     \begin{flushright}%% Alinhamento à direita
       \begin{minipage}{0.5\textwidth}%% Caixa de texto
         \raggedleft
 }{%%
       \end{minipage}
     \end{flushright}
+    \vspace*{0.05\textheight}%% Espaçamento após texto
   \end{dedicatoriaoriginal}
   \cleardoublepage%% Página de verso
 }
@@ -1144,13 +1148,16 @@
 \let\epigrafeoriginal\epigrafe%% Formatação do ambiente epigrafe (original)
 \renewenvironment{epigrafe}{%% Formatação do ambiente epigrafe
   \begin{epigrafeoriginal}%% Ambiente epigrafe (original)
-    \vspace*{0.6\textheight}%% Espaçamento vertical
+	%% Espaçamento vertical antes da dedicatoria   
+    %\vspace*{0.6\textheight}%%Começa após 60% da altura
+    \vspace*{\fill}%%Ou alinha o texto para baixo na folha    
     \begin{flushright}%% Alinhamento à direita
       \begin{minipage}{0.5\textwidth}%% Caixa de texto
         \raggedleft
 }{%%
       \end{minipage}
     \end{flushright}
+    \vspace*{0.05\textheight}%% Espaçamento após texto
   \end{epigrafeoriginal}
   \cleardoublepage%% Página de verso
 }
