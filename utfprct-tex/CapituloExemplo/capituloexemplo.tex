@@ -49,7 +49,7 @@ Seções quinárias são divisões do conteúdo de seções quartenárias. A \au
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \section{Exemplo de Título de Seção Secundária com um Texto Muito Longo que Pode Ocupar Mais de uma Linha}\label{sec:sectitulolongo}
 
-A \autoref{sec:sectitulolongo} é um exemplo de título de seção secundária com texto muito longo, formatado automaticamente de acordo com \citeonline[subseções 5.2.2 a 5.2.4]{NBR14724:2011} e \citeonline[subseções 3.1 a 3.8]{NBR6024:2012}. Segundo as normas, o título de seção deve estar alinhado à esquerda e a segunda e demais linhas devem iniciar logo abaixo da primeira palavra da primeira linha.
+A \autoref{sec:sectitulolongo} é um exemplo de título de seção secundária com texto muito longo, formatado automaticamente de acordo com \citeonline[subseções~5.2.2 a 5.2.4]{NBR14724:2011} e \citeonline[subseções~3.1 a 3.8]{NBR6024:2012}. Segundo as normas, o título de seção deve estar alinhado à esquerda e a segunda e demais linhas devem iniciar logo abaixo da primeira palavra da primeira linha.
 
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \section{Elementos Pré-Textuais}\label{sec:elempretext}
@@ -142,12 +142,12 @@ Para isso, também estão disponíveis os ambientes:
 \end{verbatim}
 \end{SingleSpacing}
 
-Para mais informações, consulte \citeonline[p. 47-52 e 135]{Wilson2010}.
+Para mais informações, consulte \citeonline[p.~47-52 e 135]{Wilson2010}.
 
 %% Título e rótulo de seção (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
 \section{Enumerações: Alíneas e Subalíneas}\label{sec:enumeracoes}\index{alíneas}\index{subalíneas}
 
-Quando for necessário enumerar os diversos assuntos de uma seção que não possua título, esta deve ser subdividida em alíneas\index{alíneas} \cite[subseção 4.2]{NBR6024:2012}:
+Quando for necessário enumerar os diversos assuntos de uma seção que não possua título, esta deve ser subdividida em alíneas\index{alíneas} \cite[subseção~4.2]{NBR6024:2012}:
 
 \begin{alineas}%% Ambiente alineas
 \item os diversos assuntos que não possuam título próprio, dentro de uma mesma seção, devem ser subdivididos em alíneas\index{alíneas};
@@ -157,7 +157,7 @@ Quando for necessário enumerar os diversos assuntos de uma seção que não pos
 \item o texto da alínea deve começar por letra minúscula e terminar em ponto-e-vírgula, exceto a última alínea que termina em ponto final;
 \item o texto da alínea deve terminar em dois pontos, se houver subalínea;
 \item a segunda e as seguintes linhas do texto da alínea começa sob a primeira letra do texto da própria alínea;
-\item subalíneas\index{subalíneas} \cite[subseção 4.3]{NBR6024:2012} devem ser conforme as alíneas\index{alíneas} a seguir:
+\item subalíneas\index{subalíneas} \cite[subseção~4.3]{NBR6024:2012} devem ser conforme as alíneas\index{alíneas} a seguir:
 \begin{alineas}%% Ambiente alineas
 \item as subalíneas\index{subalíneas} devem começar por travessão seguido de espaço;
 \item as subalíneas\index{subalíneas} devem apresentar recuo em relação à alínea;
@@ -228,7 +228,7 @@ As citações diretas no texto, que ocupam mais de três linhas, devem ser desta
 \begin{verbatim}
 \begin{citacao}
 As citações diretas no texto, com mais de três linhas,...
-... observar apenas o recuo \cite[subseção 5.3]{NBR10520:2002}.
+... observar apenas o recuo \cite[subseção~5.3]{NBR10520:2002}.
 \end{citacao}
 \end{verbatim}
 \end{SingleSpacing}
@@ -288,9 +288,9 @@ p \left(%
 \label{eq:equation2}%% Rótulo
 T \left(r\right) =
 \frac{1}{f_m}
-\left(%
+{\left(%
 \frac{\pi}{2} \sum_{i = 1}^M {\tilde{r}_i^2 \dot{\varsigma}_i^2}
-\right)^{-1/2}
+\right)}^{-1/2}
 \frac{%
 \begin{array}{ll}%% Ambiente array
 \int_0^{\rho \sqrt{M}}
@@ -402,9 +402,10 @@ A \autoref{fig:subfigure} apresenta um exemplo usando o pacote \texttt{subfigure
 \begin{figure}[!ht]
 \centering
 \caption{Exemplo de Subfigure} 
+\label{fig:subfigure}
 \begin{subfigure}[t]{.45\textwidth}
 	\centering
-	\includegraphics[width=\textwidth]{./CapituloExemplo/subfigure-a.png}  
+	\includegraphics[width=\textwidth]{./CapituloExemplo/subfigure-a.png}
 	\caption{Figura A}
 	\label{fig:subfigure_a}
 \end{subfigure}
@@ -415,7 +416,6 @@ A \autoref{fig:subfigure} apresenta um exemplo usando o pacote \texttt{subfigure
 	\caption{Figura B}
 	\label{fig:subfigure_b}
 \end{subfigure}
-\label{fig:subfigure}
 \fonte{\citet{Meira2020}} %citeonline{meira2020}
 \end{figure}
 
