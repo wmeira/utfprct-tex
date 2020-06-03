@@ -106,7 +106,7 @@ pdf2:
 inter_files= *.aux *.log *.bbl *.bcf *.blg *.brf *.mw *.out *.run.xml \
 	*.acn* *.acr* *.alg* *.glg *.glo *.gls *.idx *.ilg *.ind *.ist *.nlo *.nls \
 	*.loa *.loc *.lod *.lof *.loh *.lop *.lot *.tdo *.toc \
-	*.bak *.nav *.snm ${base_name}.dvi ${base_name}*.ps
+	*.bak *.nav *.snm *.synctex.gz ${base_name}.dvi ${base_name}*.ps
 clean:
 	rm -f ${inter_files}
 	rm -f `find . -name "*.aux"`
