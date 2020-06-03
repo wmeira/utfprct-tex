@@ -71,9 +71,13 @@
 %% -- Opções do pacote babel (hifenização) -- % 
   %french,%% Idioma adicional para hifenização (suporte parcial)
   %spanish,%% Idioma adicional para hifenização (suporte parcial)
-  english,%% Idioma adicional para hifenização  
+  english,%% Idioma adicional para hifenização  (colocar em último para doc. em inglês)
   brazil,%% Idioma principal do documento (último da lista)    
 ]{utfprct}%% Classe utfprct
+
+%%%%%%%%
+% Documento em Inglês: colocar o "english" como último idioma carregado no documentclass, sendo o último a língua principal do documento.
+%%%%%%%%
 
 %%%%%%%%
 %% Configuração dos avisos (warnings)
@@ -87,15 +91,6 @@
 %\hfuzz=0.01pt%excesso permitido de largura (\hbox)para ser considerado overfull
 %\vfuzz=0.001pt%excesso permitido de altura (\vbox) para ser considerado overfull
 %\overfullrule=10mm%adicionar aviso visual para um badbox
-%%%%%%%%
-
-%%%%%%%%
-%% Para alterar o idioma do documento para o INGLÊS: 
-%1) Colocar o "english" como último idioma carregado no documentclass (o último será o principal do documento. Adicionalmente, pode-se selecionar o english como língua principal.
-%\selectlanguage{english}%descomentar para ingles
-
-%2) Usar o abntex2-alf-en ou abntex2-num-en ao invés do default em pt-br do abntex2.
-%\bibliographystyle{abntex2-alf-en}%descomentar para ingles
 %%%%%%%%
 
 %%%%%%%%

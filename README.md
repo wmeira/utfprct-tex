@@ -102,11 +102,9 @@ A conversão para PDF/A poderia ser feita através de algum procedimento de comp
 
 ### Trabalho Acadêmico em Inglês
 
-Na declaração da classe `utfprct` no arquivo `utfprct.tex`, as últimas opções adicionam idiomas para hifenização, no qual, o último idioma definido será o idioma principal do documento (define o `\languagename`). Portanto, caso o trabalho seja desenvolvido em inglês realize os seguintes passos:
+Na declaração da classe `utfprct` no arquivo `utfprct.tex`, as últimas opções adicionam idiomas para hifenização, no qual, o último idioma definido será o idioma principal do documento (define o `\languagename`). Portanto, caso o trabalho seja desenvolvido em inglês apenas coloque `english` na última posição.
 
-1. Colocar a opção `english` em último da lista de opções da declaração de classe.
-    - Adicionalmente, pode-se selecionar a língua do pacote babel no preâmbulo: `\selectlanguage{english}`
-2. Selecionar o estilo de bibliografia `abntex2-alf-en` ou `abntex2-num-en` ao invés dos pacotes em português da `abnTeX2`, pois existem conectores e termos na citação e referência que precisavam ser traduzidos. Para isso, adicionar o seguinte comando (pode ser no preâmbulo): `\bibliographystyle{abntex2-alf-en}` (alfabético) ou  `\bibliographystyle{abntex2-num-en}` (numérico).
+Qualquer redefinição de nome em inglês pode ser feito dentro da classe `utfprct.cls` dentro da seção "Variáveis dependentes do idioma".
 
 <!--Um exemplo do template em inglês está disponível no exemplo [utfprct-ingles](./docs/examples/utfprct-ingles).-->
 

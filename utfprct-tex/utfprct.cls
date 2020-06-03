@@ -153,7 +153,13 @@
 \fi
 
 %NBR6023/2018: alinhado para esquerda (package default: bibleftalign)
+%Numérico é possível na ABNT (usar num), mas não é o preferível e mais comum
 \RequirePackage[alf, bibleftalign]{abntex2cite}%% Citações padrão ABNT (autor-data)
+
+%Bibliografia em estilo inglês
+\ifthenelse{\equal{\languagename}{english}}{%
+	\bibliographystyle{abntex2-alf-en}
+}{}%
 
 \ifpdf%% Compilação com pdflatex
 \else%% Compilação com latex
@@ -220,15 +226,77 @@
   \renewcommand\UrlRight{}%antes era ">"
 }
 
+%%%%%%%%
+%% Para alterar o idioma do documento para o INGLÊS: 
+%1) Colocar o "english" como último idioma carregado no documentclass (o último será o principal do documento. Adicionalmente, pode-se selecionar o english como língua principal.
+%\selectlanguage{english}%descomentar para ingles
+
+%2) Usar o abntex2-alf-en ou abntex2-num-en ao invés do default em pt-br do abntex2.
+%
+%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Variáveis dependentes do idioma
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifthenelse{%% Verificação do idioma português brasileiro
-  \equal{\languagename}{brazil}
-  \or\equal{\languagename}{brazilian}
-  \or\equal{\languagename}{portuguese}
-}{%% Definições em português
+\ifthenelse{\equal{\languagename}{english}}
+{%% Definição do idioma INGLES
+  \AtBeginDocument{
+    \newcommand{\nomecapa}{Cover}
+    \newcommand{\nomefolhaderosto}{Title Page}
+    \newcommand{\nomefichacatalografica}{Index Card}
+    \newcommand{\nomeerrata}{Errata}%Errata Sheet / Erratum
+    \newcommand{\nomefolhadeaprovacao}{Approval Term}
+    % \newcommand{\nomededicatoria}{Dedicatory}
+    \renewcommand{\agradecimentosname}{Acknowledgements}
+    % \newcommand{\nomeepigrafe}{Epigraphy}
+    \newcommand{\nomeresumo}{Resumo}
+    \newcommand{\nomepalavraschave}{Palavras-chave}
+    \newcommand{\nomeabstract}{Abstract}
+    \newcommand{\nomekeywords}{Keywords}
+    \newcommand{\listalgorithmname}{List of Algorithms}
+    \newcommand{\algorithmname}{Algorithm}
+    \renewcommand{\listfigurename}{List of Figures}
+    % \renewcommand{\figurename}{Figure}
+    \newcommand{\photographname}{Photograph}
+    \newcommand{\graphname}{Graph}
+    \newcommand{\tabframedname}{Frame}
+    \renewcommand{\listtablename}{List of Tables}
+    % \renewcommand{\tablename}{Table}
+    \newcommand{\nomefonte}{Source}
+    \renewcommand{\nomname}{Nomenclature}
+    \newcommand{\nomelistadeacronimos}{List of Acronyms}
+    \newcommand{\nomeabreviaturas}{Abbreviations}
+    \newcommand{\nomesiglas}{Initialism} %Initialism 
+    \newcommand{\nomeacronimos}{Acronyms}
+    \newcommand{\nomelistadesimbolos}{List of Symbols}
+    \newcommand{\nomeletraslatinas}{Latin Letters}
+    \newcommand{\nomeletrasgregas}{Greek Letters}
+    \newcommand{\nomesobrescritos}{Superscripts}
+    \newcommand{\nomesubscritos}{Subscripts}
+    \newcommand{\nomenotacoes}{Notations}
+    \newcommand{\nomeindicessets}{Indices and Sets}
+    \newcommand{\nomeparam}{Parameters}
+    \newcommand{\nomefloatvar}{Continuos Variables}
+    \newcommand{\nomeintvar}{Integer Variables}
+    \newcommand{\nomebinvar}{Binary Variables}
+    % \renewcommand{\contentsname}{Summary}
+    \renewcommand{\chapterautorefname}{Chapter}
+    \renewcommand{\sectionautorefname}{Section}
+    \renewcommand{\subsectionautorefname}{Subsection}
+    \renewcommand{\subsubsectionautorefname}{Subsection}
+    \renewcommand{\paragraphautorefname}{\subsubsectionautorefname}
+    \renewcommand{\bibname}{References}
+    \renewcommand{\refname}{\bibname}
+    % \renewcommand{\appendixname}{Appendix}
+    % \newcommand{\apendiceautorefname}{Appendix}
+    % \newcommand{\nomeanexo}{Annex}
+    \newcommand{\anexoautorefname}{Annex}
+    \renewcommand{\indexname}{Index}
+  }
+}{%Definição do idioma em Português (DEFAULT)
   \AtBeginDocument{%% Definições carregadas no início do documento
     \newcommand{\nomecapa}{Capa}
     \newcommand{\nomefolhaderosto}{Folha de Rosto}
@@ -312,61 +380,8 @@
     \providetranslation{Numbers (glossaries)}{Números}
     \SIdecimalsign{,}%% Símbolo de decimal (pacote sistyle)
   }
-}{%% English definitions
-  \AtBeginDocument{%% Definições carregadas no início do documento
-    \newcommand{\nomecapa}{Cover}
-    \newcommand{\nomefolhaderosto}{Title Page}
-    \newcommand{\nomefichacatalografica}{Index Card}
-    \newcommand{\nomeerrata}{Errata}%Errata Sheet / Erratum
-    \newcommand{\nomefolhadeaprovacao}{Approval Term}
-    % \newcommand{\nomededicatoria}{Dedicatory}
-    \renewcommand{\agradecimentosname}{Acknowledgements}
-    % \newcommand{\nomeepigrafe}{Epigraphy}
-    \newcommand{\nomeresumo}{Resumo}
-    \newcommand{\nomepalavraschave}{Palavras-chave}
-    \newcommand{\nomeabstract}{Abstract}
-    \newcommand{\nomekeywords}{Keywords}
-    \newcommand{\listalgorithmname}{List of Algorithms}
-    \newcommand{\algorithmname}{Algorithm}
-    \renewcommand{\listfigurename}{List of Figures}
-    % \renewcommand{\figurename}{Figure}
-    \newcommand{\photographname}{Photograph}
-    \newcommand{\graphname}{Graph}
-    \newcommand{\tabframedname}{Frame}
-    \renewcommand{\listtablename}{List of Tables}
-    % \renewcommand{\tablename}{Table}
-    \newcommand{\nomefonte}{Source}
-    \renewcommand{\nomname}{Nomenclature}
-    \newcommand{\nomelistadeacronimos}{List of Acronyms}
-    \newcommand{\nomeabreviaturas}{Abbreviations}
-    \newcommand{\nomesiglas}{Initialism} %Initialism 
-    \newcommand{\nomeacronimos}{Acronyms}
-    \newcommand{\nomelistadesimbolos}{List of Symbols}
-    \newcommand{\nomeletraslatinas}{Latin Letters}
-    \newcommand{\nomeletrasgregas}{Greek Letters}
-    \newcommand{\nomesobrescritos}{Superscripts}
-    \newcommand{\nomesubscritos}{Subscripts}
-    \newcommand{\nomenotacoes}{Notations}
-    \newcommand{\nomeindicessets}{Indices and Sets}
-    \newcommand{\nomeparam}{Parameters}
-    \newcommand{\nomefloatvar}{Continuos Variables}
-    \newcommand{\nomeintvar}{Integer Variables}
-    \newcommand{\nomebinvar}{Binary Variables}
-    % \renewcommand{\contentsname}{Summary}
-    \renewcommand{\chapterautorefname}{Chapter}
-    \renewcommand{\sectionautorefname}{Section}
-    \renewcommand{\subsectionautorefname}{Subsection}
-    \renewcommand{\subsubsectionautorefname}{Subsection}
-    \renewcommand{\paragraphautorefname}{\subsubsectionautorefname}
-    \renewcommand{\bibname}{References}
-    \renewcommand{\refname}{\bibname}
-    % \renewcommand{\appendixname}{Appendix}
-    % \newcommand{\apendiceautorefname}{Appendix}
-    % \newcommand{\nomeanexo}{Annex}
-    \newcommand{\anexoautorefname}{Annex}
-    \renewcommand{\indexname}{Index}
-  }
 }
+ 
 \renewcommand{\folhaderostoname}{\nomefolhaderosto}
 \renewcommand{\folhadeaprovacaoname}{\nomefolhadeaprovacao}
 \renewcommand{\listadesiglasname}{\nomelistadeacronimos}
