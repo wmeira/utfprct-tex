@@ -44,7 +44,7 @@ if [%prg_mkidx%] == [] (
 )
 
 REM Check for errors
-if [%1] == [check] chktex %base_name%.tex
+if [%1] == [check] chktex -l .chktexrc %base_name%.tex
 
 REM Creates dvi file
 set "cmd_dvi=%cmd_latex% & %cmd_bib% & %cmd_mkidx% & %cmd_latex% & cls & %cmd_latex%"
@@ -64,7 +64,7 @@ REM Removes intermediate files
 set inter_files=*.aux *.log *.bbl *.bcf *.blg *.brf *.mw *.out *.run.xml^
   *.acn* *.acr* *.alg* *.glg *.glo *.gls *.idx *.ilg *.ind *.ist *.nlo *.nls^
   *.loa *.loc *.lod *.lof *.loh *.lop *.lot *.tdo *.toc^
-  *.bak *.nav *.snm %base_name%.dvi %base_name%*.ps
+  *.bak *.nav *.snm *.synctex.gz %base_name%.dvi %base_name%*.ps
 set "cmd_clean=del /s %inter_files%"
 if [%1] == [clean] %cmd_clean%
 

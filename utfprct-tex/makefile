@@ -76,7 +76,7 @@ help:
 
 ## Check for errors
 check:
-	chktex ${base_name}.tex || true
+	chktex -l .chktexrc ${base_name}.tex || true
 
 ## Creates dvi file
 dvi:
