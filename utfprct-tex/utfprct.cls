@@ -1,4 +1,4 @@
-%% UTFPRCT-TEX, v1.0 wmeira on 2020/06/01
+%% UTFPRCT-TEX, v1.0 wmeira on 2020/06/03
 %% Copyright (C) 2020- by William H. T. Meira
 %%
 %% Modified version of project 'utfprpgtex' maintained
@@ -32,7 +32,7 @@
 
 %% Identificação e modificações
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
-\ProvidesClass{utfprct}[2020/05/25 v1.0]
+\ProvidesClass{utfprct}[2020/06/03 v1.0]
 %% -- v1.0: Modification of utfprpgtex to utrpfcttex project
 
 

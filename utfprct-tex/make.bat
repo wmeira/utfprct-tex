@@ -1,7 +1,7 @@
 @echo off
-REM make.bat, 2020/05/25
-REM Copyright (C) 2020 William H. T. Meira (williammeira@gmail.com)
-REM Modified version from Luiz E. M. Lima (luizeduardomlima@gmail.com) - 2019/12/03
+REM make.bat, 2020/06/03
+REM Copyright (C) 2020 William H. T. Meira
+REM Modified version from Luiz E. M. Lima - 2019/12/03
 REM
 REM This make.bat provides commands to make compiling LaTeX files.
 

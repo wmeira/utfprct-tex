@@ -1,4 +1,4 @@
-#### makefile, 2020/06/01
+#### makefile, 2020/06/03
 #### Copyright (C) 2020 William H. T. Meira
 #### Modified version from Luiz E. M. Lima - 2019/12/03
 ####
