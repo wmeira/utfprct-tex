@@ -1,4 +1,4 @@
-%% UTFPRCT-TEX, v1.0 wmeira on 2020/06/03
+%% UTFPRCT-TEX, v1.0.1 wmeira on 2020/06/06
 %% Copyright (C) 2020- by William H. T. Meira
 %%
 %% Modified version of project 'utfprpgtex' maintained
@@ -21,9 +21,9 @@
 %%
 %% The 'abntex2-alf.bst' and 'abntex2-num.bst' files are slightly
 %% modified versions of the bibtex styles from abntex2 (v.1.9.7)
-%% package to suit NBR6023/2018 (not yet implemented). Complementary,
-%% 'abntex2-alf-en.bst' and 'abntex2-num-en.bst' are english versions
-%% of the respective bibtex styles.
+%% package to suit NBR6023/2018 (not yet implemented there). 
+%% Complementary, 'abntex2-alf-en.bst' and 'abntex2-num-en.bst' are
+%% english versions of the respective bibtex styles.
 %%
 %% Contribute to improve this project (github repo):
 %% https://github.com/wmeira/utfprct-tex
