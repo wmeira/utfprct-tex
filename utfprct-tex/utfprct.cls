@@ -282,6 +282,8 @@
     \newcommand{\nomefloatvar}{Continuos Variables}
     \newcommand{\nomeintvar}{Integer Variables}
     \newcommand{\nomebinvar}{Binary Variables}
+    
+    % abntex2
     % \renewcommand{\contentsname}{Summary}
     \renewcommand{\chapterautorefname}{Chapter}
     \renewcommand{\sectionautorefname}{Section}
@@ -290,9 +292,9 @@
     \renewcommand{\paragraphautorefname}{\subsubsectionautorefname}
     \renewcommand{\bibname}{References}
     \renewcommand{\refname}{\bibname}
-    % \renewcommand{\appendixname}{Appendix}
-    % \newcommand{\apendiceautorefname}{Appendix}
-    % \newcommand{\nomeanexo}{Annex}
+    \renewcommand{\appendixname}{Appendix}
+    \newcommand{\apendiceautorefname}{Appendix}
+    \renewcommand{\anexosname}{Annex}
     \newcommand{\anexoautorefname}{Annex}
     \renewcommand{\indexname}{Index}
   }
@@ -336,6 +338,8 @@
     \newcommand{\nomefloatvar}{Variáveis Contínuas}
     \newcommand{\nomeintvar}{Variáveis Inteiras}
     \newcommand{\nomebinvar}{Variáveis Binárias}
+    
+    % abntex2
     % \renewcommand{\contentsname}{Sumário}
     % \renewcommand{\chapterautorefname}{Capítulo}
     % \renewcommand{\sectionautorefname}{Seção}
@@ -344,9 +348,9 @@
     \renewcommand{\paragraphautorefname}{\subsubsectionautorefname}
     \renewcommand{\bibname}{Referências}
     \renewcommand{\refname}{\bibname}
-    % \renewcommand{\appendixname}{Apêndice}
-    % \newcommand{\apendiceautorefname}{Apêndice}
-    % \newcommand{\nomeanexo}{Anexo}
+    \renewcommand{\appendixname}{Apêndice}
+    \newcommand{\apendiceautorefname}{Apêndice}
+    \renewcommand{\anexosname}{Anexo}
     \newcommand{\anexoautorefname}{Anexo}
     \renewcommand{\indexname}{Índice Remissivo}
     
@@ -1674,9 +1678,12 @@
   \printglossary%% Impressão do glossário
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Apêndices
-\newenvironment{arquivosdeapendices}{%% Definição do ambiente arquivosdeapendices
-  \begin{apendicesenv}%% Ambiente apendicesenv
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{arquivosdeapendices}{%% Definição do ambiente arquivosdeapendices 
+ \begin{apendicesenv}%% Ambiente apendicesenv
     \renewcommand{\appendixtocname}{%% Nome da parte apêndices no sumário
       \texorpdfstring{\uppercase{\apendicesname}}{\apendicesname}%%
     }
@@ -1685,10 +1692,11 @@
   \end{apendicesenv}
 }
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Anexos
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+    
 \newenvironment{arquivosdeanexos}{%% Definição do ambiente arquivosdeanexos
   \renewcommand{\Hy@appendixstring}{anexo}%% Definição do comando para o rótulo anexo
   \xdef\Hy@chapapp{\Hy@appendixstring}%% Definição do rótulo anexo

@@ -13,3 +13,12 @@
 - Change `make.bat` and `makefile` to accept filename (source) as parameter and `utfprct.tex` if not defined
 
 - Include the possibility of "Coletânea de Artigos" to the template
+
+
+# BUGS
+
+- Bug0001:
+    - Given: that there are at least one annex and one appendix and the annex initial page is removed (`\partanexos`)
+    - Then: then the first annex is referred as `appendix` in the table of contents (toc). The next annexes are okay.
+    - Issue: https://github.com/abntex/abntex2/issues/224 (abntex2)
+    - Reasoning: the abntex2 and the memoir class are having problems to handle this condition in the toc file. When we add a new page (empty paragraph*, or even a letter...) between the last appendix and the first annex, then the latex is able to solve the toc correctly. For now, I recommend to maintian the `\partanexos` and `\partapendices` (just to maintain the pattern) to avoid such problem.

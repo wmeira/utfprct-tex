@@ -148,6 +148,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 %% Arquivo de dados do modelo de documento LaTeX para produção de trabalhos acadêmicos da UTFPR
 \input{./utfprct-dados}%% Realize as modificações pertinentes no arquivo "utfprct-dados.tex"
 
@@ -293,16 +294,17 @@
 
 %% Arquivos de apêndices
 \begin{arquivosdeapendices}%% Os arquivos de apêndices devem se incluídos neste ambiente - Não comente esta linha
-  %\partapendices%% Página de início dos apêndices - Comente para remover este item
+  \partapendices%% Página de início dos apêndices - Comente para remover este item
   \include{./PosTexto/apendicea}%% Apêndice - Comente para remover este item
   \include{./PosTexto/apendiceb}%% Apêndice - Comente para remover este item
 \end{arquivosdeapendices}%% Não comente esta linha
 
+
 %% Arquivos de anexos
-\begin{arquivosdeanexos}%% Os arquivos de anexos devem se incluídos neste ambiente - Não comente esta linha
-  %\partanexos%% Página de início dos anexos - Comente para remover este item
+\begin{arquivosdeanexos}%% Os arquivos de anexos devem se incluídos neste ambiente - Não comente esta linha  
+  \partanexos%% Página de início dos anexos - Comente para remover este item (ver Bug0001)
   \include{./PosTexto/anexoa}%% Anexo - Comente para remover este item
-  %\include{./PosTexto/anexob}%% Anexo - Comente para remover este item
+%  %\include{./PosTexto/anexob}%% Anexo - Comente para remover este item
 \end{arquivosdeanexos}%% Não comente esta linha
 
 %% Índice
