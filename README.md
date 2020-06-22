@@ -25,6 +25,10 @@ Os arquivos do template são:
 - `abntex2-num-en.bst`: arquivo `abntex2-num.bst` com conectores e termos traduzidos para o inglês
 - `make.bat` (`makefile`): possui comandos para converter o arquivo `utfprct.tex` (default) para PDF e um comando para limpar os arquivos intermediários (`clean`) (vide comando `help`)
 
+Outros arquivos:
+
+- `capituloexemplo.tex`: capítulo exemplo que serve como documentação de como utilizar os recursos disponívels no template
+
 ## Normas vigentes do Sistema de Bibliotecas da UTFPR (2020)
 
 A orientação para entrega de trabalhos acadêmicos pode ser encontrada no [portal da UTFPR](http://portal.utfpr.edu.br/biblioteca/trabalhos-academicos/orientacao-para-trabalhos-academicos) (*publicada em 18/09/2017*). No qual, estabele-se que os trabalhos devem estar de acordo com as normas da Associação Brasileira de Normas Técnicas (ABNT):
