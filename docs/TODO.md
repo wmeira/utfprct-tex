@@ -14,6 +14,10 @@
 
 - Include the possibility of "Coletânea de Artigos" to the template
 
+- Aumentar abrangêngia da NBR6023/2018 (referências)
+    - Melhorar comando @patent (bibtex) do abnTeX2 (está implementado de forma incorreta)
+    - Implementar formatos faltantes
+    - Inserir exemplos dos formatos ainda não contemplados
 
 # BUGS
 
