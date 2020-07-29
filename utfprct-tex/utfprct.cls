@@ -396,189 +396,540 @@
 %% Informações do Documento
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\TipoDeDocumento}[1]{\providecommand{\imprimirtipodedocumento}{#1}}%% Tipo de documento
-\newcommand{\DocumentType}[1]{\providecommand{\imprimirdocumenttype}{#1}}%% Document type
-\newcommand{\NivelDeFormacao}[1]{\providecommand{\imprimirniveldeformacao}{#1}}%% Nível de formação
-\newcommand{\FormationLevel}[1]{\providecommand{\imprimirformationlevel}{#1}}%% Formation level
-\newcommand{\TituloPretendido}[1]{\providecommand{\imprimirtitulopretendido}{#1}}%% Título pretendido
-\newcommand{\TituloDoDocumento}[1]{\providecommand{\imprimirtitulododocumento}{#1}}%% Título do documento
-\newcommand{\DocumentTitle}[1]{\providecommand{\imprimirdocumenttitle}{#1}}%% Document title
-\newcommand{\TituloEmMultiplasLinhas}[1]{\providecommand{\imprimirtituloemmultiplaslinhas}{#1}}%% Título em multiplas linhas
-\newcommand{\Dia}[1]{\providecommand{\imprimirdia}{#1}}%% Dia com número de dígitos exatos
-\newcommand{\MesPorExtenso}[1]{\providecommand{\imprimirmesporextenso}{#1}}%% Mês por extenso
-\newcommand{\Ano}[1]{\providecommand{\imprimirano}{#1}}%% Ano com quatro dígitos
-\newcommand{\NumeroDePalavrasChave}[1]{\providecommand{\imprimirnumerodepalavraschave}{#1}}%% Número de palavras-chave (máximo 5)
-\newcommand{\PalavraChaveA}[1]{\providecommand{\imprimirpalavrachavea}{#1}}%% Palavra-chave A
-\newcommand{\PalavraChaveB}[1]{\providecommand{\imprimirpalavrachaveb}{#1}}%% Palavra-chave B
-\newcommand{\PalavraChaveC}[1]{\providecommand{\imprimirpalavrachavec}{#1}}%% Palavra-chave C
-\newcommand{\PalavraChaveD}[1]{\providecommand{\imprimirpalavrachaved}{#1}}%% Palavra-chave D
-\newcommand{\PalavraChaveE}[1]{\providecommand{\imprimirpalavrachavee}{#1}}%% Palavra-chave E
-\newcommand{\NumeroDeKeywords}[1]{\providecommand{\imprimirnumerodekeywords}{#1}}%% Número de keywords (máximo 5)
-\newcommand{\KeywordA}[1]{\providecommand{\imprimirkeyworda}{#1}}%% Keyword A
-\newcommand{\KeywordB}[1]{\providecommand{\imprimirkeywordb}{#1}}%% Keyword B
-\newcommand{\KeywordC}[1]{\providecommand{\imprimirkeywordc}{#1}}%% Keyword C
-\newcommand{\KeywordD}[1]{\providecommand{\imprimirkeywordd}{#1}}%% Keyword D
-\newcommand{\KeywordE}[1]{\providecommand{\imprimirkeyworde}{#1}}%% Keyword E
+%% Tipo de documento
+\providecommand{\imprimirtipodedocumento}{Tese} %default
+\newcommand{\TipoDeDocumento}[1]{\renewcommand{\imprimirtipodedocumento}{#1}}
+
+% Document type
+\providecommand{\imprimirdocumenttype}{Thesis}
+\newcommand{\DocumentType}[1]{\renewcommand{\imprimirdocumenttype}{#1}}
+
+%% Nível de formação
+\providecommand{\imprimirniveldeformacao}{Doutorado}
+\newcommand{\NivelDeFormacao}[1]{\renewcommand{\imprimirniveldeformacao}{#1}}
+
+%% Formation level
+\providecommand{\imprimirformationlevel}{PhD}
+\newcommand{\FormationLevel}[1]{\renewcommand{\imprimirformationlevel}{#1}}
+
+%% Título pretendido
+\providecommand{\imprimirtitulopretendido}{Doutor(a)}
+\newcommand{\TituloPretendido}[1]{\renewcommand{\imprimirtitulopretendido}{#1}}
+
+%% Título do documento
+\providecommand{\imprimirtitulododocumento}{Título}
+\newcommand{\TituloDoDocumento}[1]
+{\renewcommand{\imprimirtitulododocumento}{#1}}
+
+%% Document title
+\providecommand{\imprimirdocumenttitle}{Title}
+\newcommand{\DocumentTitle}[1]{\renewcommand{\imprimirdocumenttitle}{#1}}
+
+%% Título em multiplas linhas
+\providecommand{\imprimirtituloemmultiplaslinhas}{Título: \par Subtítulo}
+\newcommand{\TituloEmMultiplasLinhas}[1]{\renewcommand{\imprimirtituloemmultiplaslinhas}{#1}}
+
+%% Dia da defesa com número de dígitos exatos (opcional)
+\providecommand{\imprimirdia}{1}
+\newcommand{\Dia}[1]{\renewcommand{\imprimirdia}{#1}}
+
+%% Mês da defesa por extenso (opcional)
+\providecommand{\imprimirmesporextenso}{Janeiro}
+\newcommand{\MesPorExtenso}[1]{\renewcommand{\imprimirmesporextenso}{#1}}
+
+%% Ano da defesa com quatro dígitos
+\providecommand{\imprimirano}{2020}
+\newcommand{\Ano}[1]{\renewcommand{\imprimirano}{#1}}
+
+%% Número de palavras-chave (máximo 5)
+\providecommand{\imprimirnumerodepalavraschave}{5}
+\newcommand{\NumeroDePalavrasChave}[1]{\renewcommand{\imprimirnumerodepalavraschave}{#1}}
+
+%% Palavra-chave A
+\providecommand{\imprimirpalavrachavea}{A}
+\newcommand{\PalavraChaveA}[1]{\renewcommand{\imprimirpalavrachavea}{#1}}
+
+%% Palavra-chave B
+\providecommand{\imprimirpalavrachaveb}{B}
+\newcommand{\PalavraChaveB}[1]{\renewcommand{\imprimirpalavrachaveb}{#1}}
+
+%% Palavra-chave C
+\providecommand{\imprimirpalavrachavec}{C}
+\newcommand{\PalavraChaveC}[1]{\renewcommand{\imprimirpalavrachavec}{#1}}
+
+%% Palavra-chave D
+\providecommand{\imprimirpalavrachaved}{D}
+\newcommand{\PalavraChaveD}[1]{\renewcommand{\imprimirpalavrachaved}{#1}}
+
+%% Palavra-chave E
+\providecommand{\imprimirpalavrachavee}{E}
+\newcommand{\PalavraChaveE}[1]{\renewcommand{\imprimirpalavrachavee}{#1}}
+
+%% Número de keywords (máximo 5)
+\providecommand{\imprimirnumerodekeywords}{\imprimirnumerodepalavraschave}
+\newcommand{\NumeroDeKeywords}[1]{\renewcommand{\imprimirnumerodekeywords}{#1}}
+
+%% Keyword A
+\providecommand{\imprimirkeyworda}{\imprimirpalavrachavea}
+\newcommand{\KeywordA}[1]{\renewcommand{\imprimirkeyworda}{#1}}
+
+%% Keyword B
+\providecommand{\imprimirkeywordb}{\imprimirpalavrachaveb}
+\newcommand{\KeywordB}[1]{\renewcommand{\imprimirkeywordb}{#1}}
+
+%% Keyword C
+\providecommand{\imprimirkeywordc}{\imprimirpalavrachavec}
+\newcommand{\KeywordC}[1]{\renewcommand{\imprimirkeywordc}{#1}}
+
+%% Keyword D
+\providecommand{\imprimirkeywordd}{\imprimirpalavrachaved}
+\newcommand{\KeywordD}[1]{\renewcommand{\imprimirkeywordd}{#1}}
+
+%% Keyword E
+\providecommand{\imprimirkeyworde}{\imprimirpalavrachavee}
+\newcommand{\KeywordE}[1]{\renewcommand{\imprimirkeyworde}{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Informação do Autor(a) ou Autores(as) (TCC)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\NomeDoAutor}[1]{\providecommand{\imprimirnomedoautor}{#1}}%% Nome completo do(a) autor(a)
-\newcommand{\SobrenomeDoAutor}[1]{\providecommand{\imprimirsobrenomedoautor}{#1}}%% Sobrenome do(a) autor(a)
-\newcommand{\PrenomeDoAutor}[1]{\providecommand{\imprimirprenomedoautor}{#1}}%% Prenome do(a) autor(a)
-\newcommand{\AtribuiAutorDois}[1]{%% Insere ou remove autor(a) 2
+%% Nome completo do(a) autor(a)
+\providecommand{\imprimirnomedoautor}{Nome do(a) Autor(a)}
+\newcommand{\NomeDoAutor}[1]{\renewcommand{\imprimirnomedoautor}{#1}}
+
+%% Sobrenome do(a) autor(a)
+\providecommand{\imprimirsobrenomedoautor}{Último Nome}
+\newcommand{\SobrenomeDoAutor}[1]{\renewcommand{\imprimirsobrenomedoautor}{#1}}
+
+%% Prenome do(a) autor(a)
+\providecommand{\imprimirprenomedoautor}{Nome do(a) Autor(a) Sem Último}
+\newcommand{\PrenomeDoAutor}[1]{\renewcommand{\imprimirprenomedoautor}{#1}}
+
+%% Insere ou remove autor(a) 2
+\providecommand{\imprimiratribuiautordois}{false}
+\newcommand{\AtribuiAutorDois}[1]{
   \ifthenelse{\equal{\imprimirtipodedocumento}{Trabalho de Conclusão de Curso}}%% Verificação do tipo de documento
-    {\providecommand{\imprimiratribuiautordois}{#1}}%% Insere ou remove autor(a) 2
-    {\providecommand{\imprimiratribuiautordois}{false}}%% Remove autor(a) 2
+    {\renewcommand{\imprimiratribuiautordois}{#1}}%% Insere ou remove autor(a) 2
+    {\renewcommand{\imprimiratribuiautordois}{false}}%% Remove autor(a) 2
 }
-\newcommand{\NomeDoAutorDois}[1]{\providecommand{\imprimirnomedoautordois}{#1}}%% Nome completo do(a) autor(a) 2
-\newcommand{\SobrenomeDoAutorDois}[1]{\providecommand{\imprimirsobrenomedoautordois}{#1}}%% Sobrenome do(a) autor(a) 2
-\newcommand{\PrenomeDoAutorDois}[1]{\providecommand{\imprimirprenomedoautordois}{#1}}%% Prenome do(a) autor(a) 2
-\newcommand{\AtribuiAutorTres}[1]{%% Insere ou remove autor(a) 3
+
+%% Nome completo do(a) autor(a) 2
+\providecommand{\imprimirnomedoautordois}{Nome do(a) Autor(a) 2}
+\newcommand{\NomeDoAutorDois}[1]{\renewcommand{\imprimirnomedoautordois}{#1}}
+
+%% Sobrenome do(a) autor(a) 2
+\providecommand{\imprimirsobrenomedoautordois}{Último Nome}
+\newcommand{\SobrenomeDoAutorDois}[1]{\renewcommand{\imprimirsobrenomedoautordois}{#1}}
+
+%% Prenome do(a) autor(a) 2
+\providecommand{\imprimirprenomedoautordois}{Nome do(a) Autor(a) 2 Sem Último}
+\newcommand{\PrenomeDoAutorDois}[1]{\renewcommand{\imprimirprenomedoautordois}{#1}}
+
+%% Insere ou remove autor(a) 3
+\providecommand{\imprimiratribuiautortres}{false}
+\newcommand{\AtribuiAutorTres}[1]{
   \ifthenelse{\equal{\imprimirtipodedocumento}{Trabalho de Conclusão de Curso}}%% Verificação do tipo de documento
-    {\providecommand{\imprimiratribuiautortres}{#1}}%% Insere ou remove autor(a) 3
-    {\providecommand{\imprimiratribuiautortres}{false}}%% Remove autor(a) 3
+    {\renewcommand{\imprimiratribuiautortres}{#1}}%% Insere ou remove autor(a) 3
+    {\renewcommand{\imprimiratribuiautortres}{false}}%% Remove autor(a) 3
 }
-\newcommand{\NomeDoAutorTres}[1]{\providecommand{\imprimirnomedoautortres}{#1}}%% Nome completo do(a) autor(a) 3
-\newcommand{\SobrenomeDoAutorTres}[1]{\providecommand{\imprimirsobrenomedoautortres}{#1}}%% Sobrenome do(a) autor(a) 3
-\newcommand{\PrenomeDoAutorTres}[1]{\providecommand{\imprimirprenomedoautortres}{#1}}%% Prenome do(a) autor(a) 3
+
+%% Nome completo do(a) autor(a) 3
+\providecommand{\imprimirnomedoautortres}{Nome do(a) Autor(a) 3}
+\newcommand{\NomeDoAutorTres}[1]{\renewcommand{\imprimirnomedoautortres}{#1}}
+
+%% Sobrenome do(a) autor(a) 3
+\providecommand{\imprimirsobrenomedoautortres}{Último Nome}
+\newcommand{\SobrenomeDoAutorTres}[1]{\renewcommand{\imprimirsobrenomedoautortres}{#1}}
+
+%% Prenome do(a) autor(a) 3
+\providecommand{\imprimirprenomedoautortres}{Nome do(a) Autor(a) 3 Sem Último}
+\newcommand{\PrenomeDoAutorTres}[1]{\renewcommand{\imprimirprenomedoautortres}{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Informações do Orientador(a) e Coorientador(a)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\AtribuicaoOrientador}[1]{\providecommand{\imprimiratribuicaoorientador}{#1}}%% Atribuição "orientador(a)"
-\newcommand{\TituloDoOrientador}[1]{\providecommand{\imprimirtitulodoorientador}{#1}}%% Título do(a) orientador(a)
-\newcommand{\NomeDoOrientador}[1]{\providecommand{\imprimirnomedoorientador}{#1}}%% Nome completo do(a) orientador(a)
-\newcommand{\SobrenomeDoOrienador}[1]{\providecommand{\imprimirsobrenomedoorientador}{#1}}%% Sobrenome do(a) orientador(a)
-\newcommand{\PrenomeDoOrientador}[1]{\providecommand{\imprimirprenomedoorientador}{#1}}%% Prenome do(a) orientador(a)
-\newcommand{\AtribuiCoorientador}[1]{\providecommand{\imprimiratribuicoorientador}{#1}}%% Insere ou remove o(a) coorientador(a)
-\newcommand{\AtribuicaoCoorientador}[1]{\providecommand{\imprimiratribuicaocoorientador}{#1}}%% Atribuição "coorientador(a)"
-\newcommand{\TituloDoCoorientador}[1]{\providecommand{\imprimirtitulodocoorientador}{#1}}%% Título do(a) coorientador(a)
-\newcommand{\NomeDoCoorientador}[1]{\providecommand{\imprimirnomedocoorientador}{#1}}%% Nome completo do(a) coorientador(a)
-\newcommand{\SobrenomeDoCoorienador}[1]{\providecommand{\imprimirsobrenomedocoorientador}{#1}}%% Sobrenome do(a) coorientador(a)
-\newcommand{\PrenomeDoCoorientador}[1]{\providecommand{\imprimirprenomedocoorientador}{#1}}%% Prenome do(a) coorientador(a)
+%% Atribuição "orientador(a)"
+\providecommand{\imprimiratribuicaoorientador}{Orientador(a)}
+\newcommand{\AtribuicaoOrientador}[1]{\renewcommand{\imprimiratribuicaoorientador}{#1}}
+
+%% Título do(a) orientador(a)
+\providecommand{\imprimirtitulodoorientador}{Prof(a). Dr(a).}
+\newcommand{\TituloDoOrientador}[1]{\renewcommand{\imprimirtitulodoorientador}{#1}}
+
+%% Nome completo do(a) orientador(a)
+\providecommand{\imprimirnomedoorientador}{Nome Completo do(a) Orientador(a)}
+\newcommand{\NomeDoOrientador}[1]{\renewcommand{\imprimirnomedoorientador}{#1}}
+
+%% Sobrenome do(a) orientador(a)
+\providecommand{\imprimirsobrenomedoorientador}{Último Nome}
+\newcommand{\SobrenomeDoOrienador}[1]{\renewcommand{\imprimirsobrenomedoorientador}{#1}}
+
+%% Prenome do(a) orientador(a)
+\providecommand{\imprimirprenomedoorientador}{Nome do(a) Orientador(a) Sem Último}
+\newcommand{\PrenomeDoOrientador}[1]{\renewcommand{\imprimirprenomedoorientador}{#1}}
+
+%% Insere ou remove o(a) coorientador(a)
+\providecommand{\imprimiratribuicoorientador}{false}
+\newcommand{\AtribuiCoorientador}[1]{\renewcommand{\imprimiratribuicoorientador}{#1}}
+
+%% Atribuição "coorientador(a)"
+\providecommand{\imprimiratribuicaocoorientador}{Coorientador(a)}
+\newcommand{\AtribuicaoCoorientador}[1]{\renewcommand{\imprimiratribuicaocoorientador}{#1}}
+
+%% Título do(a) coorientador(a)
+\providecommand{\imprimirtitulodocoorientador}{Prof(a). Dr(a).}
+\newcommand{\TituloDoCoorientador}[1]{\renewcommand{\imprimirtitulodocoorientador}{#1}}
+
+%% Nome completo do(a) coorientador(a)
+\providecommand{\imprimirnomedocoorientador}{Nome Completo do(a) Coorientador(a)}
+\newcommand{\NomeDoCoorientador}[1]{\renewcommand{\imprimirnomedocoorientador}{#1}}
+
+%% Sobrenome do(a) coorientador(a)
+\providecommand{\imprimirsobrenomedocoorientador}{Último Nome}
+\newcommand{\SobrenomeDoCoorienador}[1]{\renewcommand{\imprimirsobrenomedocoorientador}{#1}}
+
+%% Prenome do(a) coorientador(a)
+\providecommand{\imprimirprenomedocoorientador}{Nome do(a) Coorientador(a) Sem Último}
+\newcommand{\PrenomeDoCoorientador}[1]{\renewcommand{\imprimirprenomedocoorientador}{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Informações da Instituição
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\Institution}[1]{\providecommand{\imprimirinstitution}{#1}}%% Institution name
-\newcommand{\SiglaInstituicao}[1]{\providecommand{\imprimirsiglainstituicao}{#1}}%% Sigla instituicao
-\newcommand{\Cidade}[1]{\providecommand{\imprimircidade}{#1}}%% Nome da cidade (câmpus)
-\newcommand{\Diretoria}[1]{\providecommand{\imprimirdiretoria}{Diretoria de #1}}%% Diretoria
-\newcommand{\Departamento}[1]{\providecommand{\imprimirdepartamento}{#1}}%% Nome do departamento
-\newcommand{\SiglaDepartamento}[1]{\providecommand{\imprimirsigladepartamento}{#1}}%% Sigla do departamento
-\newcommand{\Curso}[1]{\providecommand{\imprimircurso}{#1}}%% Nome do curso
-\newcommand{\Course}[1]{\providecommand{\imprimircourse}{#1}}%% Course name
-\newcommand{\AreaDeConcentracao}[1]{\providecommand{\imprimirareadeconcentracao}{#1}}%% Nome da área de concentração
-\newcommand{\Programa}[1]{\providecommand{\imprimirprograma}{#1}}%% Nome do programa ou nome do curso completo
-\newcommand{\SiglaDoPPG}[1]{\providecommand{\imprimirsigladoppg}{#1}}%% Logo do programa de pós-graduação
-\newcommand{\imprimirppgoudepartamento}{%% Programa de pós-graduação ou departamento
+%% Instituição (from abntex2)
+\renewcommand{\imprimirinstituicao}{Universidade Tecnológica Federal do Paraná}
+\let\Instituicao\instituicao
+
+%% Institution name
+\providecommand{\imprimirinstitution}{Universidade Tecnológica Federal do Paraná}
+\newcommand{\Institution}[1]{\renewcommand{\imprimirinstitution}{#1}}
+
+%% Sigla instituicao
+\providecommand{\imprimirsiglainstituicao}{UTFPR}
+\newcommand{\SiglaInstituicao}[1]{\renewcommand{\imprimirsiglainstituicao}{#1}}
+
+%% Nome da cidade (câmpus)
+\providecommand{\imprimircidade}{Curitiba}
+\newcommand{\Cidade}[1]{\renewcommand{\imprimircidade}{#1}}
+
+%% Diretoria
+\providecommand{\imprimirdiretoria}{Diretoria de Pesquisa e Pós-Graduação}
+\newcommand{\Diretoria}[1]{\renewcommand{\imprimirdiretoria}{Diretoria de #1}}
+
+%% Nome do departamento
+\providecommand{\imprimirdepartamento}{Nome do Departamento ou da Coordenação}
+\newcommand{\Departamento}[1]{\renewcommand{\imprimirdepartamento}{#1}}
+
+%% Sigla do departamento
+\providecommand{\imprimirsigladepartamento}{DPT}
+\newcommand{\SiglaDepartamento}[1]{\renewcommand{\imprimirsigladepartamento}{#1}}
+
+%% Nome do curso
+\providecommand{\imprimircurso}{Nome do Curso}
+\newcommand{\Curso}[1]{\renewcommand{\imprimircurso}{#1}}
+
+%% Course name
+\providecommand{\imprimircourse}{Course Name}
+\newcommand{\Course}[1]{\renewcommand{\imprimircourse}{#1}}
+
+%% Nome do programa ou nome do curso completo
+\providecommand{\imprimirprograma}{Programa de Pós-Graduação em \imprimircurso}
+\newcommand{\Programa}[1]{\renewcommand{\imprimirprograma}{#1}}
+
+%% Sigla do programa de pós-graduação
+\providecommand{\imprimirsigladoppg}{PPG}
+\newcommand{\SiglaDoPPG}[1]{\renewcommand{\imprimirsigladoppg}{#1}}
+
+%% Programa de pós-graduação ou departamento
+\newcommand{\imprimirppgoudepartamento}{
   \ifthenelse{\equal{\imprimirtipodedocumento}{Tese}\or\equal{\imprimirtipodedocumento}{Dissertação}}%% Tese ou dissertação
   {\imprimirprograma}%% Programa de pós-graduação
-  {\imprimirdepartamento}%% Departamento
+  {\imprimirdepartamento}%% Departamento (default)
 }
-\let\Instituicao\instituicao%% Instituição (from abntex2)
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Folha de Rosto
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newcommand{\DescricaoDoDocumento}[1]{\providecommand{\imprimirdescricaododocumento}{#1}}%% Descrição do documento
-
+%% Nome da área de concentração
+\providecommand{\imprimirareadeconcentracao}{Nome da Área de Concentração}
+\newcommand{\AreaDeConcentracao}[1]{\renewcommand{\imprimirareadeconcentracao}{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Informações de Cotutela (Duplo Grau)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\AtribuiCotutela}[1]{\providecommand{\imprimiratribuicotutela}{#1}}%% Insere dados de cotutela
+%% Insere dados de cotutela
+\providecommand{\imprimiratribuicotutela}{false}
+\newcommand{\AtribuiCotutela}[1]{\renewcommand{\imprimiratribuicotutela}{#1}}
 
-%% Informacoes da Instituicao Cotutela
-\newcommand{\InstituicaoCotutela}[1]{\providecommand{\imprimirinstituicaocotutela}{#1}}%% Instituicao cotutela
-\newcommand{\InstitutionCotutela}[1]{\providecommand{\imprimirinstitutioncotutela}{#1}}%% Institution cotutela
-\newcommand{\SiglaInstituicaoCotutela}[1]{\providecommand{\imprimirsiglainstituicaocotutela}{#1}}%% Sigla instituicao cotutela
-\newcommand{\DepartamentoCotutela}[1]{\providecommand{\imprimirdepartamentocotutela}{#1}}%% Nome do departamento da inst. cotutela
-\newcommand{\SiglaDepartamentoCotutela}[1]{\providecommand{\imprimirsigladepartamentocotutela}{#1}}%% Sigla do departamento da inst. cotutela
-\newcommand{\CursoCotutela}[1]{\providecommand{\imprimircursocotutela}{#1}}%% Nome do curso bachalerado ou pós-graduação (PPG)
-\newcommand{\CourseCotutela}[1]{\providecommand{\imprimircoursecotutela}{#1}}%% Cotutela Course name
-\newcommand{\ProgramaCotutela}[1]{\providecommand{\imprimirprogramacotutela}{#1}}%% Nome do programa ou nome do curso completo na inst. cotutela
-\newcommand{\SiglaDoPPGCotutela}[1]{\providecommand{\imprimirsigladoppgcotutela}{#1}}%% Sigla do programa de pós-graduação da inst. de cotutela
+%% Instituicao cotutela
+\providecommand{\imprimirinstituicaocotutela}{Universidade Da Cotutela}
+\newcommand{\InstituicaoCotutela}[1]{\renewcommand{\imprimirinstituicaocotutela}{#1}}
 
-\newcommand{\AreaDeConcentracaoCotutela}[1]{\providecommand{\imprimirareadeconcentracaocotutela}{#1}}%% Area de concentração na inst. de cotutela
+%% Institution cotutela
+\providecommand{\imprimirinstitutioncotutela}{Double Degree University}
+\newcommand{\InstitutionCotutela}[1]{\renewcommand{\imprimirinstitutioncotutela}{#1}}
 
-\newcommand{\NivelDeFormacaoResumo}[1]{\providecommand{\imprimirniveldeformacaoresumo}{#1}}%% Nível de formação no resumo
-\newcommand{\FormationLevelAbstract}[1]{\providecommand{\imprimirformationlevelabstract}{#1}}%% Formation level no abstract
+%% Sigla instituicao cotutela
+\providecommand{\imprimirsiglainstituicaocotutela}{UC}
+\newcommand{\SiglaInstituicaoCotutela}[1]{\renewcommand{\imprimirsiglainstituicaocotutela}{#1}}
+
+%% Nome do departamento da inst. cotutela
+\providecommand{\imprimirdepartamentocotutela}{Nome do Departamento ou da Coordenação}
+\newcommand{\DepartamentoCotutela}[1]{\renewcommand{\imprimirdepartamentocotutela}{#1}}
+
+%% Sigla do departamento da inst. cotutela
+\providecommand{\imprimirsigladepartamentocotutela}{DPT-EXT}
+\newcommand{\SiglaDepartamentoCotutela}[1]{\renewcommand{\imprimirsigladepartamentocotutela}{#1}}
+
+%% Nome do curso bachalerado ou pós-graduação (PPG)
+\providecommand{\imprimircursocotutela}{Nome do Curso Cotutela}
+\newcommand{\CursoCotutela}[1]{\renewcommand{\imprimircursocotutela}{#1}}
+
+%% Cotutela Course name
+\providecommand{\imprimircoursecotutela}{Second Degree Course}
+\newcommand{\CourseCotutela}[1]{\renewcommand{\imprimircoursecotutela}{#1}}
+
+%% Nome do programa ou nome do curso completo na inst. cotutela
+\providecommand{\imprimirprogramacotutela}{Programa de Doutoral em \imprimircursocotutela}
+\newcommand{\ProgramaCotutela}[1]{\renewcommand{\imprimirprogramacotutela}{#1}}
+
+%% Sigla do programa de pós-graduação da inst. de cotutela
+\providecommand{\imprimirsigladoppgcotutela}{PPG-EXT}
+\newcommand{\SiglaDoPPGCotutela}[1]{\renewcommand{\imprimirsigladoppgcotutela}{#1}}
+
+%% Area de concentração na inst. de cotutela
+\providecommand{\imprimirareadeconcentracaocotutela}{Nome da Área de Concentração}
+\newcommand{\AreaDeConcentracaoCotutela}[1]{\renewcommand{\imprimirareadeconcentracaocotutela}{#1}}
+
+%% Nível de formação no resumo
+\providecommand{\imprimirniveldeformacaoresumo}{Duplo doutorado}
+\newcommand{\NivelDeFormacaoResumo}[1]{\renewcommand{\imprimirniveldeformacaoresumo}{#1}}
+
+%% Formation level no abstract
+\providecommand{\imprimirformationlevelabstract}{Double PhD}
+\newcommand{\FormationLevelAbstract}[1]{\renewcommand{\imprimirformationlevelabstract}{#1}}
 
 %% Informacoes do orientador(a) da inst. cotutela
-\newcommand{\AtribuicaoOrientadorCotutela}[1]{\providecommand{\imprimiratribuicaoorientadorcotutela}{#1}}%% Atribuição "orientador(a)"
-\newcommand{\TituloDoOrientadorCotutela}[1]{\providecommand{\imprimirtitulodoorientadorcotutela}{#1}}%% Título do(a) orientador(a)
-\newcommand{\NomeDoOrientadorCotutela}[1]{\providecommand{\imprimirnomedoorientadorcotutela}{#1}}%% Nome completo do(a) orientador(a)
-\newcommand{\SobrenomeDoOrienadorCotutela}[1]{\providecommand{\imprimirsobrenomedoorientadorcotutela}{#1}}%% Sobrenome do(a) orientador(a)
-\newcommand{\PrenomeDoOrientadorCotutela}[1]{\providecommand{\imprimirprenomedoorientadorcotutela}{#1}}%% Prenome do(a) orientador(a)
-\newcommand{\AtribuiCoorientadorCotutela}[1]{\providecommand{\imprimiratribuicoorientadorcotutela}{#1}}%% Insere ou remove o(a) coorientador(a)
-\newcommand{\AtribuicaoCoorientadorCotutela}[1]{\providecommand{\imprimiratribuicaocoorientadorcotutela}{#1}}%% Atribuição "coorientador(a)"
-\newcommand{\TituloDoCoorientadorCotutela}[1]{\providecommand{\imprimirtitulodocoorientadorcotutela}{#1}}%% Título do(a) coorientador(a)
-\newcommand{\NomeDoCoorientadorCotutela}[1]{\providecommand{\imprimirnomedocoorientadorcotutela}{#1}}%% Nome completo do(a) coorientador(a)
-\newcommand{\SobrenomeDoCoorienadorCotutela}[1]{\providecommand{\imprimirsobrenomedocoorientadorcotutela}{#1}}%% Sobrenome do(a) coorientador(a)
-\newcommand{\PrenomeDoCoorientadorCotutela}[1]{\providecommand{\imprimirprenomedocoorientadorcotutela}{#1}}%% Prenome do(a) coorientador(a)
 
-\newcommand{\AtribuiDescricaoCotutela}[1]{\providecommand{\imprimiratribuidescricaocotutela}{#1}}%% Insere descrição de cotutela na folha de rosto
-\newcommand{\DescricaoDoDocumentoCotutela}[1]{\providecommand{\imprimirdescricaododocumentocotutela}{#1}}%% descricao de cotutela na folha de rosto
+%% Atribuição "orientador(a)" de cotutela
+\providecommand{\imprimiratribuicaoorientadorcotutela}{Orientador(a)}
+\newcommand{\AtribuicaoOrientadorCotutela}[1]{\renewcommand{\imprimiratribuicaoorientadorcotutela}{#1}}
 
-\newcommand{\imprimirppgoudepartamentocotutela}{%% Programa de pós-graduação ou departamento da inst. cotutela
+%% Título do(a) orientador(a) de cotutela
+\providecommand{\imprimirtitulodoorientadorcotutela}{Prof(a). Dr(a).}
+\newcommand{\TituloDoOrientadorCotutela}[1]{\renewcommand{\imprimirtitulodoorientadorcotutela}{#1}}
+
+%% Nome completo do(a) orientador(a) de cotutela
+\providecommand{\imprimirnomedoorientadorcotutela}{Nome Completo do(a) Orientador(a)}
+\newcommand{\NomeDoOrientadorCotutela}[1]{\renewcommand{\imprimirnomedoorientadorcotutela}{#1}}
+
+%% Sobrenome do(a) orientador(a) de cotutela
+\providecommand{\imprimirsobrenomedoorientadorcotutela}{Último Nome}
+\newcommand{\SobrenomeDoOrienadorCotutela}[1]{\renewcommand{\imprimirsobrenomedoorientadorcotutela}{#1}}
+
+%% Prenome do(a) orientador(a) de cotutela
+\providecommand{\imprimirprenomedoorientadorcotutela}{Nome do(a) Orientador(a) Sem Último}
+\newcommand{\PrenomeDoOrientadorCotutela}[1]{\renewcommand{\imprimirprenomedoorientadorcotutela}{#1}}
+
+%% Insere ou remove o(a) coorientador(a) de cotutela
+\providecommand{\imprimiratribuicoorientadorcotutela}{false}
+\newcommand{\AtribuiCoorientadorCotutela}[1]{\renewcommand{\imprimiratribuicoorientadorcotutela}{#1}}
+
+%% Atribuição "coorientador(a)" de cotutela
+\providecommand{\imprimiratribuicaocoorientadorcotutela}{Coorientador(a)}
+\newcommand{\AtribuicaoCoorientadorCotutela}[1]{\renewcommand{\imprimiratribuicaocoorientadorcotutela}{#1}}
+
+%% Título do(a) coorientador(a)
+\providecommand{\imprimirtitulodocoorientadorcotutela}{Prof(a). Dr(a).}
+\newcommand{\TituloDoCoorientadorCotutela}[1]{\renewcommand{\imprimirtitulodocoorientadorcotutela}{#1}}
+
+%% Nome completo do(a) coorientador(a)
+\providecommand{\imprimirnomedocoorientadorcotutela}{Nome Completo do(a) Coorientador(a)}
+\newcommand{\NomeDoCoorientadorCotutela}[1]{\renewcommand{\imprimirnomedocoorientadorcotutela}{#1}}
+
+%% Sobrenome do(a) coorientador(a)
+\providecommand{\imprimirsobrenomedocoorientadorcotutela}{Último Nome}
+\newcommand{\SobrenomeDoCoorienadorCotutela}[1]{\renewcommand{\imprimirsobrenomedocoorientadorcotutela}{#1}}
+
+%% Prenome do(a) coorientador(a)
+\providecommand{\imprimirprenomedocoorientadorcotutela}{Nome do(a) Coorientador(a) Sem Último}
+\newcommand{\PrenomeDoCoorientadorCotutela}[1]{\renewcommand{\imprimirprenomedocoorientadorcotutela}{#1}}
+
+%% Programa de pós-graduação ou departamento da inst. cotutela
+\newcommand{\imprimirppgoudepartamentocotutela}{
   \ifthenelse{\equal{\imprimirtipodedocumento}{Tese}\or\equal{\imprimirtipodedocumento}{Dissertação}}%% Tese ou dissertação
   {\imprimirprogramacotutela}%% Programa de pós-graduação
   {\imprimirdepartamentocotutela}%% Departamento
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Folha de Rosto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Descrição do documento
+\providecommand{\imprimirdescricaododocumento}{\imprimirtipodedocumento\ apresentado(a) como requisito parcial à obtenção do título de \imprimirtitulopretendido\ em \imprimircurso, do \imprimirppgoudepartamento, da \imprimirinstituicao.
+}
+\newcommand{\DescricaoDoDocumento}[1]{\renewcommand{\imprimirdescricaododocumento}{#1}}
+
+%% Insere descrição de cotutela na folha de rosto
+\providecommand{\imprimiratribuidescricaocotutela}{false}
+\newcommand{\AtribuiDescricaoCotutela}[1]{\renewcommand{\imprimiratribuidescricaocotutela}{#1}}
+
+%% Descrição do documento (cotutela)
+\providecommand{\imprimirdescricaododocumentocotutela}{\imprimirtipodedocumento\ apresentado(a) como requisito parcial à obtenção do título de \imprimirtitulopretendido\ em \imprimircursocotutela, do \imprimirppgoudepartamentocotutela, da \imprimirinstituicaocotutela.}
+\newcommand{\DescricaoDoDocumentoCotutela}[1]{\renewcommand{\imprimirdescricaododocumentocotutela}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ficha Catalografica
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\TituloDaFichaCatalografica}[1]{%% Título da ficha catalográfica
-  \providecommand{\imprimirtitulodafichacatalografica}{#1}%%
-}
-\newcommand{\TextoDeAprovacao}[1]{\providecommand{\imprimirtextodeaprovacao}{#1}}%% Texto de aprovação
-\newcommand{\AvisoDeAprovacao}[1]{\providecommand{\imprimiravisodeaprovacao}{#1}}%% Aviso de aprovação
-\newcommand{\NumeroDaTeseOuDissertacao}[1]{\providecommand{\imprimirnumerodateseoudissertacao}{#1}}%% Número da tese ou dissertação
-\newcommand{\NumeroDaPublicacao}[1]{\providecommand{\imprimirnumerodapublicacao}{#1}}%% Número da publicação
-\newcommand{\NumeroDaFichaCatalografica}[1]{%% Número da ficha catalográfica
-  \providecommand{\imprimirnumerodafichacatalografica}{#1}%%
-}
-\newcommand{\CDDOuCDU}[1]{\providecommand{\imprimircddoucdu}{#1}}%% CDD ou CDU
-\newcommand{\TituloDoResponsavelTCC}[1]{\providecommand{\imprimirtitulodoresponsaveltcc}{#1}}%% Título do(a) responsável pelos TCC
-\newcommand{\NomeDoResponsavelTCC}[1]{%% Nome completo do(a) responsável pelos TCC
-  \providecommand{\imprimirnomedoresponsaveltcc}{#1}%%
-}
-\newcommand{\AtribuicaoCoordenador}[1]{\providecommand{\imprimiratribuicaocoordenador}{#1}}%% Atribuição "coordenador(a)" do curso
-\newcommand{\TituloDoCoordenador}[1]{\providecommand{\imprimirtitulodocoordenador}{#1}}%% Título do(a) coordenador(a) do curso
-\newcommand{\NomeDoCoordenador}[1]{\providecommand{\imprimirnomedocoordenador}{#1}}%% Nome completo do(a) coordenador(a) do curso
-\newcommand{\MembroAIgualOrientador}[1]{\providecommand{\imprimirmembroaigualorientador}{#1}}%% Membro A igual ao(à) orientador(a)
-\newcommand{\MembroA}[1]{\providecommand{\imprimirmembroa}{#1}}%% Nome completo do membro A
-\newcommand{\TituloDoMembroA}[1]{\providecommand{\imprimirtitulodomembroa}{#1}}%% Título do membro A
-\newcommand{\InstituicaoDoMembroA}[1]{\providecommand{\imprimirinstituicaodomembroa}{#1}}%% Nome da instituição do membro A
-\newcommand{\MembroB}[1]{\providecommand{\imprimirmembrob}{#1}}%% Nome completo do membro B
-\newcommand{\TituloDoMembroB}[1]{\providecommand{\imprimirtitulodomembrob}{#1}}%% Título do membro B
-\newcommand{\InstituicaoDoMembroB}[1]{\providecommand{\imprimirinstituicaodomembrob}{#1}}%% Nome da instituição do membro B
-\newcommand{\MembroC}[1]{\providecommand{\imprimirmembroc}{#1}}%% Nome completo do membro C
-\newcommand{\TituloDoMembroC}[1]{\providecommand{\imprimirtitulodomembroc}{#1}}%% Título do membro C
-\newcommand{\InstituicaoDoMembroC}[1]{\providecommand{\imprimirinstituicaodomembroc}{#1}}%% Nome da instituição do membro C
-\newcommand{\MembroD}[1]{\providecommand{\imprimirmembrod}{#1}}%% Nome completo do membro D
-\newcommand{\TituloDoMembroD}[1]{\providecommand{\imprimirtitulodomembrod}{#1}}%% Título do membro D
-\newcommand{\InstituicaoDoMembroD}[1]{\providecommand{\imprimirinstituicaodomembrod}{#1}}%% Nome da instituição do membro D
-\newcommand{\MembroE}[1]{\providecommand{\imprimirmembroe}{#1}}%% Nome completo do membro E
-\newcommand{\TituloDoMembroE}[1]{\providecommand{\imprimirtitulodomembroe}{#1}}%% Título do membro E
-\newcommand{\InstituicaoDoMembroE}[1]{\providecommand{\imprimirinstituicaodomembroe}{#1}}%% Nome da instituição do membro E
-\newcommand{\AtribuiMembroF}[1]{\providecommand{\imprimiratribuimembrof}{#1}}%% Insere ou remove o membro F
-\newcommand{\MembroF}[1]{\providecommand{\imprimirmembrof}{#1}}%% Nome completo do membro F
-\newcommand{\TituloDoMembroF}[1]{\providecommand{\imprimirtitulodomembrof}{#1}}%% Título do membro F
-\newcommand{\InstituicaoDoMembroF}[1]{\providecommand{\imprimirinstituicaodomembrof}{#1}}%% Nome da instituição do membro F
-\newcommand{\AtribuiMembroG}[1]{\providecommand{\imprimiratribuimembrog}{#1}}%% Insere ou remove o membro G
-\newcommand{\MembroG}[1]{\providecommand{\imprimirmembrog}{#1}}%% Nome completo do membro G
-\newcommand{\TituloDoMembroG}[1]{\providecommand{\imprimirtitulodomembrog}{#1}}%% Título do membro G
-\newcommand{\InstituicaoDoMembroG}[1]{\providecommand{\imprimirinstituicaodomembrog}{#1}}%% Nome da instituição do membro G
+%% Número da publicação
+\providecommand{\imprimirnumerodapublicacao}{00/\imprimirano}
+\newcommand{\NumeroDaPublicacao}[1]{\renewcommand{\imprimirnumerodapublicacao}{#1}}
+
+%% CDD ou CDU
+\providecommand{\imprimircddoucdu}{CDD 000.00}
+\newcommand{\CDDOuCDU}[1]{\renewcommand{\imprimircddoucdu}{#1}}
+
+%% Título da ficha catalográfica
+\providecommand{\imprimirtitulodafichacatalografica}{Ficha catalográfica elaborada pelo Departamento de Biblioteca da \par \imprimirinstituicao, Câmpus \imprimircidade \par n. \imprimirnumerodapublicacao}
+\newcommand{\TituloDaFichaCatalografica}[1]{\renewcommand{\imprimirtitulodafichacatalografica}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Folha de aprovação (Formato UTFPR-PG)*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Número da tese ou dissertação
+\providecommand{\imprimirnumerodateseoudissertacao}{00/\imprimirano}
+\newcommand{\NumeroDaTeseOuDissertacao}[1]
+{\renewcommand{\imprimirnumerodateseoudissertacao}{#1}}
+
+%% Número da ficha catalográfica
+\providecommand{\imprimirnumerodafichacatalografica}{A000}
+\newcommand{\NumeroDaFichaCatalografica}[1]{\renewcommand{\imprimirnumerodafichacatalografica}{#1}}
+
+%% Título do(a) responsável pelos TCC
+\providecommand{\imprimirtitulodoresponsaveltcc}{Prof(a). Dr(a).}
+\newcommand{\TituloDoResponsavelTCC}[1]{\renewcommand{\imprimirtitulodoresponsaveltcc}{#1}}
+
+%% Nome completo do(a) responsável pelos TCC
+\providecommand{\imprimirnomedoresponsaveltcc}{Nome do(a) Responsável}
+\newcommand{\NomeDoResponsavelTCC}[1]{\renewcommand{\imprimirnomedoresponsaveltcc}{#1}}
+
+%% Atribuição "coordenador(a)" do curso
+\providecommand{\imprimiratribuicaocoordenador}{Coordenador(a)}
+\newcommand{\AtribuicaoCoordenador}[1]{\renewcommand{\imprimiratribuicaocoordenador}{#1}}
+
+%% Título do(a) coordenador(a) do curso
+\providecommand{\imprimirtitulodocoordenador}{Prof(a). Dr(a).}
+\newcommand{\TituloDoCoordenador}[1]{\renewcommand{\imprimirtitulodocoordenador}{#1}}
+
+%% Nome completo do(a) coordenador(a) do curso
+\providecommand{\imprimirnomedocoordenador}{Nome do(a) Coordenador(a)}
+\newcommand{\NomeDoCoordenador}[1]{\renewcommand{\imprimirnomedocoordenador}{#1}}
+
+%% Texto de aprovação
+\providecommand{\imprimirtextodeaprovacao}{Esta \imprimirtipodedocumento\ foi apresentada...}
+\newcommand{\TextoDeAprovacao}[1]{\renewcommand{\imprimirtextodeaprovacao}{#1}}
+
+%% Aviso de aprovação
+\providecommand{\imprimiravisodeaprovacao}{A Folha de Aprovação assinada encontra-se...}
+\newcommand{\AvisoDeAprovacao}[1]{\renewcommand{\imprimiravisodeaprovacao}{#1}}
+
+%% Membro A igual ao(à) orientador(a)
+\providecommand{\imprimirmembroaigualorientador}{true}
+\newcommand{\MembroAIgualOrientador}[1]{\renewcommand{\imprimirmembroaigualorientador}{#1}}
+
+%% Nome completo do membro A
+\providecommand{\imprimirmembroa}{Nome do Membro A}
+\newcommand{\MembroA}[1]{\renewcommand{\imprimirmembroa}{#1}}
+
+%% Título do membro A
+\providecommand{\imprimirtitulodomembroa}{Prof(a). Dr(a).}
+\newcommand{\TituloDoMembroA}[1]{\renewcommand{\imprimirtitulodomembroa}{#1}}
+
+%% Nome da instituição do membro A
+\providecommand{\imprimirinstituicaodomembroa}{Instituição do Membro A}
+\newcommand{\InstituicaoDoMembroA}[1]{\renewcommand{\imprimirinstituicaodomembroa}{#1}}
+
+%% Nome completo do membro B
+\providecommand{\imprimirmembrob}{Nome do Membro B}
+\newcommand{\MembroB}[1]{\renewcommand{\imprimirmembrob}{#1}}
+
+%% Título do membro B
+\providecommand{\imprimirtitulodomembrob}{Prof(a). Dr(a).}
+\newcommand{\TituloDoMembroB}[1]{\renewcommand{\imprimirtitulodomembrob}{#1}}
+
+%% Nome da instituição do membro B
+\providecommand{\imprimirinstituicaodomembrob}{Instituição do Membro B}
+\newcommand{\InstituicaoDoMembroB}[1]{\renewcommand{\imprimirinstituicaodomembrob}{#1}}
+
+%% Nome completo do membro C
+\providecommand{\imprimirmembroc}{Nome do Membro C}
+\newcommand{\MembroC}[1]{\renewcommand{\imprimirmembroc}{#1}}
+
+%% Título do membro C
+\providecommand{\imprimirtitulodomembroc}{Prof(a). Dr(a).}
+\newcommand{\TituloDoMembroC}[1]{\renewcommand{\imprimirtitulodomembroc}{#1}}
+
+%% Nome da instituição do membro C
+\providecommand{\imprimirinstituicaodomembroc}{Instituição do Membro C}
+\newcommand{\InstituicaoDoMembroC}[1]{\renewcommand{\imprimirinstituicaodomembroc}{#1}}
+
+%% Nome completo do membro D
+\providecommand{\imprimirmembrod}{Nome do Membro D}
+\newcommand{\MembroD}[1]{\renewcommand{\imprimirmembrod}{#1}}
+
+%% Título do membro D
+\providecommand{\imprimirtitulodomembrod}{Prof(a). Dr(a).}
+\newcommand{\TituloDoMembroD}[1]{\renewcommand{\imprimirtitulodomembrod}{#1}}
+
+%% Nome da instituição do membro D
+\providecommand{\imprimirinstituicaodomembrod}{Instituição do Membro D}
+\newcommand{\InstituicaoDoMembroD}[1]{\renewcommand{\imprimirinstituicaodomembrod}{#1}}
+
+%% Nome completo do membro E
+\providecommand{\imprimirmembroe}{Nome do Membro E}
+\newcommand{\MembroE}[1]{\renewcommand{\imprimirmembroe}{#1}}
+
+%% Título do membro E
+\providecommand{\imprimirtitulodomembroe}{Prof(a). Dr(a).}
+\newcommand{\TituloDoMembroE}[1]{\renewcommand{\imprimirtitulodomembroe}{#1}}
+
+%% Nome da instituição do membro E
+\providecommand{\imprimirinstituicaodomembroe}{Instituição do Membro E}
+\newcommand{\InstituicaoDoMembroE}[1]{\renewcommand{\imprimirinstituicaodomembroe}{#1}}
+
+%% Insere ou remove o membro F
+\providecommand{\imprimiratribuimembrof}{false}
+\newcommand{\AtribuiMembroF}[1]{\renewcommand{\imprimiratribuimembrof}{#1}}
+
+%% Nome completo do membro F
+\providecommand{\imprimirmembrof}{Nome do Membro F}
+\newcommand{\MembroF}[1]{\renewcommand{\imprimirmembrof}{#1}}
+
+%% Título do membro F
+\providecommand{\imprimirtitulodomembrof}{Prof(a). Dr(a).}
+\newcommand{\TituloDoMembroF}[1]{\renewcommand{\imprimirtitulodomembrof}{#1}}
+
+%% Nome da instituição do membro F
+\providecommand{\imprimirinstituicaodomembrof}{Instituição do Membro F}
+\newcommand{\InstituicaoDoMembroF}[1]{\renewcommand{\imprimirinstituicaodomembrof}{#1}}
+
+%% Insere ou remove o membro G
+\providecommand{\imprimiratribuimembrog}{false}
+\newcommand{\AtribuiMembroG}[1]{\renewcommand{\imprimiratribuimembrog}{#1}}
+
+%% Nome completo do membro G
+\providecommand{\imprimirmembrog}{Nome do Membro G}
+\newcommand{\MembroG}[1]{\renewcommand{\imprimirmembrog}{#1}}
+
+%% Título do membro G
+\providecommand{\imprimirtitulodomembrog}{Prof(a). Dr(a).}
+\newcommand{\TituloDoMembroG}[1]{\renewcommand{\imprimirtitulodomembrog}{#1}}
+
+%% Nome da instituição do membro G
+\providecommand{\imprimirinstituicaodomembrog}{Instituição do Membro G}
+\newcommand{\InstituicaoDoMembroG}[1]{\renewcommand{\imprimirinstituicaodomembrog}{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Informações nas propriedades do documento do arquivo PDF

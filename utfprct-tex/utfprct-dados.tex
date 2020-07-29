@@ -71,8 +71,8 @@
 %% Informações do Documento
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% Tipo de documento: "Tese", "Dissertação", "Trabalho de Conclusão de Curso"
-\TipoDeDocumento{Tese}%
+%% Tipo de documento (opções: "Tese", "Dissertação", "Trabalho de Conclusão de Curso"
+\TipoDeDocumento{Tese}%copiar exatamente uma das opções 
 
 %% [abstract] Document type: "Thesis", "Dissertation", "Bachelor Thesis"
 \DocumentType{Thesis}%
@@ -81,7 +81,7 @@
 \NivelDeFormacao{Doutorado}%
 
 %% [abstract] Formation level: "Doctorate", "PhD", "Master's Degree", "Bachelor's Degree"
-\FormationLevel{Doctorate}%
+\FormationLevel{PhD}%
 
 %% Título pretendido: "Doutor(a)", "Mestre(a)" ou "Bacharel(a)"
 \TituloPretendido{Doutor(a)}%
@@ -108,14 +108,15 @@ subtítulo do presente trabalho acadêmico
 \MesPorExtenso{janeiro}%% mês por extenso (opcional: usado na ficha catalográfica apenas)
 \Ano{2020}%% Ano
 
-%% Palavras-chave e keywords
-\NumeroDePalavrasChave{5}%% Número de palavras-chave (máximo 5)
+%% Palavras-chave e keywords (máximo 5)
+\NumeroDePalavrasChave{5}%% Número de palavras-chave 
 \PalavraChaveA{Palavra-chave A}%% Palavra-chave A
 \PalavraChaveB{Palavra-chave B}%% Palavra-chave B
 \PalavraChaveC{Palavra-chave C}%% Palavra-chave C
 \PalavraChaveD{Palavra-chave D}%% Palavra-chave D
 \PalavraChaveE{Palavra-chave E}%% Palavra-chave E
-\NumeroDeKeywords{5}%% Número de keywords (máximo 5)
+
+\NumeroDeKeywords{\imprimirnumerodepalavraschave}%% Número de keywords (mesmo que palavras-chave)
 \KeywordA{Keyword A}%% Keyword A
 \KeywordB{Keyword B}%% Keyword B
 \KeywordC{Keyword C}%% Keyword C
@@ -134,14 +135,14 @@ subtítulo do presente trabalho acadêmico
 
 %%% Autor(a) 2 (opcional)
 %% *Considera apenas se "\TipoDeDocumento" == "Trabalho de Conclusão de Curso"
-\AtribuiAutorDois{true}%% Insere ou remove autor(a) 2: "true" ou "false"
+\AtribuiAutorDois{false}%% Insere ou remove autor(a) 2: "true" ou "false"
 \NomeDoAutorDois{Nome do(a) Autor(a) 2}%% Nome completo do(a) autor(a) 2
 \SobrenomeDoAutorDois{Último Nome}%% Último nome do(a) autor(a) 2
 \PrenomeDoAutorDois{Nome do(a) Autor(a) 2 Sem Último}%% Nome do(a) autor(a) 2 sem último nome
 
 %%% Autor(a) 3 (opcional)
 %% *Considera apenas se "\TipoDeDocumento" == "Trabalho de Conclusão de Curso"
-\AtribuiAutorTres{true}%% Insere ou remove autor(a) 3: "true" ou "false"
+\AtribuiAutorTres{false}%% Insere ou remove autor(a) 3: "true" ou "false"
 \NomeDoAutorTres{Nome do(a) Autor(a) 3}%% Nome completo do(a) autor(a) 3
 \SobrenomeDoAutorTres{Último Nome}%% Último nome do(a) autor(a) 3
 \PrenomeDoAutorTres{Nome do(a) Autor(a) 3 Sem Último}%% Nome do(a) autor(a) 3 sem último nome
@@ -183,20 +184,11 @@ subtítulo do presente trabalho acadêmico
 %% Nome da cidade (câmpus)
 \Cidade{Curitiba}
 
-%% Diretoria: "Graduação e Educação Profissional" ou "Pesquisa e Pós-Graduação" (opcional: usado na ficha catalográfica)
+%% Diretoria: "Graduação e Educação Profissional" ou "Pesquisa e Pós-Graduação" (opcional)
 \Diretoria{Pesquisa e Pós-Graduação}
 
 %% Nome do departamento ou da coordenação (opcional: mais comum no Bacharelado: Departamento de Informática)
 \Departamento{Nome do Departamento ou da Coordenação}
-
-%% Sigla do departamento (opcional, ex: DAINF, DAMEC, DAMAT...)
-\SiglaDepartamento{DPT}
-
-%% Nome do curso bachalerado ou pós-graduação (PPG) (ex: "Engenharia de Computação",  "Engenharia El{\'e}trica e Inform{\'a}tica Industrial") 
-\Curso{Nome do Curso}
-
-%% [abstract] Course name
-\Course{Course Name}
 
 %% Programa ou nome do curso completo (capa)
 %% "Bachalerado em Engenharia de Computação"
@@ -225,17 +217,17 @@ subtítulo do presente trabalho acadêmico
 %% Sigla da instituição de cotutela
 \SiglaInstituicaoCotutela{UC}
 
-%% Nome do curso bachalerado ou pós-graduação (PPG) na instituição de cotutela (ex: "Engenharia de Computação",  "Engenharia El{\'e}trica e Inform{\'a}tica Industrial")
-\CursoCotutela{Nome do Curso Cotutela}
-
-%% [abstract] Course name 
-\CourseCotutela{Second Degree Course}
-
 %% Nome do departamento ou da coordenação da inst. de cotutela (mais comum no Bacharelado: Departamento de Informática)
 \DepartamentoCotutela{Nome do Departamento ou da Coordenação}
 
 %% Sigla do departamento da inst. cotutela (ex: DAINF, DAMEC, DAMAT...)
 \SiglaDepartamentoCotutela{DPT-EXT}
+
+%% Nome do curso bachalerado ou pós-graduação (PPG) na instituição de cotutela (ex: "Engenharia de Computação",  "Engenharia El{\'e}trica e Inform{\'a}tica Industrial")
+\CursoCotutela{Nome do Curso Cotutela}
+
+%% [abstract] Course name 
+\CourseCotutela{Second Degree Course}
 
 %% Programa ou nome do curso completo na inst. cotutela (capa)
 %% "Bachalerado em Engenharia de Computação"
@@ -264,7 +256,7 @@ subtítulo do presente trabalho acadêmico
 
 %% Coorientador(a) da instituição de cotutela
 %% Usado para citação: "\SobrenomeDoCoorientador, PrenomeDoCoorientador" (ex: "Doe, John" ou "Doe, J.")
-\AtribuiCoorientadorCotutela{true}%% Insere ou remove o(a) coorientador(a) da cotutela: "true" ou "false"
+\AtribuiCoorientadorCotutela{false}%% Insere ou remove o(a) coorientador(a) da cotutela: "true" ou "false"
 \AtribuicaoCoorientadorCotutela{Coorientador(a)}%% Atribuição "Coorientador(a)"
 \TituloDoCoorientadorCotutela{Prof(a). Dr(a).}%% Título do(a) coorientador(a)
 \NomeDoCoorientadorCotutela{Nome Completo do(a) Coorientador(a)}%% Nome completo do(a) coorientador(a)
@@ -289,7 +281,7 @@ subtítulo do presente trabalho acadêmico
 %% Insere ou remove descrição da cotutela (extra) na folha de rosto: "true" ou "false". 
 %% Se "true", a descrição do documento será colocada na folha de rosto, logo abaixo do orientador(a) e coorientador(a) da primeira inst. e depois o orientador(a) e coorientador(a) da inst. de cotutela. 
 %% Se "false", os nomes do orientador(a) e coorientador(a) aparecerão logo abaixo do orientador(a) da primeira instituição, sem uma descrição extra. Neste caso, recomenda-se revisar a "\DescricaoDoDocumento" para contemplar ambas as instituições.   
-\AtribuiDescricaoCotutela{true}
+\AtribuiDescricaoCotutela{false}
 
 %% Segunda Descricao da Inst. de Cotutela na folha de rosto (exemplos)
 \DescricaoDoDocumentoCotutela{
