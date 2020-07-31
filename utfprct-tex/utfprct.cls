@@ -32,9 +32,7 @@
 
 %% Identificação e modificações
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
-\ProvidesClass{utfprct}[2020/06/06 v1.0.1]
-%% -- v1.0.1: Changed annex and appendices default structure (workaround bug0001)
-%% -- v1.0: Modification of utfprpgtex to utrpfcttex project
+\ProvidesClass{utfprct}[2020/07/30 v1.0.2]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
