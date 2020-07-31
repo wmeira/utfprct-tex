@@ -1691,7 +1691,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de abreviaturas, siglas e acrônimos 
-%%(configuração do arquivo ./PreTexto/lista-acronimos.tex)
+%%(configuração do arquivo ./PreTexto/file-acronimos.tex)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\listadeabrevsiglaseacr}{%% Formatação da lista de abreviaturas, siglas e acrônimos
@@ -1768,7 +1768,7 @@
 %% Lista de abreviaturas, siglas e acrônimos
 \newcommand{\incluirlistadeacronimos}[1]{%% Definição do comando para inclusão da lista de abreviaturas, siglas e acrônimos
   \ifthenelse{\equal{#1}{file}}{%% Lista de abreviaturas, siglas e acrônimos usando arquivo
-    \include{./PreTexto/lista-acronimos}%% Impressão da lista de abreviaturas, siglas e acrônimos
+    \include{./PreTexto/file-acronimos}%% Impressão da lista de abreviaturas, siglas e acrônimos
     \cleardoublepage%% Página de verso
   }{%%
     \ifthenelse{\equal{#1}{glossaries}}{%% Lista de abreviaturas, siglas e acrônimos através do pacote glossaries
@@ -1779,7 +1779,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de símbolos 
-%% (configuração do arquivo ./PreTexto/lista-simbolos.tex)
+%% (configuração do arquivo ./PreTexto/file-simbolos.tex)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\unidade}[1]{\SI{}{[#1]}}%% Formatação da unidade na lista de símbolos
@@ -1940,7 +1940,7 @@
 %% Lista de símbolos
 \newcommand{\incluirlistadesimbolos}[1]{%% Definição do comando para inclusão da lista de símbolos
   \ifthenelse{\equal{#1}{file}}{%% Lista de símbolos usando arquivo
-    \include{./PreTexto/lista-simbolos}%% Impressão da lista de símbolos
+    \include{./PreTexto/file-simbolos}%% Impressão da lista de símbolos
     \cleardoublepage%% Página de verso
   }{%%
     \ifthenelse{\equal{#1}{nomencl}}{%% Lista de símbolos através do pacote nomencl

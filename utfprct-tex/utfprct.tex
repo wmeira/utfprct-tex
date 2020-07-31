@@ -154,7 +154,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%% Configuração das entradas
+%%
 
 %% Arquivo de dados do modelo de documento LaTeX para produção de trabalhos acadêmicos da UTFPR
 \input{./utfprct-dados}%% Realize as modificações pertinentes no arquivo "utfprct-dados.tex"
@@ -168,24 +169,33 @@
 %% Entradas da lista de abreviaturas, siglas e acrônimos
 \include{./PreTexto/entradas-acronimos}% Comente para remover este item
 
-%Remove subtitulos da lista de abreviaturas, siglas e acrônimos
-%\renewcommand{\glossarysection}[2][]{}
-
 %% Entradas do glossário
 \include{./PosTexto/entradas-glossario}% Comente para remover este item
 
 %% Ferramenta para criação de nomenclaturas
 \makenomenclature%% Não comente esta linha
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Início do documento
+%%
 \begin{document}%% Não comente esta linha
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Formatação de páginas de elementos pré-textuais
+%%
 \pretextual%% Não comente esta linha
 
-%% Capa
-\incluircapa%% Comente para remover este item
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Capa
+%%
+\incluircapa%% Comente para remover este item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Folha de rosto (comentar para remover pré-textual)
 %%
 %% A descrição da folha de rosto pode ser customizada no 
@@ -193,19 +203,27 @@
 %% '\DescricaoDoDocumento'.
 %%
 %% Comando com * coloca a ficha catalográfica no verso
+%%
 \incluirfolhaderosto*%% Com ficha catalográfica no verso 
 %\incluirfolhaderosto%% Sem ficha catalográfica no verso
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ficha catalográfica (comente para remover este item)
 %% A ficha catalográfica é fornecida pela biblioteca em PDF
 %% e deve ser anexada no verso da folha de rosto.
 %%
 %% Comando \incluirfichacatalografica: 
 %% 1) Aceita o path para o PDF (insere a primeira página)
-%% 2) Com argumento 'template' (ou sem argumento), insere-se um template 'utfprct', que pode servir de placeholder.
+%% 2) Com argumento 'template' (ou sem argumento), insere-se um template 'utfprct' (placeholder)
+%%
 \incluirfichacatalografica{./PreTexto/ficha_catalografica_exemplo.pdf}%%1
 %\incluirfichacatalografica{template}%%2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Errata
 \include{./PreTexto/errata}%% Comente para remover este item
 
@@ -214,53 +232,122 @@
 %% a defesa e deve ser anexada nos pré-textuais .
 %% 1) Aceita o path para o PDF (insere a primeira página)
 %% 2) Com argumento 'template' (ou sem argumento), insere-se um template 'utfprct', que pode servir de placeholder.
+%%
 \incluirfolhadeaprovacao{./PreTexto/folha_de_aprovacao_exemplo.pdf}%%1
 %\incluirfolhadeaprovacao{template}%2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Dedicatória
+%%
 \include{./PreTexto/dedicatoria}%% Comente para remover este item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Agradecimentos
+%%
 \include{./PreTexto/agradecimentos}%% Comente para remover este item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Epígrafe
+%%
 \include{./PreTexto/epigrafe}%% Comente para remover este item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Resumo
+%%
 \include{./PreTexto/resumo}%% Comente para remover este item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Abstract
+%%
 \include{./PreTexto/abstract}%% Comente para remover este item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de algoritmos
+%%
 \incluirlistadealgoritmos%% Comente para remover este item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de ilustrações
+%%
 \incluirlistadeilustracoes%% Comente para remover este item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de tabelas
+%%
 \incluirlistadetabelas%% Comente para remover este item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de abreviaturas, siglas e acrônimos
+%% 
+%%
+%% Modo "glossaries": utiliza o pacote "glossaries" do TeX 
+%%  1) Ordena automaticamente a lista
+%%  2) Apenas os termos referenciados (\gls) são colocados na lista
+%%  3) Referencia de uso na seção 6.11 do Capítulo Exemplo
+%%  4) ATENÇÃO: o arquivo que define qual lista utilizar está 
+%%  definido no preambulo.
+%%  5) Arquivo exemplo: PreTexto/entradas-acronimos.tex 
+%% 		
+%% Modo "file": utiliza os termos definidos no arquivo PreTexto/file-acronimos.tex
+%%  1) Inserção tabular da listas
+%%  2) Controle da ordem de apresentação das listas
+%%  3) Não é preciso referenciar no texto
+%%
 \incluirlistadeacronimos{glossaries}%% Opções: "glossaries" (pacote) ou "file" (arquivo) ou "none" (desabilita)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lista de símbolos
-%% Pretexto da lista de símbolos (opção pacote nomencl)
-%\renewcommand{\nompreamble}{Nomenclature...}
-
+%% 
+%% Modo "nomencl": utiliza o pacote "nomencl" do TeX
+%%  1) Ordena automaticamente a lista pelo índice e seção
+%%  2) Comandos pré-definidos para as seções definidas
+%%  3) Referência de uso na seção 6.12 do Capítulo Exemplo
+%% Modo "file": utiliza os símbolos definidos no arquivo PreTexto/file-acronimos.tex
+%%  1) Inserção tabular da listas
+%%  2) Liberdade na organização das seções das listas
+%%  3) Controle da ordem de apresentação dentro das listas
+%%
 \incluirlistadesimbolos{nomencl}%% Opções: "nomencl" (pacote) ou "file" (arquivo) ou "none" (desabilita)
 
-%% Sumário
-\incluirsumario%% Comente para remover este item
+%% Pretexto da lista de símbolos (opção pacote nomencl)
+%\renewcommand{\nompreamble}{Nomenclature...}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Sumário
+%%
+\incluirsumario%% Comente para remover este item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Formatação de páginas de elementos textuais
+%%
 \textual%% Não comente esta linha
 
 %% Parte
 % \part{Introdução}%% Comente para remover este item
 
 %% Capítulo
-
 \include{./Capitulo1/capitulo1}%% Comente para remover este item
 
 %% Parte
@@ -287,35 +374,59 @@
 %% Capítulo de exemplo
 \include{./CapituloExemplo/capituloexemplo}%% Comente para remover este item
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Formatação de páginas de elementos pós-textuais
+%%
 \postextual%% Não comente esta linha
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Arquivos de referências
+%%
 \arquivosdereferencias{%% Arquivos bibtex sem a extensão .bib e separados por vírgula - Não comente esta linha
   ./PosTexto/exemplos-referencias,%% Arquivo de referências - Comente para remover este item (chktex 26 supress warn.)
   ./PosTexto/referencias%% Arquivo de referências - Comente para remover este item (chktex 26 - supress warn.)
 }%% Não comente esta linha
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Glossário
+%%
 \incluirglossario%% Comente para remover este item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Arquivos de apêndices
+%%
 \begin{arquivosdeapendices}%% Os arquivos de apêndices devem se incluídos neste ambiente - Não comente esta linha
   \partapendices%% Página de início dos apêndices - Comente para remover este item
   \include{./PosTexto/apendicea}%% Apêndice - Comente para remover este item
   \include{./PosTexto/apendiceb}%% Apêndice - Comente para remover este item
 \end{arquivosdeapendices}%% Não comente esta linha
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Arquivos de anexos
+%%
 \begin{arquivosdeanexos}%% Os arquivos de anexos devem se incluídos neste ambiente - Não comente esta linha  
   \partanexos%% Página de início dos anexos - Comente para remover este item (ver Bug0001)
   \include{./PosTexto/anexoa}%% Anexo - Comente para remover este item
 %  %\include{./PosTexto/anexob}%% Anexo - Comente para remover este item
 \end{arquivosdeanexos}%% Não comente esta linha
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Índice
+%%
 \incluirindice%% Comente para remover este item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Fim do documento
 \end{document}%% Não comente esta linha
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
