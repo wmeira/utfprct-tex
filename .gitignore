@@ -22,6 +22,7 @@
 *.glg
 *.glo
 *.gls
+*.glsdefs
 *.idx
 *.ilg
 *.ind
@@ -43,6 +44,7 @@
 *.synctex
 *.synctex(busy)
 *.synctex.gz
+
 
 # Final files
 *.dvi
