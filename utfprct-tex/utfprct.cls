@@ -32,7 +32,7 @@
 
 %% Identificação e modificações
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
-\ProvidesClass{utfprct}[2020/07/30 v1.0.2]
+\ProvidesClass{utfprct}[2020/08/27 v1.0.3]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
