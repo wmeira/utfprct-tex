@@ -32,7 +32,7 @@
 
 %% Identificação e modificações
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
-\ProvidesClass{utfprct}[2020/08/27 v1.0.3]
+\ProvidesClass{utfprct}[2020/12/29 v1.0.4]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -182,6 +182,9 @@
 \RequirePackage{morewrites}%% Espaços adicionais para comandos \write*
 \RequirePackage{pdfpages}%% Inclusão de PDF com múltiplas páginas
 
+\let\footruleskip\undefined%% Remoção da definição de "\footruleskip" antes do carregamento do pacote fancyhdr
+\RequirePackage{fancyhdr}%% Controle extensivo de cabeçalhos e rodapés
+
 %% Logo UTFPRPGTeX
 \newcommand{\utfprpgtex}{UTF\kern-0.75ex\lower0.4ex\hbox{\tiny PR}\kern-0.9ex\lower-0.585ex\hbox{\tiny PG}\kern-0.1ex\TeX}
 
@@ -234,6 +237,21 @@
 %
 %%%%%%%%
 
+
+%%%%%%%%
+%% Licenciamento
+%%
+%% A resolução conjunta Nº 01/2020 COGEP-COPPG torna
+%% obrigatório o uso de uma das 6 licenças Creative Commons
+%% disponíveis (CC-BY, CC-BY-SA, CC-BY-ND, CC-BY-NC, CC-BY-NC-SA, CC-BY-NC-ND),
+%% sendo necessário verificar junto ao curso ou programa de pós-graduação do 
+%% discente qual deve-se utilizar no trabalho.
+%%
+%% Opções: CC-BY, CC-BY-SA, CC-BY-ND, CC-BY-NC, CC-BY-NC-SA, CC-BY-NC-ND, Nenhuma
+\providecommand{\licenciamento}{Nenhuma} %default
+\newcommand{\Licenca}[1]{\renewcommand{\licenciamento}{#1}}
+%% 
+%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1112,20 +1130,107 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Folha de rosto
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
+
+\fancypagestyle{CC-BY}{
+  \fancyhf{} % sets both header and footer to nothing
+  \renewcommand{\headrulewidth}{0pt}
+  \setlength{\footskip}{10mm}%% Espaçamento entre texto e rodapé
+  \fancyfoot[C]{
+  \begin{minipage}[c][][c]{\textwidth}%
+     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by/4.0/deed.pt_BR}{\footnotesize 4.0 Internacional}}\hfill
+    \parbox{0.80\textwidth}{\footnotesize Esta licença permite compartilhamento, remixe, adaptação e criação a partir do trabalho, mesmo para fins comerciais, desde que sejam atribuídos créditos ao(s) autor(es).\\
+Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}\hfill
+  \end{minipage}
+}
+}
+
+\fancypagestyle{CC-BY-SA}{
+  \fancyhf{} % sets both header and footer to nothing
+  \renewcommand{\headrulewidth}{0pt}
+  \setlength{\footskip}{10mm}%% Espaçamento entre texto e rodapé
+  \fancyfoot[C]{
+  \begin{minipage}[c][][c]{\textwidth}%
+     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-SA.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{\footnotesize 4.0 Internacional}}\hfill
+    \parbox{0.80\textwidth}{\footnotesize Esta licença permite remixe, adaptação e criação a partir do trabalho, mesmo para fins comerciais, desde que sejam atribuídos créditos ao(s) autor(es) e que licenciem as novas criações sob termos idênticos.\\
+Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.
+}\hfill
+  \end{minipage}
+}
+}
+
+\fancypagestyle{CC-BY-ND}{
+  \fancyhf{} % sets both header and footer to nothing
+  \renewcommand{\headrulewidth}{0pt}
+  \setlength{\footskip}{10mm}%% Espaçamento entre texto e rodapé
+  \fancyfoot[C]{
+  \begin{minipage}[c][][c]{\textwidth}%
+     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-ND.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-nd/4.0/deed.pt_BR}{\footnotesize 4.0 Internacional}}\hfill
+    \parbox{0.80\textwidth}{\footnotesize Esta licença permite compartilhamento do trabalho, mesmo para fins comerciais, sem a possibilidade de alterá-lo, desde que sejam atribuídos créditos ao(s) autor(es).\\ 
+Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.
+}\hfill
+  \end{minipage}
+}
+}
+
+\fancypagestyle{CC-BY-NC}{
+  \fancyhf{} % sets both header and footer to nothing
+  \renewcommand{\headrulewidth}{0pt}
+  \setlength{\footskip}{10mm}%% Espaçamento entre texto e rodapé
+  \fancyfoot[C]{
+  \begin{minipage}[c][][c]{\textwidth}%
+     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-NC.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR}{\footnotesize 4.0 Internacional}}\hfill
+    \parbox{0.80\textwidth}{\footnotesize Esta licença permite remixe, adaptação e criação a partir do trabalho, para fins não comerciais, desde que sejam atribuídos créditos ao(s) autor(es).\\
+Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.
+}\hfill
+  \end{minipage}
+}
+}
+
+\fancypagestyle{CC-BY-NC-SA}{
+  \fancyhf{} % sets both header and footer to nothing
+  \renewcommand{\headrulewidth}{0pt}
+  \setlength{\footskip}{10mm}%% Espaçamento entre texto e rodapé
+  \fancyfoot[C]{
+  \begin{minipage}[c][][c]{\textwidth}%
+     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-NC-SA.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR}{\footnotesize 4.0 Internacional}}\hfill
+    \parbox{0.80\textwidth}{\footnotesize Esta licença permite remixe, adaptação e criação a partir do trabalho, para fins não comerciais, desde que sejam atribuídos créditos ao(s) autor(es) e que licenciem as novas criações sob termos idênticos.\\
+Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.
+}\hfill
+  \end{minipage}
+}
+}
+
+\fancypagestyle{CC-BY-NC-ND}{
+  \fancyhf{} % sets both header and footer to nothing
+  \renewcommand{\headrulewidth}{0pt}
+  \setlength{\footskip}{10mm}%% Espaçamento entre texto e rodapé
+  \fancyfoot[C]{
+  \begin{minipage}[c][][c]{\textwidth}%
+     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-NC-ND.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt_BR}{\footnotesize 4.0 Internacional}}\hfill
+    \parbox{0.80\textwidth}{\footnotesize Esta licença permite \textit{download} e compartilhamento do trabalho desde que sejam atribuídos créditos ao(s) autor(es), sem a possibilidade de alterá-lo ou utilizá-lo para fins comerciais.\\
+Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.
+}\hfill
+  \end{minipage}
+}
+}
+
 \renewcommand{\folhaderostocontent}{%% Formatação da folha de rosto
+
+  \ifthenelse{\equal{\licenciamento}{Nenhuma}}{}{
+	\newgeometry{bottom=30mm}
+  }
   \begin{center}%% Texto centralizado
     \bfseries%% Texto em negrito
     \ifthenelse{\equal{\imprimiratribuiautortres}{true}}{%% Insere 3 autores(as)
       \MakeUppercase{\imprimirnomedoautor}\par%% Autor(a)
       \MakeUppercase{\imprimirnomedoautordois}\par%% Autor(a) 2
-      \MakeUppercase{\imprimirnomedoautortres}\\[241pt]%% Autor(a) 3
+      \MakeUppercase{\imprimirnomedoautortres}\\[224pt]%% Autor(a) 3
     }{% 
       \ifthenelse{\equal{\imprimiratribuiautordois}{true}}{%% Insere 2 autores(as)
         \MakeUppercase{\imprimirnomedoautor}\par%% Autor(a)
-        \MakeUppercase{\imprimirnomedoautordois}\\[263pt]%% Autor(a) 2
+        \MakeUppercase{\imprimirnomedoautordois}\\[246pt]%% Autor(a) 2
       }{%% Insere 1 autor(a)
-        \MakeUppercase{\imprimirnomedoautor}\\[285pt]%% Autor(a)
+        \MakeUppercase{\imprimirnomedoautor}\\[268pt]%% Autor(a)
       }
     }
     \ifthenelse{\equal{\imprimiratribuicotutela}{true}}{%%
@@ -1170,9 +1275,15 @@
     \MakeUppercase{\imprimircidade}\par%% Cidade
     \MakeUppercase{\imprimirano}%% Ano
   \end{center}
+
+\ifthenelse{\equal{\licenciamento}{Nenhuma}}{}{
+	\thispagestyle{\licenciamento}
+	\loadgeometry{standard}
+}
+
 }
 \newcommand{\incluirfolhaderosto}[1][\folhaderostoname]{%% Inclusão da folha de rosto (com ou sem ficha catalográfica)
-  \@ifstar\imprimirfolhaderostostar\imprimirfolhaderostonostar%% Verificação do asterisco (*)
+\@ifstar\imprimirfolhaderostostar\imprimirfolhaderostonostar%% Verificação do asterisco (*)
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1263,8 +1374,6 @@
 %% Cabeçalho da folha de aprovação
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\let\footruleskip\undefined%% Remoção da definição de "\footruleskip" antes do carregamento do pacote fancyhdr
-\RequirePackage{fancyhdr}%% Controle extensivo de cabeçalhos e rodapés
 \fancypagestyle{folhadeaprovacao}{%% Formatação do cabeçalho da folha de aprovação
   \fancyhf{}%% Remoção da formatação atual de cabeçalhos e rodapés
   % \setlength{\headheight}{0pt}%% Espessura do cabeçalho

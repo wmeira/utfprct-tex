@@ -78,7 +78,7 @@
 %% -- Opções do pacote babel (hifenização) -- % 
   %french,%% Idioma adicional para hifenização (suporte parcial)
   %spanish,%% Idioma adicional para hifenização (suporte parcial)
-  english,%% Idioma adicional para hifenização  (colocar em último para doc. em inglês)
+   english,%% Idioma adicional para hifenização  (colocar em último para doc. em inglês)
   brazil,%% Idioma principal do documento (último da lista)    
 ]{utfprct}%% Classe utfprct
 
@@ -200,10 +200,18 @@
 %%
 %% A descrição da folha de rosto pode ser customizada no 
 %% arquivo de dados ('utfprct-dados.tex) alterando o dado
-%% '\DescricaoDoDocumento'.
+%% '\DescricaoDoDocumento'. Colocando o * (asterisco)
+%% insere a ficha catalográfica no verso da folha de rosto
 %%
-%% Comando com * coloca a ficha catalográfica no verso
+%% Licenciamento: a resolução conjunta Nº 01/2020 COGEP-COPPG torna
+%% obrigatório a inclusão de uma das 6 licenças Creative Commons
+%% disponíveis na folha de rosto. Verificar junto ao curso ou 
+%% programa de pós-graduação qual deve ser utilizada no trabalho. 
+%% Por exemplo, o CPGEI aderiu a CC-BY. 
 %%
+%% Opções: CC-BY, CC-BY-SA, CC-BY-ND, CC-BY-NC, CC-BY-NC-SA, CC-BY-NC-ND, Nenhuma
+%%
+\Licenca{CC-BY}
 \incluirfolhaderosto*%% Com ficha catalográfica no verso 
 %\incluirfolhaderosto%% Sem ficha catalográfica no verso
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

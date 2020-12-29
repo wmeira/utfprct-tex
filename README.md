@@ -24,8 +24,10 @@ Os arquivos do template são:
 - `abntex2-alf-en.bst`: arquivo `abntex2-alf.bst` com conectores e termos traduzidos para o inglês
 - `abntex2-num-en.bst`: arquivo `abntex2-num.bst` com conectores e termos traduzidos para o inglês
 - `make.bat` (`makefile`): possui comandos para converter o arquivo `utfprct.tex` (default) para PDF e um comando para limpar os arquivos intermediários (`clean`) (vide comando `help`)
+- `Licencas/*.png`: contém as imagens referentes as licenças *Creative Commons*
 
 Outros arquivos:
+
 
 - `capituloexemplo.tex`: capítulo exemplo que serve como documentação de como utilizar os recursos disponívels no template
 
@@ -101,6 +103,12 @@ Outra categoria é o **PDF/A-1B**, cujo formato pode ser gerado ao tentar imprim
 Para validar se o PDF/A foi gerado corretamente, o programa [VeraPDF](https://verapdf.org/) pode detectar e validar a categoria do PDF/A do documento de entrada. Outra opção é abrir o arquivo no *Abobe Acrobat Reader*, no qual aparecerá um aviso informando que o documento PDF aberto é um PDF/A.
 
 A conversão para PDF/A poderia ser feita através de algum procedimento de compilação do LaTeX, porém tive algumas dificuldades e não  consegui validar o arquivo gerado como PDF/A. A falta da ferramenta não é tão negativa, pois o procedimento só é necessário no momento de gerar a versão final e as alternativas citadas já satisfazem bem o requisito (*fico aberto à sugestões*).
+
+## Licenciamento
+
+A [Resolução Conjunta nº 01/2020 COGEP-COPPG](https://sei.utfpr.edu.br/sei/publicacoes/controlador_publicacoes.php?acao=publicacao_visualizar&id_documento=1811618&id_orgao_publicacao=0) dispõe sobre a Política de licenciamento das versões finais dos TCCs e dos Programas de Pós-Graduação Stricto Sensu (dissertações e teses) produzidas na UTFPR. Sendo obrigatória a inclusão de uma das seguintes licenças [Creative Commons](https://creativecommons.org/about/cclicenses/) (*CC-BY*, *CC-BY-SA*, *CC-BY-ND*, *CC-BY-NC*, *CC-BY-NC-SA* ou *CC-BY-NC-ND*) seguindo os [modelos de folha de rosto](http://portal.utfpr.edu.br/biblioteca/trabalhos-academicos) disponilizados pela biblioteca. Para escolha da forma de licenciamento, verificar junto ao curso ou programa de pós-graduação do discente qual deverá ser utilizada. Por exemplo, o CPGEI aderiu a opção *CC-BY* segundo a [Resolução Normativa 02/2020](http://portal.utfpr.edu.br/cursos/coordenacoes/stricto-sensu/cpgei/documentos/regulamentos-e-normas/resolucoes-internas/resolucoes-vigentes/resolucao_01_2020.pdf/view).
+
+Todas as opções de licenciamento estão disponíveis no template `UTFPRCT-TEX` através da configuração da folha de rosto.
 
 ## Opções de Trabalho Acadêmico
 
