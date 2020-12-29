@@ -2,11 +2,11 @@
 
 O `UTFPRCT-TEX` é um template LaTeX não oficial para trabalhos acadêmicos (teses, dissertações, trabalhos de conclusão, etc.) da Universidade Tecnológica Federal do Paraná (UTFPR) - Curitiba.
 
+A versão mais recente do template encontra-se também disponível no [**Overleaf**](https://www.overleaf.com/latex/templates/utfprct-tex-template-para-trabalhos-academicos-da-utfpr/rgmcwpndsrgq).
+
 Este trabalho é baseado no projeto [UTFPRPG-TEX](https://www.overleaf.com/latex/templates/federal-university-of-technology-parana-academic-works/vvbtcwhwngcz) mantido por Luiz. E. M. Lima. As alterações do template `UTFPRPG-TEX` foram necessárias para alinhar as diferentes interpretações da ABNT presentes mesmo entre diferentes campi da UTFPR e implementar os principais pontos da **NBR 6023/2018** (referências).
 
 A estrutura principal de ambos os trabalhos é baseada no template de trabalhos acadêmicos [abnTeX2](http://www.abntex.net.br), que atende aos requisitos das normas da Associação Brasileira de Normas Técnicas (ABNT) para produção de documentos técnicos e científicos brasileiros.
-
-A versão mais recente do template encontra-se também disponível no [**Overleaf**](https://www.overleaf.com/latex/templates/utfprct-tex-template-para-trabalhos-academicos-da-utfpr/rgmcwpndsrgq)
 
 ---
 
@@ -114,7 +114,7 @@ Todas as opções de licenciamento estão disponíveis no template `UTFPRCT-TEX`
 
 ### Trabalho Acadêmico em Inglês
 
-Na declaração da classe `utfprct` no arquivo `utfprct.tex`, as últimas opções adicionam idiomas para hifenização, no qual, o último idioma definido será o idioma principal do documento (define o `\languagename`). Portanto, caso o trabalho seja desenvolvido em inglês apenas coloque `english` na última posição.
+Na declaração da classe `utfprct` no arquivo `utfprct.tex`, as últimas opções adicionam idiomas para hifenização, no qual, o último idioma definido será o idioma principal do documento (define o `\languagename`). Portanto, caso o trabalho seja desenvolvido em inglês apenas coloque `english` na última posição (evite idiomas duplicados).
 
 Qualquer redefinição de nome em inglês pode ser feito dentro da classe `utfprct.cls` dentro da seção "Variáveis dependentes do idioma".
 
