@@ -83,25 +83,44 @@
 %% [abstract] Formation level: "Doctorate", "PhD", "Master's Degree", "Bachelor's Degree"
 \FormationLevel{PhD}%
 
-%% Título pretendido: "Doutor(a)", "Mestre(a)" ou "Bacharel(a)"
-\TituloPretendido{Doutor(a)}%
+%% Título ou grau pretendido: "Doutor", "Mestre" ou "Bacharel"
+\TituloPretendido{Doutor}%
 
-%% Título do documento
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Por padrão, o título principal será o \TituloDoDocumento (português)
+%% Se a língua do documento for definida como inglês, será o \DocumentTitle
+
+%% Título do documento em PORTUGUÊS (resumo)
 \TituloDoDocumento{%%
 Título do presente trabalho acadêmico: subtítulo do presente trabalho acadêmico
 }%
 
-%% [abstract] Document title
+%% Título do trabalho em INGLÊS (abstract)
 \DocumentTitle{%%
 Title of this academic work: subtitle of this academic work
 }%
 
 %% Título em múltiplas linhas na capa, folha de rosto e termo de aprovação
 %% Use o comando \par para indicar a quebra de linha
+%%
+%% A CAPA apresentará o título no formato de múltiplas linhas
+%% para a respectiva língua do documento definida.
+%%
+%% Na folha de rosto, caso a língua do documento não seja português, aparecerá o
+%% \TituloEmMultiplasLinhasIngles seguido pela tradução \TituloEmMultiplasLinhas
+%%
 \TituloEmMultiplasLinhas{%%
 Título do presente trabalho acadêmico: \par 
 subtítulo do presente trabalho acadêmico
 }%
+
+\TituloEmMultiplasLinhasIngles{%%
+Title of this academic work: \par
+subtitle of this academic work
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %% Data da defesa
 \Dia{1}%% Dia (opcional: usado na ficha catalográfica apenas)
@@ -283,9 +302,19 @@ subtítulo do presente trabalho acadêmico
 
 %% Descrição do documento na folha de rosto (exemplos)
 \DescricaoDoDocumento{
-%\imprimirtipodedocumento\ apresentada ao Programa de Pós-Graduação em \imprimircurso\ (\imprimirsigladoppg) da \imprimirinstituicao\ (\imprimirsiglainstituicao)\ como requisito à obtenção do título de ``Doutor em Ciências''. Área de Concentração: \imprimirareadeconcentracao.%
-\imprimirtipodedocumento\ apresentado(a) como requisito parcial à obtenção do título de \imprimirtitulopretendido\ em \imprimircurso, do \imprimirppgoudepartamento, da \imprimirinstituicao.
+\imprimirtipodedocumento\ apresentado(a) como requisito para obtenção do título(grau) de \imprimirtitulopretendido\ em \imprimircurso, do \imprimirppgoudepartamento, da \imprimirinstituicao\ (\imprimirsiglainstituicao).
 }
+
+% Exemplo: Mestrado
+%\DescricaoDoDocumento{
+%\imprimirtipodedocumento\ apresentada como requisito para obtenção do grau de \imprimirtitulopretendido\ em \imprimircurso\ da \imprimirinstituicao\ (\imprimirsiglainstituicao).
+%}
+
+% Exemplo: Doutorado
+%\DescricaoDoDocumento{
+%\imprimirtipodedocumento\ apresentada como requisito para obtenção do título de \imprimirtitulopretendido\ em \imprimircurso\ da \imprimirinstituicao\ (\imprimirsiglainstituicao).
+%}
+
 
 %% Insere ou remove descrição da cotutela (extra) na folha de rosto: "true" ou "false". 
 %% Se "true", a descrição do documento será colocada na folha de rosto, logo abaixo do orientador(a) e coorientador(a) da primeira inst. e depois o orientador(a) e coorientador(a) da inst. de cotutela. 
@@ -294,7 +323,7 @@ subtítulo do presente trabalho acadêmico
 
 %% Segunda Descricao da Inst. de Cotutela na folha de rosto (exemplos)
 \DescricaoDoDocumentoCotutela{
-\imprimirtipodedocumento\ apresentado(a) como requisito parcial à obtenção do título de \imprimirtitulopretendido\ em \imprimircursocotutela, do \imprimirppgoudepartamentocotutela, da \imprimirinstituicaocotutela.  
+\imprimirtipodedocumento\ apresentado(a) como requisito à obtenção do título de \imprimirtitulopretendido\ em \imprimircursocotutela, do \imprimirppgoudepartamentocotutela, da \imprimirinstituicaocotutela.  
 %\imprimirtipodedocumento\ apresentada à Comissão de Acompanhamento de Tese do Programa Doutoral em \imprimircursocotutela\ do \imprimirinstituicaocotutela\ (\imprimirsiglainstituicaocotutela) como requisito à obtenção de grau de \imprimirtitulopretendido\ na área de concentração \imprimirareadeconcentracaocotutela.
 }
 

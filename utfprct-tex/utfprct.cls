@@ -261,6 +261,7 @@
 \ifthenelse{\equal{\languagename}{english}}
 {%% Definição do idioma INGLES
   \AtBeginDocument{
+  	\newcommand{\lingua}{english}
     \newcommand{\nomecapa}{Cover}
     \newcommand{\nomefolhaderosto}{Title Page}
     \newcommand{\nomefichacatalografica}{Index Card}
@@ -317,6 +318,7 @@
   }
 }{%Definição do idioma em Português (DEFAULT)
   \AtBeginDocument{%% Definições carregadas no início do documento
+  	\newcommand{\lingua}{brazil}
     \newcommand{\nomecapa}{Capa}
     \newcommand{\nomefolhaderosto}{Folha de Rosto}
     \newcommand{\nomefichacatalografica}{Ficha Catalográfica}
@@ -444,6 +446,10 @@
 %% Título em multiplas linhas
 \providecommand{\imprimirtituloemmultiplaslinhas}{Título: \par Subtítulo}
 \newcommand{\TituloEmMultiplasLinhas}[1]{\renewcommand{\imprimirtituloemmultiplaslinhas}{#1}}
+
+%% Título em multiplas linhas em inglês
+\providecommand{\imprimirtituloemmultiplaslinhasingles}{Title: \par Subtitle}
+\newcommand{\TituloEmMultiplasLinhasIngles}[1]{\renewcommand{\imprimirtituloemmultiplaslinhasingles}{#1}}
 
 %% Dia da defesa com número de dígitos exatos (opcional)
 \providecommand{\imprimirdia}{1}
@@ -1117,8 +1123,13 @@
       	}{%% Insere 1 autor(a)
           \MakeUppercase{\imprimirnomedoautor}\\[140pt]%% Autor(a)
         }
+      }%%
+      \ifthenelse{\equal{\lingua}{english}}{%
+	   	  {\large\MakeUppercase{\imprimirtituloemmultiplaslinhasingles}}\\[120pt]}
+   	  {%
+      	{\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[120pt]
       }
-      {\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[120pt]%% Título do documento
+      
       \MakeUppercase{\imprimirtipodedocumento}\\%% Tipo de documento
       \vspace*{\stretch{1}}%% Espaçamento vertical
       \MakeUppercase{\imprimircidade}\par%% Cidade
@@ -1137,7 +1148,7 @@
   \setlength{\footskip}{10mm}%% Espaçamento entre texto e rodapé
   \fancyfoot[C]{
   \begin{minipage}[c][][c]{\textwidth}%
-     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by/4.0/deed.pt_BR}{\footnotesize 4.0 Internacional}}\hfill
+     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by/4.0/deed.pt_BR}{\footnotesize \color{blue}{\underline{4.0 Internacional}}}}\hfill
     \parbox{0.80\textwidth}{\footnotesize Esta licença permite compartilhamento, remixe, adaptação e criação a partir do trabalho, mesmo para fins comerciais, desde que sejam atribuídos créditos ao(s) autor(es).\\
 Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}\hfill
   \end{minipage}
@@ -1150,7 +1161,7 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
   \setlength{\footskip}{10mm}%% Espaçamento entre texto e rodapé
   \fancyfoot[C]{
   \begin{minipage}[c][][c]{\textwidth}%
-     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-SA.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{\footnotesize 4.0 Internacional}}\hfill
+     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-SA.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{\footnotesize \color{blue}{\underline{4.0 Internacional}}}}\hfill
     \parbox{0.80\textwidth}{\footnotesize Esta licença permite remixe, adaptação e criação a partir do trabalho, mesmo para fins comerciais, desde que sejam atribuídos créditos ao(s) autor(es) e que licenciem as novas criações sob termos idênticos.\\
 Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.
 }\hfill
@@ -1164,7 +1175,7 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
   \setlength{\footskip}{10mm}%% Espaçamento entre texto e rodapé
   \fancyfoot[C]{
   \begin{minipage}[c][][c]{\textwidth}%
-     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-ND.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-nd/4.0/deed.pt_BR}{\footnotesize 4.0 Internacional}}\hfill
+     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-ND.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-nd/4.0/deed.pt_BR}{\footnotesize \color{blue}{\underline{4.0 Internacional}}}}\hfill
     \parbox{0.80\textwidth}{\footnotesize Esta licença permite compartilhamento do trabalho, mesmo para fins comerciais, sem a possibilidade de alterá-lo, desde que sejam atribuídos créditos ao(s) autor(es).\\ 
 Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.
 }\hfill
@@ -1178,7 +1189,7 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
   \setlength{\footskip}{10mm}%% Espaçamento entre texto e rodapé
   \fancyfoot[C]{
   \begin{minipage}[c][][c]{\textwidth}%
-     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-NC.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR}{\footnotesize 4.0 Internacional}}\hfill
+     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-NC.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR}{\footnotesize \color{blue}{\underline{4.0 Internacional}}}}\hfill
     \parbox{0.80\textwidth}{\footnotesize Esta licença permite remixe, adaptação e criação a partir do trabalho, para fins não comerciais, desde que sejam atribuídos créditos ao(s) autor(es).\\
 Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.
 }\hfill
@@ -1192,7 +1203,7 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
   \setlength{\footskip}{10mm}%% Espaçamento entre texto e rodapé
   \fancyfoot[C]{
   \begin{minipage}[c][][c]{\textwidth}%
-     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-NC-SA.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR}{\footnotesize 4.0 Internacional}}\hfill
+     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-NC-SA.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR}{\footnotesize \color{blue}{\underline{4.0 Internacional}}}}\hfill
     \parbox{0.80\textwidth}{\footnotesize Esta licença permite remixe, adaptação e criação a partir do trabalho, para fins não comerciais, desde que sejam atribuídos créditos ao(s) autor(es) e que licenciem as novas criações sob termos idênticos.\\
 Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.
 }\hfill
@@ -1206,7 +1217,7 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
   \setlength{\footskip}{10mm}%% Espaçamento entre texto e rodapé
   \fancyfoot[C]{
   \begin{minipage}[c][][c]{\textwidth}%
-     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-NC-ND.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt_BR}{\footnotesize 4.0 Internacional}}\hfill
+     \parbox{0.20\textwidth}{\includegraphics[width=0.16\textwidth]{./Licencas/CC-BY-NC-ND.png}\smallbreak\vspace{-2mm}\href{https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt_BR}{\footnotesize \color{blue}{\underline{4.0 Internacional}}}}\hfill
     \parbox{0.80\textwidth}{\footnotesize Esta licença permite \textit{download} e compartilhamento do trabalho desde que sejam atribuídos créditos ao(s) autor(es), sem a possibilidade de alterá-lo ou utilizá-lo para fins comerciais.\\
 Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.
 }\hfill
@@ -1238,7 +1249,14 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 			{\vspace{-70pt}}
     	}{}
     }{}
-    {\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[35pt]%% Título do documento
+    \ifthenelse{\equal{\lingua}{english}} {
+    	\vspace{-45pt}
+		{\large\MakeUppercase{\imprimirtituloemmultiplaslinhasingles}}\\[10pt]%% Título do documento (em ingles)
+		{\large{\imprimirtituloemmultiplaslinhas}}\\[35pt]
+    }{
+		{\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[35pt]%% Título do documento
+    }
+
   \end{center}
   \begin{flushright}%% Alinhamento à direita
     \begin{Spacing}{1.0}%% Espaçamento simples entre linhas
