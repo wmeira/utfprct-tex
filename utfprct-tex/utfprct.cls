@@ -1,4 +1,4 @@
-%% UTFPRCT-TEX, v1.0.4 wmeira on 2020/12/29
+%% UTFPRCT-TEX, v1.0.5 wmeira on 2021/02/06
 %% Copyright (C) 2020- by William H. T. Meira
 %%
 %% Modified version of project 'utfprpgtex' maintained
@@ -32,16 +32,7 @@
 
 %% Identificação e modificações
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
-\ProvidesClass{utfprct}[2020/12/29 v1.0.4]
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Classe e Opções
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%% -- Opções da classe abntex2
-\RequirePackage{color}%% Controle de cores em documentos LaTeX
+\ProvidesClass{utfprct}[2021/02/06 v1.0.5]\RequirePackage{color}%% Controle de cores em documentos LaTeX
 \RequirePackage{substr}%% Controle de substrings em strings
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{abntex2}}%% Envio das opções atuais para a classe abntex2
 %% -- Opções da classe utfprct
