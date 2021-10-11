@@ -32,7 +32,9 @@
 
 %% Identificação e modificações
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
-\ProvidesClass{utfprct}[2021/10/11 v1.0.6]\RequirePackage{substr}%% Controle de substrings em strings
+\ProvidesClass{utfprct}[2021/10/11 v1.0.6]\RequirePackage{color}%% Controle de cores em documentos LaTeX
+\RequirePackage{substr}%% Controle de substrings em strings
+
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{abntex2}}%% Envio das opções atuais para a classe abntex2
 %% -- Opções da classe utfprct
 %%    -- Impressão dos elementos pré-textuais
