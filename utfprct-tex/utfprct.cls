@@ -1,4 +1,4 @@
-%% UTFPRCT-TEX, v1.0.5 wmeira on 2021/02/06
+%% UTFPRCT-TEX, v1.0.6 wmeira on 2021/10/11
 %% Copyright (C) 2020- by William H. T. Meira
 %%
 %% Modified version of project 'utfprpgtex' maintained
@@ -32,8 +32,7 @@
 
 %% Identificação e modificações
 \NeedsTeXFormat{LaTeX2e}[2005/12/01]
-\ProvidesClass{utfprct}[2021/02/06 v1.0.5]\RequirePackage{color}%% Controle de cores em documentos LaTeX
-\RequirePackage{substr}%% Controle de substrings em strings
+\ProvidesClass{utfprct}[2021/10/11 v1.0.6]\RequirePackage{substr}%% Controle de substrings em strings
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{abntex2}}%% Envio das opções atuais para a classe abntex2
 %% -- Opções da classe utfprct
 %%    -- Impressão dos elementos pré-textuais
@@ -1245,7 +1244,9 @@ Conteúdos elaborados por terceiros, citados e referenciados nesta obra não sã
 		{\large\MakeUppercase{\imprimirtituloemmultiplaslinhasingles}}\\[10pt]%% Título do documento (em ingles)
 		{\large{\imprimirtituloemmultiplaslinhas}}\\[35pt]
     }{
-		{\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[35pt]%% Título do documento
+    	\vspace{-45pt}
+		{\large\MakeUppercase{\imprimirtituloemmultiplaslinhas}}\\[10pt]%% Título do documento
+		{\large{\imprimirtituloemmultiplaslinhasingles}}\\[35pt]
     }
 
   \end{center}
